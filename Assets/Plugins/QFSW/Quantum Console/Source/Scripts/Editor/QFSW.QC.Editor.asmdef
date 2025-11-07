@@ -1,0 +1,23 @@
+{
+    "name": "QFSW.QC.Editor",
+    "rootNamespace": "",
+    "references": [
+        "QFSW.QC",
+        "QFSW.QC.Editor.Tools",
+        "QFSW.QC.QGUI",
+        "Unity.TextMeshPro"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "CONSOLE"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

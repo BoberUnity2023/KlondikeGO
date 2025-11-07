@@ -1,0 +1,28 @@
+{
+    "name": "CoreAssembly",
+    "rootNamespace": "BloomLines",
+    "references": [
+        "GUID:937effe31229ea641ba8a5591f89140f",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:6546d7765b4165b40850b3667f981c26",
+        "GUID:fb24642277b1db2449da7ac148ce939d",
+        "GUID:21b0c8d1703a94250bfac916590cea4f",
+        "GUID:037600c3217604015b2d4ac17447fb17",
+        "GUID:136c0d688e4954491b367d4f76187375",
+        "GUID:e2c3782dc6445491e87d280768bacab5",
+        "GUID:99b8960d915bbce4da064bdb778dccca",
+        "GUID:764a0e1d3535a456e9a4bf0c23f88bf7",
+        "GUID:f8c64bb88d959406689053ae3f31183d",
+        "GUID:1bdb52f232b068c4bad5d7fa1d915d08",
+        "GUID:ce9517d26831027489d5942cd367c965"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

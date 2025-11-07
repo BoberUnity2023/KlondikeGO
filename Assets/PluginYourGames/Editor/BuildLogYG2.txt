@@ -1,0 +1,3 @@
+Build path: C:/PROJECTS/KlondikeGO/VK
+Build number: 229
+PluginYG version: 2.005

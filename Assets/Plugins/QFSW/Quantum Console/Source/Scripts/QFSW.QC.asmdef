@@ -1,0 +1,19 @@
+{
+    "name": "QFSW.QC",
+    "rootNamespace": "",
+    "references": [
+        "Unity.TextMeshPro",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "CONSOLE"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

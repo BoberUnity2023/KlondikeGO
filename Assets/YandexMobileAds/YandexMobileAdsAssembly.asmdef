@@ -1,0 +1,20 @@
+{
+    "name": "YandexMobileAdsAssembly",
+    "rootNamespace": "",
+    "references": [],
+    "includePlatforms": [
+        "Android",
+        "Editor",
+        "iOS"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "RuStore"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

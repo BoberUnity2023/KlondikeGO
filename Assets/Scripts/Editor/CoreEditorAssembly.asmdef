@@ -1,0 +1,20 @@
+{
+    "name": "CoreEditorAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d1783784b8468bc4a9506a73637f912e",
+        "GUID:99b8960d915bbce4da064bdb778dccca",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
