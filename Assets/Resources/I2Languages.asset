@@ -17,378 +17,580 @@ MonoBehaviour:
     UserAgreesToHaveItInsideThePluginsFolder: 0
     GoogleLiveSyncIsUptoDate: 1
     mTerms:
-    - Term: Main/save_button
+    - Term: ads
       TermType: 0
       Description: 
       Languages:
-      - "\u0421\u043E\u0445\u0440\u0430\u043D\u0438\u0442\u044C"
-      - Save
-      - Guardar
-      - Speichern
-      - Kaydet
+      - "\u0420\u0415\u041A\u041B\u0410\u041C\u0410 \u0427\u0415\u0420\u0415\u0417:"
+      - 'AD IN:'
+      - "REKLAM \u0130\xC7\u0130NDE:"
+      - 'ANUNCIO EN:'
+      - 'ANZEIGE IN:'
       Flags: 0000000000
       Languages_Touch: []
-    - Term: Main/language
+    - Term: again
       TermType: 0
       Description: 
       Languages:
-      - "\u042F\u0437\u044B\u043A"
-      - Language
-      - Idioma
-      - Sprache
-      - Dil
+      - "\u0417\u0410\u041D\u041E\u0412\u041E?"
+      - RESTART
+      - "YEN\u0130DEN BA\u015ELAT"
+      - REINICIAR
+      - NEUSTART
       Flags: 0000000000
       Languages_Touch: []
-    - Term: Main/sounds
+    - Term: back
       TermType: 0
       Description: 
       Languages:
-      - "\u0417\u0432\u0443\u043A"
-      - Sounds
-      - Sonidos
-      - "T\xF6ne"
-      - Sesler
+      - "\u0420\u0423\u0411\u0410\u0428\u041A\u0410"
+      - BACK
+      - "GER\u0130"
+      - VOLVER
+      - "ZUR\xDCCK"
       Flags: 0000000000
       Languages_Touch: []
-    - Term: Main/vibration
+    - Term: background
       TermType: 0
       Description: 
       Languages:
-      - "\u0412\u0438\u0431\u0440\u0430\u0446\u0438\u044F"
-      - Vibration
-      - "Vibraci\xF3n"
-      - Vibration
-      - "Titre\u015Fim"
+      - "\u0424\u041E\u041D"
+      - BACKGROUND
+      - ARKA PLAN
+      - ANTECEDENTES
+      - HINTERGRUND
       Flags: 0000000000
       Languages_Touch: []
-    - Term: Main/gamemode
+    - Term: best_time
       TermType: 0
       Description: 
       Languages:
-      - "\u0420\u0435\u0436\u0438\u043C \u0438\u0433\u0440\u044B"
-      - Game Mode
-      - Modo de juego
-      - Spielmodus
-      - Oyun Modu
+      - "\u041B\u0423\u0427\u0428\u0415\u0415 \u0412\u0420\u0415\u041C\u042F"
+      - BEST TIME
+      - "EN \u0130Y\u0130 ZAMAN"
+      - MEJOR TIEMPO
+      - BESTE ZEIT
       Flags: 0000000000
       Languages_Touch: []
-    - Term: Main/classic
+    - Term: buy
       TermType: 0
       Description: 
       Languages:
-      - "\u041A\u043B\u0430\u0441\u0441\u0438\u0447\u0435\u0441\u043A\u0438\u0439"
-      - Classic
-      - "Cl\xE1sico"
-      - Klassisch
-      - Klasik
+      - "\u041A\u0423\u041F\u0418\u0422\u042C \u0417\u0410"
+      - BUY FOR
+      - SATIN AL
+      - PAGAR
+      - "KAUFEN F\xDCR"
       Flags: 0000000000
       Languages_Touch: []
-    - Term: Main/adventure
+    - Term: cancel
       TermType: 0
       Description: 
       Languages:
-      - "\u041F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435"
-      - Adventure
-      - Aventura
-      - Abenteuer
-      - Macera
+      - "\u041E\u0422\u041C\u0415\u041D\u0410"
+      - CANCEL
+      - "\u0130PTAL"
+      - CANCELAR
+      - ABBRECHEN
       Flags: 0000000000
       Languages_Touch: []
-    - Term: Main/shop
+    - Term: cards
       TermType: 0
       Description: 
       Languages:
-      - "\u041C\u0430\u0433\u0430\u0437\u0438\u043D"
-      - Shop
-      - Tienda
-      - Laden
-      - "Ma\u011Faza"
+      - "\u041A\u0410\u0420\u0422\u042B"
+      - CARDS
+      - KARTLAR
+      - CARTAS
+      - KARTEN
       Flags: 0000000000
       Languages_Touch: []
-    - Term: Main/no_ads_iap
+    - Term: coins
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041C\u041E\u041D\u0415\u0422\u042B"
+      - COINS
+      - JET
+      - MONEDAS
+      - "M\xDCNZEN"
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: congratulations
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u041E\u0417\u0414\u0420\u0410\u0412\u041B\u042F\u0415\u041C!"
+      - CONGRATULATIONS!
+      - "TEBR\u0130KLER!"
+      - "\xA1FELICITACIONES!"
+      - "HERZLICHEN GL\xDCCKWUNSCH!"
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: daily_bonus
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0414\u041D\u0415\u0412\u041D\u0410\u042F \u041D\u0410\u0413\u0420\u0410\u0414\u0410"
+      - DAILY REWARD
+      - "G\xDCNL\xDCK \xD6D\xDCL"
+      - RECOMPENSA DIARIA
+      - "T\xC4GLICHE BELOHNUNG"
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: day
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0414\u0415\u041D\u042C"
+      - DAY
+      - "G\xDCN"
+      - "D\xCDA"
+      - TAG
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: deck
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041A\u041E\u041B\u041E\u0414\u0410"
+      - DECK
+      - DESTE
+      - BAMBA
+      - DECK
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: difficulty
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0421\u041B\u041E\u0416\u041D\u041E\u0421\u0422\u042C"
+      - DIFFICULTY
+      - ZORLUK
+      - DIFICULTAD
+      - SCHWIERIGKEITSGRAD
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: easy
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041B\u0415\u0413\u041A\u0418\u0419"
+      - EASY
+      - KOLAY
+      - "F\xC1CIL"
+      - EINFACH
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: get
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u041E\u041B\u0423\u0427\u0418\u0422\u042C"
+      - GET
+      - AL
+      - OBTENER
+      - WERDEN
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: hard
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041C\u0410\u0421\u0422\u0415\u0420"
+      - HARD
+      - ZOR
+      - "DIF\xCDCIL"
+      - SCHWER
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: lay_out
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0420\u0410\u0417\u041B\u041E\u0416\u0418\u0422\u042C"
+      - LAY OUT
+      - "YERLE\u015ET\u0130RMEK"
+      - DISPONER
+      - AUSLEGEN
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: middle
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0421\u0420\u0415\u0414\u041D\u0418\u0419"
+      - NORMAL
+      - NORMAL
+      - NORMAL
+      - NORMAL
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: new_game
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u041E\u0412\u0410\u042F \u0418\u0413\u0420\u0410"
+      - NEW GAME
+      - "YEN\u0130 OYUN"
+      - NUEVO JUEGO
+      - NEUES SPIEL
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: no
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u0415\u0422"
+      - NO
+      - HAYIR
+      - NO
+      - NEIN
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: personal_record
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041B\u0418\u0427\u041D\u042B\u0419 \u0420\u0415\u041A\u041E\u0420\u0414"
+      - PERSONAL BEST
+      - "K\u0130\u015E\u0130SEL EN \u0130Y\u0130"
+      - MEJOR MARCA PERSONAL
+      - "PERS\xD6NLICHE BESTLEISTUNG"
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: play
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0418\u0413\u0420\u0410\u0422\u042C"
+      - PLAY
+      - OYNA
+      - JUGAR
+      - SPIELEN
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: played_games
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0421\u042B\u0413\u0420\u0410\u041D\u041E \u041F\u0410\u0420\u0422\u0418\u0419"
+      - GAMES PLAYED
+      - OYNAYAN OYUNLAR
+      - JUEGOS JUGADOS
+      - GESPIELTE SPIELE
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: rating
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0420\u0415\u0419\u0422\u0418\u041D\u0413"
+      - RATING
+      - "DERECELEND\u0130RME"
+      - "CALIFICACI\xD3N"
+      - BEWERTUNG
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: restart
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0420\u0415\u0421\u0422\u0410\u0420\u0422"
+      - RESTART
+      - "YEN\u0130DEN BA\u015ELAT"
+      - REINICIAR
+      - NEUSTART
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: rules
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u0420\u0410\u0412\u0418\u041B\u0410 \u0418\u0413\u0420\u042B"
+      - 'RULES OF THE GAME '
+      - 'OYUNUN KURALLARI '
+      - 'REGLAS DEL JUEGO '
+      - 'SPIELREGELN '
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: score
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041E\u0427\u041A\u0418"
+      - SCORE
+      - PUAN
+      - "PUNTUACI\xD3N"
+      - PUNKTE
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: sec
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0421\u0415\u041A"
+      - SEC
+      - SN
+      - SEG
+      - SEKUNDEN
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: settings
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
+      - SETTINGS
+      - AYARLAR
+      - "CONFIGURACI\xD3N"
+      - EINSTELLUNGEN
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: sound
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0417\u0412\u0423\u041A"
+      - SOUND
+      - SES
+      - SONIDO
+      - TON
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: the_aim
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0426\u0435\u043B\u044C \u0438\u0433\u0440\u044B \u2014 \u0440\u0430\u0441\u043A\u0440\u044B\u0442\u044C
+        \u0432\u0441\u0435 \u0441\u043A\u0440\u044B\u0442\u044B\u0435 \u043A\u0430\u0440\u0442\u044B
+        \u0438, \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0430\u044F \u043A\u0430\u0440\u0442\u044B
+        \u0438\u0437 \u043E\u0434\u043D\u043E\u0433\u043E \u0441\u0442\u043E\u043B\u0431\u0446\u0430
+        \u0432 \u0434\u0440\u0443\u0433\u043E\u0439, \u0440\u0430\u0437\u043C\u0435\u0449\u0430\u0442\u044C
+        \u043A\u0430\u0440\u0442\u044B \u0432 \u043F\u043E\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u043C
+        \u043F\u043E\u0440\u044F\u0434\u043A\u0435 \u043E\u0442 \u043A\u043E\u0440\u043E\u043B\u044F
+        \u043A \u0442\u0443\u0437\u0443 (\u043A\u043E\u0440\u043E\u043B\u044C, \u0434\u0430\u043C\u0430,
+        \u0432\u0430\u043B\u0435\u0442, 10, 9... \u0438 \u0442.\u0434.). \u041A\u0430\u0436\u0434\u0430\u044F
+        \u0444\u0438\u043D\u0430\u043B\u044C\u043D\u0430\u044F \u043F\u043E\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C
+        \u0434\u043E\u043B\u0436\u043D\u0430 \u0431\u044B\u0442\u044C \u043E\u0434\u043D\u043E\u0439
+        \u043C\u0430\u0441\u0442\u0438. \u041F\u043E\u0441\u043B\u0435 \u0442\u043E\u0433\u043E,
+        \u043A\u0430\u043A \u043F\u043E\u043B\u043D\u0430\u044F \u043F\u043E\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C
+        \u0434\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442\u0430, \u043A\u0430\u0440\u0442\u044B
+        \u0443\u0434\u0430\u043B\u044F\u044E\u0442\u0441\u044F \u0441\u043E \u0441\u0442\u043E\u043B\u0430
+        \u0432 \xAB\u0434\u043E\u043C\xBB. \u041F\u043E\u0441\u043B\u0435 \u0442\u043E\u0433\u043E,
+        \u043A\u0430\u043A \u0438\u0433\u0440\u043E\u043A \u0441\u0434\u0435\u043B\u0430\u043B
+        \u0432\u0441\u0435 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u044B\u0435
+        \u0445\u043E\u0434\u044B \u0441 \u0442\u0435\u043A\u0443\u0449\u0438\u043C
+        \u0440\u0430\u0441\u043A\u043B\u0430\u0434\u043E\u043C \u043A\u0430\u0440\u0442,
+        \u0442\u044F\u043D\u0435\u0442\u0441\u044F \u043D\u043E\u0432\u044B\u0439
+        \u0440\u044F\u0434 \u043A\u0430\u0440\u0442 \u0438\u0437 \u043E\u0434\u043D\u043E\u0439
+        \u0438\u0437 \u0441\u0442\u043E\u043F\u043E\u043A \u043F\u043E \u0434\u0435\u0441\u044F\u0442\u044C
+        \u0432 \u043F\u0440\u0430\u0432\u043E\u043C \u043D\u0438\u0436\u043D\u0435\u043C
+        \u0443\u0433\u043B\u0443. \u0418\u0433\u0440\u0430 \u0437\u0430\u043A\u0430\u043D\u0447\u0438\u0432\u0430\u0435\u0442\u0441\u044F
+        \u0432\u044B\u0438\u0433\u0440\u044B\u0448\u0435\u043C, \u043A\u043E\u0433\u0434\u0430
+        \u0432\u0441\u0435 \u043A\u0430\u0440\u0442\u044B \u0441\u043E\u0431\u0440\u0430\u043D\u044B
+        \u0432 \xAB\u0434\u043E\u043C\xBB."
+      - Game Objective - The goal of the game is to reveal all hidden cards and arrange
+        them in sequential order from King to Ace (King, Queen, Jack, 10, 9... etc.)
+        by moving cards from one column to another. Each final sequence must be of
+        the same suit. Once a complete sequence is formed, the cards are removed
+        from the table to the "home" pile. When the player has made all possible
+        moves with the current card layout, a new row of cards is drawn from one
+        of the ten-card stacks in the bottom right corner. The game is won when all
+        cards are collected in the "home" pile.
+      - "Oyun Amac\u0131 - Oyunun amac\u0131, t\xFCm gizli kartlar\u0131 a\xE7\u0131\u011Fa
+        \xE7\u0131karmak ve kartlar\u0131 bir s\xFCtundan di\u011Ferine ta\u015F\u0131yarak
+        Kral'dan As'a (Kral, K\u0131z, Vale, 10, 9... vb.) s\u0131ral\u0131 bir \u015Fekilde
+        d\xFCzenlemektir. Her bir nihai s\u0131ra ayn\u0131 renkten olmal\u0131d\u0131r.
+        Tam bir s\u0131ra olu\u015Fturuldu\u011Funda, kartlar masadan kald\u0131r\u0131larak
+        \"ev\" destesine yerle\u015Ftirilir. Oyuncu mevcut kart d\xFCzeniyle t\xFCm
+        olas\u0131 hamleleri yapt\u0131\u011F\u0131nda, sa\u011F alt k\xF6\u015Fedeki
+        on kartl\u0131k y\u0131\u011F\u0131nlardan birinden yeni bir s\u0131ra kart
+        \xE7ekilir. T\xFCm kartlar \"ev\" destesine topland\u0131\u011F\u0131nda
+        oyun kazan\u0131l\u0131r."
+      - "Objetivo del Juego - El objetivo del juego es revelar todas las cartas ocultas
+        y organizarlas en orden secuencial del Rey al As (Rey, Reina, Jota, 10, 9...
+        etc.), moviendo las cartas de una columna a otra. Cada secuencia final debe
+        ser del mismo palo. Cuando se forma una secuencia completa, las cartas se
+        eliminan de la mesa y se colocan en el mazo \"casa\". Cuando el jugador ha
+        realizado todos los movimientos posibles con la disposici\xF3n actual de
+        las cartas, se saca una nueva fila de cartas de una de las pilas de diez
+        cartas en la esquina inferior derecha. El juego se gana cuando todas las
+        cartas est\xE1n en el mazo \"casa\"."
+      - "Spielziel - Das Ziel des Spiels ist es, alle verdeckten Karten aufzudecken
+        und sie in absteigender Reihenfolge von K\xF6nig bis Ass (K\xF6nig, Dame,
+        Bube, 10, 9... usw.) anzuordnen, indem Karten von einer Spalte in eine andere
+        verschoben werden. Jede vollst\xE4ndige Sequenz muss dieselbe Farbe haben.
+        Sobald eine vollst\xE4ndige Sequenz gebildet wurde, werden die Karten vom
+        Tisch entfernt und in den \"Heimstapel\" gelegt. Wenn der Spieler alle m\xF6glichen
+        Z\xFCge mit der aktuellen Kartenanordnung gemacht hat, wird eine neue Kartenreihe
+        aus einem der Zehnerstapel in der unteren rechten Ecke gezogen. Das Spiel
+        ist gewonnen, wenn alle Karten im \"Heimstapel\" gesammelt wurden."
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: time
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0412\u0420\u0415\u041C\u042F"
+      - TIME
+      - ZAMAN
+      - TIEMPO
+      - ZEIT
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: time_bonus
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0411\u041E\u041D\u0423\u0421 \u0417\u0410 \u0412\u0420\u0415\u041C\u042F"
+      - TIME BONUS
+      - ZAMAN BONUSU
+      - "BONIFICACI\xD3N DE TIEMPO"
+      - ZEITBONUS
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: x2
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0423\u0414\u0412\u041E\u0418\u0422\u042C"
+      - DOUBLE
+      - "\xC7\u0130FT"
+      - DOBLE
+      - DOPPELT
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: yes
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0414\u0410"
+      - YES
+      - EVET
+      - "S\xCD"
+      - JA
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: purchase
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u041E\u041A\u0423\u041F\u041A\u0410"
+      - PURCHASE
+      - SATIN ALMAK
+      - COMPRA
+      - KAUFEN
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: tut_stacks
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0421\u0442\u043E\u043F\u043A\u0438"
+      - 'Stacks '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: tut_page1
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0426\u0435\u043B\u044C - \u043F\u0435\u0440\u0435\u043C\u0435\u0441\u0442\u0438\u0442\u044C
+        \u0432\u0441\u0435 \u043A\u0430\u0440\u0442\u044B \u0432 \u0441\u0442\u043E\u043F\u043A\u0438,
+        \u0440\u0430\u0441\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u044F \u0438\u0445
+        \u043F\u043E \u043C\u0430\u0441\u0442\u044F\u043C \u043E\u0442 \u0442\u0443\u0437\u0430
+        \u0434\u043E \u043A\u043E\u0440\u043E\u043B\u044F. \u0422, 2, 3 \u2026 10,
+        \u0412, \u0414, \u041A"
+      - "The goal is to move all the cards into piles, arranging them by suit from
+        Ace to King. A, 2, 3\u2026 10, J, Q, K "
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: tut_page2
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041A\u0430\u0440\u0442\u044B \u043C\u043E\u0436\u043D\u043E \u043F\u0435\u0440\u0435\u043C\u0435\u0449\u0430\u0442\u044C
+        \u0438\u0437 \u0441\u0442\u043E\u043B\u0431\u0446\u0430 \u0432 \u0441\u0442\u043E\u043B\u0431\u0435\u0446,
+        \u0432 \u043F\u043E\u0440\u044F\u0434\u043A\u0435 \u0443\u0431\u044B\u0432\u0430\u043D\u0438\u044F,
+        \u0447\u0435\u0440\u0435\u0434\u0443\u044F \u043A\u0440\u0430\u0441\u043D\u044B\u0435
+        \u0438 \u0447\u0435\u0440\u043D\u044B\u0435 \u043A\u0430\u0440\u0442\u044B. "
+      - 'Cards can be moved from column to column, in descending order, alternating
+        red and black cards. '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: tut_page3
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0415\u0441\u043B\u0438 \u043D\u0443\u0436\u043D\u044B\u0445 \u043A\u0430\u0440\u0442
+        \u043D\u0435\u0442 - \u043F\u0440\u043E\u0441\u0442\u043E \u043D\u0430\u0436\u043C\u0438
+        \u043D\u0430 \u043A\u043E\u043B\u043E\u0434\u0443 \u0438 \u0437\u0434\u0435\u0441\u044C
+        \u043F\u043E\u044F\u0432\u044F\u0442\u0441\u044F \u0434\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435
+        \u043A\u0430\u0440\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+        \u043F\u043E\u043C\u043E\u0433\u0443\u0442 \u0432\u0430\u043C \u043D\u0430\u0439\u0442\u0438
+        \u0440\u0435\u0448\u0435\u043D\u0438\u0435!"
+      - 'If you don''t have the cards you need, just click on the deck and additional
+        cards will appear to help you find a solution! '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: tut_page4
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u043E\u0440\u044F\u0434\u043E\u043A \u0441\u043E\u0440\u0442\u0438\u0440\u043E\u0432\u043A\u0438
+        \u0432 \u043A\u0430\u0436\u0434\u043E\u0439 \u0441\u0442\u043E\u043F\u043A\u0435
+        \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439: \u0422, 2, 3 \u2026
+        9, 10, \u0412, \u0414, \u041A"
+      - "The sorting order in each stack is as follows: T, 2, 3 \u2026 9, 10,  J,
+        Q, K "
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: shop
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041C\u0410\u0413\u0410\u0417\u0418\u041D"
+      - SHOP
+      - SHOP(T)
+      - SHOP(Es)
+      - SHOP(G)
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ads_disable
       TermType: 0
       Description: 
       Languages:
       - "\u041E\u0442\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u043A\u043B\u0430\u043C\u0443"
-      - Remove Ads
-      - Quitar anuncios
-      - Werbung entfernen
-      - "Reklamlar\u0131 Kald\u0131r"
+      - Disable ads
+      - Disable ads
+      - Disable ads
+      - Disable ads
       Flags: 0000000000
       Languages_Touch: []
-    - Term: Main/new_flowers_iap
+    - Term: start_offer
       TermType: 0
       Description: 
       Languages:
-      - "\u042D\u043A\u0437\u043E\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0435
-        \u0446\u0432\u0435\u0442\u044B"
-      - Exotic Flowers
-      - "Flores ex\xF3ticas"
-      - Exotische Blumen
-      - "Egzotik \xC7i\xE7ekler"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/default_flowers
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u041E\u0431\u044B\u0447\u043D\u044B\u0435 \u0446\u0432\u0435\u0442\u044B"
-      - Regular Flowers
-      - Flores normales
-      - "Gew\xF6hnliche Blumen"
-      - "Normal \xC7i\xE7ekler"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/change
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0421\u043C\u0435\u043D\u0438\u0442\u044C"
-      - Change
-      - Cambiar
-      - Wechseln
-      - "De\u011Fi\u015Ftir"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/settings
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u041D\u0430\u0441\u0442\u0440\u043E\u0439\u043A\u0438"
-      - Settings
-      - Ajustes
-      - Einstellungen
-      - Ayarlar
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/restart
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0417\u0430\u043D\u043E\u0432\u043E"
-      - Restart
-      - Reiniciar
-      - Neustart
-      - "Yeniden Ba\u015Flat"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/home
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0414\u043E\u043C\u043E\u0439"
-      - Home
-      - Inicio
-      - Startseite
-      - Ana Sayfa
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/our_games
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u041D\u0430\u0448\u0438 \u0438\u0433\u0440\u044B"
-      - Our Games
-      - Nuestros juegos
-      - Unsere Spiele
-      - "Oyunlar\u0131m\u0131z"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/lose_title
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0412\u0430\u0448 \u0441\u0430\u0434 \u0437\u0430\u0440\u043E\u0441"
-      - Your Garden is Overgrown
-      - "Tu jard\xEDn est\xE1 cubierto"
-      - "Dein Garten ist \xFCberwuchert"
-      - "Bah\xE7en \xC7ok B\xFCy\xFCm\xFC\u015F"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/new_record_title
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u041D\u043E\u0432\u044B\u0439 \u0440\u0435\u043A\u043E\u0440\u0434!"
-      - New Record!
-      - "\xA1Nuevo r\xE9cord!"
-      - Neuer Rekord!
-      - Yeni Rekor!
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/current_score
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0421\u0447\u0435\u0442:"
-      - 'Score:'
-      - "Puntuaci\xF3n:"
-      - 'Punktzahl:'
-      - 'Skor:'
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/record_score
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0420\u0435\u043A\u043E\u0440\u0434:"
-      - 'Record:'
-      - "R\xE9cord:"
-      - 'Rekord:'
-      - 'Rekor:'
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/continue_button
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0418\u0433\u0440\u0430\u0442\u044C \u0434\u0430\u043B\u044C\u0448\u0435"
-      - Continue Playing
-      - Seguir jugando
-      - Weiter spielen
-      - Oynamaya Devam Et
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/notification_new_record
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0423 \u0432\u0430\u0441 \u043D\u043E\u0432\u044B\u0439 \u0440\u0435\u043A\u043E\u0440\u0434!"
-      - You Got a New Record!
-      - "\xA1Tienes un nuevo r\xE9cord!"
-      - Du hast einen neuen Rekord!
-      - "Yeni Bir Rekor K\u0131rd\u0131n\u0131z!"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/notification_extended_connection
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0412\u044B \u0441\u043E\u0431\u0440\u0430\u043B\u0438 \u0446\u0432\u0435\u0442\u044B
-        \u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043D\u043D\u044B\u043C \u0421\u043F\u043E\u0441\u043E\u0431\u043E\u043C!"
-      - You Collected Flowers in an Advanced Way!
-      - "\xA1Has recogido flores de forma especial!"
-      - Du hast Blumen auf erweiterte Weise gesammelt!
-      - "\xC7i\xE7ekleri Geli\u015Fmi\u015F Bir Y\xF6ntemle Toplad\u0131n\u0131z!"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/notification_task_completed
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0417\u0430\u043A\u0430\u0437 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D!"
-      - Order Completed!
-      - "\xA1Pedido completado!"
-      - Bestellung abgeschlossen!
-      - "Sipari\u015F Tamamland\u0131!"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/notification_end_season
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C \u0441
-        \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0435\u0437\u043E\u043D\u0430!"
-      - Congratulations on Finishing the Season!
-      - "\xA1Felicidades por terminar la temporada!"
-      - "Gl\xFCckwunsch zum Saisonabschluss!"
-      - "Sezonunuzu Tamamlad\u0131\u011F\u0131n\u0131z i\xE7in Tebrikler!"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/notification_wrong_gamemode
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0412\u044B\u0431\u043E\u0440 \u043C\u0435\u0442\u043E\u0434\u043E\u0432
-        \u0441\u0431\u043E\u0440\u0430 \u0438 \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u043E\u0432
-        \u043E\u0442\u043A\u0440\u044B\u0442 \u0432 \u043F\u0440\u0438\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0438"
-      - Game mode selection for gathering and tools is available in Adventure
-      - "La selecci\xF3n de m\xE9todos de recolecci\xF3n y herramientas est\xE1 disponible
-        en la Aventura"
-      - "Die Auswahl von Sammelmethoden und Werkzeugen ist im Abenteuer verf\xFCgbar"
-      - "Toplama ve ara\xE7 se\xE7imleri Macera modunda a\xE7\u0131kt\u0131r"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/reward
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u043D\u0430\u0433\u0440\u0430\u0434\u0430:"
-      - 'Reward:'
-      - 'Recompensa:'
-      - 'Belohnung:'
-      - "\xD6d\xFCl:"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/multiply_button
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0423\u0434\u0432\u043E\u0438\u0442\u044C"
-      - Double
-      - Duplicar
-      - Verdoppeln
-      - "\u0130ki Kat\u0131na \xC7\u0131kar"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/daily_reward_title
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0415\u0436\u0435\u0434\u043D\u0435\u0432\u043D\u044B\u0439 \u0431\u043E\u043D\u0443\u0441"
-      - Daily Bonus
-      - "Bonificaci\xF3n diaria"
-      - "T\xE4glicher Bonus"
-      - "G\xFCnl\xFCk Bonus"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/to_flower_garden_button
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0412 \u0446\u0432\u0435\u0442\u043D\u0438\u043A!"
-      - To the Flowerbed!
-      - "\xA1Al macizo de flores!"
-      - Zum Blumenbeet!
-      - "\xC7i\xE7ekli\u011Fe!"
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/leaderboard_title
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u041B\u0438\u0434\u0435\u0440\u0431\u043E\u0440\u0434"
-      - Leaderboard
-      - "Clasificaci\xF3n"
-      - Rangliste
-      - Liderlik Tablosu
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/leaderboard_no_items
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u0417\u0434\u0435\u0441\u044C \u043F\u043E\u043A\u0430\n\u043D\u0438\u0447\u0435\u0433\u043E
-        \u043D\u0435\u0442 :("
-      - 'Nothing here
-
-        yet :('
-      - "Aqu\xED a\xFAn no\nhay nada :("
-      - 'Hier gibt es
-
-        noch nichts :('
-      - "Burada hen\xFCz\nbir \u015Fey yok :("
-      Flags: 0000000000
-      Languages_Touch: []
-    - Term: Main/rate_game_title
-      TermType: 0
-      Description: 
-      Languages:
-      - "\u041E\u0446\u0435\u043D\u0438\u0442\u0435 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435"
-      - Rate the app
-      - "Califica la aplicaci\xF3n"
-      - Bewerte die App
-      - "Uygulamay\u0131 de\u011Ferlendir"
+      - "\u041D\u0430\u0431\u043E\u0440 \u043D\u043E\u0432\u0438\u0447\u043A\u0430"
+      - Start offer
+      - Start offer
+      - Start offer
+      - Start offer
       Flags: 0000000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
@@ -401,28 +603,28 @@ MonoBehaviour:
     - Name: English
       Code: en
       Flags: 0
+    - Name: Turkish
+      Code: tr
+      Flags: 0
     - Name: Spanish
       Code: es
       Flags: 0
     - Name: German
       Code: de
       Flags: 0
-    - Name: Turkish
-      Code: tr
-      Flags: 0
     IgnoreDeviceLanguage: 0
     _AllowUnloadingLanguages: 0
     Google_WebServiceURL: https://script.google.com/macros/s/AKfycbxsvAy6ulq1nW-U1MPyfXH8dcAEPAKEjDH8YUklPPy30bIbJKmc1nQxDZmnaZX9MhwxbA/exec
     Google_SpreadsheetKey: 1XTSxsxrltyEbdj4JcKiIw-v7GdLWELdRQ_4nHyKTjyA
     Google_SpreadsheetName: I2Loc BloomLines Localization
-    Google_LastUpdatedVersion: 1756291472531
+    Google_LastUpdatedVersion: 1758609152411
     Google_Password: PASSWORD
     GoogleUpdateFrequency: 3
     GoogleInEditorCheckFrequency: 2
     GoogleUpdateSynchronization: 1
     GoogleUpdateDelay: 0
     Assets: []
-    Spreadsheet_LocalFileName: 
+    Spreadsheet_LocalFileName: Resources/I2Loc Klondice Localization.csv
     Spreadsheet_LocalCSVSeparator: ','
     Spreadsheet_LocalCSVEncoding: utf-8
     Spreadsheet_SpecializationAsRows: 1

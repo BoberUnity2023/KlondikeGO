@@ -994,9 +994,9 @@ namespace SimpleSolitaire.Controller
 
         public void OnClickShoplBtn()
         {
-            //_cardLayer.SetActive(false);
-            //_shopLayer.SetActive(true);
-            //AppearWindow(_settingLayer);
+            _cardLayer.SetActive(false);
+            _shopLayer.SetActive(true);
+            AppearWindow(_shopLayer);
         }
         public void OnClickShopLayerCloseBtn()
         {
@@ -1004,8 +1004,8 @@ namespace SimpleSolitaire.Controller
 
             void OnWindowDisappeared()
             {
-                //_shopLayer.SetActive(false);
-                //_cardLayer.SetActive(!_statisticLayer.activeInHierarchy);
+                _shopLayer.SetActive(false);
+                _cardLayer.SetActive(!_statisticLayer.activeInHierarchy);
             }
         }
         #endregion

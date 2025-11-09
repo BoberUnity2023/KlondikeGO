@@ -760,7 +760,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _catSource: {fileID: 0}
 --- !u!4 &2094071744
 Transform:
   m_ObjectHideFlags: 0

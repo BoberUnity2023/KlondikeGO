@@ -143,7 +143,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.0.10
+  bundleVersion: 0.0.13
   preloadedAssets:
   - {fileID: 11400000, guid: 98d89a64e450dad4b8d768b2daed42f1, type: 2}
   metroInputSource: 0
@@ -546,9 +546,9 @@ PlayerSettings:
     PROGRESS_BAR_BACKGROUND_COLOR: 
     PROGRESS_BAR_BORDER_COLOR: 
     PROGRESS_BAR_FILL_COLOR: 
-    PROJECT_ID: 23700
-    SHOW_PRELOADER_AD: True
-    TOKEN: hyxpauoSEcWZAXp29GC3uUPkRHYBQqIi
+    PROJECT_ID: 25092
+    SHOW_PRELOADER_AD: False
+    TOKEN: w9kpWa3DtxvBzTHTF1619VhaAkh11gEg
   mobileMTRendering:
     Android: 1
     iPhone: 1

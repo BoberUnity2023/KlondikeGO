@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PreLauncher.unity
+    path: Assets/Scenes/0_PreLauncher.unity
     guid: b144664d5a3995942a6b58f2ef1c76ac
   - enabled: 1
-    path: Assets/Scenes/Launcher.unity
+    path: Assets/Scenes/1_Launcher.unity
     guid: de165ab69e57fec4982f6c69c376f60b
   - enabled: 1
-    path: Assets/Scenes/KlondikeGO.unity
+    path: Assets/Scenes/2_KlondikeGO.unity
     guid: c6e983bf6f7b93b4493878d319320bbf
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
