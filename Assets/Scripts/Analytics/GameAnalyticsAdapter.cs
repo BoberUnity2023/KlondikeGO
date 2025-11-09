@@ -16,38 +16,38 @@ namespace BloomLines.Analytics
                 RuntimePlatform platform = RuntimePlatform.Android;
 
 #if Yandex
-                gameKey = "970617db8eacf09170567b1c180c4968";
-                secretKey = "365cc1792ee9d0c0a3c3664350abf42916cbd519";
+                gameKey = "8b37f6f956c071cec054aaeb466b4482";
+                secretKey = "0ee917e71aa5aec9433fc2e57a6cddda56ade9c0";
                 platform = RuntimePlatform.WebGLPlayer;
 #endif
 
 #if VK
-                gameKey = "cd9def4da21bff28a13db415c771506e";
-                secretKey = "54cd0a30db50a64b3b87fdb187ed64247d45e1ca";
+                gameKey = "ea65a1b6553a53cc1c88a997056be2e7";
+                secretKey = "9960aa07a87489b7ba2c37ede4aca12dc09d9ff5";
                 platform = RuntimePlatform.WebGLPlayer;
 #endif
 
 #if OK
-                gameKey = "553999ddf52825606c2456b08239e7b0";
-                secretKey = "e4a3fa580510579bc6692e669093f59ab79e3db6";
+                gameKey = "fe49849d07de4c6117ebe90edeb524c6";
+                secretKey = "987d664e89c41c851ab4a8592172d638bd06cdc1";
                 platform = RuntimePlatform.WebGLPlayer;
 #endif
 
 #if CRAZY_GAMES
-                gameKey = "f1dbfcc40612f142a2383d8ccbda4aaa";
-                secretKey = "54e22532e1fd76c9f8fca8ad2f7530c25a278724";
+                gameKey = "";
+                secretKey = "";
                 platform = RuntimePlatform.WebGLPlayer;
 #endif
 
 #if GD
-                gameKey = "cc5c7b2e855080d1c0567d975b41e125";
-                secretKey = "88ce1f0af064cf19c769d2ef0fba973d2b12127a";
+                gameKey = "";
+                secretKey = "";
                 platform = RuntimePlatform.WebGLPlayer;
 #endif
 
 #if Poki
-                gameKey = "952a54409a2b405582914d9ea0a5dfaf";
-                secretKey = "ea48178f126dab6df68793dddea7705e6b3c210f";
+                gameKey = "";
+                secretKey = "";
                 platform = RuntimePlatform.WebGLPlayer;
 #endif
 

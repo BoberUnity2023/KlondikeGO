@@ -16,8 +16,8 @@ namespace GamePushEditor
     
         public static void Archiving(string pathToBuiltProject)
         {
-             //InfoYG infoYG = ConfigYG.GetInfoYG();
-            bool archivingBuild = false;
+            // InfoYG infoYG = ConfigYG.GetInfoYG();
+            bool archivingBuild = true;
         
             if (archivingBuild)
             {

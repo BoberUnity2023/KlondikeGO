@@ -8,7 +8,7 @@ namespace GamePush.Initialization
     {
         private async void Start()
         {
-            //await GP_Init.Ready;
+            await GP_Init.Ready;
             SceneManager.LoadScene(1);
         }
     }
