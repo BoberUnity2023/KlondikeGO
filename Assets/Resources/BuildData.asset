@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4702ee5ef00a0df4992494334cbc2de0, type: 3}
   m_Name: BuildData
   m_EditorClassIdentifier: 
-  _buildPlatform: 1
+  _buildPlatform: 2
   _console: 0

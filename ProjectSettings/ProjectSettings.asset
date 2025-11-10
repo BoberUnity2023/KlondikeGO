@@ -143,7 +143,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 0.0.13
+  bundleVersion: 0.0.27
   preloadedAssets:
   - {fileID: 11400000, guid: 98d89a64e450dad4b8d768b2daed42f1, type: 2}
   metroInputSource: 0
@@ -816,7 +816,7 @@ PlayerSettings:
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: PROJECT:VK
+  webGLTemplate: PROJECT:OK
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 0
@@ -837,25 +837,25 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: Yandex;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;StickyAdv_yg;EnvirData_yg;Authorization_yg;Storage_yg;Localization_yg;Leaderboards_yg;Payments_yg;OpenURL_yg;Review_yg;RU_YG2;VK;GAME_PUSH;OK;RuStore;CRAZY_GAMES;GD;Poki;GooglePlay;CONSOLE;DOTWEEN;TextMeshPro;gameanalytics_admob_enabled;YandexGamesPlatform_yg;NJSON_YG2
+    Android: Yandex;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;StickyAdv_yg;EnvirData_yg;Authorization_yg;Storage_yg;Localization_yg;Leaderboards_yg;Payments_yg;OpenURL_yg;Review_yg;RU_YG2;VK;GAME_PUSH;OK;RuStore;CRAZY_GAMES;GD;Poki;GooglePlay;CONSOLE;DOTWEEN;TextMeshPro;gameanalytics_admob_enabled;NJSON_YG2
     Bratwurst: DOTWEEN;TextMeshPro
     EmbeddedLinux: DOTWEEN;TextMeshPro
     GameCoreScarlett: DOTWEEN;TextMeshPro
     GameCoreXboxOne: DOTWEEN;TextMeshPro
     Kepler: TextMeshPro
-    LinuxHeadlessSimulation: DOTWEEN;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;TextMeshPro;YandexGamesPlatform_yg;NJSON_YG2
-    Nintendo Switch: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;YandexGamesPlatform_yg;NJSON_YG2
-    PS4: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;YandexGamesPlatform_yg;NJSON_YG2
-    PS5: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;YandexGamesPlatform_yg;NJSON_YG2
+    LinuxHeadlessSimulation: DOTWEEN;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;TextMeshPro;NJSON_YG2
+    Nintendo Switch: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;NJSON_YG2
+    PS4: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;NJSON_YG2
+    PS5: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;NJSON_YG2
     QNX: DOTWEEN;TextMeshPro
     ReservedCFE: TextMeshPro
-    Standalone: DOTWEEN;YG_PLUGIN_YANDEX_GAME;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;CONSOLE;Yandex;GAME_PUSH;YandexGamesPlatform_yg;NJSON_YG2
+    Standalone: DOTWEEN;YG_PLUGIN_YANDEX_GAME;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;CONSOLE;Yandex;GAME_PUSH;NJSON_YG2
     VisionOS: TextMeshPro
-    WebGL: YandexGamesPlatform_yg;Yandex;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;StickyAdv_yg;EnvirData_yg;Authorization_yg;Storage_yg;Localization_yg;Leaderboards_yg;Payments_yg;OpenURL_yg;Review_yg;RU_YG2;NJSON_YG2;VK;OK;GAME_PUSH;RuStore;CRAZY_GAMES;GD;Poki;GooglePlay;CONSOLE;DOTWEEN;TextMeshPro
-    Windows Store Apps: DOTWEEN;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;YandexGamesPlatform_yg;NJSON_YG2
-    XboxOne: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;YandexGamesPlatform_yg;NJSON_YG2
-    iPhone: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;gameanalytics_admob_enabled;YandexGamesPlatform_yg;NJSON_YG2
-    tvOS: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;YandexGamesPlatform_yg;NJSON_YG2
+    WebGL: OK;GAME_PUSH;DOTWEEN;TextMeshPro
+    Windows Store Apps: DOTWEEN;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;NJSON_YG2
+    XboxOne: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;NJSON_YG2
+    iPhone: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;gameanalytics_admob_enabled;NJSON_YG2
+    tvOS: DOTWEEN;TextMeshPro;PLUGIN_YG_2;Authorization_yg;EnvirData_yg;InterstitialAdv_yg;Leaderboards_yg;Localization_yg;OpenURL_yg;Payments_yg;Review_yg;RewardedAdv_yg;StickyAdv_yg;Storage_yg;TMP_YG2;NJSON_YG2
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

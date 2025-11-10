@@ -1,4 +1,5 @@
 ﻿#if GAME_PUSH
+using BloomLines.Assets;
 using GamePush;
 #endif
 using Newtonsoft.Json.Linq;
@@ -33,8 +34,7 @@ namespace SimpleSolitaire.Controller
 
     public abstract class GameManager : MonoBehaviour
     {
-        [SerializeField] private Game _game;
-        [SerializeField] private Platform _platform;
+        [SerializeField] private Game _game;        
         [Header("Serialized fields:")]
         [SerializeField]
         private RectTransform _bottomPanel;
@@ -219,6 +219,7 @@ namespace SimpleSolitaire.Controller
         public Game Game => _game;
 
         public Platform Platform => _platform;
+        private Platform _platform;
 
         private readonly string _appearTrigger = "Appear";
         private readonly string _disappearTrigger = "Disappear";
@@ -246,7 +247,7 @@ namespace SimpleSolitaire.Controller
         protected float _windowAnimationTime = 0.42f;
 
         private void Awake()
-        {
+        {            
             InitializeGame();
         }
 
@@ -257,11 +258,12 @@ namespace SimpleSolitaire.Controller
         {
             Application.targetFrameRate = 300;
 
+            SetPlatform();
             _soundEnable = true;
             _autoCompleteEnable = true;
             _isBarActive = true;
 
-            InterVideoAds.RewardAction += OnRewardActionState;
+            //InterVideoAds.RewardAction += OnRewardActionState;
 
             _cardLogic.SubscribeEvents();
             _audioController = AudioController.Instance;
@@ -284,6 +286,19 @@ namespace SimpleSolitaire.Controller
             }
 
             StartCoroutine(InitGameState());
+        }
+
+        private void SetPlatform()
+        {
+            BuildData buildData = Resources.Load<BuildData>("BuildData");
+            if (buildData.BuildPlatform == BuildPlatform.VK)
+                _platform = Platform.VK;
+            if (buildData.BuildPlatform == BuildPlatform.OK)
+                _platform = Platform.Ok;
+            if (buildData.BuildPlatform == BuildPlatform.Yandex)
+                _platform = Platform.Yandex;
+            if (buildData.BuildPlatform == BuildPlatform.GD)
+                _platform = Platform.GD;
         }
 
         /// <summary>

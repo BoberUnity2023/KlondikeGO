@@ -82,20 +82,22 @@ namespace BloomLines.Controllers
         {
             Debug.Log("AdsController: Show Rewarded");
 
-            var gameState = SaveManager.GameState;
-            if (gameState.Purchased.Contains(IAPController.NO_ADS)) // Если купленно отключение рекламы
-            {
-                onComplete?.Invoke(true);
-                return;
-            }
-            AnalyticsController.SendEvent("ads_show_rewarded");
+            //var gameState = SaveManager.GameState;//TODO: !!!
+            //if (gameState.Purchased.Contains(IAPController.NO_ADS)) // Если купленно отключение рекламы
+            //{
+                //onComplete?.Invoke(true);
+                //AnalyticsController.SendEvent("ads_show_rewarded");
+                //return;
+            //}
+            
 #if UNITY_EDITOR
             onComplete?.Invoke(true);
             return;
 #endif
 
-            if(_adsAdapter == null)
+            if (_adsAdapter == null)
             {
+                Debug.LogError("_adsAdapter == null");
                 onComplete?.Invoke(true);
                 return;
             }

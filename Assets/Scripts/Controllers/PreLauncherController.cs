@@ -18,19 +18,23 @@ namespace BloomLines.Controllers
     {
         private void Awake()
         {
-            Debug.Log("BloomLines v." + Application.version + " started success");
+            Debug.Log("KlondikeGO v." + Application.version + " started success");
         }
 
         private async void Start()
         {
-            var audioMixer = Resources.Load<AudioMixer>("AudioMixer");
-            audioMixer.SetFloat("MusicVolume", -80f);
-            audioMixer.SetFloat("SoundVolume", -80f);
-            AnalyticsController.SendEvent("applicaton_start");            
+            Debug.Log("GamePush initing...");
+            //var audioMixer = Resources.Load<AudioMixer>("AudioMixer");
+            //audioMixer.SetFloat("MusicVolume", -80f);
+            //audioMixer.SetFloat("SoundVolume", -80f);
+            AnalyticsController.SendEvent("applicaton_start");
+            Debug.Log("GamePush initing...(1)");
 
 #if GAME_PUSH
             await GP_Init.Ready;
+            Debug.Log("GamePush initing...(2)");
             AnalyticsController.SendEvent("applicaton_gp_inited");
+            Debug.Log("GamePush inited success");
 #endif
 
 #if CRAZY_GAMES
@@ -61,7 +65,8 @@ namespace BloomLines.Controllers
 
         private void LoadGame()
         {
-            SceneManager.LoadScene("Launcher");
+            Debug.Log("LoadGame()");
+            SceneManager.LoadScene("1_Launcher");
         }
 
         private void OnPluginInited()

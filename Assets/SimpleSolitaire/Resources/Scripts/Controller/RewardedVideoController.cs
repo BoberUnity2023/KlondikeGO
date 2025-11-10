@@ -91,24 +91,36 @@ public class RewardedVideoController : MonoBehaviour
     {
         Debug.Log("PressRewardedVideo(" + id + ")");
         Id = id;
-        if (_gameManager.Platform == Platform.Ok)
-        {
-            //OKManager.ShowLoadedAd();
-#if GAME_PUSH
-            GP_Ads.ShowRewarded(id.ToString(), OnRewardedReward, OnRewardedStart, OnRewardedClose);
-#endif
-        }
+//        if (_gameManager.Platform == Platform.Ok)
+//        {
+//            //OKManager.ShowLoadedAd();
+//#if GAME_PUSH
+//            GP_Ads.ShowRewarded(id.ToString(), OnRewardedReward, OnRewardedStart, OnRewardedClose);
+//#endif
+//        }
 
-        if (_gameManager.Platform == Platform.VK)
-        {
-            //VKManager.Instance.ShowLoadedAd();
-        }        
+        //if (_gameManager.Platform == Platform.VK)
+        //{            
+            BloomLines.Controllers.AdsController.ShowRewarded((success) =>
+            {
+                if (success)
+                {
+                    OnRewardedReward(id.ToString());
+                    //var gameModeState = SaveManager.GameModeState;
+                    //gameModeState.ContinueGameCount++;
 
-        if (_gameManager.Platform == Platform.GD)
-        {
-            GameDistribution.Instance.ShowRewardedAd();
-            GameDistribution.Instance.PreloadRewardedAd();
-        }
+                    //Close();
+
+                    //EventsManager.Publish(new ReviveEvent());
+                }
+            });
+        //}        
+
+        //if (_gameManager.Platform == Platform.GD)
+        //{
+        //    GameDistribution.Instance.ShowRewardedAd();
+        //    GameDistribution.Instance.PreloadRewardedAd();
+        //}
     }
 
     public void OnRewardedReward(string id)

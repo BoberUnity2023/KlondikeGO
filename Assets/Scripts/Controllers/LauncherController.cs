@@ -22,8 +22,9 @@ namespace BloomLines.Controllers
 
         private IEnumerator LoadGame()
         {
+            Debug.Log("Scene1.LoadGame(1)");
 #if !UNITY_WEBGL
-            VibrationAssets.Vibration.Init();
+            //VibrationAssets.Vibration.Init();
 #endif
 
             _progressBarFill.DOFillAmount(0.3f, 0.5f).SetEase(_curve);
@@ -39,11 +40,11 @@ namespace BloomLines.Controllers
                 yield return null;
 #endif
 #endif
-
-            SaveManager.LoadAll(); // Загружаем сохранения
-            IAPController.LoadPurchases(); // Загружаем покупки
-
-            var gameState = SaveManager.GameState; // Ставим нужную громкость
+            Debug.Log("Scene1.LoadGame(2)");
+            //SaveManager.LoadAll(); // Загружаем сохранения
+            //IAPController.LoadPurchases(); // Загружаем покупки
+            Debug.Log("Scene1.LoadGame(3)");
+            //var gameState = SaveManager.GameState; // Ставим нужную громкость
             //var audioMixer = Resources.Load<AudioMixer>("AudioMixer");
             //audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80f, 0f, gameState.MusicVolume));
             //audioMixer.SetFloat("SoundVolume", Mathf.Lerp(-80f, 0f, gameState.SoundVolume));            
@@ -54,11 +55,12 @@ namespace BloomLines.Controllers
 
             _progressBarFill.DOFillAmount(1f, 0.6f).SetEase(_curve);
 
-            SaveManager.LoadAll(); // Загружаем сохранения
-            IAPController.LoadPurchases(); // Загружаем покупки
+            //SaveManager.LoadAll(); // Загружаем сохранения
+            //IAPController.LoadPurchases(); // Загружаем покупки
 
             yield return new WaitForSeconds(0.6f);
-            SceneManager.LoadScene("KlondikeGO");
+            Debug.Log("Scene1.LoadGame(4)");
+            SceneManager.LoadScene("2_KlondikeGO");
         }
 
         private void OnApplicationQuit()

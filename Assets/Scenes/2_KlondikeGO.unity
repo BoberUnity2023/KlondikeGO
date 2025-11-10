@@ -9903,7 +9903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _game: 0
-  _platform: 2
+  _platform: 0
   _bottomPanel: {fileID: 2284100040935464274}
   _settingsPanelAnimator: {fileID: 0}
   _buttonHint: {fileID: 2284100042079886694}
