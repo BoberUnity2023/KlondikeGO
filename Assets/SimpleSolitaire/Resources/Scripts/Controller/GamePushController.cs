@@ -35,17 +35,17 @@ public class GamePushController : MonoBehaviour
 
     private void OnEnable()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        //SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        //SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void OnDestroy()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        //SceneManager.sceneLoaded -= OnSceneLoaded;
 #if GAME_PUSH
         GP_Init.OnReady -= OnPluginReady;
         GP_Leaderboard.OnFetchSuccess -= OnFetchLeaderboardSuccess;
@@ -55,7 +55,7 @@ public class GamePushController : MonoBehaviour
 #endif
     }
 
-    private async void Start()
+    private /*async*/ void Start()
     {
         DontDestroyOnLoad(gameObject);
         Debug.Log("GamePush starting...");
@@ -65,12 +65,12 @@ public class GamePushController : MonoBehaviour
 #endif
 
 #if GAME_PUSH
-        await GP_Init.Ready;
+        //await GP_Init.Ready;
 
-        /*if (GP_Init.isReady)
-            Debug.Log("GamePush started success!");
+        if (GP_Init.isReady)
+            Debug.Log("GamePush isReady!");
         else
-            Debug.Log("GamePush failed");*/
+            Debug.Log("GamePush failed");
 
         GP_Init.OnReady += OnPluginReady;
         GP_Leaderboard.OnFetchSuccess += OnFetchLeaderboardSuccess;

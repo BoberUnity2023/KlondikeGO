@@ -69,7 +69,7 @@ namespace BloomLines.Controllers
             SceneManager.LoadScene("1_Launcher");
         }
 
-        private void OnPluginInited()
+        private void OnPluginInited()//Crazy
         {
 #if CRAZY_GAMES
             Debug.Log("PreLauncherController.OnPluginInited()");

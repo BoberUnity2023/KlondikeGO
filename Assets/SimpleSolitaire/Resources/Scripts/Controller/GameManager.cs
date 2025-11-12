@@ -2,6 +2,7 @@
 using BloomLines.Assets;
 using GamePush;
 #endif
+using BloomLines.Assets;
 using Newtonsoft.Json.Linq;
 using SimpleSolitaire.Model.Config;
 using SimpleSolitaire.Model.Enum;
@@ -12,6 +13,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
+using UnityEngine.SocialPlatforms.Impl;
+using GamePush;
 //using YG;
 
 namespace SimpleSolitaire.Controller
@@ -1298,6 +1301,8 @@ namespace SimpleSolitaire.Controller
         public void PressAddGold()
         {
             Gold += 100;
+            GP_Player.SetScore(5000);//TODO: Temp
+            GP_Player.Sync(SyncStorageType.cloud);
         }
 
         public void PressClearPrefs()

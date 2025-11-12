@@ -9,6 +9,7 @@ namespace BloomLines.UI
     {
         [SerializeField] protected string _purchaseId;
         [SerializeField] protected TextMeshProUGUI _price;
+        [SerializeField] protected Text _priceLegacy;
         [SerializeField] private Button _btn;
 
         private void Awake()

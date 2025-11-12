@@ -42,13 +42,20 @@ namespace BloomLines.Controllers
 
 #if Yandex
             _adapter = new YandexAdapter();
+            if (_adapter == null)
+                Debug.LogError("YandexAdapter = null");
 #endif
 
 #if GAME_PUSH
             _adapter = new GamePushAdapter();
+            if (_adapter == null)
+                Debug.LogError("GamePushAdapter = null");
 #endif
-
-            _adapter.Initialize();
+            if (_adapter == null)            
+                Debug.LogError("LeaderboardAdapter = null");
+            
+            if (_adapter != null)
+                _adapter.Initialize();
         }
 
         // Получить лидерборда

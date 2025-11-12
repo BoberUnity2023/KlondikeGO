@@ -10,7 +10,7 @@
       "hash": "f9868197c056b3d178852c7fc78baf8720bf29c8"
     },
     "com.gameanalytics.sdk": {
-      "version": "7.10.5",
+      "version": "7.10.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -140,7 +140,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
-      "version": "2.10.0",
+      "version": "2.10.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
@@ -235,7 +235,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.recorder": {
-      "version": "5.1.2",
+      "version": "5.1.3",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -287,7 +287,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.8",
+      "version": "1.9.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {

@@ -9,7 +9,13 @@ namespace BloomLines.UI
     {
         protected override void UpdatePurchase()
         {
-            _price.text = IAPController.GetPurchasePrice(_purchaseId);
+            string price = IAPController.GetPurchasePrice(_purchaseId);
+            if (_price != null)
+                _price.text = price;
+
+            if (_priceLegacy != null)
+                _priceLegacy.text = price;
+
             gameObject.SetActive(!IAPController.IsPurchased(_purchaseId));
         }
     }

@@ -29,8 +29,9 @@ namespace BloomLines.Controllers
 
             _progressBarFill.DOFillAmount(0.3f, 0.5f).SetEase(_curve);
 
-#if !UNITY_EDITOR
+/*#if !UNITY_EDITOR//TODO: CloudSave
 #if OK
+            Debug.Log("OKController.SaveLoaded");
             while (!OKController.SaveLoaded)
                 yield return null;
 #endif
@@ -39,11 +40,12 @@ namespace BloomLines.Controllers
             while (!VKController.SaveLoaded)
                 yield return null;
 #endif
-#endif
+#endif*/
             Debug.Log("Scene1.LoadGame(2)");
-            //SaveManager.LoadAll(); // Загружаем сохранения
-            //IAPController.LoadPurchases(); // Загружаем покупки
+            SaveManager.LoadAll(); // Загружаем сохранения
             Debug.Log("Scene1.LoadGame(3)");
+            IAPController.LoadPurchases(); // Загружаем покупки
+            Debug.Log("Scene1.LoadGame(4)");
             //var gameState = SaveManager.GameState; // Ставим нужную громкость
             //var audioMixer = Resources.Load<AudioMixer>("AudioMixer");
             //audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80f, 0f, gameState.MusicVolume));
