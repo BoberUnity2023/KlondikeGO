@@ -6,46 +6,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using SimpleSolitaire.Controller;
+using BloomLines.Controllers;
 
 public class GamePushController : MonoBehaviour
 {
-    private GameManager _gameManager;
+    private GameManager _gameManager;    
 
     private void Awake()
     {
 #if GAME_PUSH
         Debug.Log("GamePush Awake()");
-        GamePushController[] _gPCs = FindObjectsOfType<GamePushController>();
-
-        GP_Init[] _GP_Inits = FindObjectsOfType<GP_Init>();
-
-        if (_GP_Inits.Length > 1)
-            Debug.LogError("_GP_Inits.Length > 1");
-
-        if (_gPCs.Length > 1)
+        if (IsSingle)        
+            DontDestroyOnLoad(gameObject);
+        else
             Destroy(gameObject);
-
-        if (_gameManager == null)
-            _gameManager = FindObjectOfType<GameManager>();
-
-        _gameManager.GamePush = this;
-        DontDestroyOnLoad(gameObject);
 #endif
     }
 
     private void OnEnable()
     {
-        //SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
-        //SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void OnDestroy()
     {
-        //SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
 #if GAME_PUSH
         GP_Init.OnReady -= OnPluginReady;
         GP_Leaderboard.OnFetchSuccess -= OnFetchLeaderboardSuccess;
@@ -55,9 +45,8 @@ public class GamePushController : MonoBehaviour
 #endif
     }
 
-    private /*async*/ void Start()
-    {
-        DontDestroyOnLoad(gameObject);
+    private async void Start()
+    {        
         Debug.Log("GamePush starting...");
 
 # if UNITY_EDITOR
@@ -65,7 +54,7 @@ public class GamePushController : MonoBehaviour
 #endif
 
 #if GAME_PUSH
-        //await GP_Init.Ready;
+        await GP_Init.Ready;
 
         if (GP_Init.isReady)
             Debug.Log("GamePush isReady!");
@@ -80,15 +69,27 @@ public class GamePushController : MonoBehaviour
 #endif
     }
 
-    private void OnPluginReady()
+    private void OnApplicationQuit()
     {
-        Init();
-    }
+        AnalyticsController.SendEvent("game_end");
+    }    
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (scene.name.Contains("KlondikeGO"))
+        {
+            if (_gameManager == null)
+                _gameManager = FindFirstObjectByType<GameManager>();
+
+            _gameManager.GamePush = this;
+        }
         //if (GP_Init.isReady)
         //    Init();
+    }
+
+    private void OnPluginReady()
+    {
+        Init();
     }
 
     private void Init()
@@ -100,7 +101,7 @@ public class GamePushController : MonoBehaviour
             _gameManager.Saves.OnGamePushInit();
             _gameManager.UI.WindowMainMenu.OnGamePushInit();            
         }*/
-    }
+    }    
 
     //LB
     public void FetchLeaderboard()
@@ -144,4 +145,22 @@ public class GamePushController : MonoBehaviour
         _hub.Sound.Unlock();
         _hub.RewardedVideo.CloseVideoAd();
     }*/
+
+    private bool IsSingle
+    {
+        get
+        {
+            GamePushController[] _gPCs = FindObjectsByType<GamePushController>(FindObjectsSortMode.None);
+
+            GP_Init[] _GP_Inits = FindObjectsByType<GP_Init>(FindObjectsSortMode.None);
+
+            if (_GP_Inits.Length > 1)
+                Debug.LogError("_GP_Inits.Length > 1");
+
+            if (_gPCs.Length > 1)
+                return false;
+            else
+                return true;
+        }
+    }
 }

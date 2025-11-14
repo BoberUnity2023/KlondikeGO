@@ -21,7 +21,7 @@ namespace BloomLines.Controllers
             Debug.Log("KlondikeGO v." + Application.version + " started success");
         }
 
-        private async void Start()
+        private /*async*/ void Start()
         {
             Debug.Log("GamePush initing...");
             //var audioMixer = Resources.Load<AudioMixer>("AudioMixer");
@@ -30,17 +30,17 @@ namespace BloomLines.Controllers
             AnalyticsController.SendEvent("applicaton_start");
             Debug.Log("GamePush initing...(1)");
 
-#if GAME_PUSH
-            await GP_Init.Ready;
-            Debug.Log("GamePush initing...(2)");
-            AnalyticsController.SendEvent("applicaton_gp_inited");
-            Debug.Log("GamePush inited success");
-#endif
+//#if GAME_PUSH
+//            await GP_Init.Ready;
+//            Debug.Log("GamePush initing...(2)");
+//            AnalyticsController.SendEvent("applicaton_gp_inited");
+//            Debug.Log("GamePush inited success");
+//#endif
 
 #if CRAZY_GAMES
             Debug.Log("PreLauncherController.Initialize()");
             CrazyGamesController.Initialize();
-            CrazyGamesController.OnInit += OnPluginInited;
+            CrazyGamesController.OnInit += OnCrazyGamesPluginInited;
 #endif
 
 #if Poki
@@ -59,7 +59,7 @@ namespace BloomLines.Controllers
         private void OnDestroy()
         {
 #if CRAZY_GAMES            
-            CrazyGamesController.OnInit -= OnPluginInited;
+            CrazyGamesController.OnInit -= OnCrazyGamesPluginInited;
 #endif
         }
 
@@ -69,10 +69,10 @@ namespace BloomLines.Controllers
             SceneManager.LoadScene("1_Launcher");
         }
 
-        private void OnPluginInited()//Crazy
+        private void OnCrazyGamesPluginInited()//Crazy
         {
 #if CRAZY_GAMES
-            Debug.Log("PreLauncherController.OnPluginInited()");
+            Debug.Log("PreLauncherController.OnCrazyGamesPluginInited()");
             AnalyticsController.SendEvent("applicaton_inited");
             LoadGame();
 #endif

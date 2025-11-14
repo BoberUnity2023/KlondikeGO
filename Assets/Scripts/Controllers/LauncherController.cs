@@ -63,11 +63,6 @@ namespace BloomLines.Controllers
             yield return new WaitForSeconds(0.6f);
             Debug.Log("Scene1.LoadGame(4)");
             SceneManager.LoadScene("2_KlondikeGO");
-        }
-
-        private void OnApplicationQuit()
-        {
-            AnalyticsController.SendEvent("game_end");
-        }
+        }        
     }    
 }
