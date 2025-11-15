@@ -1,5 +1,6 @@
 using UnityEngine;
 using SimpleSolitaire.Controller;
+using UnityEngine.VFX;
 
 public class Stats
 {
@@ -96,6 +97,54 @@ public class Stats
             PlayerPrefs.SetInt("LongestWinTime", value);
             PlayerPrefs.Save();
         }
+    }
+
+    public int GetAchivementProgress(int id)
+    {
+        //if (_saveType == SaveType.Yandex)
+        //{
+        //    return YandexGame.savesData.AchivementProgress[id];
+        //}
+
+        //if (_saveType == SaveType.Struct || _saveType == SaveType.Json)
+        //{
+        //    return
+        //        Mathf.Max(Save.AchivementProgress[id],
+        //        PlayerPrefs.GetInt(KeyAchivementProgress + id.ToString(), 0));
+        //}
+
+        //if (_saveType == SaveType.Prefs)
+        //{
+            return PlayerPrefs.GetInt("AchivementProgress" + id.ToString(), 0);
+        //}
+        //return 0;
+    }
+
+    public void SetAchivementProgress(int id, int value)
+    {
+        //if (_saveType == SaveType.Yandex)
+        //{
+        //    YandexGame.savesData.AchivementProgress[id] = value;
+        //    YandexGame.SaveProgress();
+        //}
+
+        //if (_saveType == SaveType.Prefs || _saveType == SaveType.Struct)
+        //{
+            PlayerPrefs.SetInt("AchivementProgress" + id.ToString(), value);
+            PlayerPrefs.Save();
+        //}
+
+        //if (_saveType == SaveType.Struct)
+        //{
+        //    Save.AchivementProgress[id] = value;
+        //    VKManager.Instance.StorageSave();
+        //}
+
+        //if (_saveType == SaveType.Json)
+        //{
+        //    Save.AchivementProgress[id] = value;
+        //    SetSaveToJson();
+        //}
     }
     //public int Experience
     //{

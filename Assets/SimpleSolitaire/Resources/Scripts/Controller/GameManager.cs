@@ -244,6 +244,7 @@ namespace SimpleSolitaire.Controller
 
         private Coroutine _timeCoroutine;
         private AudioController _audioController;
+        public AudioController AudioController => _audioController; 
 
         private RewardAdsType _currentAdsType = RewardAdsType.None;
 
@@ -339,13 +340,13 @@ namespace SimpleSolitaire.Controller
         /// <summary>
         /// Appear window with animation.
         /// </summary>
-        protected void AppearWindow(GameObject window)
+        public void AppearWindow(GameObject window)
         {
             if (window == null)
             {
                 return;
             }
-
+            
             var anim = window.GetComponent<Animator>();
 
             if (anim == null)
@@ -364,7 +365,7 @@ namespace SimpleSolitaire.Controller
         /// <summary>
         /// Disappear window with animation.
         /// </summary>
-        protected void DisappearWindow(GameObject window, Action onDisappear)
+        public void DisappearWindow(GameObject window, Action onDisappear)
         {
             if (window == null)
             {
