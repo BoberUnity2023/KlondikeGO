@@ -32,10 +32,10 @@ public class TabLeaderboard : MonoBehaviour
     private void OnEnable()
     {
 #if GAME_PUSH
-        _experienceIndicator.text = GP_Player.GetScore().ToString();
-        
         if (GP_Init.isReady)
         {
+            _experienceIndicator.text = GP_Player.GetScore().ToString();        
+        
             Debug.Log("GP_LB Fetching...");
             _gameManager.GamePush.FetchLeaderboard();
             _gameManager.GamePush.FetchPlayerRating();
@@ -61,7 +61,7 @@ public class TabLeaderboard : MonoBehaviour
         Rank = position;
         string playerName = GP_Player.GetName();
         string score = GP_Player.GetScore().ToString();
-        string scoreForAllGames = PlayerPrefs.GetInt("ScoreForAllGames").ToString();        
+        string scoreForAllGames = PlayerPrefs.GetInt("Experience").ToString();        
         string avatarUrl = GP_Player.GetAvatarUrl();
         string rank = position.ToString();
         if (_lBPlayer != null)

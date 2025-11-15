@@ -136,14 +136,14 @@ public class GamePushController : MonoBehaviour
 
     /*private void OnAdsStart()//GamePush
     {
-        _hub.Sound.Lock();
-        _hub.RewardedVideo.OpenVideoAd();
+        _gameManager.Sound.Lock();
+        _gameManager.RewardedVideo.OpenVideoAd();
     }
     private void OnAdsClose(bool success)//GamePush
     {
         Debug.LogWarning("OnAdsClose(" + success + ")");
-        _hub.Sound.Unlock();
-        _hub.RewardedVideo.CloseVideoAd();
+        _gameManager.Sound.Unlock();
+        _gameManager.RewardedVideo.CloseVideoAd();
     }*/
 
     private bool IsSingle

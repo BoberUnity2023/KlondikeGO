@@ -13,27 +13,27 @@ public class SavesContoller : MonoBehaviour
     // Отписываемся от события GetDataEvent в OnDisable
     //private void OnDisable() => YandexGame.GetDataEvent -= GetData;
 
-    private void Awake()
+    public void LoadGold()//Awake
     {
-        if (_gameManager.Platform == Platform.Ok ||
-            _gameManager.Platform == Platform.VK ||            
-            _gameManager.Platform == Platform.GD)
-        {
-            _gameManager.Gold = PlayerPrefs.GetInt("Gold");
-        }
+        //if (_gameManager.Platform == Platform.Ok ||
+        //    _gameManager.Platform == Platform.VK ||            
+        //    _gameManager.Platform == Platform.GD)
+        //{
+        //    _gameManager.Gold = PlayerPrefs.GetInt("Gold");
+        //}
 
-        if (_gameManager.Platform == Platform.Yandex)
-        {
-            // Проверяем запустился ли плагин
-            //if (YandexGame.SDKEnabled == true)
-            //{
-            //    // Если запустился, то запускаем Ваш метод
-            //    GetData();
+        //if (_gameManager.Platform == Platform.Yandex)
+        //{
+        //    // Проверяем запустился ли плагин
+        //    //if (YandexGame.SDKEnabled == true)
+        //    //{
+        //    //    // Если запустился, то запускаем Ваш метод
+        //    //    GetData();
 
-            //    // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
-            //    // но он запустится при вызове события GetDataEvent, после прогрузки плагина
-            //}
-        }        
+        //    //    // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
+        //    //    // но он запустится при вызове события GetDataEvent, после прогрузки плагина
+        //    //}
+        //}        
     }
 
     // Ваш метод, который будет запускаться в старте

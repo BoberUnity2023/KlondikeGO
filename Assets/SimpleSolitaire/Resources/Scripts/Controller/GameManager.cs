@@ -188,9 +188,12 @@ namespace SimpleSolitaire.Controller
             }
             set
             {
+                if (value > _gold)
+                    Stats.GoldForAllTime += value - _gold;
+
                 _gold = Mathf.Max(0, value);
                 _goldLabel.text = _gold.ToString();
-
+                
                 if (Platform == Platform.Ok ||
                     Platform == Platform.VK ||
                     Platform == Platform.GD)
@@ -217,7 +220,9 @@ namespace SimpleSolitaire.Controller
             {
                 return MoveFromWasteToPackPrices[Level];
             }
-        }        
+        }
+
+        public Stats Stats;
 
         public Game Game => _game;
 
@@ -248,6 +253,7 @@ namespace SimpleSolitaire.Controller
         private bool _isBarActive;
 
         protected float _windowAnimationTime = 0.42f;
+        //private float _startTime;
 
         private void Awake()
         {            
@@ -265,13 +271,39 @@ namespace SimpleSolitaire.Controller
             _soundEnable = true;
             _autoCompleteEnable = true;
             _isBarActive = true;
-
+            Stats = new Stats(this);
+            LoadGold();
+            Stats.PlayedGames++;
             //InterVideoAds.RewardAction += OnRewardActionState;
 
             _cardLogic.SubscribeEvents();
             _audioController = AudioController.Instance;
             //_settingsRef.StartCorner = _cardLogic.Orientation == HandOrientation.RIGHT ? TableLayoutGroup.Corner.UpperLeft : TableLayoutGroup.Corner.UpperRight;
             _goldLabel.text = Gold.ToString();
+            //_startTime = Time.time;
+        }
+
+        public void LoadGold()
+        {
+            if (Platform == Platform.Ok ||
+                Platform == Platform.VK ||
+                Platform == Platform.GD)
+            {
+                Gold = PlayerPrefs.GetInt("Gold");
+            }
+
+            if (Platform == Platform.Yandex)
+            {
+                // Проверяем запустился ли плагин
+                //if (YandexGame.SDKEnabled == true)
+                //{
+                //    // Если запустился, то запускаем Ваш метод
+                //    GetData();
+
+                //    // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
+                //    // но он запустится при вызове события GetDataEvent, после прогрузки плагина
+                //}
+            }
         }
 
         private void Start()
@@ -495,21 +527,24 @@ namespace SimpleSolitaire.Controller
             statisticsController.IncreaseScore?.Invoke(score);
             statisticsController.IncreaseWonGames?.Invoke();
             statisticsController.BestTime?.Invoke(_timeCount);
-            statisticsController.BestMoves?.Invoke(_stepCount);
-
-            int scoreForAllGames = PlayerPrefs.GetInt("ScoreForAllGames");
-            //YandexGame.savesData.ScoreForAllGames += score;
-            PlayerPrefs.SetInt("ScoreForAllGames", scoreForAllGames + score);
-            PlayerPrefs.Save();
-#if GAME_PUSH
-            GP_Player.SetScore(scoreForAllGames + score);
-            GP_Player.Sync(SyncStorageType.cloud);
-            //Debug.Log("ScoreForAllGames: " + YandexGame.savesData.ScoreForAllGames);
-            //YandexGame.NewLeaderboardScores("advanced", YandexGame.savesData.ScoreForAllGames);
-#endif
-            StartCoroutine(AfterWin(2.5f));
-
+            statisticsController.BestMoves?.Invoke(_stepCount);            
+            //YandexGame.savesData.Experience += score;            
+            Stats.Experience += score;
+            Stats.Wins++;
             //_interVideoAdsComponent.ShowInterstitial();
+            //int partyTime = (int)(Time.time - _startTime);
+            if (_timeCount < Stats.FastestWinTime)
+                Stats.FastestWinTime = _timeCount;
+
+            if (_timeCount > Stats.LongestWinTime)
+                Stats.LongestWinTime = _timeCount;
+#if GAME_PUSH
+            GP_Player.SetScore(Stats.Experience);
+            GP_Player.Sync(SyncStorageType.cloud);
+            //Debug.Log("Experience: " + YandexGame.savesData.Experience);
+            //YandexGame.NewLeaderboardScores("advanced", YandexGame.savesData.Experience);
+#endif
+            StartCoroutine(AfterWin(2.5f));           
         }
 
         private IEnumerator AfterWin(float time)
@@ -1235,7 +1270,7 @@ namespace SimpleSolitaire.Controller
                 _timeCount++;
                 if (_timeCount % 30 == 0)
                 {
-                    AddScoreValue(Public.SCORE_OVER_THIRTY_SECONDS_DECREASE);
+                    //AddScoreValue(Public.SCORE_OVER_THIRTY_SECONDS_DECREASE);
                 }
                 SetTimeLabel(_timeCount);
             }
@@ -1301,7 +1336,8 @@ namespace SimpleSolitaire.Controller
         public void PressAddGold()
         {
             Gold += 100;
-            GP_Player.SetScore(5000);//TODO: Temp
+            int scoreForAllGames = PlayerPrefs.GetInt("Experience");
+            GP_Player.SetScore(Gold + scoreForAllGames);//TODO: Temp
             GP_Player.Sync(SyncStorageType.cloud);
         }
 

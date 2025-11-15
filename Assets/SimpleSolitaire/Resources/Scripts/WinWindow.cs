@@ -38,7 +38,7 @@ public class WinWindow : MonoBehaviour
         int myRecordScore = /*YandexGame.savesData.BestScore;*/PlayerPrefs.GetInt("BestScore");
         _myRecordIndicator.text = myRecordScore.ToString();
 
-        int playedGamesAmount = StatisticsController.Instance.PlayedGamesAmount;
+        int playedGamesAmount = _gameManager.Stats.PlayedGames;//StatisticsController.Instance.PlayedGamesAmount;
         _playedGamesIndicator.text = playedGamesAmount.ToString();
 
         _goldIndicator.text = _gameManager.GoldForParty.ToString();
