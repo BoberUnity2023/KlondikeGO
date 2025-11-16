@@ -207,7 +207,7 @@ namespace SimpleSolitaire.Controller
             }
 
             WriteUndoState();
-            bool completed = false;
+            //bool completed = false;
             for (int i = 0; i < BottomDeckArray.Length; i++)
             {
                 SpiderDeck bottomDeck = BottomDeckArray[i] as SpiderDeck;

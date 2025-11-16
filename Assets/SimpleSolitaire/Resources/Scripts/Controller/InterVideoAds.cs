@@ -81,7 +81,7 @@ namespace SimpleSolitaire.Controller
 
         public readonly string NoAdsKey = "NoAds";
 
-        private RewardAdsType _lastShowingType = RewardAdsType.None;
+        //private RewardAdsType _lastShowingType = RewardAdsType.None;
         //private RewardVideoStatus _lastRewardVideoStatus = RewardVideoStatus.None;
 
         //private bool _isRewarded = false;

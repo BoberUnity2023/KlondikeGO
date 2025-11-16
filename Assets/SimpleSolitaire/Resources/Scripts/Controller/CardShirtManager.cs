@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using SimpleSolitaire.Model.Config;
+using Unity.Android.Gradle;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -170,15 +171,21 @@ namespace SimpleSolitaire.Controller
                 if (a.name == visual.VisualName)
                 {
                     a.ActivateCheckmark();
-                    a.Anim.enabled = true;
-                    a.Anim.speed = 1f;
-                    a.Anim.SetTrigger(_animationActionTrigger);
+                    if (a.gameObject.activeInHierarchy)
+                    {
+                        a.Anim.enabled = true;
+                        a.Anim.speed = 1f;
+                        a.Anim.SetTrigger(_animationActionTrigger);
+                    }
                 }
                 else
                 {
                     a.DeactivateCheckmark();
-                    a.Anim.enabled = false;
-                    a.transform.localRotation = Quaternion.identity;
+                    if (a.gameObject.activeInHierarchy)
+                    {
+                        a.Anim.enabled = false;
+                        a.transform.localRotation = Quaternion.identity;
+                    }
                 }
             });
         }

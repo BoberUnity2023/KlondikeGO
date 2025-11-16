@@ -31,7 +31,7 @@ namespace SimpleSolitaire.Controller
                     else if (Type == DeckType.DECK_TYPE_WASTE)
                     {
                         var wasteHorizontalSpace = CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_HORIONTAL_WASTE);
-                        CanvasScaler canvasScaler = FindObjectOfType<CanvasScaler>();
+                        CanvasScaler canvasScaler = FindFirstObjectByType<CanvasScaler>();
                         //Debug.LogWarning("WasteHorizontalSpace: " + wasteHorizontalSpace + " CanvasHeight: " + canvasScaler.referenceResolution.y);
                         
                         

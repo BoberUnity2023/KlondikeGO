@@ -95,7 +95,7 @@ namespace SimpleSolitaire.Controller
 
         private void Start()
         {
-            _cardShirtManager = FindObjectOfType<CardShirtManager>();
+            _cardShirtManager = FindFirstObjectByType<CardShirtManager>();
 
             switch (_elementType)
             {
@@ -130,7 +130,7 @@ namespace SimpleSolitaire.Controller
         public void PressTryBuy()
         {
             if (_gameManager == null)
-                _gameManager = FindObjectOfType<GameManager>();
+                _gameManager = FindFirstObjectByType<GameManager>();
 
             _gameManager.OnClickTryBuyBtn(this);
         }
@@ -138,7 +138,7 @@ namespace SimpleSolitaire.Controller
         public void Buy()
         {
             if (_gameManager == null)
-                _gameManager = FindObjectOfType<GameManager>();
+                _gameManager = FindFirstObjectByType<GameManager>();
 
             _priceField.SetActive(false);
             //PlayerPrefs.SetInt(gameObject.name, 1);
@@ -158,7 +158,7 @@ namespace SimpleSolitaire.Controller
             PlayerPrefs.Save();
             //YandexGame.SaveProgress();
 
-            AudioController _audioController = FindObjectOfType<AudioController>();
+            AudioController _audioController = FindFirstObjectByType<AudioController>();
             _audioController.Play(AudioController.AudioType.Buy);
         }
     }

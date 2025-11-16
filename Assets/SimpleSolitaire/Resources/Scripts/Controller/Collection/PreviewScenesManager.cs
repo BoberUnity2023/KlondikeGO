@@ -93,7 +93,7 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         private void OpenPreviewScene()
         {
-            CardLogic cardLogic = FindObjectOfType<CardLogic>();
+            CardLogic cardLogic = FindFirstObjectByType<CardLogic>();
             
             if(cardLogic != null)
             {

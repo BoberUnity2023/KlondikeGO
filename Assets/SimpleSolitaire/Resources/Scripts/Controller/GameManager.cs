@@ -1,9 +1,7 @@
 ﻿#if GAME_PUSH
-using BloomLines.Assets;
 using GamePush;
 #endif
 using BloomLines.Assets;
-using Newtonsoft.Json.Linq;
 using SimpleSolitaire.Model.Config;
 using SimpleSolitaire.Model.Enum;
 using SimpleSolitaire.Screen;
@@ -13,8 +11,6 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
-using UnityEngine.SocialPlatforms.Impl;
-using GamePush;
 //using YG;
 
 namespace SimpleSolitaire.Controller
@@ -45,8 +41,8 @@ namespace SimpleSolitaire.Controller
         private Animator _settingsPanelAnimator;
         [SerializeField]
         protected GameObject _buttonHint;
-        [SerializeField]
-        private GameObject _buttonRewardedVideo;
+        //[SerializeField]
+        //private GameObject _buttonRewardedVideo;
         [SerializeField]
         private ToggleGroup _levelToggleGroup;
         [SerializeField]
@@ -250,7 +246,7 @@ namespace SimpleSolitaire.Controller
 
         private bool _highlightDraggableEnable;
         private bool _soundEnable;
-        private bool _autoCompleteEnable;
+        //private bool _autoCompleteEnable;
         private bool _isBarActive;
 
         protected float _windowAnimationTime = 0.42f;
@@ -260,6 +256,8 @@ namespace SimpleSolitaire.Controller
         public event Action OnGameWin;
         public event Action OnUndo;
         public event Action<int> OnTimeCount;
+        public event Action OnBoughtBackground;
+        public event Action OnBoughtDeck;
 
         private void Awake()
         {            
@@ -275,7 +273,7 @@ namespace SimpleSolitaire.Controller
 
             SetPlatform();
             _soundEnable = true;
-            _autoCompleteEnable = true;
+            //_autoCompleteEnable = true;
             _isBarActive = true;
             Stats = new Stats(this);
             LoadGold();
@@ -676,7 +674,7 @@ namespace SimpleSolitaire.Controller
             Debug.Log("OnClickTryBuyBtn Name: " + element.ElementName + "; Price: " + element.Price);
 
             _buyWindow.gameObject.SetActive(true);
-            _buttonRewardedVideo.gameObject.SetActive(false);
+            //_buttonRewardedVideo.gameObject.SetActive(false);
             _buyWindow.Set(element);
             AppearWindow(_buyWindow.gameObject);
         }
@@ -693,7 +691,7 @@ namespace SimpleSolitaire.Controller
             StartCoroutine(InvokeAction(delegate
             {
                 _buyWindow.gameObject.SetActive(false);
-                _buttonRewardedVideo.gameObject.SetActive(true);
+                //_buttonRewardedVideo.gameObject.SetActive(true);
             }, 0.42f));
         }
 
@@ -701,6 +699,13 @@ namespace SimpleSolitaire.Controller
         {
             Gold -= element.Price;
             element.Buy();
+
+            if (element.Type == VisualiseElementType.Background)            
+                OnBoughtBackground?.Invoke();
+
+            if (element.Type == VisualiseElementType.Card)
+                OnBoughtDeck?.Invoke();
+
 
             DisappearWindow(_buyWindow.gameObject, OnWindowDisappeared);
             void OnWindowDisappeared()
@@ -711,7 +716,7 @@ namespace SimpleSolitaire.Controller
             StartCoroutine(InvokeAction(delegate
             {
                 _buyWindow.gameObject.SetActive(false);
-                _buttonRewardedVideo.gameObject.SetActive(true);
+                //_buttonRewardedVideo.gameObject.SetActive(true);
             }, 0.42f));
         }
 
