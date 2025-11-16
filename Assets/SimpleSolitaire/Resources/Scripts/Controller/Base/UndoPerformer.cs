@@ -74,11 +74,11 @@ namespace SimpleSolitaire.Controller
                 _cardLogicComponent.PackDeck.PushCardArray(_cardLogicComponent.CardsArray.ToArray(), false, 0);
 
                 UndoProcess();
-
+                _gameMgrComponent.Undo();
                 _hintComponent.UpdateAvailableForDragCards();
                 _cardLogicComponent.GameManagerComponent.CardMove();
                 StatesData.States.RemoveAt(StatesData.States.Count - 1);
-                ActivateUndoButton();
+                ActivateUndoButton();                
             }
         }
 

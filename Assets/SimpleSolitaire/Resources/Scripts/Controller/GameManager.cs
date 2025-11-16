@@ -256,6 +256,11 @@ namespace SimpleSolitaire.Controller
         protected float _windowAnimationTime = 0.42f;
         //private float _startTime;
 
+        public event Action OnGameStart;
+        public event Action OnGameWin;
+        public event Action OnUndo;
+        public event Action<int> OnTimeCount;
+
         private void Awake()
         {            
             InitializeGame();
@@ -282,6 +287,7 @@ namespace SimpleSolitaire.Controller
             //_settingsRef.StartCorner = _cardLogic.Orientation == HandOrientation.RIGHT ? TableLayoutGroup.Corner.UpperLeft : TableLayoutGroup.Corner.UpperRight;
             _goldLabel.text = Gold.ToString();
             //_startTime = Time.time;
+            OnGameStart?.Invoke();
         }
 
         public void LoadGold()
@@ -539,6 +545,8 @@ namespace SimpleSolitaire.Controller
 
             if (_timeCount > Stats.LongestWinTime)
                 Stats.LongestWinTime = _timeCount;
+
+            OnGameWin?.Invoke();
 #if GAME_PUSH
             GP_Player.SetScore(Stats.Experience);
             GP_Player.Sync(SyncStorageType.cloud);
@@ -851,6 +859,12 @@ namespace SimpleSolitaire.Controller
         {
             _currentAdsType = RewardAdsType.GetUndo;
             ShowAdsLayer();
+        }
+
+        public void Undo()
+        {
+            OnUndo?.Invoke();
+            Debug.Log("Undo");
         }
 
         /// <summary>
@@ -1269,6 +1283,7 @@ namespace SimpleSolitaire.Controller
             {
                 yield return new WaitForSeconds(1.0f);
                 _timeCount++;
+                OnTimeCount?.Invoke(_timeCount);
                 if (_timeCount % 30 == 0)
                 {
                     //AddScoreValue(Public.SCORE_OVER_THIRTY_SECONDS_DECREASE);

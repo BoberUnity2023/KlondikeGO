@@ -1,14 +1,15 @@
 public class Winner : AchivementBase
 {
+    //Выиграть 100 игр
     protected override void Start()
     {  
         base.Start();
-        //Hub.Logic.OnGameWin += OnGameWin;
+        Hub.OnGameWin += OnGameWin;
     }
 
     private void OnDestroy()
     {
-        //Hub.Logic.OnGameWin -= OnGameWin;
+        Hub.OnGameWin -= OnGameWin;
     }
 
     private void OnGameWin()

@@ -593,6 +593,296 @@ MonoBehaviour:
       - Start offer
       Flags: 0000000000
       Languages_Touch: []
+    - Term: done
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E"
+      - Done
+      - Done
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_first_step
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u0435\u0440\u0432\u044B\u0439 \u0448\u0430\u0433"
+      - First step
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_done_first_game
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u0440\u043E\u0439\u0442\u0438 \u043F\u0435\u0440\u0432\u0443\u044E
+        \u0438\u0433\u0440\u0443"
+      - Complete first game
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_master_soliter
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041C\u0430\u0441\u0442\u0435\u0440 \u0421\u043E\u043B\u0438\u0442\u0435\u0440\u0430"
+      - Soliter Master
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_done_100_games
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0412\u044B\u0438\u0433\u0440\u0430\u0442\u044C 100 \u0438\u0433\u0440"
+      - Complete 100 games
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_without_mistake
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0411\u0435\u0437 \u043F\u0440\u0430\u0432\u0430 \u043D\u0430 \u043E\u0448\u0438\u0431\u043A\u0443"
+      - 'No room for error '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_without_undo
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0412\u044B\u0438\u0433\u0440\u0430\u0442\u044C \u0438\u0433\u0440\u0443
+        \u043D\u0435 \u0434\u0435\u043B\u0430\u044F \u043E\u0442\u043C\u0435\u043D\u044B
+        \u0445\u043E\u0434\u0430"
+      - 'Win a game without undoing a move '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_blitz_soliter
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0411\u043B\u0438\u0446-\u043F\u0430\u0441\u044C\u044F\u043D\u0441"
+      - Blitz-soliter
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_done_faster_3min
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u0440\u043E\u0439\u0442\u0438 \u0438\u0433\u0440\u0443 \u043C\u0435\u043D\u0435\u0435
+        \u0447\u0435\u043C \u0437\u0430 3 \u043C\u0438\u043D\u0443\u0442\u044B"
+      - 'Complete the game in less than 3 minutes '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_gold_series
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0417\u043E\u043B\u043E\u0442\u0430\u044F \u0441\u0435\u0440\u0438\u044F"
+      - Gold series
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_win_5games
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0412\u044B\u0438\u0433\u0440\u0430\u0442\u044C 5 \u0438\u0433\u0440 \u043F\u043E\u0434\u0440\u044F\u0434"
+      - 'Win 5 games in a row '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_my_atmosphere
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0421\u0432\u043E\u044F \u0430\u0442\u043C\u043E\u0441\u0444\u0435\u0440\u0430"
+      - 'Its own atmosphere '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_open_3backs
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041E\u0442\u043A\u0440\u044B\u0442\u044C 3 \u043B\u044E\u0431\u044B\u0445
+        \u0444\u043E\u043D\u0430"
+      - 'Open any 3 backgrounds '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_card_collector
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u043E\u043D\u0435\u0440
+        \u043A\u0430\u0440\u0442"
+      - 'Card collector '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_open_3decks
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041E\u0442\u043A\u0440\u044B\u0442\u044C 3 \u043B\u044E\u0431\u044B\u0435
+        \u043A\u043E\u043B\u043E\u0434\u044B"
+      - 'Open any 3 decks '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_to_tooth
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u0430 \u0437\u0443\u0431\u043E\u043A"
+      - 'To the tooth '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_win_without_help
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0420\u0430\u0437\u043B\u043E\u0436\u0438\u0442\u044C \u043F\u0430\u0441\u044C\u044F\u043D\u0441
+        \u0431\u0435\u0437 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F
+        \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043E\u043A"
+      - 'Play solitaire without using hints '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_impossible_possible
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0435 \u2014
+        \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E"
+      - 'The impossible is possible '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_without_turning_deck
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0420\u0430\u0437\u043B\u043E\u0436\u0438\u0442\u044C \u043F\u0430\u0441\u044C\u044F\u043D\u0441
+        \u043D\u0435 \u043F\u0435\u0440\u0435\u0432\u043E\u0440\u0430\u0447\u0438\u0432\u0430\u044F
+        \u043A\u043E\u043B\u043E\u0434\u0443"
+      - 'Play solitaire without turning the deck over '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_this_my_life
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u042D\u0442\u043E \u043C\u043E\u044F \u0436\u0438\u0437\u043D\u044C"
+      - 'This is my life '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_play_30games_in_day
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0420\u0430\u0437\u043B\u043E\u0436\u0438\u0442\u044C 30 \u043F\u0430\u0440\u0442\u0438\u0439
+        \u0437\u0430 1 \u0434\u0435\u043D\u044C"
+      - 'Play 30 games in 1 day '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_nutcracker
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0429\u0435\u043B\u043A\u0443\u043D\u0447\u0438\u043A"
+      - 'Nutcracker '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_500clics_in_game
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0421\u0434\u0435\u043B\u0430\u0442\u044C 500 \u043A\u043B\u0438\u043A\u043E\u0432
+        \u0437\u0430 1 \u0438\u0433\u0440\u0443"
+      - 'Make 500 clicks in 1 game '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_no_fuss
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0411\u0435\u0437 \u0441\u0443\u0435\u0442\u044B"
+      - 'No fuss '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: ach_desc_complete_less_20min
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041F\u0440\u043E\u0439\u0442\u0438 \u043F\u0430\u0441\u044C\u044F\u043D\u0441
+        \u043C\u0435\u043D\u0435\u0435 \u0447\u0435\u043C \u0437\u0430 20 \u043C\u0438\u043D\u0443\u0442"
+      - 'Complete Solitaire in less than 20 minutes '
+      - 
+      - 
+      - 
+      Flags: 0000000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

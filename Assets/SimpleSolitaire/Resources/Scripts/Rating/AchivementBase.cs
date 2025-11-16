@@ -6,14 +6,14 @@ public class AchivementBase : MonoBehaviour
 {
     [SerializeField] private AchivementUI _achivementUI;
     [SerializeField] private Sprite _icon;
-    [SerializeField] private string _title;
-    [SerializeField] private string _description;
+    [SerializeField] private string _titleKey;
+    [SerializeField] private string _descriptionKey;
     [SerializeField] private int _targetProgress;
 
     public int Id { get; set;}
     public GameManager Hub { get; set; }
 
-    public string Description => _description;
+    public string DescriptionKey => _descriptionKey;
     public int Progress 
     {
         get 
@@ -28,7 +28,7 @@ public class AchivementBase : MonoBehaviour
 
     public int TargetProgress => _targetProgress;
 
-    public string Title => _title;  
+    public string TitleKey => _titleKey;  
 
     public Sprite Icon => _icon;
 
@@ -57,9 +57,9 @@ public class AchivementBase : MonoBehaviour
 
     public void Complete()
     {
-        Debug.Log("јчивка выполнена! " + _description);
+        Debug.Log("јчивка выполнена! " + _descriptionKey);
         _achivementUI.ShowComplete();
         Hub.AudioController.Play(AudioController.AudioType.Bonus);
-        GameAnalytics.NewDesignEvent("AchivementComplete: " + Title);        
+        GameAnalytics.NewDesignEvent("AchivementComplete: " + TitleKey);        
     }
 }

@@ -19,9 +19,9 @@ public class AchivementsController: MonoBehaviour
     public void PressInfo(int id)
     {
         _windowInfo.gameObject.SetActive(true);
-        _hub.AppearWindow(_windowInfo.gameObject);
-        _windowInfo.SetTitle(_achivements[id].Title);
-        _windowInfo.SetDescription(_achivements[id].Description);
+        _hub.AppearWindow(_windowInfo.gameObject);        
+        _windowInfo.SetTitle(_achivements[id].TitleKey);        
+        _windowInfo.SetDescription(_achivements[id].DescriptionKey);
         _windowInfo.SetProgress(ProgressText(id));
         _windowInfo.SetIcon(_achivements[id].Icon);
     }
