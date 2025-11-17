@@ -1,38 +1,38 @@
 namespace BloomLines
 {
-    public class WithoutUndo : AchivementBase
+    public class WithoutHint : AchivementBase
     {
-        //Выиграть игру не делая отмены хода
-        private bool _usedUndo;
+        //Разложить пасьянс без использования подсказок
+        private bool _usedHint;
 
         protected override void Start()
         {
             base.Start();
             Hub.OnGameWin += OnGameWin;
             Hub.OnGameStart += OnGameStart;
-            Hub.OnUndo += OnUndo;
+            Hub.OnUndo += OnHint;
         }
 
         private void OnDestroy()
         {
             Hub.OnGameWin -= OnGameWin;
             Hub.OnGameStart -= OnGameStart;
-            Hub.OnUndo -= OnUndo;
+            Hub.OnUndo -= OnHint;
         }
 
         private void OnGameStart()
         {
-            _usedUndo = false;
+            _usedHint = false;
         }
 
-        private void OnUndo()
+        private void OnHint()
         {
-            _usedUndo = true;
+            _usedHint = true;
         }
 
         private void OnGameWin()
         {
-            if(!_usedUndo)
+            if(!_usedHint)
                 StepAdd();
         }
     }
