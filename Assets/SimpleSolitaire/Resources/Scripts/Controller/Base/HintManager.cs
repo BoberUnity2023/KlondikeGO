@@ -154,6 +154,7 @@ namespace SimpleSolitaire.Controller
                 hintButtonPressed: true
             );
             Hint(data);
+            _gameManager.Hint();
         }
 
         protected abstract IEnumerator HintTranslate(HintData data);

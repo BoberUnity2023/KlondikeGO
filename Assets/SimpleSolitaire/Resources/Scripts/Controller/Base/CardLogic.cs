@@ -23,8 +23,8 @@ namespace SimpleSolitaire.Controller
     public abstract class CardLogic : MonoBehaviour
     {
         protected Vector3[] Corners;
-        [SerializeField]
-        protected RectTransform CorrectlyDeck;
+        [SerializeField] GameManager _gameManager;
+        [SerializeField] protected RectTransform CorrectlyDeck;
         
         public Color DraggableColor;
         public Color NondraggableColor;
@@ -431,6 +431,8 @@ namespace SimpleSolitaire.Controller
             {
                 AudioCtrl.Play(AudioController.AudioType.MoveToPack);
             }
+
+            _gameManager.RotateDeck();
         }
 
         /// <summary>

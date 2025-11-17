@@ -258,6 +258,8 @@ namespace SimpleSolitaire.Controller
         public event Action<int> OnTimeCount;
         public event Action OnBoughtBackground;
         public event Action OnBoughtDeck;
+        public event Action OnHint;
+        public event Action OnRotateDeck;
 
         private void Awake()
         {            
@@ -1398,6 +1400,16 @@ namespace SimpleSolitaire.Controller
             yield return new WaitForSeconds(time);
             Gold += 100 * (Level + 1);
             
+        }
+
+        public void Hint()
+        {
+            OnHint?.Invoke();
+        }
+
+        public void RotateDeck()
+        {
+            OnRotateDeck?.Invoke();
         }
     }
 }

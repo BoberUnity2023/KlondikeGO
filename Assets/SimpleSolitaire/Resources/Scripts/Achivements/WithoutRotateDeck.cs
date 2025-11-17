@@ -1,38 +1,38 @@
 namespace BloomLines
 {
-    public class WithoutHint : AchivementBase
+    public class WithoutRotateDeck : AchivementBase
     {
         //–азложить пась€нс без использовани€ подсказок
-        private bool _usedHint;
+        private bool _usedRotate;
 
         protected override void Start()
         {
             base.Start();
             Hub.OnGameWin += OnGameWin;
             Hub.OnGameStart += OnGameStart;
-            Hub.OnHint += OnHint;
+            Hub.OnRotateDeck += OnRotateDeck;
         }
 
         private void OnDestroy()
         {
             Hub.OnGameWin -= OnGameWin;
             Hub.OnGameStart -= OnGameStart;
-            Hub.OnHint -= OnHint;
+            Hub.OnRotateDeck -= OnRotateDeck;
         }
 
         private void OnGameStart()
         {
-            _usedHint = false;
+            _usedRotate = false;
         }
 
-        private void OnHint()
+        private void OnRotateDeck()
         {
-            _usedHint = true;
+            _usedRotate = true;
         }
 
         private void OnGameWin()
         {
-            if(!_usedHint)
+            if(!_usedRotate)
                 StepAdd();
         }
     }

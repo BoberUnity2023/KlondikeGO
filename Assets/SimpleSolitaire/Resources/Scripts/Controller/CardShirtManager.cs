@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using SimpleSolitaire.Model.Config;
-using Unity.Android.Gradle;
 using UnityEngine;
 using UnityEngine.UI;
 
