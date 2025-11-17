@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 using YG.Insides;
 
@@ -59,4 +58,3 @@ namespace YG.EditorScr
         }
     }
 }
-#endif

@@ -1,4 +1,3 @@
-#if UNITY_EDITOR
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -9,11 +8,11 @@ namespace YG.EditorScr
 {
     [CustomEditor(typeof(PlatformEventsYG2)), CanEditMultipleObjects]
     public class PlatformEventsYG2Editor : Editor
-
     {
         private SerializedProperty platforms;
         private SerializedProperty whenToEvent;
         private SerializedProperty unityEvents;
+        private SerializedProperty executeMode;
         private GUIContent[] options;
         private GUIContent m_AddButonContent;
 
@@ -22,7 +21,7 @@ namespace YG.EditorScr
             platforms = serializedObject.FindProperty("platforms");
             whenToEvent = serializedObject.FindProperty("whenToEvent");
             unityEvents = serializedObject.FindProperty("platformAction");
-
+            executeMode = serializedObject.FindProperty("executeMode");
 #if RU_YG2
             m_AddButonContent = EditorGUIUtility.TrTextContent("Добавить платформу");
 #else
@@ -80,20 +79,33 @@ namespace YG.EditorScr
                 ShowAddTriggerMenu();
             }
 
+            string descript;
 #if RU_YG2
-            string nameProp = "Платформы для которых cработают методы";
+            descript = "Список выбранных платформ";
 #else
-            string nameProp = "Platforms for which methods will be triggered";
+            descript = "List of selected platforms";
 #endif
-            EditorGUILayout.PropertyField(platforms, new GUIContent(nameProp), true);
-
+            EditorGUILayout.PropertyField(platforms, new GUIContent(descript), true);
             EditorGUILayout.Space(10);
 #if RU_YG2
-            nameProp = "Когда выполнить";
+            descript = "Способ выполнения";
 #else
-            nameProp = "When to Execute";
+            descript = "Execution mede";
 #endif
-            EditorGUILayout.PropertyField(whenToEvent, new GUIContent(nameProp), true);
+            EditorGUILayout.PropertyField(executeMode, new GUIContent(descript), true);
+#if RU_YG2
+            descript = "Триггер (когда выполнить)";
+#else
+            descript = "Trigger (when to Execute)";
+#endif
+            EditorGUILayout.PropertyField(whenToEvent, new GUIContent(descript), true);
+#if RU_YG2
+            descript = "Выполнить:";
+#else
+            descript = "To perform:";
+#endif
+            EditorGUILayout.Space(10);
+            EditorGUILayout.LabelField(descript, TextStyles.Header(Color.white));
 
             int listenerCount = ((PlatformEventsYG2)target).platformAction.GetPersistentEventCount();
             if (listenerCount == 1 && ((PlatformEventsYG2)target).platformAction.GetPersistentTarget(0) != null)
@@ -104,11 +116,11 @@ namespace YG.EditorScr
                 if (targetObject.name == ((PlatformEventsYG2)target).gameObject.name && methodName == "DeactivateGameObject")
                 {
 #if RU_YG2
-                    string tooltip = "По умолчанию привязан метод деактивации объекта";
+                    descript = "По умолчанию привязан метод деактивации объекта";
 #else
-                    string tooltip = "By default, the deactivation method of object is linked";
+                    descript = "By default, the deactivation method of object is linked";
 #endif
-                    EditorGUILayout.LabelField(tooltip, TextStyles.Header());
+                    EditorGUILayout.LabelField(descript, TextStyles.Header());
                 }
             }
 
@@ -165,4 +177,3 @@ namespace YG.EditorScr
         }
     }
 }
-#endif

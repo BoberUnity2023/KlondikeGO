@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEditor;
@@ -128,7 +127,7 @@ namespace YG.EditorScr
                 if (!File.Exists(file))
                 {
                     Directory.CreateDirectory(directory);
-                    File.WriteAllText(file, string.Empty);
+                    FileYG.WriteAllText(file, string.Empty);
                     AssetDatabase.SaveAssets();
                     AssetDatabase.Refresh();
                 }
@@ -163,4 +162,3 @@ namespace YG.EditorScr
         }
     }
 }
-#endif

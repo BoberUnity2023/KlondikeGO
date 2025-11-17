@@ -1,5 +1,4 @@
-﻿#if UNITY_EDITOR
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -80,7 +79,7 @@ namespace YG.EditorScr
 
                     if (!string.IsNullOrEmpty(fileContent))
                     {
-                        File.WriteAllText(InfoYG.FILE_SERVER_INFO, fileContent);
+                        FileYG.WriteAllText(InfoYG.FILE_SERVER_INFO, fileContent);
                         ServerInfo.Read();
                         AssetDatabase.SaveAssets();
                         AssetDatabase.Refresh();
@@ -139,4 +138,3 @@ namespace YG.EditorScr
         }
     }
 }
-#endif

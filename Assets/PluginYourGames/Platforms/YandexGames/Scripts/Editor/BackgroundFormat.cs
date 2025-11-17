@@ -1,4 +1,4 @@
-﻿#if YandexGamesPlatform_yg && UNITY_EDITOR
+﻿#if YandexGamesPlatform_yg
 using System.IO;
 using UnityEngine;
 
@@ -54,12 +54,10 @@ namespace YG.EditorScr.BuildModify
 
             void DeleteImage(string format)
             {
-                string pathImage = BUILD_PATCH + "/Images/background." + format;
+                string pathImage = $"{ProcessBuild.BuildPath}/Images/background.{format}";
 
                 if (File.Exists(pathImage))
-                {
-                    File.Delete(pathImage);
-                }
+                    FileYG.Delete(pathImage);
             }
         }
 
