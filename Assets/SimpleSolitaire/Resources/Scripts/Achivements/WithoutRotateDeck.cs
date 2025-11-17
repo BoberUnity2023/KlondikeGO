@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace BloomLines
 {
     public class WithoutRotateDeck : AchivementBase
@@ -21,7 +23,7 @@ namespace BloomLines
         }
 
         private void OnGameStart()
-        {
+        {            
             _usedRotate = false;
         }
 

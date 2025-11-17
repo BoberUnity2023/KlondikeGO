@@ -260,6 +260,8 @@ namespace SimpleSolitaire.Controller
         public event Action OnBoughtDeck;
         public event Action OnHint;
         public event Action OnRotateDeck;
+        public event Action OnLastVisitNoToday;
+        public event Action OnClick;
 
         private void Awake()
         {            
@@ -274,20 +276,14 @@ namespace SimpleSolitaire.Controller
             Application.targetFrameRate = 300;
 
             SetPlatform();
-            _soundEnable = true;
-            //_autoCompleteEnable = true;
+            _soundEnable = true;            
             _isBarActive = true;
             Stats = new Stats(this);
             LoadGold();
-            Stats.PlayedGames++;
-            //InterVideoAds.RewardAction += OnRewardActionState;
-
+            Stats.PlayedGames++;    
             _cardLogic.SubscribeEvents();
             _audioController = AudioController.Instance;
-            //_settingsRef.StartCorner = _cardLogic.Orientation == HandOrientation.RIGHT ? TableLayoutGroup.Corner.UpperLeft : TableLayoutGroup.Corner.UpperRight;
-            _goldLabel.text = Gold.ToString();
-            //_startTime = Time.time;
-            OnGameStart?.Invoke();
+            _goldLabel.text = Gold.ToString();             
         }
 
         public void LoadGold()
@@ -1144,7 +1140,8 @@ namespace SimpleSolitaire.Controller
                     ScreenController.Active = true;
                 }
                 _undoPerformComponent.ResetUndoStates();
-                _adsController.TryShowInterstitial();                
+                _adsController.TryShowInterstitial();
+                OnGameStart?.Invoke();
             }
         }
 
@@ -1186,6 +1183,7 @@ namespace SimpleSolitaire.Controller
                 //StartCoroutine(AfterStartEffectPlayed(2.5f));
                 _undoPerformComponent.ResetUndoStates();
                 _adsController.TryShowInterstitial();
+                OnGameStart?.Invoke();
             }
         }
 
@@ -1243,6 +1241,7 @@ namespace SimpleSolitaire.Controller
             {
                 _timeCoroutine = StartCoroutine(GameTimer());
             }
+            Click();
         }
 
         /// <summary>
@@ -1410,6 +1409,16 @@ namespace SimpleSolitaire.Controller
         public void RotateDeck()
         {
             OnRotateDeck?.Invoke();
+        }
+
+        public void LastVisitNoToday()
+        {
+            OnLastVisitNoToday?.Invoke();
+        }
+
+        public void Click()
+        {
+            OnClick?.Invoke();
         }
     }
 }

@@ -1,10 +1,8 @@
 namespace BloomLines
 {
-    public class Blitz : AchivementBase
+    public class NoFuss : AchivementBase
     {
-        //Пройти игру менее чем за 3 минуты
         //Пройти пасьянс менее чем за 20 минут
-        private int _mintimeCount;
         private int _timeCount;
         protected override void Start()
         {
@@ -22,13 +20,13 @@ namespace BloomLines
         }
 
         private void OnGameStart()
-        {
+        {            
             _timeCount = 0;
         }        
 
         private void OnGameWin()
         {
-            if (_timeCount < 180)
+            if (_timeCount < 1200)
                 StepAdd();
         }
 

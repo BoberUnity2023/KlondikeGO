@@ -251,7 +251,7 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         protected void ActivateHintButton(bool isActive)
         {
-            Debug.Log("ActivateHintButton(" + isActive + ")");
+            //Debug.Log("ActivateHintButton(" + isActive + ")");
             //if (AvailableCountLevels == 0)
             //    isActive = false;
 

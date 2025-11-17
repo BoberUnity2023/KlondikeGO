@@ -21,6 +21,9 @@ namespace BloomLines
 
         private void OnGameStart()
         {
+            if (IsComplete)
+                return;
+
             if (Round > Progress)
             { 
                 Progress = 0;
@@ -37,8 +40,15 @@ namespace BloomLines
         
         private int Round//TODO: SaveToCloud
         {
-            get { return PlayerPrefs.GetInt(_key, 0); }
-            set { PlayerPrefs.SetInt(_key, value); }
+            get 
+            { 
+                return PlayerPrefs.GetInt(_key, 0); 
+            }
+            set 
+            { 
+                PlayerPrefs.SetInt(_key, value);
+                PlayerPrefs.Save();
+            }
         }
     }
 }

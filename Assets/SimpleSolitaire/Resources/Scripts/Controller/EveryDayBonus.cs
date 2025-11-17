@@ -55,7 +55,8 @@ public class EveryDayBonus : MonoBehaviour
                 //YandexGame.SaveProgress();                
                 _gameManager.ShowEveryDayBonusWindow();
                 SetDayWindow(everyday);
-                GameAnalytics.NewDesignEvent("LastVisit: Yesterday");
+                _gameManager.LastVisitNoToday();
+                GameAnalytics.NewDesignEvent("LastVisit: Yesterday");                
             }
 
             if (!lastVisitToday && !lastVisitYesterday)
@@ -66,7 +67,8 @@ public class EveryDayBonus : MonoBehaviour
                 //YandexGame.savesData.EveryDayVisits = 0;
                 //YandexGame.SaveProgress();
                 _gameManager.ShowEveryDayBonusWindow();
-                SetDayWindow(everyday);
+                SetDayWindow(everyday);                
+                _gameManager.LastVisitNoToday();
                 GameAnalytics.NewDesignEvent("LastVisit: A few das ago");
             }
         }
