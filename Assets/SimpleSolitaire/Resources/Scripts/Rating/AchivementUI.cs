@@ -12,6 +12,6 @@ public class AchivementUI : MonoBehaviour
 
     public void ShowNoComplete()
     {        
-        _icon.color = new Color(1, 1, 1, 0.2f);
+        _icon.color = new Color(1, 1, 1, 0.4f);
     }
 }

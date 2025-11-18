@@ -1,17 +1,37 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-//using YG;
+#if Yandex
+using YG;
+#endif
+
+#if GAME_PUSH
+using GamePush;
+#endif
 
 public class LocalizeController : MonoBehaviour
 {
     [SerializeField] private List<string> _langs;
     public event Action<string> ChangeLanguage;
 
-    private void Start()
+    private async void Start()
     { 
         _langs = I2.Loc.LocalizationManager.GetAllLanguages();
 
+#if Yandex
+        YG2.onSwitchLang += OnChangeLanguage;
+        OnChangeLanguage(YG2.envir.language);
+#endif
+
+#if GAME_PUSH
+        await GP_Init.Ready;
+        GP_Language.OnChangeLanguage += GPOnChangeLanguage;
+        OnChangeLanguage(GP_Language.CurrentISO());
+#endif
+
+#if UNITY_EDITOR
+        OnChangeLanguage("en");
+#endif
         //YandexGame.SwitchLangEvent += OnChangeLanguage;
         //YandexGame.InitLang();
         string language = SystemLanguageIndex;
@@ -26,7 +46,9 @@ public class LocalizeController : MonoBehaviour
 
     private void OnDestroy()
     {
-        //YandexGame.SwitchLangEvent -= OnChangeLanguage;        
+#if Yandex
+        YG2.onSwitchLang -= OnChangeLanguage;
+#endif
     }
 
     private void OnChangeLanguage(string lang)
@@ -66,6 +88,13 @@ public class LocalizeController : MonoBehaviour
             Debug.LogError("Language " + lang + " was not founded!");
         ChangeLanguage?.Invoke(lang);
     }
+
+#if GAME_PUSH
+    private void GPOnChangeLanguage(Language language)
+    {
+        OnChangeLanguage(GP_Language.CurrentISO());
+    }
+#endif
 
     /*public void GetSystemInfo()
     {

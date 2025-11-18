@@ -15,13 +15,9 @@ namespace BloomLines.Controllers
 {
     public static class LanguageManager
     {
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static async void Initialize()
         {
-#if UNITY_EDITOR
-            OnChangeLanguage("ru");
-#endif
-
 #if Yandex
             YG2.onSwitchLang += OnChangeLanguage;
             OnChangeLanguage(YG2.envir.language);
@@ -31,6 +27,10 @@ namespace BloomLines.Controllers
             await GP_Init.Ready;
             GP_Language.OnChangeLanguage += GPOnChangeLanguage;
             OnChangeLanguage(GP_Language.CurrentISO());
+#endif
+
+#if UNITY_EDITOR
+            OnChangeLanguage("en");
 #endif
         }
 

@@ -96,7 +96,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField]
         protected GameObject _newGameLayer;
         [SerializeField]
-        protected GameObject _newGameLayerBlocker;
+        protected GameObject _backgroundBlocker;
         [SerializeField]
         protected GameObject _cardLayer;
         [SerializeField]
@@ -440,7 +440,7 @@ namespace SimpleSolitaire.Controller
                 InitMenuView(false);
                 _cardLayer.SetActive(false);
                 _newGameLayer.SetActive(true);
-                _newGameLayerBlocker.SetActive(true);
+                _backgroundBlocker.SetActive(true);
                 AppearWindow(_newGameLayer);
             }
         }
@@ -642,7 +642,7 @@ namespace SimpleSolitaire.Controller
         protected void AppearGameLayer()
         {
             _newGameLayer.SetActive(true);
-            _newGameLayerBlocker.SetActive(true);
+            _backgroundBlocker.SetActive(true);
             InitCardLogic();
             AppearWindow(_newGameLayer);
         }
@@ -651,6 +651,7 @@ namespace SimpleSolitaire.Controller
         {
             _cardLayer.SetActive(false);
             _leaderboardLayer.SetActive(true);
+            _backgroundBlocker.SetActive(true);
 
             if (_cardLogic is KlondikeCardLogic klondikeLogic)
             {
@@ -1065,6 +1066,7 @@ namespace SimpleSolitaire.Controller
 
         public void OnClickShoplBtn()
         {
+            _backgroundBlocker.SetActive(true);
             _cardLayer.SetActive(false);
             _shopLayer.SetActive(true);
             AppearWindow(_shopLayer);
@@ -1077,6 +1079,7 @@ namespace SimpleSolitaire.Controller
             {
                 _shopLayer.SetActive(false);
                 _cardLayer.SetActive(!_statisticLayer.activeInHierarchy);
+                _backgroundBlocker.SetActive(false);
             }
         }
         #endregion
@@ -1128,7 +1131,7 @@ namespace SimpleSolitaire.Controller
                 StatisticsController.Instance.PlayedGames?.Invoke();                
                 _cardLogic.OnNewGameStart();
                 _newGameLayer.SetActive(false);
-                _newGameLayerBlocker.SetActive(false);
+                _backgroundBlocker.SetActive(false);
                 _cardLayer.SetActive(true);
                 _cardLogic.Shuffle(false);
                 _winLayer.SetActive(false);
@@ -1176,7 +1179,7 @@ namespace SimpleSolitaire.Controller
                 StatisticsController.Instance.PlayedGames?.Invoke();
                 _cardLogic.OnNewGameStart();
                 _newGameLayer.SetActive(false);
-                _newGameLayerBlocker.SetActive(false);
+                _backgroundBlocker.SetActive(false);
                 _winLayer.SetActive(false);
                 _cardLayer.SetActive(true);
                 _cardLogic.Shuffle(true);
@@ -1197,7 +1200,7 @@ namespace SimpleSolitaire.Controller
             void OnModalLayerDisappeared()
             {
                 _newGameLayer.SetActive(false);
-                _newGameLayerBlocker.SetActive(false);
+                _backgroundBlocker.SetActive(false);
                 _cardLayer.SetActive(true);
             }
         }    
@@ -1205,13 +1208,21 @@ namespace SimpleSolitaire.Controller
         public void OnClickLeaderboardClose()
         {
             DisappearWindow(_leaderboardLayer, OnLeaderboardLayerDisappeared);
-            StartCoroutine(InvokeAction(delegate { _leaderboardLayer.SetActive(false); _cardLayer.SetActive(true); }, 0.42f));
+            /*StartCoroutine(InvokeAction
+                (delegate 
+            { 
+                _leaderboardLayer.SetActive(false); 
+                _cardLayer.SetActive(true);
+                _backgroundBlocker.SetActive(false);
+            }, 0.42f)
+                );*/
         }
 
         protected virtual void OnLeaderboardLayerDisappeared()
         {
             _leaderboardLayer.SetActive(false);
             _cardLayer.SetActive(true);
+            _backgroundBlocker.SetActive(false);
         }
         #endregion
 

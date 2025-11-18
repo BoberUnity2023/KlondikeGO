@@ -1,11 +1,20 @@
 using UnityEngine;
 using SimpleSolitaire.Controller;
+using System.Linq;
 
 public class AchivementsController: MonoBehaviour
 {
     [SerializeField] private GameManager _hub;
     [SerializeField] private WindowAchivementInfo _windowInfo;
-    [SerializeField] private AchivementBase[] _achivements; 
+    [SerializeField] private AchivementBase[] _achivements;
+
+    public int CompletedAchivements
+    {
+        get
+        {
+            return (from p in _achivements where p.IsComplete select p).Count();            
+        }
+    }
 
     private void Awake()
     {
@@ -38,7 +47,7 @@ public class AchivementsController: MonoBehaviour
     private string ProgressText(int id)
     {
         if (_achivements[id].IsComplete)
-            return "Выполнено";
+            return I2.Loc.LocalizationManager.GetTranslation("done");// "Выполнено";
 
         if (_achivements[id].TargetProgress == 1)
             return "";

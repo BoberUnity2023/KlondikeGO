@@ -30,7 +30,6 @@ score,ОЧКИ,SCORE,PUAN,PUNTUACIÓN,PUNKTE
 sec,СЕК,SEC,SN,SEG,SEKUNDEN
 settings,НАСТРОЙКИ,SETTINGS,AYARLAR,CONFIGURACIÓN,EINSTELLUNGEN
 sound,ЗВУК,SOUND,SES,SONIDO,TON
-the_aim,"Цель игры — раскрыть все скрытые карты и, перемещая карты из одного столбца в другой, размещать карты в последовательном порядке от короля к тузу (король, дама, валет, 10, 9... и т.д.). Каждая финальная последовательность должна быть одной масти. После того, как полная последовательность достигнута, карты удаляются со стола в «дом». После того, как игрок сделал все возможные ходы с текущим раскладом карт, тянется новый ряд карт из одной из стопок по десять в правом нижнем углу. Игра заканчивается выигрышем, когда все карты собраны в «дом».","Game Objective - The goal of the game is to reveal all hidden cards and arrange them in sequential order from King to Ace (King, Queen, Jack, 10, 9... etc.) by moving cards from one column to another. Each final sequence must be of the same suit. Once a complete sequence is formed, the cards are removed from the table to the ""home"" pile. When the player has made all possible moves with the current card layout, a new row of cards is drawn from one of the ten-card stacks in the bottom right corner. The game is won when all cards are collected in the ""home"" pile.","Oyun Amacı - Oyunun amacı, tüm gizli kartları açığa çıkarmak ve kartları bir sütundan diğerine taşıyarak Kral'dan As'a (Kral, Kız, Vale, 10, 9... vb.) sıralı bir şekilde düzenlemektir. Her bir nihai sıra aynı renkten olmalıdır. Tam bir sıra oluşturulduğunda, kartlar masadan kaldırılarak ""ev"" destesine yerleştirilir. Oyuncu mevcut kart düzeniyle tüm olası hamleleri yaptığında, sağ alt köşedeki on kartlık yığınlardan birinden yeni bir sıra kart çekilir. Tüm kartlar ""ev"" destesine toplandığında oyun kazanılır.","Objetivo del Juego - El objetivo del juego es revelar todas las cartas ocultas y organizarlas en orden secuencial del Rey al As (Rey, Reina, Jota, 10, 9... etc.), moviendo las cartas de una columna a otra. Cada secuencia final debe ser del mismo palo. Cuando se forma una secuencia completa, las cartas se eliminan de la mesa y se colocan en el mazo ""casa"". Cuando el jugador ha realizado todos los movimientos posibles con la disposición actual de las cartas, se saca una nueva fila de cartas de una de las pilas de diez cartas en la esquina inferior derecha. El juego se gana cuando todas las cartas están en el mazo ""casa"".","Spielziel - Das Ziel des Spiels ist es, alle verdeckten Karten aufzudecken und sie in absteigender Reihenfolge von König bis Ass (König, Dame, Bube, 10, 9... usw.) anzuordnen, indem Karten von einer Spalte in eine andere verschoben werden. Jede vollständige Sequenz muss dieselbe Farbe haben. Sobald eine vollständige Sequenz gebildet wurde, werden die Karten vom Tisch entfernt und in den ""Heimstapel"" gelegt. Wenn der Spieler alle möglichen Züge mit der aktuellen Kartenanordnung gemacht hat, wird eine neue Kartenreihe aus einem der Zehnerstapel in der unteren rechten Ecke gezogen. Das Spiel ist gewonnen, wenn alle Karten im ""Heimstapel"" gesammelt wurden."
 time,ВРЕМЯ,TIME,ZAMAN,TIEMPO,ZEIT
 time_bonus,БОНУС ЗА ВРЕМЯ,TIME BONUS,ZAMAN BONUSU,BONIFICACIÓN DE TIEMPO,ZEITBONUS
 x2,УДВОИТЬ,DOUBLE,ÇİFT,DOBLE,DOPPELT
@@ -70,3 +69,13 @@ ach_nutcracker,Щелкунчик,Nutcracker ,,,
 ach_desc_500clics_in_game,Сделать 500 кликов за 1 игру,Make 500 clicks in 1 game ,,,
 ach_no_fuss,Без суеты,No fuss ,,,
 ach_desc_complete_less_20min,Пройти пасьянс менее чем за 20 минут,Complete Solitaire in less than 20 minutes ,,,
+player_newbie,Новичок,Newbie,,,
+player_gamer,Игрок,Gamer,,,
+player_profi,Профи,Profi,,,
+player_master,Мастер ,Master,,,
+player_legend,Легенда,Legend,,,
+experience,Опыт,Experience,,,
+rating_personal,Личный,Personal,,,
+rating_global,Мировой,Global,,,
+rating_achivements,Достижения,Achivements,,,
+rating_stats,Статистика,Stats,,,

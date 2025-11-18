@@ -1,3 +1,3 @@
-Build path: C:/PROJECTS/KlondikeGO/OK
-Build number: 257
-PluginYG version: 2.005
+﻿Build path: C:/PROJECTS/KlondikeGO/OK
+Build number: 260
+PluginYG version: 2.007
