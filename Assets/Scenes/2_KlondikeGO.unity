@@ -2862,6 +2862,7 @@ GameObject:
   - component: {fileID: 110533722}
   - component: {fileID: 110533721}
   - component: {fileID: 110533720}
+  - component: {fileID: 110533723}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -2945,6 +2946,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 110533718}
   m_CullTransparentMesh: 0
+--- !u!114 &110533723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110533718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.Localize
+  mTerm: stats_wins
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  AllowParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 1760736063}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!1 &112739501
 GameObject:
   m_ObjectHideFlags: 0
@@ -4046,6 +4086,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ca566005bc568488fb7fda8ceb3277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &152374847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 493549918882789035}
 --- !u!1 &153946189
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,7 +4552,7 @@ RectTransform:
   m_GameObject: {fileID: 159832000}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 433127912}
@@ -4572,6 +4625,7 @@ GameObject:
   - component: {fileID: 163971455}
   - component: {fileID: 163971454}
   - component: {fileID: 163971453}
+  - component: {fileID: 163971456}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -4655,6 +4709,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163971451}
   m_CullTransparentMesh: 0
+--- !u!114 &163971456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163971451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.Localize
+  mTerm: stats_games
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  AllowParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 2081031670}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!1 &165437823
 GameObject:
   m_ObjectHideFlags: 0
@@ -5580,6 +5673,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1899898687}
   - {fileID: 797631090}
   - {fileID: 7199374664615212322}
   - {fileID: 5617650572121305664}
@@ -7389,6 +7483,32 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4911621971641533361, guid: b58d6e130ab4836478a6b0444c4f592a, type: 3}
   m_PrefabInstance: {fileID: 4911621971532142931}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &246213053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 1647985477}
+--- !u!114 &248906024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 2059104787563967588}
 --- !u!1 &249516963
 GameObject:
   m_ObjectHideFlags: 0
@@ -7476,7 +7596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 0}
+  mTarget: {fileID: 1925386922}
 --- !u!1 &253176966
 GameObject:
   m_ObjectHideFlags: 0
@@ -8409,6 +8529,17 @@ MonoBehaviour:
   _title: {fileID: 195330518}
   _star: {fileID: 13553054}
   _medal: {fileID: 910037736}
+--- !u!114 &283927039 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5685609168915323478, guid: 9b1b75829284c374797139f1c9c466b3, type: 3}
+  m_PrefabInstance: {fileID: 6999278737531844967}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &284169947
 GameObject:
   m_ObjectHideFlags: 0
@@ -8825,7 +8956,7 @@ RectTransform:
   m_GameObject: {fileID: 287968663}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 433127912}
@@ -10531,6 +10662,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8972114611808274532, guid: 41a53429c24e2cf47a8ece8edccafbc2, type: 3}
   m_PrefabInstance: {fileID: 316940911}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &320401532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 5504774795947386392}
 --- !u!1 &321646395
 GameObject:
   m_ObjectHideFlags: 0
@@ -12024,6 +12168,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6783268784728270903, guid: 1d7027b258485214eb521de58446f93e, type: 3}
   m_PrefabInstance: {fileID: 371390659}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &374364032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 816062695}
 --- !u!1001 &374793003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12245,6 +12402,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 523731410}
   - {fileID: 812153438}
   - {fileID: 633121613}
   - {fileID: 60389219}
@@ -13224,6 +13382,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401869222}
   m_CullTransparentMesh: 1
+--- !u!114 &403030827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 7641562160761432546}
 --- !u!1 &404369805
 GameObject:
   m_ObjectHideFlags: 0
@@ -14411,6 +14582,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 429804363}
   m_CullTransparentMesh: 1
+--- !u!114 &433123926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 1507757463}
 --- !u!1 &433127911
 GameObject:
   m_ObjectHideFlags: 0
@@ -16784,6 +16968,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 75}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &499058263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 1574865285167965699}
 --- !u!1 &500924559
 GameObject:
   m_ObjectHideFlags: 0
@@ -17463,6 +17660,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519042094}
   m_CullTransparentMesh: 1
+--- !u!114 &523452821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 5783233514876510375}
 --- !u!114 &523604551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17476,6 +17686,104 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
   mTarget: {fileID: 633121615}
+--- !u!1 &523731409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 523731410}
+  - component: {fileID: 523731413}
+  - component: {fileID: 523731412}
+  - component: {fileID: 523731411}
+  m_Layer: 5
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &523731410
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523731409}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 379195406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -180, y: 420}
+  m_SizeDelta: {x: 130, y: 130}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &523731411
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523731409}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0df507616fdf304fb92193a23ad25f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &523731412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523731409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f9f94659640f6fa4eb520be54b0f04f7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &523731413
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523731409}
+  m_CullTransparentMesh: 1
 --- !u!1 &524684629
 GameObject:
   m_ObjectHideFlags: 0
@@ -18686,6 +18994,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ca566005bc568488fb7fda8ceb3277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &581265451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 1634792971}
 --- !u!1 &583243491
 GameObject:
   m_ObjectHideFlags: 0
@@ -19033,6 +19354,7 @@ GameObject:
   - component: {fileID: 597492281}
   - component: {fileID: 597492280}
   - component: {fileID: 597492279}
+  - component: {fileID: 597492282}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -19116,6 +19438,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597492277}
   m_CullTransparentMesh: 0
+--- !u!114 &597492282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597492277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.Localize
+  mTerm: stats_score
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  AllowParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 1933232046}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!1 &599522566
 GameObject:
   m_ObjectHideFlags: 0
@@ -20345,7 +20706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 644050986}
   m_Layer: 5
-  m_Name: Experience
+  m_Name: ScoreForAllTime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21935,6 +22296,7 @@ GameObject:
   - component: {fileID: 706930536}
   - component: {fileID: 706930538}
   - component: {fileID: 706930537}
+  - component: {fileID: 706930539}
   m_Layer: 5
   m_Name: Icon4
   m_TagString: Untagged
@@ -21999,6 +22361,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 706930535}
   m_CullTransparentMesh: 1
+--- !u!114 &706930539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 706930535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UIEffect::Coffee.UIEffects.UIShiny
+  m_EffectFactor: 0.503
+  m_Width: 0.15
+  m_Rotation: 135
+  m_Softness: 0.5
+  m_Brightness: 0.07
+  m_Gloss: 0.8
+  m_EffectArea: 0
+  m_Player:
+    play: 1
+    initialPlayDelay: 2
+    duration: 2
+    loop: 1
+    loopDelay: 2
+    updateMode: 0
 --- !u!114 &707548608 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5685609169262294686, guid: 9b1b75829284c374797139f1c9c466b3, type: 3}
@@ -24236,6 +24624,7 @@ GameObject:
   - component: {fileID: 797631090}
   - component: {fileID: 797631092}
   - component: {fileID: 797631091}
+  - component: {fileID: 797631093}
   m_Layer: 5
   m_Name: Icon2
   m_TagString: Untagged
@@ -24300,6 +24689,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797631089}
   m_CullTransparentMesh: 1
+--- !u!114 &797631093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797631089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UIEffect::Coffee.UIEffects.UIShiny
+  m_EffectFactor: 0.503
+  m_Width: 0.15
+  m_Rotation: 135
+  m_Softness: 0.5
+  m_Brightness: 0.07
+  m_Gloss: 0.8
+  m_EffectArea: 0
+  m_Player:
+    play: 1
+    initialPlayDelay: 2
+    duration: 2
+    loop: 1
+    loopDelay: 2
+    updateMode: 0
 --- !u!1 &801368458
 GameObject:
   m_ObjectHideFlags: 0
@@ -24568,6 +24983,7 @@ GameObject:
   - component: {fileID: 812153438}
   - component: {fileID: 812153440}
   - component: {fileID: 812153439}
+  - component: {fileID: 812153441}
   m_Layer: 5
   m_Name: Icon1
   m_TagString: Untagged
@@ -24632,6 +25048,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 812153437}
   m_CullTransparentMesh: 1
+--- !u!114 &812153441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812153437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UIEffect::Coffee.UIEffects.UIShiny
+  m_EffectFactor: 0.503
+  m_Width: 0.15
+  m_Rotation: 135
+  m_Softness: 0.5
+  m_Brightness: 0.07
+  m_Gloss: 0.8
+  m_EffectArea: 0
+  m_Player:
+    play: 1
+    initialPlayDelay: 2
+    duration: 2
+    loop: 1
+    loopDelay: 2
+    updateMode: 0
 --- !u!1 &813088225
 GameObject:
   m_ObjectHideFlags: 0
@@ -24760,6 +25202,7 @@ GameObject:
   - component: {fileID: 816062696}
   - component: {fileID: 816062695}
   - component: {fileID: 816062694}
+  - component: {fileID: 816062697}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -24844,6 +25287,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816062692}
   m_CullTransparentMesh: 0
+--- !u!114 &816062697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816062692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.Localize
+  mTerm: stats_party_fastest
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  AllowParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 374364032}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!1 &822960082
 GameObject:
   m_ObjectHideFlags: 0
@@ -25946,6 +26428,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1401202634}
   - {fileID: 1711460061}
   - {fileID: 410714837}
   - {fileID: 2070835491}
@@ -27976,6 +28459,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 898605412}
   m_CullTransparentMesh: 1
+--- !u!114 &901119135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 2104527437}
 --- !u!1 &902115579
 GameObject:
   m_ObjectHideFlags: 0
@@ -30324,6 +30820,17 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &991711196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5685609168915323478, guid: 9b1b75829284c374797139f1c9c466b3, type: 3}
+  m_PrefabInstance: {fileID: 6999278738763909744}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &992135392
 GameObject:
   m_ObjectHideFlags: 0
@@ -31292,6 +31799,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1249689041945343597, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
   m_PrefabInstance: {fileID: 1019363890}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1020800799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 991711196}
 --- !u!1001 &1022734093
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41521,6 +42041,104 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8499892908290970252, guid: f03ee7d733df6b24db948c28b37413ab, type: 3}
   m_PrefabInstance: {fileID: 8408348911132330996}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1264436524
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1264436525}
+  - component: {fileID: 1264436528}
+  - component: {fileID: 1264436527}
+  - component: {fileID: 1264436526}
+  m_Layer: 5
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1264436525
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264436524}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1868295046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 180, y: 420}
+  m_SizeDelta: {x: 130, y: 130}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1264436526
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264436524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0df507616fdf304fb92193a23ad25f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1264436527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264436524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f9f94659640f6fa4eb520be54b0f04f7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1264436528
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264436524}
+  m_CullTransparentMesh: 1
 --- !u!1 &1267739141
 GameObject:
   m_ObjectHideFlags: 0
@@ -42401,6 +43019,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287665405}
   m_CullTransparentMesh: 1
+--- !u!114 &1288327646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 6010052745400988978}
 --- !u!1 &1288915387
 GameObject:
   m_ObjectHideFlags: 0
@@ -47714,7 +48345,7 @@ RectTransform:
   m_GameObject: {fileID: 1304271699}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 433127912}
@@ -49649,6 +50280,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362988637}
   m_CullTransparentMesh: 1
+--- !u!114 &1364815282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 1762917270}
 --- !u!1001 &1365564208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50864,6 +51508,104 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392899601}
+  m_CullTransparentMesh: 1
+--- !u!1 &1401202633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1401202634}
+  - component: {fileID: 1401202637}
+  - component: {fileID: 1401202636}
+  - component: {fileID: 1401202635}
+  m_Layer: 5
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1401202634
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401202633}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 843218092}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 60, y: 420}
+  m_SizeDelta: {x: 130, y: 130}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1401202635
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401202633}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0df507616fdf304fb92193a23ad25f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1401202636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401202633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f9f94659640f6fa4eb520be54b0f04f7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1401202637
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1401202633}
   m_CullTransparentMesh: 1
 --- !u!1 &1403505303
 GameObject:
@@ -52191,6 +52933,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436226787}
   m_CullTransparentMesh: 1
+--- !u!114 &1439749401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 2046463996}
 --- !u!224 &1444738890 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 359527351032352868, guid: 6c8abf02761f889478b83d8610a260c7, type: 3}
@@ -54427,6 +55182,7 @@ GameObject:
   - component: {fileID: 1507757464}
   - component: {fileID: 1507757463}
   - component: {fileID: 1507757462}
+  - component: {fileID: 1507757465}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -54510,6 +55266,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507757460}
   m_CullTransparentMesh: 0
+--- !u!114 &1507757465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507757460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.Localize
+  mTerm: stats_percent_wins
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  AllowParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 433123926}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!1 &1508486982
 GameObject:
   m_ObjectHideFlags: 0
@@ -58131,6 +58926,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1634792971 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5685609168915323478, guid: 9b1b75829284c374797139f1c9c466b3, type: 3}
+  m_PrefabInstance: {fileID: 8670447766629791780}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1638657073
 GameObject:
   m_ObjectHideFlags: 0
@@ -58225,6 +59031,30 @@ MonoBehaviour:
   m_EffectColor: {r: 0.00277896, g: 0.13746631, b: 0.011570157, a: 0.5}
   m_EffectDistance: {x: 2, y: -2}
   m_UseGraphicAlpha: 1
+--- !u!114 &1647985477 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5685609168915323478, guid: 9b1b75829284c374797139f1c9c466b3, type: 3}
+  m_PrefabInstance: {fileID: 6999278738774519152}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1649805923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 1718718334}
 --- !u!1 &1651271583
 GameObject:
   m_ObjectHideFlags: 0
@@ -59886,6 +60716,7 @@ GameObject:
   - component: {fileID: 1711460061}
   - component: {fileID: 1711460063}
   - component: {fileID: 1711460062}
+  - component: {fileID: 1711460064}
   m_Layer: 5
   m_Name: Icon3
   m_TagString: Untagged
@@ -59950,6 +60781,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711460060}
   m_CullTransparentMesh: 1
+--- !u!114 &1711460064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711460060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b7e2285c104f6ca47d583f3e5444f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UIEffect::Coffee.UIEffects.UIShiny
+  m_EffectFactor: 0.503
+  m_Width: 0.15
+  m_Rotation: 135
+  m_Softness: 0.5
+  m_Brightness: 0.07
+  m_Gloss: 0.8
+  m_EffectArea: 0
+  m_Player:
+    play: 1
+    initialPlayDelay: 2
+    duration: 2
+    loop: 1
+    loopDelay: 2
+    updateMode: 0
 --- !u!114 &1712047057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60050,6 +60907,7 @@ GameObject:
   - component: {fileID: 1718718335}
   - component: {fileID: 1718718334}
   - component: {fileID: 1718718333}
+  - component: {fileID: 1718718336}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -60133,6 +60991,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718718331}
   m_CullTransparentMesh: 0
+--- !u!114 &1718718336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718718331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.Localize
+  mTerm: stats_coins
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  AllowParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 1649805923}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!1001 &1719024737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -60908,7 +61805,7 @@ RectTransform:
   m_GameObject: {fileID: 1755704786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 433127912}
@@ -61031,6 +61928,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1758826694}
   m_CullTransparentMesh: 1
+--- !u!114 &1760736063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 110533721}
 --- !u!1 &1762917267
 GameObject:
   m_ObjectHideFlags: 0
@@ -61043,6 +61953,7 @@ GameObject:
   - component: {fileID: 1762917271}
   - component: {fileID: 1762917270}
   - component: {fileID: 1762917269}
+  - component: {fileID: 1762917272}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -61126,6 +62037,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762917267}
   m_CullTransparentMesh: 0
+--- !u!114 &1762917272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762917267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.Localize
+  mTerm: stats_party_longest
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  AllowParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 1364815282}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!1 &1762956762
 GameObject:
   m_ObjectHideFlags: 0
@@ -62396,6 +63346,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &1829752502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 7287842420444176072}
 --- !u!1 &1831773767
 GameObject:
   m_ObjectHideFlags: 0
@@ -63507,6 +64470,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1264436525}
   - {fileID: 706930536}
   - {fileID: 1735626588}
   - {fileID: 1614165743}
@@ -64062,6 +65026,19 @@ RectTransform:
   m_AnchoredPosition: {x: -140, y: 360.00006}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1886546702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 283927039}
 --- !u!114 &1886875292 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8703446553506726337, guid: f03ee7d733df6b24db948c28b37413ab, type: 3}
@@ -64374,6 +65351,104 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e57d0b079c885aa4086cbf3ece045099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1899898686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1899898687}
+  - component: {fileID: 1899898690}
+  - component: {fileID: 1899898689}
+  - component: {fileID: 1899898688}
+  m_Layer: 5
+  m_Name: Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1899898687
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899898686}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 183045843}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -60, y: 408.5}
+  m_SizeDelta: {x: 130, y: 130}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1899898688
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899898686}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a0df507616fdf304fb92193a23ad25f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1899898689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899898686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f9f94659640f6fa4eb520be54b0f04f7, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1899898690
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1899898686}
+  m_CullTransparentMesh: 1
 --- !u!1 &1901900173
 GameObject:
   m_ObjectHideFlags: 0
@@ -64624,6 +65699,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
   mTarget: {fileID: 1545063826}
+--- !u!114 &1918657595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 2053267544}
 --- !u!1001 &1923101884
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64913,6 +66001,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6783268784728270903, guid: 1d7027b258485214eb521de58446f93e, type: 3}
   m_PrefabInstance: {fileID: 8408348911338792452}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1933232046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 597492280}
 --- !u!1 &1933829125
 GameObject:
   m_ObjectHideFlags: 0
@@ -67912,6 +69013,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6783268784728270903, guid: 1d7027b258485214eb521de58446f93e, type: 3}
   m_PrefabInstance: {fileID: 8408348913064548146}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2046463996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5685609168915323478, guid: 9b1b75829284c374797139f1c9c466b3, type: 3}
+  m_PrefabInstance: {fileID: 6999278737284959111}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2050955729 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1111073677840225506, guid: 1d7027b258485214eb521de58446f93e, type: 3}
@@ -67940,6 +69052,7 @@ GameObject:
   - component: {fileID: 2053267545}
   - component: {fileID: 2053267544}
   - component: {fileID: 2053267543}
+  - component: {fileID: 2053267546}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -68023,6 +69136,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053267541}
   m_CullTransparentMesh: 0
+--- !u!114 &2053267546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053267541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.Localize
+  mTerm: stats_losts
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  TermPrefix: 
+  TermSuffix: 
+  LocalizeOnAwake: 1
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  IgnoreNumbersInRTL: 1
+  CorrectAlignmentForRTL: 1
+  AddSpacesToJoinedLanguages: 0
+  AllowLocalizedParameters: 1
+  AllowParameters: 1
+  TranslatedObjects: []
+  LocalizeEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  AlwaysForceLocalize: 0
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
+  mGUI_ShowReferences: 0
+  mGUI_ShowTems: 1
+  mGUI_ShowCallback: 0
+  mLocalizeTarget: {fileID: 1918657595}
+  mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!114 &2055418258 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1111073677840225506, guid: 1d7027b258485214eb521de58446f93e, type: 3}
@@ -69323,6 +70475,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2077074090}
   m_CullTransparentMesh: 1
+--- !u!114 &2081031670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::I2.Loc.LocalizeTarget_UnityUI_Text
+  mTarget: {fileID: 163971454}
 --- !u!224 &2086304277 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6783268784728270903, guid: 1d7027b258485214eb521de58446f93e, type: 3}
@@ -69688,6 +70853,17 @@ RectTransform:
   m_AnchoredPosition: {x: 120, y: -195}
   m_SizeDelta: {x: 240, y: 12}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2104527437 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5685609168915323478, guid: 9b1b75829284c374797139f1c9c466b3, type: 3}
+  m_PrefabInstance: {fileID: 6999278739082993441}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2107146264
 GameObject:
   m_ObjectHideFlags: 0
@@ -70801,7 +71977,7 @@ MonoBehaviour:
   mGUI_ShowReferences: 0
   mGUI_ShowTems: 1
   mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 0}
+  mLocalizeTarget: {fileID: 499058263}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!114 &201414921501375992
 MonoBehaviour:
@@ -71318,18 +72494,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SimpleSolitaire.Controller.KlondikeGameManager,
           Assembly-CSharp
         m_MethodName: OnClickSettingBtn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: SetSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -72180,7 +73344,7 @@ MonoBehaviour:
   mGUI_ShowReferences: 0
   mGUI_ShowTems: 1
   mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 0}
+  mLocalizeTarget: {fileID: 1829752502}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!114 &1170085551235282262
 MonoBehaviour:
@@ -80868,7 +82032,7 @@ MonoBehaviour:
   mGUI_ShowReferences: 0
   mGUI_ShowTems: 1
   mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 0}
+  mLocalizeTarget: {fileID: 152374847}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!1 &4320707103833101247
 GameObject:
@@ -83143,7 +84307,7 @@ MonoBehaviour:
   mGUI_ShowReferences: 0
   mGUI_ShowTems: 1
   mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 0}
+  mLocalizeTarget: {fileID: 320401532}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!95 &5329156592763454184
 Animator:
@@ -83801,7 +84965,7 @@ MonoBehaviour:
   mGUI_ShowReferences: 0
   mGUI_ShowTems: 1
   mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 0}
+  mLocalizeTarget: {fileID: 248906024}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!222 &5631089570105135300
 CanvasRenderer:
@@ -86105,7 +87269,7 @@ MonoBehaviour:
   mGUI_ShowReferences: 0
   mGUI_ShowTems: 1
   mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 0}
+  mLocalizeTarget: {fileID: 403030827}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!114 &6117105641743785444
 MonoBehaviour:
@@ -88714,7 +89878,7 @@ MonoBehaviour:
   mGUI_ShowReferences: 0
   mGUI_ShowTems: 1
   mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 0}
+  mLocalizeTarget: {fileID: 1288327646}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!114 &7364162914771931534
 MonoBehaviour:
@@ -89372,7 +90536,7 @@ MonoBehaviour:
   mGUI_ShowReferences: 0
   mGUI_ShowTems: 1
   mGUI_ShowCallback: 0
-  mLocalizeTarget: {fileID: 0}
+  mLocalizeTarget: {fileID: 523452821}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
 --- !u!114 &8068199905263235577
 MonoBehaviour:

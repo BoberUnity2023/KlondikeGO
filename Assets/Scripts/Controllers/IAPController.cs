@@ -46,6 +46,11 @@ namespace BloomLines.Controllers
             var gameState = SaveManager.GameState;
 
 #if UNITY_EDITOR
+            if (gameState.Purchased == null)
+            {
+                Debug.LogWarning("gameState.Purchased == null");
+                return false;
+            }
             return gameState.Purchased.Contains(id);
 #endif
 
