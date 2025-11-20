@@ -23,12 +23,12 @@ namespace BloomLines.Controllers
 
         private /*async*/ void Start()
         {
-            Debug.Log("GamePush initing...");
+            //Debug.Log("GamePush initing...");
             //var audioMixer = Resources.Load<AudioMixer>("AudioMixer");
             //audioMixer.SetFloat("MusicVolume", -80f);
             //audioMixer.SetFloat("SoundVolume", -80f);
             AnalyticsController.SendEvent("applicaton_start");
-            Debug.Log("GamePush initing...(1)");
+            //Debug.Log("GamePush initing...(1)");
 
 //#if GAME_PUSH
 //            await GP_Init.Ready;

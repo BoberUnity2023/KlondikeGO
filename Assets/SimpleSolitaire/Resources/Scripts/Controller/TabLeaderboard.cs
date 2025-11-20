@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using BloomLines.Helpers;
 
 [System.Serializable]
 public class LeaderboardFetchData
@@ -24,13 +25,21 @@ public class TabLeaderboard : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private Text _experienceIndicator;
-    [SerializeField] private LBPlayer _lBPlayer;
-    [SerializeField] private LBPlayer[] _lBPlayers; 
+    [SerializeField] private LBPlayer _thisPlayer;
+    [SerializeField] private GameObject _loadingScreen;
+    [SerializeField] private LBPlayer[] _lBPlayers;
+    //[SerializeField] private Transform _itemsParent;
+    //[SerializeField] private UILeaderboardItem _itemPrefab;
+    private long _lastUpdateTimestamp;
 
     public int Rank { get; set; }
 
     private void OnEnable()
     {
+        var currentTimestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+        if (Mathf.Abs(currentTimestamp - _lastUpdateTimestamp) < 60f)
+            return;
+
 #if GAME_PUSH
         if (GP_Init.isReady)
         {
@@ -39,9 +48,27 @@ public class TabLeaderboard : MonoBehaviour
             Debug.Log("GP_LB Fetching...");
             _gameManager.GamePush.FetchLeaderboard();
             _gameManager.GamePush.FetchPlayerRating();
+            _loadingScreen.SetActive(true);
         }
         else
             Debug.Log("GP_LB is not ready");
+#if UNITY_EDITOR
+        for (int i = 0; i < 50; i++)
+        {
+            string playerName = "Player " + (i + 1).ToString();
+            string playerScore = FormatNumbers.Format(100 + (50 - i) * 150); 
+            string playerRank = (i + 1).ToString();
+            string playerAvatar = "https://games.pikabu.ru/static/0/images/def_avatar/games.png";
+
+            if (i < _lBPlayers.Length)
+            {
+                _lBPlayers[i].Set(playerName, playerScore, playerRank, playerAvatar);
+            }
+        }
+
+        _thisPlayer.Set("Begemot", FormatNumbers.Format(5278000), "10", "https://games.pikabu.ru/static/0/images/def_avatar/games.png");
+        _loadingScreen.SetActive(false);
+#endif
 #endif
     }
 
@@ -51,7 +78,8 @@ public class TabLeaderboard : MonoBehaviour
 #if GAME_PUSH
     public void OnFetchSuccess(string fetchTag, GP_Data data)
     {
-        Debug.Log("LEADERBOARD: OnFetchLBPlayers Success()");             
+        Debug.Log("LEADERBOARD: OnFetchLBPlayers Success()");
+        _loadingScreen.SetActive(false);
         SetPlayers(data);
     }
 
@@ -60,12 +88,12 @@ public class TabLeaderboard : MonoBehaviour
         Debug.Log("LEADERBOARD: OnFetchPlayerRating Success() " + fetchTag + " PLAYER POSITION: " + position);
         Rank = position;
         string playerName = GP_Player.GetName();
-        string score = GP_Player.GetScore().ToString();
-        string scoreForAllGames = PlayerPrefs.GetInt("Experience").ToString();        
+        string score = FormatNumbers.Format(GP_Player.GetScore());
+        //string scoreForAllGames = PlayerPrefs.GetInt("Experience").ToString();        
         string avatarUrl = GP_Player.GetAvatarUrl();
         string rank = position.ToString();
-        if (_lBPlayer != null)
-            _lBPlayer.Set(playerName, score, rank, avatarUrl);   
+        if (_thisPlayer != null)
+            _thisPlayer.Set(playerName, score, rank, avatarUrl);   
         else
             Debug.Log("GP. ThisPlayer == null");
     }
@@ -93,9 +121,7 @@ public class TabLeaderboard : MonoBehaviour
             Debug.Log("PLAYER.SCORE: " + playerScore);
             Debug.Log("PLAYER.NAME: " + playerName);
             Debug.Log("PLAYER.POSITION: " + playerRank);
-            //Debug.Log("PLAYER.GOLD: " + players[i].gold);
-            //Debug.Log("PLAYER.LEVEL: " + players[i].level);
-            //Debug.Log("PLAYER.AVATAR: " + players[i].avatar);
+
             try
             {
                 if (i < _lBPlayers.Length)

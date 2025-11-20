@@ -139,7 +139,7 @@ public class CustomBuildConfigurator : IPreprocessBuildWithReport, IPostprocessB
                     "Storage_yg;Localization_yg;Leaderboards_yg;" +
                     "Payments_yg;OpenURL_yg;Review_yg;RU_YG2;NJSON_YG2";
             case BuildPlatform.VK:
-                return "VK";
+                return "VK;GAME_PUSH";
             case BuildPlatform.OK:
                 return "OK;GAME_PUSH";
             case BuildPlatform.RuStore:

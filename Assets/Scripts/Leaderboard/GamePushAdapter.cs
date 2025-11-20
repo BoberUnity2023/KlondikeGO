@@ -31,7 +31,7 @@ namespace BloomLines.Leaderboard
             Debug.Log("GamePush GetLeaderboard");
 
             _onComplete = onComplete;
-            GP_Leaderboard.Fetch("25182", "score", Order.DESC, 50, 0, WithMe.none, "score");
+            GP_Leaderboard.Fetch("27002", "score", Order.DESC, 50, 0, WithMe.none, "score");
         }
 
         public void SetScore(int score)

@@ -32,59 +32,63 @@ public class EveryDayBonus : MonoBehaviour
     private IEnumerator Show(float time)
     {
         yield return new WaitForSeconds(time);
-
-        if (HasLastVisit)
-        {
-            int currentTime = (int)(DateTime.UtcNow - new DateTime(2024, 1, 1)).TotalSeconds;
-            int _lastVisitTime = ConvertLastVisitTime();
-            bool lastVisitToday = currentTime - DateTime.Now.Hour * 3600 - DateTime.Now.Minute * 60 - DateTime.Now.Second < _lastVisitTime;
-            bool lastVisitYesterday = !lastVisitToday && currentTime - DateTime.Now.Hour * 3600 - DateTime.Now.Minute * 60 - DateTime.Now.Second - 24 * 3600 < _lastVisitTime;
-
-            if (lastVisitToday)
-            {
-                Debug.LogWarning("Прошлый визит: Cегодня ");
-                everyday = Mathf.Min(PlayerPrefs.GetInt("EveryDayVisits"), 5);//PlayerPrefs.GetInt("EDB_Evereday");
-                GameAnalytics.NewDesignEvent("LastVisit: Today");
-            }
-            if (lastVisitYesterday)
-            {
-                Debug.LogWarning("Прошлый визит: Bчера ");
-                everyday = Mathf.Min(PlayerPrefs.GetInt("EveryDayVisits") + 1, 5);// PlayerPrefs.GetInt("EDB_Evereday") + 1;
-                PlayerPrefs.SetInt("EveryDayVisits", everyday);
-                PlayerPrefs.Save();
-                //YandexGame.SaveProgress();                
-                _gameManager.ShowEveryDayBonusWindow();
-                SetDayWindow(everyday);
-                _gameManager.LastVisitNoToday();
-                GameAnalytics.NewDesignEvent("LastVisit: Yesterday");                
-            }
-
-            if (!lastVisitToday && !lastVisitYesterday)
-            {
-                Debug.LogWarning("Прошлый визит: Давнее чем вчера");                
-                PlayerPrefs.SetInt("EveryDayVisits", 0);
-                PlayerPrefs.Save();
-                //YandexGame.savesData.EveryDayVisits = 0;
-                //YandexGame.SaveProgress();
-                _gameManager.ShowEveryDayBonusWindow();
-                SetDayWindow(everyday);                
-                _gameManager.LastVisitNoToday();
-                GameAnalytics.NewDesignEvent("LastVisit: A few das ago");
-            }
-        }
+        if (IsOtherLayerActive)
+            StartCoroutine(TryShow(3f)); 
         else
         {
-            Debug.LogWarning("Прошлый визит: Hе найдено");
-            _gameManager.ShowEveryDayBonusWindow();            
-            SetDayWindow(everyday);
-            GameAnalytics.NewDesignEvent("LastVisit: It is First");
+            if (HasLastVisit)
+            {
+                int currentTime = (int)(DateTime.UtcNow - new DateTime(2024, 1, 1)).TotalSeconds;
+                int _lastVisitTime = ConvertLastVisitTime();
+                bool lastVisitToday = currentTime - DateTime.Now.Hour * 3600 - DateTime.Now.Minute * 60 - DateTime.Now.Second < _lastVisitTime;
+                bool lastVisitYesterday = !lastVisitToday && currentTime - DateTime.Now.Hour * 3600 - DateTime.Now.Minute * 60 - DateTime.Now.Second - 24 * 3600 < _lastVisitTime;
+
+                if (lastVisitToday)
+                {
+                    Debug.LogWarning("Прошлый визит: Cегодня ");
+                    everyday = Mathf.Min(PlayerPrefs.GetInt("EveryDayVisits"), 5);//PlayerPrefs.GetInt("EDB_Evereday");
+                    GameAnalytics.NewDesignEvent("LastVisit: Today");
+                }
+                if (lastVisitYesterday)
+                {
+                    Debug.LogWarning("Прошлый визит: Bчера ");
+                    everyday = Mathf.Min(PlayerPrefs.GetInt("EveryDayVisits") + 1, 5);// PlayerPrefs.GetInt("EDB_Evereday") + 1;
+                    PlayerPrefs.SetInt("EveryDayVisits", everyday);
+                    PlayerPrefs.Save();
+                    //YandexGame.SaveProgress();                
+                    _gameManager.ShowEveryDayBonusWindow();
+                    SetDayWindow(everyday);
+                    _gameManager.LastVisitNoToday();
+                    GameAnalytics.NewDesignEvent("LastVisit: Yesterday");
+                }
+
+                if (!lastVisitToday && !lastVisitYesterday)
+                {
+                    Debug.LogWarning("Прошлый визит: Давнее чем вчера");
+                    PlayerPrefs.SetInt("EveryDayVisits", 0);
+                    PlayerPrefs.Save();
+                    //YandexGame.savesData.EveryDayVisits = 0;
+                    //YandexGame.SaveProgress();
+                    _gameManager.ShowEveryDayBonusWindow();
+                    SetDayWindow(everyday);
+                    _gameManager.LastVisitNoToday();
+                    GameAnalytics.NewDesignEvent("LastVisit: A few das ago");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Прошлый визит: Hе найдено");
+                _gameManager.ShowEveryDayBonusWindow();
+                SetDayWindow(everyday);
+                GameAnalytics.NewDesignEvent("LastVisit: It is First");
+            }
+            int lastVisitTime = (int)(DateTime.UtcNow - new DateTime(2024, 1, 1)).TotalSeconds;
+            //PlayerPrefs.SetString("EDB_LastVisit", lastVisitTime.ToString());//Повесить на выход !!!!!!!!!!!!!!!!!!!
+            PlayerPrefs.SetString("LastVisitTime", lastVisitTime.ToString());
+            PlayerPrefs.Save();
+            //YandexGame.savesData.LastVisitTime = lastVisitTime.ToString();
+            //YandexGame.SaveProgress();
         }
-        int lastVisitTime = (int)(DateTime.UtcNow - new DateTime(2024, 1, 1)).TotalSeconds;
-        //PlayerPrefs.SetString("EDB_LastVisit", lastVisitTime.ToString());//Повесить на выход !!!!!!!!!!!!!!!!!!!
-        PlayerPrefs.SetString("LastVisitTime", lastVisitTime.ToString());
-        PlayerPrefs.Save();
-        //YandexGame.savesData.LastVisitTime = lastVisitTime.ToString();
-        //YandexGame.SaveProgress();
     }
 
     private bool HasLastVisit

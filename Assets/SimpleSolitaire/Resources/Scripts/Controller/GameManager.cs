@@ -1370,8 +1370,10 @@ namespace SimpleSolitaire.Controller
         {
             Gold += 100;
             int scoreForAllGames = PlayerPrefs.GetInt("Experience");
-            GP_Player.SetScore(Gold + scoreForAllGames);//TODO: Temp
-            GP_Player.Sync(SyncStorageType.cloud);
+//#if GAME_PUSH
+            //GamePush.GP_Player.SetScore(Gold + scoreForAllGames);//TODO: Temp
+            //GamePush.GP_Player.Sync(SyncStorageType.cloud);
+//#endif
         }
 
         public void PressClearPrefs()

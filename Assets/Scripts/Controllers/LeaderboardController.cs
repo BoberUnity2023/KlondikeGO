@@ -31,7 +31,7 @@ namespace BloomLines.Controllers
     {
         private static ILeaderboardAdapter _adapter; // Адаптер лидерборда
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()
         {
 #if UNITY_EDITOR

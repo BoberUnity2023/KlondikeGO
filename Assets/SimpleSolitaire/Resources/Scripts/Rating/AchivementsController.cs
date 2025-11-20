@@ -6,6 +6,7 @@ public class AchivementsController: MonoBehaviour
 {
     [SerializeField] private GameManager _hub;
     [SerializeField] private WindowAchivementInfo _windowInfo;
+    [SerializeField] private GameObject _windowInfoBgBlocker;
     [SerializeField] private AchivementBase[] _achivements;
 
     public int CompletedAchivements
@@ -28,6 +29,7 @@ public class AchivementsController: MonoBehaviour
     public void PressInfo(int id)
     {
         _windowInfo.gameObject.SetActive(true);
+        _windowInfoBgBlocker.SetActive(true);
         _hub.AppearWindow(_windowInfo.gameObject);        
         _windowInfo.SetTitle(_achivements[id].TitleKey);        
         _windowInfo.SetDescription(_achivements[id].DescriptionKey);
@@ -41,6 +43,7 @@ public class AchivementsController: MonoBehaviour
         void OnDissapear()
         {
             _windowInfo.gameObject.SetActive(false);
+            _windowInfoBgBlocker.SetActive(false);
         }
     }
 

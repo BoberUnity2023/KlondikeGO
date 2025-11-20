@@ -152,10 +152,10 @@ public class GamePushController : MonoBehaviour
         {
             GamePushController[] _gPCs = FindObjectsByType<GamePushController>(FindObjectsSortMode.None);
 
-            GP_Init[] _GP_Inits = FindObjectsByType<GP_Init>(FindObjectsSortMode.None);
+            //GP_Init[] _GP_Inits = FindObjectsByType<GP_Init>(FindObjectsSortMode.None);
 
-            if (_GP_Inits.Length > 1)
-                Debug.LogError("_GP_Inits.Length > 1");
+            //if (_GP_Inits.Length > 1)
+            //    Debug.LogError("_GP_Inits.Length > 1");
 
             if (_gPCs.Length > 1)
                 return false;
