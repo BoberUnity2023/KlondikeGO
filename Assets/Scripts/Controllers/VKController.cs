@@ -55,21 +55,10 @@ namespace BloomLines.Controllers
             SaveLoaded = true;
         }
 
-//        public void VKWebAppStorageSet(string key, string value)
-//        {
-//#if !UNITY_EDITOR
-//                _VKWebAppStorageSet(key, value);
-//#endif
-//        }
-
-//        public void VKWebAppStorageGet(string key, UnityAction<string> action)
-//        {
-//#if !UNITY_EDITOR
-//                 TODO : Вместо стринга сделать отдельную структуру, в которой будет отслеживаться ошибка
-//                _actionStorageGet = action;
-//                _VKWebAppStorageGet(key);
-//#endif
-//        }
+        public static void InvieFriend()
+        {
+            Application.ExternalCall("VKWebAppShowInviteBox");
+        }
     }
 }
 #endif

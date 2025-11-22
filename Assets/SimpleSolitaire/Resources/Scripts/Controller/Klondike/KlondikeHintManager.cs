@@ -146,8 +146,9 @@ namespace SimpleSolitaire.Controller
                 }
             }
 
-            ActivateHintButton(IsHasAutoCompleteHint()/*IsHasHint()*/);
+            ActivateHintButton(IsHasAutoCompleteHint());
             ActivateAutoCompleteHintButton(IsHasAutoCompleteHint());
-        }
+            _magicWand.SetState();
+        }        
     }
 }

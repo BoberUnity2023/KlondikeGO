@@ -11,6 +11,8 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
+using BloomLines.Controllers;
+using BloomLines;
 //using YG;
 
 namespace SimpleSolitaire.Controller
@@ -66,20 +68,14 @@ namespace SimpleSolitaire.Controller
         public string GetUndoAdsInfoText = "DO YOU WANNA TO GET FREE UNDO COUNTS? JUST WATCH REWARD VIDEO AND INSTALL APP. THEN UNDO WILL ADDED TO YOUR GAME SESSION!";
 
         [Header("Components:")]
-        [SerializeField]
-        protected CardLogic _cardLogic;
-        [SerializeField]        
-        private KlondikeCardLogic _klondikeCardLogic;
-        [SerializeField]
-        private InterVideoAds _interVideoAdsComponent;
-        [SerializeField]
-        private CongratulationManager _congratManagerComponent;
-        [SerializeField]
-        protected UndoPerformer _undoPerformComponent;
-        [SerializeField]
-        private TutorialManager _tutorialComponent;
-        [SerializeField]
-        private AutoCompleteManager _autoCompleteComponent;
+        [SerializeField] protected CardLogic _cardLogic;
+        [SerializeField] private KlondikeCardLogic _klondikeCardLogic;
+        [SerializeField] private MagicWand _magicWand;
+        [SerializeField] private InterVideoAds _interVideoAdsComponent;
+        [SerializeField] private CongratulationManager _congratManagerComponent;
+        [SerializeField] protected UndoPerformer _undoPerformComponent;
+        [SerializeField] private TutorialManager _tutorialComponent;
+        [SerializeField] private AutoCompleteManager _autoCompleteComponent;
         //[SerializeField]
         //public LeaderboardYG _leaderboardYG;
         [SerializeField]
@@ -127,6 +123,8 @@ namespace SimpleSolitaire.Controller
         private GameObject _clickBlockerPanels;
         [SerializeField]
         private GameObject _everyDayBonusWindow;
+        [SerializeField]
+        private GameObject _inviteFriendButton;
 
         public Text DebugLayer;
 
@@ -266,6 +264,9 @@ namespace SimpleSolitaire.Controller
         private void Awake()
         {            
             InitializeGame();
+#if VK
+            _inviteFriendButton.SetActive(true);
+#endif
         }
 
         /// <summary>
@@ -721,7 +722,8 @@ namespace SimpleSolitaire.Controller
 
         public void OnClickTryRestartBtn()
         {
-            _restartWindow.SetActive(true);            
+            _restartWindow.SetActive(true); 
+            _backgroundBlocker.SetActive(true);
             AppearWindow(_restartWindow);
         }
 
@@ -735,7 +737,8 @@ namespace SimpleSolitaire.Controller
             }
             StartCoroutine(InvokeAction(delegate
             {
-                _restartWindow.SetActive(false);                
+                _restartWindow.SetActive(false);
+                _backgroundBlocker.SetActive(false);
             }, 0.42f));
         }
 
@@ -756,6 +759,19 @@ namespace SimpleSolitaire.Controller
             {
                 _everyDayBonusWindow.SetActive(false);
             }, 0.42f));
+        }
+
+        public void OnClickMagicWand()
+        {
+            Debug.Log("Click MagicWand");            
+            _magicWand.OnClickButton();
+        }
+
+        public void OnClickInviteBtn()
+        {
+#if VK
+            VKController.InvieFriend();
+#endif
         }
 
         protected abstract void InitCardLogic();

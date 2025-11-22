@@ -196,13 +196,7 @@ namespace SimpleSolitaire.Controller
             }
 
             IndexZ = transform.GetSiblingIndex();
-            List<Card> cardsToTop = _deck.SetCardsToTop(this);
-            //Debug.Log("cardsToTop: " + cardsToTop.Count);
-            //foreach (var item in cardsToTop)
-            //{
-            //    Debug.Log("Card Name: " + item.gameObject.name);
-            //}
-            //Card card = GetComponent<Card>();
+            List<Card> cardsToTop = _deck.SetCardsToTop(this);                     
 
             if (IsDraggable)
             {

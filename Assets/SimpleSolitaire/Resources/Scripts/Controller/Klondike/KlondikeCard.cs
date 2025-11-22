@@ -36,6 +36,7 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         protected override void OnTapToPlace()
         {
+            Debug.Log("OnTapToPlace");
             CardLogicComponent.HintManagerComponent.HintAndSetByClick(this);
         }
     }
