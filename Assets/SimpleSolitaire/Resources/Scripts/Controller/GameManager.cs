@@ -284,7 +284,7 @@ namespace SimpleSolitaire.Controller
             Stats.PlayedGames++;    
             _cardLogic.SubscribeEvents();
             _audioController = AudioController.Instance;
-            _goldLabel.text = Gold.ToString();             
+            _goldLabel.text = Gold.ToString();            
         }
 
         public void LoadGold()
@@ -1161,6 +1161,7 @@ namespace SimpleSolitaire.Controller
                 _undoPerformComponent.ResetUndoStates();
                 _adsController.TryShowInterstitial();
                 OnGameStart?.Invoke();
+                _magicWand.StartParty();
             }
         }
 
@@ -1202,6 +1203,7 @@ namespace SimpleSolitaire.Controller
                 //StartCoroutine(AfterStartEffectPlayed(2.5f));
                 _undoPerformComponent.ResetUndoStates();
                 _adsController.TryShowInterstitial();
+                _magicWand.StartParty();
                 OnGameStart?.Invoke();
             }
         }

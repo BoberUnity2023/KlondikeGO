@@ -14333,6 +14333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 411655882}
+  _hintManager: {fileID: 418428742}
   CorrectlyDeck: {fileID: 224060133031795439}
   DraggableColor: {r: 0, g: 0, b: 0, a: 0}
   NondraggableColor: {r: 0, g: 0, b: 0, a: 0}
@@ -14852,7 +14853,7 @@ MonoBehaviour:
   _settingLayer: {fileID: 4051539491164553554}
   _visualLayer: {fileID: 1637608727776779715}
   _shopLayer: {fileID: 423820539}
-  _statisticLayer: {fileID: 0}
+  _statisticLayer: {fileID: 4970099318758514196}
   _exitLayer: {fileID: 839053057}
   _continueLayer: {fileID: 316940913}
   _tutorialLayer: {fileID: 6019354732395404761}
@@ -42656,11 +42657,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BloomLines.MagicWind
   _klondikeCardLogic: {fileID: 404369808}
+  _hintManager: {fileID: 418428742}
+  _audioController: {fileID: 321646398}
   _buttonField: {fileID: 487970279}
   _buttonImage: {fileID: 1250912486}
   _spriteActive: {fileID: -8682151096819355035, guid: 95affeb729cc1af4291e6a763c4b9f42, type: 3}
   _spriteInActive: {fileID: 7416736895462744823, guid: 27bf45e59ca223944900238b3addc92b, type: 3}
   _stars: {fileID: 805164671}
+  _counterIndicator: {fileID: 978354667}
+  _imageCounter: {fileID: 1751137874}
+  _spriteCounterActive: {fileID: 4277053978717149925, guid: 4d626228892ae6745af98ef64757de63, type: 3}
+  _spriteCounterInActive: {fileID: 5916627220055516496, guid: dba2879301004b74687d0cad3b2afe70, type: 3}
 --- !u!1 &1159383273
 GameObject:
   m_ObjectHideFlags: 0
@@ -71495,7 +71502,7 @@ GameObject:
   - component: {fileID: 1751137875}
   - component: {fileID: 1751137874}
   m_Layer: 5
-  m_Name: HintCircle
+  m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95240,6 +95247,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6924054530189970629}
   m_CullTransparentMesh: 1
+--- !u!1 &4970099318758514196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4970099317365651087, guid: 2dbe3a8900eea364fa1e39abd0305bf8, type: 3}
+  m_PrefabInstance: {fileID: 678251855247688043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4970099318758514197 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4970099317365651086, guid: 2dbe3a8900eea364fa1e39abd0305bf8, type: 3}

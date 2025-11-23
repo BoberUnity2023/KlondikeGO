@@ -23,7 +23,8 @@ namespace SimpleSolitaire.Controller
     public abstract class CardLogic : MonoBehaviour
     {
         protected Vector3[] Corners;
-        [SerializeField] GameManager _gameManager;
+        [SerializeField] private GameManager _gameManager;
+        [SerializeField] private HintManager _hintManager;
         [SerializeField] protected RectTransform CorrectlyDeck;
         
         public Color DraggableColor;
@@ -91,6 +92,7 @@ namespace SimpleSolitaire.Controller
             //SetHandOrientation();
             UndoPerformerComponent.ResetUndoStates();
             //ParticleStars.Stop();
+            _hintManager.GenerateHints();
         }
 
         public virtual void InitializeSpacesDictionary()

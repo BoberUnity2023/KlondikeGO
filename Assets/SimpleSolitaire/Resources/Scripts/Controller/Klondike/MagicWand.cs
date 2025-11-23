@@ -10,51 +10,96 @@ using UnityEngine.UI;
 namespace BloomLines
 {
     public class MagicWand : MonoBehaviour
-    {
+    {        
         [SerializeField] private KlondikeCardLogic _klondikeCardLogic;
+        [SerializeField] private HintManager _hintManager;
+        [SerializeField] private SimpleSolitaire.Controller.AudioController _audioController;
         [SerializeField] private Transform _buttonField;
         [SerializeField] private Image _buttonImage;
         [SerializeField] private Sprite _spriteActive;
         [SerializeField] private Sprite _spriteInActive;
         [SerializeField] private MagicWangScreenStars _stars;
+        [SerializeField] private Text _counterIndicator;
+        [SerializeField] private Image _imageCounter;
+        [SerializeField] private Sprite _spriteCounterActive;
+        [SerializeField] private Sprite _spriteCounterInActive;
+
         private List<Card> _targetOpenCards = new List<Card>();
         private Card _cardOpen;
         private Card _cardClose;
-        private bool IsProcess = false;
+        private int _count;
+        private bool IsProcess = false;        
 
-        public void SetState()
+        public int Count
         {
-            Debug.Log("MagicWand: SetState()");
-            bool success = FindPair();
-            _buttonImage.sprite = success ? _spriteActive : _spriteInActive;        
+            get { return _count; }
+            set 
+            { 
+                _count = value;
+                _counterIndicator.text = value.ToString();
+                _imageCounter.sprite = _count > 0 ? _spriteCounterActive : _spriteCounterInActive;
+                SetButtonSprite();
+            }
+        }
+
+        public void StartParty()
+        {
+            Count = 3;
+        }
+
+        public void SetButtonSprite()
+        {
+            //Debug.Log("MagicWand: SetButtonSprite()");
+            bool hasClosedCard = AnyCloseCard != null;
+            _buttonImage.sprite = hasClosedCard && Count > 0 ? _spriteActive : _spriteInActive;        
         }
 
         public void OnClickButton()
         {
+            if (Count <= 0)
+            {
+                _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Error);
+                return; 
+            }
+
             if (IsProcess)
             {
                 Debug.Log("MagicWand: IsProcess");
+                _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Error);
                 return;
             }
                 
-            bool success = FindPair();
-            if (success)
+            bool hasPair = FindPair();
+            if (hasPair)
             {
                 Debug.Log("MagicWand: " + "OpenCard: " + _cardOpen.GetTypeName() + _cardOpen.Number);
                 Debug.Log("MagicWand: " + "CloseCard: " + _cardClose.GetTypeName() + _cardClose.Number);
-
+                Count--;
                 StartCoroutine(MagicWindTranslate(_cardClose, _cardOpen, OnComplete));
             }
             else
             { 
-                Debug.Log("MagicWand: card pair no found"); 
+                Card _anyCloseCard = AnyCloseCard;
+                if (_anyCloseCard != null)
+                {
+                    Debug.Log("MagicWand: card move to Pack");
+                    Count--;
+                    StartCoroutine(MagicWindTranslate(_anyCloseCard, null, OnComplete));
+                }
+                else
+                { 
+                    Debug.Log("MagicWand: card pair no found");
+                    _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Error);
+                }
             }
         }
 
-        void OnComplete()
+        private void OnComplete()
         {
             Debug.Log("MagicWand: OnComplete()");
-            SetState();
+            SetButtonSprite();
+            _hintManager.GenerateHints();
+            _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Bonus);
         }
 
         private bool FindPair()
@@ -114,7 +159,7 @@ namespace BloomLines
                     Card card = deck.CardsArray[i];
                     if (card.CardStatus == 0 && 
                         card.Number == targetOpenCard.Number - 1 &&
-                        card.CardColor != targetOpenCard.CardColor &&//Close
+                        card.CardColor != targetOpenCard.CardColor &&
                         card.Deck != targetOpenCard.Deck)
                     { 
                         return card;
@@ -124,19 +169,44 @@ namespace BloomLines
             return null;
         }
 
+        private Card AnyCloseCard
+        {
+            get
+            {
+                for (int d = 4; d < 11; d++)
+                {
+                    Deck deck = _klondikeCardLogic.AllDeckArray[d];
+
+                    for (int i = 0; i < deck.CardsCount; i++)
+                    {
+                        Card card = deck.CardsArray[i];
+                        if (card.CardStatus == 0)
+                        {
+                            return card;
+                        }
+                    }
+                }
+                return null;
+            }
+        }
+
         public IEnumerator MagicWindTranslate(Card cardClose, Card cardOpen, UnityAction onComplete)
         {
+            bool isMoveToPack = cardOpen == null;
             IsProcess = true;
-            cardClose.transform.SetAsLastSibling();
+            cardClose.transform.SetAsLastSibling();//Карта которую двигаем
 
             Vector3 fromPosition = cardClose.transform.localPosition;
 
-            var verticalSpace = _klondikeCardLogic.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_OPENED);
+            float verticalSpace = _klondikeCardLogic.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_OPENED);
 
-            Vector3 toPosition = cardOpen.transform.localPosition - Vector3.up * verticalSpace; 
+            Vector3 toPosition = isMoveToPack ?
+                _klondikeCardLogic.PackDeck.transform.localPosition :
+                cardOpen.transform.localPosition - Vector3.up * verticalSpace; 
+            
+            
             Deck deckCardClose = cardClose.Deck;
             deckCardClose.CardsArray.Remove(cardClose);
-
 
             float distance = Vector3.Distance(fromPosition, toPosition);
             
@@ -151,18 +221,23 @@ namespace BloomLines
 
             deckCardClose.UpdateCardsPosition(false);
             cardClose.DragEffect("Off");
-            cardClose.transform.DOScaleX(0, 0.15f);            
+            if (!isMoveToPack)
+            {
+                cardClose.transform.DOScaleX(0, 0.15f);
+                yield return new WaitForSeconds(0.15f);
+            }           
             
-            yield return new WaitForSeconds(0.15f);            
-            
-            Deck deckCardOpen = cardOpen.Deck;
-            deckCardOpen.CardsArray.Add(cardClose);
-            cardClose.Deck = deckCardOpen;
-            deckCardOpen.UpdateCardsPosition(false);
-            cardClose.transform.DOScaleX(1, 0.15f);
+            Deck deckFinish = isMoveToPack ? _klondikeCardLogic.PackDeck : cardOpen.Deck;
+            deckFinish.CardsArray.Add(cardClose);
+            cardClose.Deck = deckFinish;
+            if (!isMoveToPack)
+            {
+                deckFinish.UpdateCardsPosition(false);
+                cardClose.transform.DOScaleX(1, 0.15f);
+            }
             _stars.EffectStop();
             IsProcess = false;
             onComplete();
-        }
+        }        
     }
 }
