@@ -110,7 +110,7 @@ namespace SimpleSolitaire.Controller
                 return 0f;
             }            
 
-            return SpacesDict[type];
+            return SpacesDict[type] * _gameManager.ScreenController.CanvasScaler.referenceResolution.y / UnityEngine.Screen.height; ;
         }
 
         public abstract void SubscribeEvents();

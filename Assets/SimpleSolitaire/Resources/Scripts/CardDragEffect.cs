@@ -24,11 +24,15 @@ public class CardDragEffect : MonoBehaviour
         _shadowAnimator.ResetTrigger("Off");
         _shadowAnimator.SetTrigger("On");        
         int space = _gameManager.Game == Game.Klondike ? 60 : 48;
-        _shadowRectTransform.sizeDelta = new Vector2(154, 210 + (cardsToTop.Count - 1) * space);
+        int count = cardsToTop != null ? cardsToTop.Count - 1 : 0;
+        _shadowRectTransform.sizeDelta = new Vector2(154, 210 + (count) * space);
 
-        foreach (var item in cardsToTop)
-        {            
-            item.GetComponent<CardDragEffect>().SetCardLightOn();
+        if (cardsToTop != null)
+        {
+            foreach (var item in cardsToTop)
+            {
+                item.GetComponent<CardDragEffect>().SetCardLightOn();
+            }
         }
 
         if (_audioController == null)

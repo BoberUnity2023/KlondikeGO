@@ -285,7 +285,7 @@ namespace SimpleSolitaire.Controller
             BackgroundImage.color = color;
         }
 
-        private void DragEffect(string triggerName, List<Card> cardsToTop = null)
+        public void DragEffect(string triggerName, List<Card> cardsToTop = null)
         {
             CardDragEffect cardDragEffect = GetComponent<CardDragEffect>();
 

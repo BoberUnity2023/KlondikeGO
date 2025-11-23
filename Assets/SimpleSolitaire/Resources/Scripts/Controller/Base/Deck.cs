@@ -249,7 +249,7 @@ namespace SimpleSolitaire.Controller
             }
 
             var verticalSpace =
-                CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_OPENED) * _gameManagerComponent.ScreenController.CanvasScaler.referenceResolution.y / UnityEngine.Screen.height;
+                CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_OPENED);
 
             int m = 0;
             for (int j = i; j < CardsArray.Count; j++)

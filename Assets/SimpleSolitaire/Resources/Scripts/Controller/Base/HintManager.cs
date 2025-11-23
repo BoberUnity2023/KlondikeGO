@@ -162,54 +162,7 @@ namespace SimpleSolitaire.Controller
         }
 
         protected abstract IEnumerator HintTranslate(HintData data);
-
-        public IEnumerator MagicWindTranslate(Card cardClose, Card cardOpen, UnityAction onComplete)
-        {
-            IsMagicWangProcess = true;
-
-            //CurrentHintSiblingIndex = cardClose.transform.GetSiblingIndex();
-
-            //cardClose.Deck.UpdateCardsPosition(false);
-
-            
-
-            cardClose.transform.SetAsLastSibling(); 
-
-            Vector3 fromPosition = cardClose.transform.localPosition;
-            Vector3 toPosition = cardOpen.transform.localPosition;//TODO: + offset
-            Vector3 midPos = Vector3.Lerp(fromPosition, toPosition, 0.5f) + new Vector3(Random.Range(-200, 200), Random.Range(-200, 200), 0);
-
-            Deck deckCardClose = cardClose.Deck;
-
-            deckCardClose.CardsArray.Remove(cardClose);
-            deckCardClose.UpdateCardsPosition(false);
-
-            Debug.Log("Card: " + cardClose.GetTypeName() + cardClose.Number + " started from deck: " + deckCardClose.DeckNum);
-            float distance = Vector3.Distance(fromPosition, toPosition);
-            Debug.Log("distance: " + distance);
-            float moveTime = 1;// distance / 800;
-            var t = 0f;
-            while (t < 1)
-            {
-                t += Time.deltaTime / moveTime;
-                if (t < 0.5f)
-                    cardClose.transform.localPosition = Vector3.Lerp(fromPosition, midPos, t*2);
-                else
-                    cardClose.transform.localPosition = Vector3.Lerp(midPos, toPosition, (t-0.5f)*2);
-
-                yield return new WaitForEndOfFrame();
-            }
-
-            Deck deckCardOpen = cardOpen.Deck;
-            deckCardOpen.CardsArray.Add(cardClose);
-            cardClose.Deck = deckCardOpen;
-            deckCardOpen.UpdateCardsPosition(false);
-            Debug.Log("Card: " + cardClose.GetTypeName() + cardClose.Number + " finished to deck: " + deckCardOpen.DeckNum);
-
-            IsMagicWangProcess = false;
-            onComplete();
-        }
-
+       
         /// <summary>
         /// Update for user drag hints.
         /// </summary>
