@@ -29,7 +29,8 @@ namespace BloomLines
         private Card _cardOpen;
         private Card _cardClose;
         private int _count;
-        private bool IsProcess = false;        
+        private bool _isProcess = false;  
+        public bool IsProcess => _isProcess;
 
         public int Count
         {
@@ -64,9 +65,9 @@ namespace BloomLines
                 return; 
             }
 
-            if (IsProcess)
+            if (_isProcess || _hintManager.IsHintProcess)
             {
-                Debug.Log("MagicWand: IsProcess");
+                Debug.Log("MagicWand: _isProcess");
                 _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Error);
                 return;
             }
@@ -200,7 +201,7 @@ namespace BloomLines
         public IEnumerator MagicWindTranslate(Card cardClose, Card cardOpen, UnityAction onComplete)
         {
             bool isMoveToPack = cardOpen == null;
-            IsProcess = true;
+            _isProcess = true;
             cardClose.transform.SetAsLastSibling();//Карта которую двигаем
 
             Vector3 fromPosition = cardClose.transform.localPosition;
@@ -243,7 +244,7 @@ namespace BloomLines
                 cardClose.transform.DOScaleX(1, 0.15f);
             }
             _stars.EffectStop();
-            IsProcess = false;
+            _isProcess = false;
             onComplete();
         }        
     }

@@ -37,28 +37,18 @@ namespace SimpleSolitaire.Controller
     {
         [SerializeField] private Game _game;        
         [Header("Serialized fields:")]
-        [SerializeField]
-        private RectTransform _bottomPanel;
-        [SerializeField]
-        private Animator _settingsPanelAnimator;
-        [SerializeField]
-        protected GameObject _buttonHint;
-        //[SerializeField]
-        //private GameObject _buttonRewardedVideo;
-        [SerializeField]
-        private ToggleGroup _levelToggleGroup;
-        [SerializeField]
-        private GameObject _bonusGold;
+        [SerializeField] private RectTransform _bottomPanel;
+        [SerializeField] private Animator _settingsPanelAnimator;
+        [SerializeField] protected GameObject _buttonHint;        
+        [SerializeField] private ToggleGroup _levelToggleGroup;
+        [SerializeField] private GameObject _bonusGold;
 
         [Header("Ads Components:")]        
-        [SerializeField]
-        private GameObject _adsLayer;
-        [SerializeField]
-        private GameObject _adsLayerHints;
-        [SerializeField]
-        private GameObject _watchButton;
-        [SerializeField]
-        private GameObject _adsLayerMagicWand;
+        [SerializeField] private GameObject _adsLayer;
+        [SerializeField] private GameObject _adsLayerHints;
+        [SerializeField] private GameObject _watchButton;
+        [SerializeField] private GameObject _adsLayerMagicWand;
+        [SerializeField] private GameObject _adsLayerPeek;
 
         [Header("Components:")]
         [SerializeField] protected CardLogic _cardLogic;
@@ -71,6 +61,9 @@ namespace SimpleSolitaire.Controller
 
         [SerializeField] private MagicWand _magicWand;
         public MagicWand MagicWand => _magicWand;
+
+        [SerializeField] private Peek _peek;
+        public Peek Peek => _peek;
 
         //[SerializeField]
         //public LeaderboardYG _leaderboardYG;
@@ -908,6 +901,12 @@ namespace SimpleSolitaire.Controller
             AppearWindow(_adsLayerMagicWand);
         }
 
+        public void ShowAdsLayerPeek()
+        {
+            _adsLayerPeek.SetActive(true);
+            AppearWindow(_adsLayerPeek);
+        }
+
         /// <summary>
         /// Close <see cref="_adsLayer"/>.
         /// </summary>
@@ -989,6 +988,11 @@ namespace SimpleSolitaire.Controller
         public void HideAdsLayerMagicWand()
         {
             _adsLayerMagicWand.SetActive(false);
+        }
+
+        public void HideAdsLayerPeek()
+        {
+            _adsLayerPeek.SetActive(false);
         }
         #endregion
 
@@ -1125,6 +1129,7 @@ namespace SimpleSolitaire.Controller
                 _adsController.TryShowInterstitial();
                 OnGameStart?.Invoke();
                 _magicWand.StartParty();
+                _peek.StartParty();
             }
         }
 
@@ -1167,6 +1172,7 @@ namespace SimpleSolitaire.Controller
                 _undoPerformComponent.ResetUndoStates();
                 _adsController.TryShowInterstitial();
                 _magicWand.StartParty();
+                _peek.StartParty();
                 OnGameStart?.Invoke();
             }
         }
@@ -1204,7 +1210,7 @@ namespace SimpleSolitaire.Controller
             _leaderboardLayer.SetActive(false);
             _cardLayer.SetActive(true);
             _backgroundBlocker.SetActive(false);
-        }
+        }        
         #endregion
 
         /// <summary>
