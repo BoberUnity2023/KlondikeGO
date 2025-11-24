@@ -74,6 +74,13 @@ public class RewardedVideoController : MonoBehaviour
             _everyDayBonus.OnRewardGetX2();
             _audioController.Play(AudioController.AudioType.Buy);
         }
+
+        if (id == 4)
+        {
+            _gameManager.MagicWand.OnReward();
+            _gameManager.HideAdsLayerMagicWand();
+            _audioController.Play(AudioController.AudioType.Buy);
+        }
     }
 
     // Ìועמה הכÿ גûחמגא גטהומ נוךכאלû

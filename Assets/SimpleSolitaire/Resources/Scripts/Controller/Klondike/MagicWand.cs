@@ -10,7 +10,8 @@ using UnityEngine.UI;
 namespace BloomLines
 {
     public class MagicWand : MonoBehaviour
-    {        
+    {
+        [SerializeField] private GameManager _gameManager;
         [SerializeField] private KlondikeCardLogic _klondikeCardLogic;
         [SerializeField] private HintManager _hintManager;
         [SerializeField] private SimpleSolitaire.Controller.AudioController _audioController;
@@ -59,6 +60,7 @@ namespace BloomLines
             if (Count <= 0)
             {
                 _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Error);
+                _gameManager.ShowAdsLayerMagicWand();
                 return; 
             }
 
@@ -127,6 +129,11 @@ namespace BloomLines
                 }                
             }
             return false;
+        }
+
+        public void OnReward()
+        {
+            Count += 3;
         }
         
         private Card TargetOpenCard

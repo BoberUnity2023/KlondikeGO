@@ -58,24 +58,20 @@ namespace SimpleSolitaire.Controller
         [SerializeField]
         private GameObject _watchButton;
         [SerializeField]
-        private Text _adsInfoText;
-        [SerializeField]
-        private Text _adsDidNotLoadText;
-        [SerializeField]
-        private Text _adsClosedTooEarlyText;
-
-        public string NoAdsInfoText = "DO YOU WANNA TO DEACTIVATE ALL ADS FOR THIS GAME SESSION? JUST WATCH LAST REWARD VIDEO AND INSTALL APP. THEN ADS WON'T DISTURB YOU AGAIN!";
-        public string GetUndoAdsInfoText = "DO YOU WANNA TO GET FREE UNDO COUNTS? JUST WATCH REWARD VIDEO AND INSTALL APP. THEN UNDO WILL ADDED TO YOUR GAME SESSION!";
+        private GameObject _adsLayerMagicWand;
 
         [Header("Components:")]
         [SerializeField] protected CardLogic _cardLogic;
-        [SerializeField] private KlondikeCardLogic _klondikeCardLogic;
-        [SerializeField] private MagicWand _magicWand;
+        [SerializeField] private KlondikeCardLogic _klondikeCardLogic;  
         [SerializeField] private InterVideoAds _interVideoAdsComponent;
         [SerializeField] private CongratulationManager _congratManagerComponent;
         [SerializeField] protected UndoPerformer _undoPerformComponent;
         [SerializeField] private TutorialManager _tutorialComponent;
         [SerializeField] private AutoCompleteManager _autoCompleteComponent;
+
+        [SerializeField] private MagicWand _magicWand;
+        public MagicWand MagicWand => _magicWand;
+
         //[SerializeField]
         //public LeaderboardYG _leaderboardYG;
         [SerializeField]
@@ -455,13 +451,6 @@ namespace SimpleSolitaire.Controller
             _bottomPanel.anchoredPosition = new Vector2(0, offset);
         }
 
-        /*public void OnNoAdsRewardedUser()
-        {
-            InitializeBottomPanel(0);
-            OnClickAdsCloseBtn();
-            AdsBtn.SetActive(false);
-        }*/
-
         private void OnDestroy()
         {
             InterVideoAds.RewardAction -= OnRewardActionState;
@@ -534,8 +523,7 @@ namespace SimpleSolitaire.Controller
             statisticsController.BestMoves?.Invoke(_stepCount);            
             //YandexGame.savesData.Experience += score;            
             Stats.Experience += score;
-            Stats.Wins++;
-            //_interVideoAdsComponent.ShowInterstitial();
+            Stats.Wins++;            
             //int partyTime = (int)(Time.time - _startTime);
             if (_timeCount < Stats.FastestWinTime)
                 Stats.FastestWinTime = _timeCount;
@@ -895,19 +883,10 @@ namespace SimpleSolitaire.Controller
             _currentAdsType = RewardAdsType.NoAds;
             ShowAdsLayer();
         }
-
-        /// <summary>
-        /// Appearing ads layer with information about ads type.
-        /// </summary>
+        
         private void ShowAdsLayer()
-        {
-            UpdateAdsInfoText(_currentAdsType);
-
-            //_cardLayer.SetActive(false);
-            _adsLayer.SetActive(true);
-            _adsInfoText.enabled = true;
-            _adsDidNotLoadText.enabled = false;
-            _adsClosedTooEarlyText.enabled = false;
+        {            
+            _adsLayer.SetActive(true);            
             _watchButton.SetActive(true);
             AppearWindow(_adsLayer);
         }
@@ -921,6 +900,12 @@ namespace SimpleSolitaire.Controller
         {
             _adsLayerHints.SetActive(true);  
             AppearWindow(_adsLayerHints);
+        }
+
+        public void ShowAdsLayerMagicWand()
+        {
+            _adsLayerMagicWand.SetActive(true);
+            AppearWindow(_adsLayerMagicWand);
         }
 
         /// <summary>
@@ -946,7 +931,18 @@ namespace SimpleSolitaire.Controller
                 _adsLayerHints.SetActive(false);
                 //_cardLayer.SetActive(true);
             }
-        }        
+        }
+
+        public void OnClickAdsMagicWandCloseBtn()
+        {
+            DisappearWindow(_adsLayerMagicWand, OnWindowDisappeared);
+
+            void OnWindowDisappeared()
+            {
+                _adsLayerMagicWand.SetActive(false);
+                //_cardLayer.SetActive(true);
+            }
+        }
 
         /// <summary>
         /// Close <see cref="_adsLayer"/>.
@@ -972,39 +968,11 @@ namespace SimpleSolitaire.Controller
             DisappearWindow(_adsLayer, OnWindowDisappeared);
 
             void OnWindowDisappeared()
-            {
-                bool infoText = false;
-                bool closedText = false;
-                bool notLoadedText = false;
-                switch (state)
-                {
-                    case RewardAdsState.TOO_EARLY_CLOSE:
-                        closedText = true;
-                        break;
-                    case RewardAdsState.DID_NOT_LOADED:
-                        notLoadedText = true;
-                        break;
-                }
-                _adsLayer.SetActive(true);
-                _adsInfoText.enabled = infoText;
-                _adsDidNotLoadText.enabled = notLoadedText;
-                _adsClosedTooEarlyText.enabled = closedText;
+            {                
+                _adsLayer.SetActive(true);                
                 _watchButton.SetActive(false);
                 _cardLayer.SetActive(false);
                 AppearWindow(_adsLayer);
-            }
-        }
-
-        public void UpdateAdsInfoText(RewardAdsType type)
-        {
-            switch (type)
-            {
-                case RewardAdsType.NoAds:
-                    _adsInfoText.text = NoAdsInfoText;
-                    break;
-                case RewardAdsType.GetUndo:
-                    _adsInfoText.text = GetUndoAdsInfoText;
-                    break;
             }
         }
 
@@ -1017,16 +985,11 @@ namespace SimpleSolitaire.Controller
         {
             _adsLayerHints.SetActive(false);
         }
-        #endregion
 
-        #region Rule Layer
-        /// <summary>
-        /// Click on rule button.
-        /// </summary>
-        public void OnClickSettingLayerRuleBtn()
+        public void HideAdsLayerMagicWand()
         {
-            //StartCoroutine(InvokeAction(delegate { OnClickSettingLayerCloseBtn(); Invoke(nameof(OnRuleAppearing), _windowAnimationTime); }, 0f));
-        }        
+            _adsLayerMagicWand.SetActive(false);
+        }
         #endregion
 
         #region Settings Layer

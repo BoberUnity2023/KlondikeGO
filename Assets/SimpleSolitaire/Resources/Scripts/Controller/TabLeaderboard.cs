@@ -46,6 +46,8 @@ public class TabLeaderboard : MonoBehaviour
             _experienceIndicator.text = GP_Player.GetScore().ToString();        
         
             Debug.Log("GP_LB Fetching...");
+            if (_gameManager.GamePush == null)
+                Debug.LogError("_gameManager.GamePush == null");
             _gameManager.GamePush.FetchLeaderboard();
             _gameManager.GamePush.FetchPlayerRating();
             _loadingScreen.SetActive(true);
