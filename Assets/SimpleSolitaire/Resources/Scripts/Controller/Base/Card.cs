@@ -188,7 +188,8 @@ namespace SimpleSolitaire.Controller
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log("OnPointerDown Type: " + Deck.Type.ToString());
+            if (Deck != null)
+                Debug.Log("OnPointerDown Type: " + Deck.Type.ToString());
 
             if (CardLogicComponent.AutoCompleteComponent.IsAutoCompleteActive || !IsDraggable)
             {

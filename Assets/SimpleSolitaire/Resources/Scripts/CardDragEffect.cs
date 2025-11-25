@@ -57,8 +57,8 @@ public class CardDragEffect : MonoBehaviour
                 item.GetComponent<CardDragEffect>().SetCardLightOff();
             }
         }
-        else
-            Debug.LogWarning("_cardsToTop == null");
+        //else
+        //    Debug.LogWarning("_cardsToTop == null");
 
         StartCoroutine(AfterOff());
 

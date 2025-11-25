@@ -392,5 +392,20 @@ namespace SimpleSolitaire.Controller
 
         public abstract void UpdateDraggableStatus();
         public abstract void UpdateBackgroundColor();
+
+        public Vector3 WasteNewCardPosition//0,1,2...
+        {
+            get
+            {
+                if (CardsCount == 0)
+                    return gameObject.transform.position;
+                float wasteHorizontalSpace = CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_HORIONTAL_WASTE);
+
+                if (CardsCount == 1)
+                    return gameObject.transform.position + Vector3.right * wasteHorizontalSpace;
+
+                return gameObject.transform.position + Vector3.right * wasteHorizontalSpace * 2;
+            }
+        }
     }
 }

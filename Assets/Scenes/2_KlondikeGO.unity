@@ -72497,7 +72497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.3764706}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 0
@@ -74499,6 +74499,9 @@ MonoBehaviour:
   _imageCounter: {fileID: 405588608}
   _spriteCounterActive: {fileID: 4277053978717149925, guid: 4d626228892ae6745af98ef64757de63, type: 3}
   _spriteCounterInActive: {fileID: 5916627220055516496, guid: dba2879301004b74687d0cad3b2afe70, type: 3}
+  _closeCards: []
+  _isProcess: 0
+  _isCardsRotateCloseing: 0
 --- !u!4 &1845750740
 Transform:
   m_ObjectHideFlags: 0

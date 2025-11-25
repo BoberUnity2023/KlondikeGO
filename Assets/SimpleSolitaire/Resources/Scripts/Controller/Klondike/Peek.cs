@@ -1,4 +1,6 @@
+using DG.Tweening;
 using SimpleSolitaire.Controller;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,8 +21,9 @@ namespace BloomLines
         [SerializeField] private Image _imageCounter;
         [SerializeField] private Sprite _spriteCounterActive;
         [SerializeField] private Sprite _spriteCounterInActive;
-        private List<Card> _closeCards;
-        private bool _isProcess;
+        [SerializeField] private List<Card> _closeCards;
+        [SerializeField] private bool _isProcess;
+        [SerializeField] private bool _isCardsRotateCloseing;
         private int _count;
 
         public int Count
@@ -61,34 +64,64 @@ namespace BloomLines
 
             Count--;
             _isProcess = true;
-            _backgroundBlocker.SetActive(true);
+            _backgroundBlocker.SetActive(true);            
             _closeCards = CloseCards;
+
             foreach (Card card in _closeCards)
             {
+                card.transform.DOScaleX(0, 0.15f);
+            }
+            StartCoroutine(CardsRotateOpen());            
+        }
+
+        private IEnumerator CardsRotateOpen()
+        {
+            yield return new WaitForSeconds(0.15f);
+            foreach (Card card in _closeCards)
+            {
+                card.transform.DOScaleX(1, 0.15f);
                 card.CardStatus = 1;
             }
 
-            for (int d = 4; d < 11; d++)
-            {
-                Deck deck = _klondikeCardLogic.AllDeckArray[d];
-                deck.UpdateCardsPosition(false);
-            }
+            UpdateCardsPositionInDecks();
         }
 
         public void OnClickButtonClose()
-        {            
+        {
+            if (_isCardsRotateCloseing)
+                return;
+
             foreach (Card card in _closeCards)
             {
+                card.transform.DOScaleX(0, 0.15f);
+            }
+
+            _isCardsRotateCloseing = true;
+            StartCoroutine(CardsRotateClose());
+        }
+
+        private IEnumerator CardsRotateClose()
+        {
+            yield return new WaitForSeconds(0.15f);
+            foreach (Card card in _closeCards)
+            {
+                card.transform.DOScaleX(1, 0.15f);
                 card.CardStatus = 0;
             }
 
+            UpdateCardsPositionInDecks();
+            _backgroundBlocker.SetActive(false);            
+            _isProcess = false;
+            _isCardsRotateCloseing = false;
+        }
+
+        private void UpdateCardsPositionInDecks()
+        {
             for (int d = 4; d < 11; d++)
             {
                 Deck deck = _klondikeCardLogic.AllDeckArray[d];
                 deck.UpdateCardsPosition(false);
             }
-            _backgroundBlocker.SetActive(false);
-            _isProcess = false;
         }
 
         public void OnReward()

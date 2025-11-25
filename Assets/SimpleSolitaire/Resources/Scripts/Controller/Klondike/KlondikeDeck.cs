@@ -1,4 +1,5 @@
-﻿using SimpleSolitaire.Model.Enum;
+﻿using DG.Tweening;
+using SimpleSolitaire.Model.Enum;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,7 +32,7 @@ namespace SimpleSolitaire.Controller
                     else if (Type == DeckType.DECK_TYPE_WASTE)
                     {
                         var wasteHorizontalSpace = CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_HORIONTAL_WASTE);
-                        CanvasScaler canvasScaler = FindFirstObjectByType<CanvasScaler>();
+                        //CanvasScaler canvasScaler = FindFirstObjectByType<CanvasScaler>();
                         //Debug.LogWarning("WasteHorizontalSpace: " + wasteHorizontalSpace + " CanvasHeight: " + canvasScaler.referenceResolution.y);
                         
                         
@@ -41,8 +42,7 @@ namespace SimpleSolitaire.Controller
                         {
                             if (i == 1)
                             {
-                                card.gameObject.transform.position = gameObject.transform.position +
-                                                                     new Vector3(wasteHorizontalSpace, 0, 0);
+                                card.gameObject.transform.position += new Vector3(wasteHorizontalSpace, 0, 0);
                                 card.IsDraggable = true;
                             }
                         }
@@ -50,14 +50,12 @@ namespace SimpleSolitaire.Controller
                         {
                             if (i == CardsArray.Count - 1)
                             {
-                                card.gameObject.transform.position = gameObject.transform.position +
-                                                                     new Vector3(2 * wasteHorizontalSpace, 0, 0);
+                                card.gameObject.transform.position += new Vector3(2 * wasteHorizontalSpace, 0, 0);
                                 card.IsDraggable = true;
                             }
                             else if (i == CardsArray.Count - 2)
                             {
-                                card.gameObject.transform.position = gameObject.transform.position +
-                                                                     new Vector3(wasteHorizontalSpace, 0, 0);
+                                card.gameObject.transform.position += new Vector3(wasteHorizontalSpace, 0, 0);
                             }
                         }
                     }
@@ -65,8 +63,26 @@ namespace SimpleSolitaire.Controller
                     if (i == CardsArray.Count - 1)
                     {
                         card.IsDraggable = true;
-                        card.CardStatus = 1;
-                        card.UpdateCardImg();
+
+                        if (firstTime || Type != DeckType.DECK_TYPE_BOTTOM)
+                        {
+                            card.CardStatus = 1;
+                            card.UpdateCardImg();
+                        }
+                        else
+                        {
+                            if (card.CardStatus == 0)
+                            {
+                                card.CardStatus = 1;
+                                card.transform.DOScaleX(0, 0.15f).OnComplete(Next);
+                                void Next()
+                                {
+                                    card.UpdateCardImg();
+                                    card.transform.DOScaleX(1, 0.15f);
+                                }
+                            }
+                        } 
+                        
                     }
                     else
                     {
@@ -83,8 +99,9 @@ namespace SimpleSolitaire.Controller
 
             if (Type == DeckType.DECK_TYPE_BOTTOM)
             {
+                float spaces = 0;
                 for (int i = 0; i < CardsArray.Count; i++)
-                {
+                {                    
                     Card card = CardsArray[i];
                     Card prevCard = i > 0 ? CardsArray[i - 1] : null;
 
@@ -96,7 +113,15 @@ namespace SimpleSolitaire.Controller
                     var prevPos = prevCard != null ? prevCard.gameObject.transform.position : deckPos;
 
                     var curPos = prevPos - new Vector3(0, space, 0) * spaceMultiplier;
-                    card.gameObject.transform.position = curPos;
+
+                    if (firstTime)
+                        card.gameObject.transform.position = curPos;
+                    else
+                    {                        
+                        spaces += space * spaceMultiplier;
+                        curPos = deckPos - new Vector3(0, spaces, 0);
+                        card.gameObject.transform.DOMove(curPos, 0.15f); 
+                    }
                 }
             }
 
@@ -203,6 +228,6 @@ namespace SimpleSolitaire.Controller
         public override void UpdateBackgroundColor()
         {
             
-        }
+        }        
     }
 }

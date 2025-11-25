@@ -121,7 +121,8 @@ namespace SimpleSolitaire.Controller
             {
                 _isCanComplete = false;
                 StopAutoComplete();
-                _autoCompleteCoroutine = CompleteCoroutine();
+                AutoCompleteHintButtonObj.SetActive(false);
+                _autoCompleteCoroutine = CompleteCoroutine();                
                 StartCoroutine(_autoCompleteCoroutine);
             }
         }

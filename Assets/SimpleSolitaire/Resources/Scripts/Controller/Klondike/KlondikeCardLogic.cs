@@ -1,4 +1,5 @@
-﻿using SimpleSolitaire.Model.Config;
+﻿using DG.Tweening;
+using SimpleSolitaire.Model.Config;
 using SimpleSolitaire.Model.Enum;
 using UnityEngine;
 using UnityEngine.UI;
@@ -264,6 +265,8 @@ namespace SimpleSolitaire.Controller
 
             WriteUndoState();
 
+            bool _waitingActionAfterEachStep = false;
+
             switch (CurrentRule)
             {
                 case DeckRule.ONE_RULE:
@@ -271,13 +274,25 @@ namespace SimpleSolitaire.Controller
 
                     if (PackDeck.HasCards)
                     {
-                        WasteDeck.PushCard(PackDeck.Pop());
-                        PackDeck.UpdateCardsPosition(false);
-                        WasteDeck.UpdateCardsPosition(false);
-                        if (AudioCtrl != null)
+                        _waitingActionAfterEachStep = true;
+                        Card card = PackDeck.Pop();
+                        card.transform.SetAsLastSibling();
+                        Vector3 to = WasteDeck.WasteNewCardPosition;
+                        Sequence sequence = DOTween.Sequence();
+                        sequence.Join(card.transform.DOMove(to, 0.3f));
+                        sequence.Join(card.transform.DOScaleX(0, 0.3f).SetEase(Ease.InQuart).OnComplete(() =>
                         {
-                            AudioCtrl.Play(AudioController.AudioType.MoveToWaste);
-                        }
+                            WasteDeck.PushCard(card);
+                            PackDeck.UpdateCardsPosition(false);
+                            WasteDeck.UpdateCardsPosition(false);
+                            if (AudioCtrl != null)
+                            {
+                                AudioCtrl.Play(AudioController.AudioType.MoveToWaste);
+                            }
+                            card.transform.DOScaleX(1, 0.3f).SetEase(Ease.OutSine);
+                            ActionAfterEachStep();
+                        }));
+                                                
                     }
                     else
                     {
@@ -318,8 +333,8 @@ namespace SimpleSolitaire.Controller
 
                     break;
             }
-
-            ActionAfterEachStep();
+            if (!_waitingActionAfterEachStep)
+                ActionAfterEachStep();
         }
 
         public override float GetSpaceFromDictionary(DeckSpacesTypes type)

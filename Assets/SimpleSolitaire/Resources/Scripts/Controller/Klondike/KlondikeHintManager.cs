@@ -3,6 +3,8 @@ using SimpleSolitaire.Model;
 using SimpleSolitaire.Model.Enum;
 using System.Collections.Generic;
 using UnityEngine;
+using SimpleSolitaire.Model.Config;
+using DG.Tweening;
 
 namespace SimpleSolitaire.Controller
 {
@@ -33,29 +35,40 @@ namespace SimpleSolitaire.Controller
             }
 
             var t = 0f;
-            Card hintCard = hints[CurrentHintIndex].HintCard;
+            HintElement hint = hints[CurrentHintIndex];
+            Card hintCard = hint.HintCard;
             hintCard.Deck.UpdateCardsPosition(false);
 
             CurrentHintSiblingIndex = hintCard.transform.GetSiblingIndex();
 
             hintCard.Deck.SetCardsToTop(hintCard);
 
+            Vector3 fromPosition = hint.FromPosition;
+            Vector3 toPosition = hint.ToPosition;
+
+            float distance = Vector3.Distance(fromPosition, toPosition);
+            float moveTime = distance / Public.CardSpeed + 0.2f;
+     
+            float jumpPower = Random.Range(-200, 200);
+
+            hintCard.transform.DOLocalJump(toPosition, jumpPower, 1, moveTime).SetEase(Ease.InOutQuad).OnUpdate(
+                    ()=> hint.HintCard.Deck.SetPositionFromCard(hintCard,
+                    hintCard.transform.localPosition.x,
+                    hintCard.transform.localPosition.y)
+                    );
+                        
+            hintCard.DragEffect("On");
+
             while (t < 1)
             {
-                t += Time.deltaTime / data.HintTime;
-                hintCard.transform.localPosition = Vector3.Lerp(hints[CurrentHintIndex].FromPosition,
-                    hints[CurrentHintIndex].ToPosition, t);
-
+                t += Time.deltaTime / moveTime;// data.HintTime;
                 yield return new WaitForEndOfFrame();
-                hints[CurrentHintIndex].HintCard.Deck.SetPositionFromCard(hintCard,
-                    hintCard.transform.localPosition.x,
-                    hintCard.transform.localPosition.y);
             }
-
+            hintCard.DragEffect("Off");
             if (IsHasHint() && data.Type == HintType.Hint)
             {
                 hintCard.Deck.UpdateCardsPosition(false);
-                hintCard.transform.localPosition = hints[CurrentHintIndex].FromPosition;
+                hintCard.transform.localPosition = fromPosition;
                 hintCard.transform.SetSiblingIndex(CurrentHintSiblingIndex);
                 CurrentHintIndex = CurrentHintIndex == hints.Count - 1 ? CurrentHintIndex = 0 : CurrentHintIndex + 1;
             }
