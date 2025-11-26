@@ -21,7 +21,7 @@ public class TabProgress : MonoBehaviour
     {
         int level = Mathf.Min(_needExperience.Length - 1, Level);
         Debug.Log("Exp. Level: " + level);
-        _experienceIndicator.text = value.ToString() + "/" + _needExperience[level].ToString();
+        _experienceIndicator.text = value.ToString() + " /" + _needExperience[level].ToString();
         SetProgressLines(level);
     }
 
@@ -45,6 +45,7 @@ public class TabProgress : MonoBehaviour
         {
             _progressLines[i].SetAlpha(i > level ? 0.2f : 1);
             _progressLines[i].SetTitleColor(i < level ? Color.gray : new Color(1, 0.8f, 0, 1));
+            _progressLines[i].SetMedalShiny(i == level);
 
             if (i <= level)
                 _progressLines[i].IconShow();

@@ -6,6 +6,8 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
+using System.Collections;
+using DG.Tweening;
 
 namespace SimpleSolitaire.Controller
 {
@@ -110,9 +112,9 @@ namespace SimpleSolitaire.Controller
             if (SpacesDict == null || !SpacesDict.ContainsKey(type))
             {
                 return 0f;
-            }            
+            }
 
-            return SpacesDict[type] * _gameManager.ScreenController.CanvasScaler.referenceResolution.y / UnityEngine.Screen.height; ;
+            return SpacesDict[type];// * _gameManager.ScreenController.CanvasScaler.referenceResolution.y / UnityEngine.Screen.height; ;
         }
 
         public abstract void SubscribeEvents();
@@ -423,12 +425,24 @@ namespace SimpleSolitaire.Controller
             int cardNums = WasteDeck.CardsCount;
             for (int i = 0; i < cardNums; i++)
             {
+                WasteDeck.CardsArray[i].transform.DOMove(PackDeck.transform.position, 0.3f);
+            }
+
+            StartCoroutine(MoveFromWasteToPackCoroutine(0.33f));
+        }
+
+        private IEnumerator MoveFromWasteToPackCoroutine(float time)
+        {
+            yield return new WaitForSeconds(time);
+            int cardNums = WasteDeck.CardsCount;
+            for (int i = 0; i < cardNums; i++)
+            {
                 PackDeck.PushCard(WasteDeck.Pop());
             }
 
             PackDeck.UpdateCardsPosition(false);
             WasteDeck.UpdateCardsPosition(false);
-            
+
             if (AudioCtrl != null)
             {
                 AudioCtrl.Play(AudioController.AudioType.MoveToPack);

@@ -1,3 +1,4 @@
+using Coffee.UIEffects;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +8,7 @@ public class ProgressLine : MonoBehaviour
     [SerializeField] private Text _title;
     [SerializeField] private GameObject _star;
     [SerializeField] private GameObject _medal;
+    [SerializeField] private UIShiny _medalShiny;
 
     public void SetTitleColor(Color color)
     {
@@ -28,5 +30,10 @@ public class ProgressLine : MonoBehaviour
     {
         _star.SetActive(false);
         _medal.SetActive(false);        
+    }
+
+    public void SetMedalShiny(bool shiny)
+    {
+        _medalShiny.enabled = shiny;
     }
 }

@@ -59,8 +59,12 @@ public class CardDragEffect : MonoBehaviour
         }
         //else
         //    Debug.LogWarning("_cardsToTop == null");
-
-        StartCoroutine(AfterOff());
+        if (gameObject.activeSelf && gameObject.activeInHierarchy)
+        { 
+            StartCoroutine(AfterOff()); 
+        }
+        else
+            ReturnShadowSize();
 
         _uIShiny.Play();        
 
@@ -70,7 +74,12 @@ public class CardDragEffect : MonoBehaviour
     private IEnumerator AfterOff()
     {
         yield return new WaitForSeconds(0.15f);
-        _shadowRectTransform.sizeDelta = new Vector2(154, 210);        
+        ReturnShadowSize();        
+    }
+
+    private void ReturnShadowSize()//Fix 2025
+    {
+        _shadowRectTransform.sizeDelta = new Vector2(154, 210);
     }
 
     private void SetCardLightOn()

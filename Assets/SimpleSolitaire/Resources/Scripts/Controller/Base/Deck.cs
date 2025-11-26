@@ -407,5 +407,75 @@ namespace SimpleSolitaire.Controller
                 return gameObject.transform.position + Vector3.right * wasteHorizontalSpace * 2;
             }
         }
+
+        //Waste
+        public Vector3 WasteCardPosition(int num)//0,1,2...
+        {
+            float wasteHorizontalSpace = CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_HORIONTAL_WASTE);
+
+            if (num == 0)//Верхняя карта
+            { 
+                if (CardsCount == 1)
+                    return gameObject.transform.position;
+
+                if (CardsCount == 2)
+                    return gameObject.transform.position + Vector3.right * wasteHorizontalSpace;
+
+                if (CardsCount >= 3)
+                    return gameObject.transform.position + Vector3.right * wasteHorizontalSpace * 2;
+            }
+
+            if (num == 1)//Вторая карта
+            {
+                if (CardsCount == 2)
+                    return gameObject.transform.position;
+                if (CardsCount >= 3)
+                    return gameObject.transform.position + Vector3.right * wasteHorizontalSpace;
+            }
+            //3я карта
+            return gameObject.transform.position;
+        }
+
+        public bool IsNecessaryMove(Card card)//Waste
+        {
+            for (int i = 0; i < CardsArray.Count; i++)
+            {                
+                if (card == CardsArray[i])
+                {
+                    if (i == CardsArray.Count - 1)//Верхняя карта
+                    {
+                        float distance = Vector3.Distance(card.transform.position, WasteCardPosition(0));
+                        //.Log("IsNecessaryMove 1-st(" + card.name + ") - " + (distance > 2).ToString());
+                        return distance > 2;
+                    }
+
+                    if (i == CardsArray.Count - 2)//2nd карта
+                    {
+                        float distance = Vector3.Distance(card.transform.position, WasteCardPosition(1));
+                        //Debug.Log("IsNecessaryMove 2-st(" + card.name + ") - " + (distance > 2).ToString());
+                        return distance > 2;
+                    }
+
+                    if (i == CardsArray.Count - 3)//3rd карта
+                    {
+                        float distance = Vector3.Distance(card.transform.position, WasteCardPosition(2));
+                        //Debug.Log("IsNecessaryMove 3-st(" + card.name + ") - " + (distance > 2).ToString());
+                        return distance > 2;
+                    }
+                }                
+            }
+            return false;
+        }
+
+        public Vector3 CardOffsetBottom
+        {
+            get
+            {
+                if (CardsCount == 0)
+                    return gameObject.transform.position;
+
+                return Pop().transform.position - Vector3.up * CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_OPENED);
+            }      
+        }
     }
 }

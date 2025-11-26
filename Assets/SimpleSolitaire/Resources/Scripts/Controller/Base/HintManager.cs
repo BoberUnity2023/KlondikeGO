@@ -301,7 +301,7 @@ namespace SimpleSolitaire.Controller
         {
             if (targetCard == null)
             {
-                return  Vector3.zero;
+                return Vector3.zero;
             }
 
             switch (targetCard.Deck.Type)

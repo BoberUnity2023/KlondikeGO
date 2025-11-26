@@ -41,7 +41,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private Animator _settingsPanelAnimator;
         [SerializeField] protected GameObject _buttonHint;        
         [SerializeField] private ToggleGroup _levelToggleGroup;
-        [SerializeField] private GameObject _bonusGold;
+        [SerializeField] private GameObject _bonusGold;        
 
         [Header("Ads Components:")]        
         [SerializeField] private GameObject _adsLayer;
@@ -253,6 +253,8 @@ namespace SimpleSolitaire.Controller
         private void Awake()
         {            
             InitializeGame();
+
+            _inviteFriendButton.SetActive(false);
 #if VK
             _inviteFriendButton.SetActive(true);
 #endif

@@ -33,8 +33,7 @@ namespace SimpleSolitaire.Controller
                 CurrentHintIndex = 0;
                 yield break;
             }
-
-            var t = 0f;
+            
             HintElement hint = hints[CurrentHintIndex];
             Card hintCard = hint.HintCard;
             hintCard.Deck.UpdateCardsPosition(false);
@@ -48,7 +47,7 @@ namespace SimpleSolitaire.Controller
 
             float distance = Vector3.Distance(fromPosition, toPosition);
             float moveTime = distance / Public.CardSpeed + 0.2f;
-     
+            //Debug.Log("distance: " + distance);
             float jumpPower = Random.Range(-200, 200);
 
             hintCard.transform.DOLocalJump(toPosition, jumpPower, 1, moveTime).SetEase(Ease.InOutQuad).OnUpdate(
@@ -58,7 +57,7 @@ namespace SimpleSolitaire.Controller
                     );
                         
             hintCard.DragEffect("On");
-
+            var t = 0f;
             while (t < 1)
             {
                 t += Time.deltaTime / moveTime;// data.HintTime;
@@ -76,9 +75,8 @@ namespace SimpleSolitaire.Controller
             if (data.Type != HintType.Hint)
             {
                 _cardLogicComponent.OnDragEnd(hintCard);
-            }
-
-            IsHintProcess = false;
+            }            
+            IsHintProcess = false;            
         }
 
         /// <summary>

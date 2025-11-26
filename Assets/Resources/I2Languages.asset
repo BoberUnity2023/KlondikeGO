@@ -164,8 +164,8 @@ MonoBehaviour:
       TermType: 0
       Description: 
       Languages:
-      - "\u0421\u041B\u041E\u0416\u041D\u041E\u0421\u0422\u042C"
-      - DIFFICULTY
+      - "\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C"
+      - Difficulty
       - ZORLUK
       - DIFICULTAD
       - SCHWIERIGKEITSGRAD
@@ -175,8 +175,8 @@ MonoBehaviour:
       TermType: 0
       Description: 
       Languages:
-      - "\u041B\u0415\u0413\u041A\u0418\u0419"
-      - EASY
+      - "\u041B\u0451\u0433\u043A\u0438\u0439"
+      - Easy
       - KOLAY
       - "F\xC1CIL"
       - EINFACH
@@ -197,8 +197,8 @@ MonoBehaviour:
       TermType: 0
       Description: 
       Languages:
-      - "\u041C\u0410\u0421\u0422\u0415\u0420"
-      - HARD
+      - "\u041C\u0430\u0441\u0442\u0435\u0440 "
+      - Hard
       - ZOR
       - "DIF\xCDCIL"
       - SCHWER
@@ -219,8 +219,8 @@ MonoBehaviour:
       TermType: 0
       Description: 
       Languages:
-      - "\u0421\u0420\u0415\u0414\u041D\u0418\u0419"
-      - NORMAL
+      - "\u0421\u0440\u0435\u0434\u043D\u0438\u0439"
+      - Normal
       - NORMAL
       - NORMAL
       - NORMAL
@@ -499,6 +499,17 @@ MonoBehaviour:
       - SHOP(T)
       - SHOP(Es)
       - SHOP(G)
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: your_level
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0422\u0432\u043E\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
+      - Your level
+      - Your level
+      - Your level
+      - Your level
       Flags: 0000000000
       Languages_Touch: []
     - Term: ads_disable
