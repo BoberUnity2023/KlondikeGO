@@ -111,14 +111,6 @@ namespace BloomLines.Controllers
             {
                 _adsAdapter.CloseSticky();
             }
-#if Yandex
-            YG.YG2.StickyAdActivity(false);
-#endif
-
-#if GAME_PUSH
-            GamePush.GP_Ads.CloseSticky();
-#endif
-
 #if GooglePlay
             //BloomLines.Ads.GooglePlayAdapter.
 #endif

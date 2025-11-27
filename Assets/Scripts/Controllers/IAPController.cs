@@ -12,6 +12,10 @@ namespace BloomLines.Controllers
         private static IIAPAdapter _iapAdapter; // Текущий адаптер покупок
 
         public const string NO_ADS = "no_ads";
+        public const string START_OFFER = "start_offer";
+        public const string GOLD_1 = "gold_1";
+        public const string GOLD_2 = "gold_2";
+        public const string GOLD_3 = "gold_3";
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()
@@ -43,9 +47,16 @@ namespace BloomLines.Controllers
         // Проверка куплен ли товар
         public static bool IsPurchased(string id)
         {
-            var gameState = SaveManager.GameState;
+            //var gameState = SaveManager.GameState;//TODO
 
 #if UNITY_EDITOR
+            BloomLines.Saving.GameState gameState = SaveManager.GameState;
+            if (gameState == null)
+            {
+                Debug.LogWarning("gameState == null");
+                return false;
+            }
+
             if (gameState.Purchased == null)
             {
                 Debug.LogWarning("gameState.Purchased == null");
@@ -58,7 +69,7 @@ namespace BloomLines.Controllers
                 return false;
 
             bool isPurchased = _iapAdapter.IsPurchased(id);
-            return gameState.Purchased.Contains(id) || isPurchased;
+            return /*gameState.Purchased.Contains(id) ||*/ isPurchased;
         }
 
         // Проверка можно ли купить товар
@@ -125,6 +136,14 @@ namespace BloomLines.Controllers
             {
                 case NO_ADS:
                     AdsController.CloseSticky();
+                    break;
+                case START_OFFER:
+                    break;
+                case GOLD_1:
+                    break;
+                case GOLD_2:
+                    break;
+                case GOLD_3:
                     break;
             }
 

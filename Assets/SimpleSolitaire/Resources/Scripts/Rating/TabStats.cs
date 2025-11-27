@@ -14,6 +14,7 @@ public class TabStats : MonoBehaviour
     [SerializeField] private Text _indicatorPercentWins;
     [SerializeField] private Text _indicatorFastestWinTime;    
     [SerializeField] private Text _indicatorLongestPartyTime;
+    [SerializeField] private Text _indicatorAppVersion;
 
     private void OnEnable()
     {
@@ -27,6 +28,7 @@ public class TabStats : MonoBehaviour
 
         _indicatorFastestWinTime.text = TimeString(_hub.Stats.FastestWinTime);        
         _indicatorLongestPartyTime.text = TimeString(_hub.Stats.LongestWinTime);
+        _indicatorAppVersion.text = "v. " + Application.version.ToString();
     }
 
     private string TimeString(int sec)

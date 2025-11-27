@@ -71,11 +71,11 @@ namespace BloomLines.UI
                 AudioController.Play("click_button");
                 AnalyticsController.SendEvent("click_daily_reward_multiply_button");
 
-                AdsController.ShowRewarded((success) =>
+                /*AdsController.ShowRewarded((success) =>
                 {
                     if (success)
                         Collect(2);
-                });
+                });*/
             });
         }
 
