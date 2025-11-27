@@ -7,14 +7,15 @@ using BloomLines.Skins;
 using I2.Loc;
 using TMPro;
 using UnityEngine;
-//using SimpleSolitaire.Controllers;
+using SimpleSolitaire.Controller;
+using BloomLines.UI;
 
 namespace BloomLines.UI
 {
     public class UIIAPTabGold : UIIAPTabBase
     {
         //[SerializeField] private TextMeshProUGUI _title;
-        //[SerializeField] private GameManager _gameManager;
+        [SerializeField] private GameManager _gameManager;
         [SerializeField] private int _gold;
 
         protected override void OnClick()
@@ -33,22 +34,9 @@ namespace BloomLines.UI
         protected override void OnPurchaseComplete(bool result)
         {
             base.OnPurchaseComplete(result);
-            //_gameManager.Gold
+            _gameManager.Gold += _gold;
             //SetSkinPack("skin_pack_2");
         }
-
-        //private void SetSkinPack(string id)
-        //{
-        //    var gameState = SaveManager.GameState;
-        //    var skinPack = GameAssets.GetSkinPackData(id);
-        //    gameState.SkinPack = id;
-
-        //    EventsManager.Publish(new UpdateSkinPackEvent());
-
-        //    SaveManager.Save(SaveType.Game);
-
-        //    UpdatePurchase();
-        //}
 
         protected override void UpdatePurchase()
         {
