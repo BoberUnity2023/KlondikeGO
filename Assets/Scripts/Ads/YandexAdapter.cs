@@ -19,7 +19,6 @@ namespace BloomLines.Ads
         public void ShowInterstitial()
         {
             Debug.Log("YandexAdsAdapter: ShowAd");
-
             YG2.InterstitialAdvShow();
         }
 

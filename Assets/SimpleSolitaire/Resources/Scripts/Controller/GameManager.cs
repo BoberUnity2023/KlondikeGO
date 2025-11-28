@@ -35,7 +35,8 @@ namespace SimpleSolitaire.Controller
 
     public abstract class GameManager : MonoBehaviour
     {
-        [SerializeField] private Game _game;        
+        [SerializeField] private Game _game;
+        [SerializeField] private SaveController _saveController;
         [Header("Serialized fields:")]
         [SerializeField] private RectTransform _bottomPanel;
         [SerializeField] private Animator _settingsPanelAnimator;
@@ -147,6 +148,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField]
         private int[] MoveFromWasteToPackPrices;//Штраф за переворот колоды
 
+        public SaveController Save => _saveController;
         public GamePushController GamePush { get; set; }
 
         public int TimeCount => _timeCount;
@@ -162,34 +164,38 @@ namespace SimpleSolitaire.Controller
                 //if (Platform == Platform.Yandex) 
                 //    _gold = YandexGame.savesData.Gold;
 
-                if (Platform == Platform.Ok ||
+                /*if (Platform == Platform.Ok ||
                     Platform == Platform.VK ||
                     Platform == Platform.GD)
-                    _gold = PlayerPrefs.GetInt("Gold");                
+                    _gold = PlayerPrefs.GetInt("Gold");*/
 
-                return _gold;
+                return Save.Gold; //_gold;
             }
             set
             {
-                if (value > _gold)
-                    Stats.GoldForAllTime += value - _gold;
+                int gold = Save.Gold;
 
-                _gold = Mathf.Max(0, value);
-                _goldLabel.text = _gold.ToString();
-                
-                if (Platform == Platform.Ok ||
-                    Platform == Platform.VK ||
-                    Platform == Platform.GD)
-                { 
-                    PlayerPrefs.SetInt("Gold", _gold);
-                    PlayerPrefs.Save();
-                }                
+                if (value > gold)
+                    Stats.GoldForAllTime += value - gold;
 
-                if (Platform == Platform.Yandex)
-                {
-                    //YandexGame.savesData.Gold = _gold;
-                    //YandexGame.SaveProgress();
-                }                    
+                gold = Mathf.Max(0, value);
+                _goldLabel.text = gold.ToString();
+
+                Save.Gold = gold;
+
+                //if (Platform == Platform.Ok ||
+                //    Platform == Platform.VK ||
+                //    Platform == Platform.GD)
+                //{ 
+                //    PlayerPrefs.SetInt("Gold", _gold);
+                //    PlayerPrefs.Save();
+                //}                
+
+                //if (Platform == Platform.Yandex)
+                //{
+                //    //YandexGame.savesData.Gold = _gold;
+                //    //YandexGame.SaveProgress();
+                //}                    
             }
         }
 
@@ -280,25 +286,26 @@ namespace SimpleSolitaire.Controller
 
         public void LoadGold()
         {
-            if (Platform == Platform.Ok ||
-                Platform == Platform.VK ||
-                Platform == Platform.GD)
-            {
-                Gold = PlayerPrefs.GetInt("Gold");
-            }
+            Gold = Save.Gold;
+            //if (Platform == Platform.Ok ||
+            //    Platform == Platform.VK ||
+            //    Platform == Platform.GD)
+            //{
+                
+            //}
 
-            if (Platform == Platform.Yandex)
-            {
-                // Проверяем запустился ли плагин
-                //if (YandexGame.SDKEnabled == true)
-                //{
-                //    // Если запустился, то запускаем Ваш метод
-                //    GetData();
+            //if (Platform == Platform.Yandex)
+            //{
+            //    // Проверяем запустился ли плагин
+            //    //if (YandexGame.SDKEnabled == true)
+            //    //{
+            //    //    // Если запустился, то запускаем Ваш метод
+            //    //    GetData();
 
-                //    // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
-                //    // но он запустится при вызове события GetDataEvent, после прогрузки плагина
-                //}
-            }
+            //    //    // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
+            //    //    // но он запустится при вызове события GetDataEvent, после прогрузки плагина
+            //    //}
+            //}
         }
 
         private void Start()
@@ -523,8 +530,8 @@ namespace SimpleSolitaire.Controller
             if (_timeCount < Stats.FastestWinTime)
                 Stats.FastestWinTime = _timeCount;
 
-            if (_timeCount > Stats.LongestWinTime)
-                Stats.LongestWinTime = _timeCount;
+            if (_timeCount > Stats.LongestPartyTime)
+                Stats.LongestPartyTime = _timeCount;
 
             OnGameWin?.Invoke();
 #if GAME_PUSH
@@ -1128,7 +1135,7 @@ namespace SimpleSolitaire.Controller
                     ScreenController.Active = true;
                 }
                 _undoPerformComponent.ResetUndoStates();
-                _adsController.TryShowInterstitial();
+                //_adsController.TryShowInterstitial();
                 OnGameStart?.Invoke();
                 _magicWand.StartParty();
                 _peek.StartParty();
@@ -1172,7 +1179,7 @@ namespace SimpleSolitaire.Controller
                 _cardLogic.Shuffle(true);
                 //StartCoroutine(AfterStartEffectPlayed(2.5f));
                 _undoPerformComponent.ResetUndoStates();
-                _adsController.TryShowInterstitial();
+                //_adsController.TryShowInterstitial();
                 _magicWand.StartParty();
                 _peek.StartParty();
                 OnGameStart?.Invoke();

@@ -224,7 +224,7 @@ MonoBehaviour:
     saveCloud: 1
     flush: 0
   Basic:
-    platform: {fileID: 0}
+    platform: {fileID: 11400000, guid: c2a303d33a9fd394bae4c4b88b9a1c44, type: 2}
     autoApplySettings: 1
     autoPauseGame: 1
     editEventSystem: 1
@@ -234,7 +234,8 @@ MonoBehaviour:
     syncInitSDK: 0
     loadSceneIfSDKLate: 0
     loadSceneIndex: 0
-    simulationLoadScene: 0
+    initDelaySimulation: 0
+    buildNumber: 280
   Simulation:
     device: 0
     language: ru
@@ -278,6 +279,7 @@ MonoBehaviour:
     showFirstAdv: 1
     interAdvInterval: 1
     postponeCallByFail: 0
+    setLanguageMod: 0
     skipInterAdvAfterReward: 0
     saveLocal: 0
     saveCloud: 1

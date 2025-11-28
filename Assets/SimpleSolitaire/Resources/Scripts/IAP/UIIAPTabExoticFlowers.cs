@@ -42,7 +42,7 @@ namespace BloomLines.UI
 
             EventsManager.Publish(new UpdateSkinPackEvent());
 
-            SaveManager.Save(SaveType.Game);
+            //SaveManager.Save(SaveType.Game);//BB
 
             UpdatePurchase();
         }

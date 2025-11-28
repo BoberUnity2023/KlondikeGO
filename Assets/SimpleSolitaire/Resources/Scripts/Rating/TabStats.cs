@@ -27,7 +27,7 @@ public class TabStats : MonoBehaviour
         _indicatorPercentWins.text = percentWins.ToString("f2") + "%";        
 
         _indicatorFastestWinTime.text = TimeString(_hub.Stats.FastestWinTime);        
-        _indicatorLongestPartyTime.text = TimeString(_hub.Stats.LongestWinTime);
+        _indicatorLongestPartyTime.text = TimeString(_hub.Stats.LongestPartyTime);
         _indicatorAppVersion.text = "v. " + Application.version.ToString();
     }
 

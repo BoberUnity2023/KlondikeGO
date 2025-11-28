@@ -1,22 +1,26 @@
 using UnityEngine;
 using SimpleSolitaire.Controller;
-using UnityEngine.VFX;
 
 public class Stats
 {
-    private GameManager _hub;
+    private GameManager _gameManager;
+    private SaveController Save => _gameManager.Save;
+
+    public Stats(GameManager gameManager)
+    {
+        _gameManager = gameManager;
+    }
 
     public int Experience
     {
         get
         {
-            return PlayerPrefs.GetInt("Experience", 0);
+            return Save.Experience;
         }
 
         set
         {
-            PlayerPrefs.SetInt("Experience", value);
-            PlayerPrefs.Save(); 
+            Save.Experience = value; 
         }
     }
 
@@ -38,13 +42,12 @@ public class Stats
     {
         get
         {
-            return PlayerPrefs.GetInt("PlayedGames", 0);
+            return Save.PlayedGames;
         }
 
         set
-        {
-            PlayerPrefs.SetInt("PlayedGames", value);
-            PlayerPrefs.Save();
+        {            
+            Save.PlayedGames = value;
         }
     }
 
@@ -52,13 +55,12 @@ public class Stats
     {
         get
         {
-            return PlayerPrefs.GetInt("Wins", 0);
+            return Save.Wins;
         }
 
         set
         {
-            PlayerPrefs.SetInt("Wins", value);
-            PlayerPrefs.Save();
+            Save.Wins = value;
         }
     }
 
@@ -66,7 +68,7 @@ public class Stats
     {
         get
         {
-            return PlayedGames - Wins;
+            return Save.PlayedGames - Save.Wins;
         }
     }
 
@@ -74,28 +76,26 @@ public class Stats
     {
         get
         {
-            return PlayerPrefs.GetInt("FastestWinTime", 7200);
+            return Save.FastestWinTime;
         }
 
         set
         {
-            PlayerPrefs.SetInt("FastestWinTime", value);
-            PlayerPrefs.Save();
+            Save.FastestWinTime =  value;
         }
     }
 
     
-    public int LongestWinTime
+    public int LongestPartyTime
     {
         get
         {
-            return PlayerPrefs.GetInt("LongestWinTime", 0);
+            return Save.LongestPartyTime;
         }
 
         set
         {
-            PlayerPrefs.SetInt("LongestWinTime", value);
-            PlayerPrefs.Save();
+            Save.LongestPartyTime = value;
         }
     }
 
@@ -115,13 +115,14 @@ public class Stats
 
         //if (_saveType == SaveType.Prefs)
         //{
-            return PlayerPrefs.GetInt("AchivementProgress" + id.ToString(), 0);
+        return Save.GetAchivementProgress(id);//  PlayerPrefs.GetInt("AchivementProgress" + id.ToString(), 0);
         //}
         //return 0;
     }
 
     public void SetAchivementProgress(int id, int value)
     {
+        Save.SetAchivementProgress(id, value);
         //if (_saveType == SaveType.Yandex)
         //{
         //    YandexGame.savesData.AchivementProgress[id] = value;
@@ -130,16 +131,11 @@ public class Stats
 
         //if (_saveType == SaveType.Prefs || _saveType == SaveType.Struct)
         //{
-            PlayerPrefs.SetInt("AchivementProgress" + id.ToString(), value);
-            PlayerPrefs.Save();
+        //    PlayerPrefs.SetInt("AchivementProgress" + id.ToString(), value);
+        //    PlayerPrefs.Save();
         //}
 
-        //if (_saveType == SaveType.Struct)
-        //{
-        //    Save.AchivementProgress[id] = value;
-        //    VKManager.Instance.StorageSave();
-        //}
-
+        
         //if (_saveType == SaveType.Json)
         //{
         //    Save.AchivementProgress[id] = value;
@@ -163,10 +159,5 @@ public class Stats
 
     //        _hub.UI.WindowRating.TabProgress.SetExperience(value);            
     //    }
-    //}
-
-    public Stats (GameManager hub)
-    {
-        _hub = hub;   
-    }
+    //}    
 }
