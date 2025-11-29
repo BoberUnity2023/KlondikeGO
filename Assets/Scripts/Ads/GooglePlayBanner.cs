@@ -14,8 +14,8 @@ namespace BloomLines
         public GooglePlayBanner()
         {
             var gameState = SaveManager.GameState;
-            if (gameState.Purchased.Contains(IAPController.NO_ADS)) // Если купленно отключение рекламы
-                return;
+            //if (gameState.Purchased.Contains(IAPController.NO_ADS)) // Если купленно отключение рекламы
+            //    return;
             
             LoadAd();
         }        

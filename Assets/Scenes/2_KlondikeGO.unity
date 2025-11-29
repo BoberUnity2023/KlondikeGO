@@ -24233,6 +24233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e6b3fe76067f9429d454860f215824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameManager: {fileID: 411655882}
   BackgroundVisual:
     Previews:
     - {fileID: 21300000, guid: 91153f542cfd3a14b8d72f0021c4c36b, type: 3}
@@ -49204,7 +49205,7 @@ MonoBehaviour:
   _price: {fileID: 0}
   _priceLegacy: {fileID: 1857843167}
   _btn: {fileID: 628552874}
-  _gameManager: {fileID: 0}
+  _gameManager: {fileID: 411655882}
   _gold: 3000
 --- !u!1 &942105778
 GameObject:
@@ -52776,7 +52777,7 @@ MonoBehaviour:
   _price: {fileID: 0}
   _priceLegacy: {fileID: 39855874}
   _btn: {fileID: 878032113}
-  _gameManager: {fileID: 0}
+  _gameManager: {fileID: 411655882}
   _gold: 50000
 --- !u!1 &1053351631
 GameObject:
@@ -75586,7 +75587,7 @@ MonoBehaviour:
   _price: {fileID: 0}
   _priceLegacy: {fileID: 1369357384}
   _btn: {fileID: 1130498859}
-  _gameManager: {fileID: 0}
+  _gameManager: {fileID: 411655882}
   _gold: 500000
 --- !u!1 &1436226787
 GameObject:
@@ -79762,7 +79763,7 @@ MonoBehaviour:
   _price: {fileID: 0}
   _priceLegacy: {fileID: 653716224}
   _btn: {fileID: 1205973834}
-  _gameManager: {fileID: 0}
+  _gameManager: {fileID: 411655882}
   _gold: 5000
 --- !u!1 &1546022716
 GameObject:

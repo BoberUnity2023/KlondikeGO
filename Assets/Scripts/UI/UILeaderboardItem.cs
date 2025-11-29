@@ -18,7 +18,7 @@ namespace BloomLines.UI
         [SerializeField] private Sprite[] _backgrounds;
         [SerializeField] private Color[] _textColors;
 
-        public void Set(LeaderboardPlayerData playerData)
+        /*public void Set(LeaderboardPlayerData playerData)
         {
             _name.text = string.IsNullOrEmpty(playerData.Name) ? "-" : playerData.Name;
             _position.text = playerData.Position.ToString();
@@ -34,7 +34,7 @@ namespace BloomLines.UI
             _name.color = _textColors[index];
             _position.color = _textColors[index];
             _score.color = _textColors[index];
-        }
+        }*/
 
         private void OnPhotoLoaded(Texture2D texture)
         {

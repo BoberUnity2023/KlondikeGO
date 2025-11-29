@@ -32,6 +32,7 @@ namespace SimpleSolitaire.Controller
 
     public class CardShirtManager : MonoBehaviour
     {
+        [SerializeField] private GameManager _gameManager;
         public static CardShirtManager Instance;
 
         public CardVisualData VisualData => new CardVisualData(back: CardBackVisual.VisualName, front: CardFrontVisual.VisualName);
@@ -49,9 +50,17 @@ namespace SimpleSolitaire.Controller
         private void Awake()
         {
             Instance = this;
+            InitializeElements();
             InitializeButtons();
             SetImageObjects();
             GetSettings();
+        }
+
+        private void InitializeElements()
+        {
+            CardBackVisual.Elements.ForEach(x => x.GameManager = _gameManager);
+            BackgroundVisual.Elements.ForEach(x => x.GameManager = _gameManager);
+            CardFrontVisual.Elements.ForEach(x => x.GameManager = _gameManager);
         }
 
         private void InitializeButtons()

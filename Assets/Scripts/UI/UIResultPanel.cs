@@ -155,7 +155,7 @@ namespace BloomLines.UI
             var gameModeState = SaveManager.GameModeState;
 
             gameState.Stats.MaxScore = gameModeState.Score;
-            LeaderboardController.SetScore(gameModeState.Score);
+            //LeaderboardController.SetScore(gameModeState.Score);
 
             SaveManager.Save(SaveType.Game);
             SaveManager.Sync();

@@ -59,7 +59,7 @@ namespace BloomLines.Controllers
                 StartGame(gameModeState.Type, false);
 
 #if Yandex
-            YG.YG2.GameReadyAPI();
+            //YG.YG2.GameReadyAPI();
 #endif
 
 #if GAME_PUSH

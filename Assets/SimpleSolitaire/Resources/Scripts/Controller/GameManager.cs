@@ -336,6 +336,8 @@ namespace SimpleSolitaire.Controller
                 _platform = Platform.Yandex;
             if (buildData.BuildPlatform == BuildPlatform.GD)
                 _platform = Platform.GD;
+
+            Debug.Log("GameManager Platform: " + _platform.ToString());
         }
 
         /// <summary>

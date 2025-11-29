@@ -29,7 +29,7 @@ namespace BloomLines.Controllers
             // Загружаем нужный рекламный адаптер и инициализируем её
 
 #if Yandex
-            _adsAdapter = new YandexAdapter();
+            //_adsAdapter = new YandexAdapter();
 #endif
 
 #if GAME_PUSH
@@ -67,8 +67,8 @@ namespace BloomLines.Controllers
             Debug.Log("AdsController: Show Interstitial");
 
             var gameState = SaveManager.GameState;
-            if (gameState.Purchased.Contains(IAPController.NO_ADS)) // Если купленно отключение рекламы
-                return;
+            //if (gameState.Purchased.Contains(IAPController.NO_ADS)) // Если купленно отключение рекламы
+            //    return;
 
             AnalyticsController.SendEvent("ads_show_interstitial");
 #if UNITY_EDITOR

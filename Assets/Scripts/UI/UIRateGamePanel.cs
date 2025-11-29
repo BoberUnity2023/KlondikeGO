@@ -10,7 +10,7 @@ using GamePush;
 #endif
 
 #if Yandex
-using YG;
+//using YG;
 #endif
 
 namespace BloomLines.UI
@@ -46,7 +46,7 @@ namespace BloomLines.UI
                 AnalyticsController.SendEvent("click_rate_game_write_button");
 
 #if Yandex
-                YG2.ReviewShow();
+                //YG2.ReviewShow();
 #endif
 
 #if VK

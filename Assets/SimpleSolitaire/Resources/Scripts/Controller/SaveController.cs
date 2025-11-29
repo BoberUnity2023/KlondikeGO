@@ -203,6 +203,7 @@ public class SaveController : MonoBehaviour
     
     public int GetAchivementProgress(int id)
     {
+        Debug.Log("saveType: " + _saveType.ToString());
 #if Yandex
         if (_saveType == SaveType.Yandex)
         {
@@ -730,9 +731,10 @@ public class SaveController : MonoBehaviour
         }
     }
 
-    private void Awake()
+    private void Start()
     {
         SetSaveType();
+        FillSaveFromPlayerPrefs();
 
         if (_saveType == SaveType.Yandex)
         {
@@ -745,6 +747,7 @@ public class SaveController : MonoBehaviour
             //    // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
             //    // но он запустится при вызове события GetDataEvent, после прогрузки плагина
             //}
+            FillSaveFromPlayerPrefs();
         }
 
         if (_saveType == SaveType.Json)
@@ -790,18 +793,21 @@ public class SaveController : MonoBehaviour
             case Platform.Yandex:
                 {
                     _saveType = SaveType.Yandex;
+                    Debug.Log("SaveController.SaveType.Yandex");
                     break;
                 }
 
             case Platform.VK:
                 {
                     _saveType = SaveType.Json;
+                    Debug.Log("SaveController.SaveType.Json");
                     break;
                 }
 
             case Platform.Ok:
                 {
                     _saveType = SaveType.Json;
+                    Debug.Log("SaveController.SaveType.Json");
                     break;
                 }
         }
@@ -816,10 +822,10 @@ public class SaveController : MonoBehaviour
             Save.TakenDayBonuses[i] = PlayerPrefs.GetInt(KeyTakenDayBonuses + i.ToString()) == 1;
         }
 
-        Save.AchivementProgress = new int[10];
-        for (int i = 0; i < 10; i++)
+        Save.AchivementProgress = new int[12];
+        for (int i = 0; i < 12; i++)
         {
-            Save.AchivementProgress[i] = PlayerPrefs.GetInt(KeyAchivementProgress + i.ToString()) ;
+            Save.AchivementProgress[i] = PlayerPrefs.GetInt(KeyAchivementProgress + i.ToString());
         }
 
         Save.LastVisitTime = PlayerPrefs.GetString(KeyLastVisitTime, "0");
@@ -843,8 +849,8 @@ public class SaveController : MonoBehaviour
             Save.TakenDayBonuses[i] = PlayerPrefs.GetInt(KeyTakenDayBonuses + i.ToString()) == 1 || save.TakenDayBonuses[i];
         }
 
-        Save.AchivementProgress = new int[10];
-        for (int i = 0; i < 10; i++)
+        Save.AchivementProgress = new int[12];
+        for (int i = 0; i < 12; i++)
         {
             Save.AchivementProgress[i] = Mathf.Max(PlayerPrefs.GetInt(KeyAchivementProgress + i.ToString()), save.AchivementProgress[i]);
         }

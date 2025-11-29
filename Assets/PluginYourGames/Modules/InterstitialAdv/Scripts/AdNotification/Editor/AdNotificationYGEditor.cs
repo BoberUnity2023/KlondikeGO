@@ -1,4 +1,3 @@
-#if UNITY_EDITOR
 using UnityEditor;
 
 namespace YG.EditorScr
@@ -18,4 +17,3 @@ namespace YG.EditorScr
         }
     }
 }
-#endif

@@ -36,6 +36,7 @@ namespace BloomLines.Controllers
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()
         {
+#if OK
             Debug.Log("OKController.Initialize()");
             var obj = new GameObject("OKHandle");
             var handle = obj.AddComponent<OKHandle>();
@@ -47,6 +48,7 @@ namespace BloomLines.Controllers
             GameObject.DontDestroyOnLoad(obj);
 
             Application.ExternalCall("OKInit");
+#endif
         }
 
         private static void OnGetStorage(string arg1)

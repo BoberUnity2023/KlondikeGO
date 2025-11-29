@@ -245,7 +245,7 @@ namespace BloomLines.Controllers
                 bool showPanel = false;
 
 #if Yandex
-                showPanel = YG.YG2.reviewCanShow;
+                //showPanel = YG.YG2.reviewCanShow;
 #endif
 
 #if RuStore

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 #if Yandex
-using YG;
+//using YG;
 #endif
 
 namespace BloomLines.UI
@@ -82,7 +82,7 @@ namespace BloomLines.UI
                 AnalyticsController.SendEvent("click_settings_our_games_button");
 
 #if Yandex
-                YG2.OnDeveloperURL();
+                //YG2.OnDeveloperURL();
 #endif
 
 #if VK

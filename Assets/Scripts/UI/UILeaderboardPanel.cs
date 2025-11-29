@@ -39,12 +39,12 @@ namespace BloomLines.UI
             if (Mathf.Abs(currentTimestamp - _lastUpdateTimestamp) < 60f)
                 return;
 
-            LeaderboardController.GetLeaderboard(OnGetLeaderboard);
+           // LeaderboardController.GetLeaderboard(OnGetLeaderboard);
 
             _lastUpdateTimestamp = currentTimestamp;
         }
 
-        private void OnGetLeaderboard(LeaderboardData data)
+        /*private void OnGetLeaderboard(LeaderboardData data)
         {
             if(data.Players.Length > 0)
                 _noItemsTitle.SetActive(false);
@@ -63,7 +63,7 @@ namespace BloomLines.UI
                 _items[i].Set(data.Players[i]);
                 _items[i].gameObject.SetActive(true);
             }
-        }
+        }*/
 
         protected override void Open()
         {

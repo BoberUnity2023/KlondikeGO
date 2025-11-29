@@ -34,8 +34,11 @@ namespace BloomLines.UI
         protected override void OnPurchaseComplete(bool result)
         {
             base.OnPurchaseComplete(result);
-            _gameManager.Gold += _gold;
-            //SetSkinPack("skin_pack_2");
+
+            if (result)
+            {
+                _gameManager.Gold += _gold;
+            }
         }
 
         protected override void UpdatePurchase()
@@ -45,14 +48,7 @@ namespace BloomLines.UI
 
             if (isPurchased)
             {
-                //var gameState = SaveManager.GameState;
-
-                _priceLegacy.text = "Done";//LocalizationManager.GetTranslation("Main/change");//TODO: Куплено
-
-                //if (gameState.SkinPack == "skin_pack_1")
-                //    _title.text = LocalizationManager.GetTranslation("Main/default_flowers");
-                //else if(gameState.SkinPack == "skin_pack_2")
-                ////    _title.text = LocalizationManager.GetTranslation("Main/new_flowers_iap");
+                _priceLegacy.text = "---";//LocalizationManager.GetTranslation("Main/change");//TODO: Куплено
             }
             else if (canPurchase)
             {

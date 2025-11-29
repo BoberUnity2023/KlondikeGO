@@ -1,4 +1,4 @@
-using System.Runtime.InteropServices;
+//using System.Runtime.InteropServices;
 using BloomLines.Managers;
 
 namespace BloomLines.Helpers
@@ -6,8 +6,8 @@ namespace BloomLines.Helpers
     public static class Vibration
     {
 #if UNITY_WEBGL
-        [DllImport("__Internal")]
-        private static extern void VibrateWeb(int ms);
+        //[DllImport("__Internal")]
+        //private static extern void VibrateWeb(int ms);
 #endif
 
         private static bool CanVibrate => SaveManager.GameState.Vibration;
@@ -22,9 +22,9 @@ namespace BloomLines.Helpers
 #endif
 
 #if UNITY_WEBGL
-            VibrateWeb(ms);
+            //VibrateWeb(ms);
 #else
-            VibrationAssets.Vibration.Vibrate(ms);
+           // VibrationAssets.Vibration.Vibrate(ms);
 #endif
         }
 
@@ -38,9 +38,9 @@ namespace BloomLines.Helpers
 #endif
 
 #if UNITY_WEBGL
-            VibrateWeb(0);
+           // VibrateWeb(0);
 #else
-            VibrationAssets.Vibration.Cancel();
+            //VibrationAssets.Vibration.Cancel();
 #endif
         }
     }
