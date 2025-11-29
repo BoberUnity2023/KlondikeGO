@@ -4,7 +4,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if Yandex
 using YG;
+#endif
 using Platform = SimpleSolitaire.Controller.Platform;
 
 public enum SaveType
@@ -759,8 +761,9 @@ public class SaveController : MonoBehaviour
 #if Yandex
         YG2.SaveProgress();
         //YandexGame.savesData.Gold;
-    }
 #endif
+    }
+
 
     public void ResetProgress()
     {
