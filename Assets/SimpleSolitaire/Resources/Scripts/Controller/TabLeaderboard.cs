@@ -7,6 +7,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using BloomLines.Helpers;
+using YG;
+using YG.Utils.LB;
+using BloomLines.Controllers;
+using Platform = SimpleSolitaire.Controller.Platform;
 
 [System.Serializable]
 public class LeaderboardFetchData
@@ -16,7 +20,6 @@ public class LeaderboardFetchData
     public int score;
     public string name;
     public int position;
-
     public int gold;
     public int level;
 }
@@ -25,32 +28,48 @@ public class TabLeaderboard : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private Text _experienceIndicator;
-    [SerializeField] private LBPlayer _thisPlayer;
+    [SerializeField] private Text _experienceIndicatorYandex;
+    [SerializeField] private LBPlayer _thisPlayerGamePush;
+    [SerializeField] private GameObject _thisPlayerYandex;
     [SerializeField] private GameObject _loadingScreen;
     [SerializeField] private LBPlayer[] _lBPlayers;
-    //[SerializeField] private Transform _itemsParent;
-    //[SerializeField] private UILeaderboardItem _itemPrefab;
     private long _lastUpdateTimestamp;
-
+  
     public int Rank { get; set; }
+
+    private void Awake()
+    {
+#if Yandex
+        InitializeYandex();      
+#endif
+    }
 
     private void OnEnable()
     {
+        string experience = FormatNumbers.Format(_gameManager.Save.Experience);
+        _experienceIndicator.text = experience;
+        _experienceIndicatorYandex.text = experience;
+
         var currentTimestamp = DateTimeOffset.Now.ToUnixTimeSeconds();
         if (Mathf.Abs(currentTimestamp - _lastUpdateTimestamp) < 60f)
             return;
 
+        _loadingScreen.SetActive(true);
+
+#if Yandex
+        GetLeaderboard();
+#endif
+
 #if GAME_PUSH
         if (GP_Init.isReady)
         {
-            _experienceIndicator.text = GP_Player.GetScore().ToString();        
-        
             Debug.Log("GP_LB Fetching...");
             if (_gameManager.GamePush == null)
                 Debug.LogError("_gameManager.GamePush == null");
             _gameManager.GamePush.FetchLeaderboard();
             _gameManager.GamePush.FetchPlayerRating();
             _loadingScreen.SetActive(true);
+            SetThisPlayer();
         }
         else
             Debug.Log("GP_LB is not ready");
@@ -68,7 +87,7 @@ public class TabLeaderboard : MonoBehaviour
             }
         }
 
-        _thisPlayer.Set("Begemot", FormatNumbers.Format(5278000), "10", "https://games.pikabu.ru/static/0/images/def_avatar/games.png");
+        _thisPlayerGamePush.Set("Begemot", FormatNumbers.Format(5278000), "10", "https://games.pikabu.ru/static/0/images/def_avatar/games.png");
         _loadingScreen.SetActive(false);
 #endif
 #endif
@@ -90,14 +109,10 @@ public class TabLeaderboard : MonoBehaviour
         Debug.Log("LEADERBOARD: OnFetchPlayerRating Success() " + fetchTag + " PLAYER POSITION: " + position);
         Rank = position;
         string playerName = GP_Player.GetName();
-        string score = FormatNumbers.Format(GP_Player.GetScore());
-        //string scoreForAllGames = PlayerPrefs.GetInt("Experience").ToString();        
+        string score = FormatNumbers.Format(_gameManager.Save.Experience);
         string avatarUrl = GP_Player.GetAvatarUrl();
         string rank = position.ToString();
-        if (_thisPlayer != null)
-            _thisPlayer.Set(playerName, score, rank, avatarUrl);   
-        else
-            Debug.Log("GP. ThisPlayer == null");
+        _thisPlayerGamePush.Set(playerName, score, rank, avatarUrl); 
     }
 
     public void SetPlayers(GP_Data gp_data)
@@ -115,7 +130,7 @@ public class TabLeaderboard : MonoBehaviour
         for (int i = 0; i < players.Count; i++)
         {
             string playerName = players[i].name;
-            string playerScore = players[i].score.ToString();
+            string playerScore = FormatNumbers.Format(players[i].score);
             string playerRank = players[i].position.ToString();
             string playerAvatar = players[i].avatar;
             Debug.Log("PLAYER: " + i);            
@@ -138,4 +153,53 @@ public class TabLeaderboard : MonoBehaviour
         }
     }
 #endif
+
+#if Yandex  
+    public void InitializeYandex()
+    {
+        YG2.onGetLeaderboard += OnGetLeaderboardYandex;
+        GetLeaderboard();
+        SetThisPlayer();
+        Debug.Log("YandexLB Fetching...");
+    }
+
+    public void GetLeaderboard()
+    {
+        Debug.Log("Yandex GetLeaderboard");
+        YG2.GetLeaderboard("score", 50, 50, "128x128");
+    }
+
+    public void SetScore(int score)
+    {
+        Debug.Log("Yandex SetLeaderboardScore: " + score);
+        YG2.SetLeaderboard("score", score);
+    }
+
+    private void OnGetLeaderboardYandex(LBData lbData)
+    {
+        Debug.Log("Yandex OnLeaderboardLoaded");
+        _loadingScreen.SetActive(false);
+
+        var data = new LeaderboardData();
+        data.Players = new LeaderboardPlayerData[lbData.players.Length];
+
+        for (int i = 0; i < data.Players.Length; i++)
+        {
+            string playerName = lbData.players[i].name;
+            int playerRank = lbData.players[i].rank;
+            string playerScore = FormatNumbers.Format(lbData.players[i].score);
+            string playerAvatar = lbData.players[i].photo;
+            
+            _lBPlayers[i].Set(playerName, playerScore, playerRank.ToString(), playerAvatar);
+        }
+    }
+#endif
+
+    private void SetThisPlayer()
+    {
+        Platform platform = _gameManager.Platform;
+        _thisPlayerYandex.SetActive(platform == Platform.Yandex);
+        bool isPlatformGamePush = platform == Platform.VK || platform == Platform.Ok;
+        _thisPlayerGamePush.gameObject.SetActive(isPlatformGamePush);
+    }
 }

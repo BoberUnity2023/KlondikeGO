@@ -202,8 +202,7 @@ public class SaveController : MonoBehaviour
     }
     
     public int GetAchivementProgress(int id)
-    {
-        Debug.Log("saveType: " + _saveType.ToString());
+    {        
 #if Yandex
         if (_saveType == SaveType.Yandex)
         {
@@ -465,6 +464,7 @@ public class SaveController : MonoBehaviour
             {
                 YG2.saves.Experience = value;
                 YG2.SaveProgress();
+                YG2.SetLeaderboard("score", value);
             }
 #endif
             if (_saveType == SaveType.Json)
@@ -733,11 +733,12 @@ public class SaveController : MonoBehaviour
 
     private void Start()
     {
-        SetSaveType();
-        FillSaveFromPlayerPrefs();
+        SetSaveType();        
+        //FillSaveFromPlayerPrefsOrStorage();
 
         if (_saveType == SaveType.Yandex)
         {
+            Save save = new Save();            
             // ѕровер€ем запустилс€ ли плагин
             //if (YG2.SDKEnabled == true)
             //{
@@ -747,7 +748,7 @@ public class SaveController : MonoBehaviour
             //    // ≈сли плагин еще не прогрузилс€, то метод не запуститьс€ в методе Start,
             //    // но он запуститс€ при вызове событи€ GetDataEvent, после прогрузки плагина
             //}
-            FillSaveFromPlayerPrefs();
+            FillSaveFromYandex();
         }
 
         if (_saveType == SaveType.Json)
@@ -777,7 +778,7 @@ public class SaveController : MonoBehaviour
         {
             YG2.SetDefaultSaves();
             YG2.SaveProgress();
-            YG2.SetLeaderboard("Exp", 0);//TODO:
+            YG2.SetLeaderboard("score", 0);
         }
 #endif
         if (_saveType == SaveType.Json)
@@ -869,6 +870,35 @@ public class SaveController : MonoBehaviour
         Save.LongestPartyTime = Mathf.Max(PlayerPrefs.GetInt(KeyLongestPartyTime, 0), save.LongestPartyTime);
         Save.NoAds = PlayerPrefs.GetInt(KeyNoAds) == 1 || save.NoAds;
         //VKManager.Instance.StorageSave();
+    }
+
+    public void FillSaveFromYandex()
+    {
+        Save.TakenDayBonuses = new bool[5];
+        for (int i = 0; i < 5; i++)
+        {
+            Save.TakenDayBonuses[i] = YG2.saves.TakenDayBonuses[i];
+        }
+
+        Save.AchivementProgress = new int[12];
+        for (int i = 0; i < 12; i++)
+        {
+            Save.AchivementProgress[i] = YG2.saves.AchivementProgress[i];
+        }
+
+        int fromPlayerPrefs = ConvertStringToInt(PlayerPrefs.GetString(KeyLastVisitTime, "0"));
+        int fromStorage = ConvertStringToInt(YG2.saves.LastVisitTime);
+
+        Save.LastVisitTime = Mathf.Max(fromPlayerPrefs, fromStorage).ToString();
+        Save.Gold = Mathf.Max(PlayerPrefs.GetInt(KeyGold, 0), YG2.saves.Gold);
+        Save.Score = Mathf.Max(PlayerPrefs.GetInt(KeyGold, 0), YG2.saves.Score);
+        Save.Experience = Mathf.Max(PlayerPrefs.GetInt(KeyExperience, 0), YG2.saves.Experience);
+        Save.Wins = Mathf.Max(PlayerPrefs.GetInt(KeyWins, 0), YG2.saves.Wins);
+        Save.Losts = Mathf.Max(PlayerPrefs.GetInt(KeyLosts, 0), YG2.saves.Losts);
+        Save.FastestWinTime = Mathf.Max(PlayerPrefs.GetInt(KeyFastestWinTime, 0), YG2.saves.FastestWinTime);
+        Save.FastestPartyTime = Mathf.Max(PlayerPrefs.GetInt(KeyFastestPartyTime, 0), YG2.saves.FastestPartyTime);
+        Save.LongestPartyTime = Mathf.Max(PlayerPrefs.GetInt(KeyLongestPartyTime, 0), YG2.saves.LongestPartyTime);
+        Save.NoAds = PlayerPrefs.GetInt(KeyNoAds) == 1 || YG2.saves.NoAds;        
     }
 
     private void FillSaveReset()
