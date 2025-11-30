@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.ParticleSystem;
 
 namespace BloomLines
 {
@@ -21,9 +22,11 @@ namespace BloomLines
         [SerializeField] private Image _imageCounter;
         [SerializeField] private Sprite _spriteCounterActive;
         [SerializeField] private Sprite _spriteCounterInActive;
-        [SerializeField] private List<Card> _closeCards;
-        [SerializeField] private bool _isProcess;
-        [SerializeField] private bool _isCardsRotateCloseing;
+        [SerializeField] private ParticleSystem _particles;
+        [SerializeField] private ParticleSystem _particlesRed;
+        private List<Card> _closeCards;
+        private bool _isProcess;
+        private bool _isCardsRotateCloseing;
         private int _count;
 
         public int Count
@@ -31,9 +34,15 @@ namespace BloomLines
             get { return _count; }
             set
             {
+                if (_count > value)
+                    _particles.Play();
+
+                if (_count < value)
+                    _particlesRed.Play();
+
                 _count = value;
                 _counterIndicator.text = value.ToString();
-                _imageCounter.sprite = _count > 0 ? _spriteCounterActive : _spriteCounterInActive;
+                _imageCounter.sprite = _count > 0 ? _spriteCounterActive : _spriteCounterInActive;                
                 SetButtonSprite();
             }
         }
@@ -62,7 +71,7 @@ namespace BloomLines
             if (_isProcess || _hintManager.IsHintProcess || _gameManager.MagicWand.IsProcess)
                 return;
 
-            Count--;
+            Count--;   
             _isProcess = true;
             _backgroundBlocker.SetActive(true);            
             _closeCards = CloseCards;

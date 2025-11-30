@@ -43,7 +43,7 @@ public class AdsController : MonoBehaviour
     { 
         if (_gameManager.Platform == Platform.Yandex)
         {
-            //_yandexGame._FullscreenShow();
+            YG.YG2.InterstitialAdvShow();
         }
 
         if (_gameManager.Platform == Platform.Ok)
@@ -54,6 +54,7 @@ public class AdsController : MonoBehaviour
 
         if (_gameManager.Platform == Platform.VK)
         {
+            GamePush.GP_Ads.ShowFullscreen();
             //VKManager.Instance.ShowInterstitial();
         }         
         
@@ -61,5 +62,16 @@ public class AdsController : MonoBehaviour
         {
             GameDistribution.Instance.ShowAd();
         }
-    }    
+    }
+
+    public void CloseSticky()
+    {
+#if Yandex
+        YG.YG2.StickyAdActivity(false);
+#endif
+
+#if GAME_PUSH
+        GamePush.GP_Ads.CloseSticky(); ;
+#endif
+    }
 }

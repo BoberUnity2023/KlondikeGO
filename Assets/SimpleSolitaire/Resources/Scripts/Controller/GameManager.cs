@@ -277,8 +277,7 @@ namespace SimpleSolitaire.Controller
             _soundEnable = true;            
             _isBarActive = true;
             Stats = new Stats(this);
-            LoadGold();
-            Stats.PlayedGames++;    
+            LoadGold();              
             _cardLogic.SubscribeEvents();
             _audioController = AudioController.Instance;
             _goldLabel.text = Gold.ToString();            
@@ -1121,6 +1120,7 @@ namespace SimpleSolitaire.Controller
 
             void OnWindowDisappeared()
             {
+                Stats.PlayedGames++;
                 SetLevel(_levelSelected);
                 StatisticsController.Instance.PlayedGames?.Invoke();                
                 _cardLogic.OnNewGameStart();
@@ -1172,6 +1172,7 @@ namespace SimpleSolitaire.Controller
 
             void OnWindowDisappeared()
             {
+                Stats.PlayedGames++;
                 StatisticsController.Instance.PlayedGames?.Invoke();
                 _cardLogic.OnNewGameStart();
                 _newGameLayer.SetActive(false);

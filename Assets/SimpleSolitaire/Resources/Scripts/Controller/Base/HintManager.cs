@@ -1,11 +1,9 @@
 ﻿using BloomLines;
-using Newtonsoft.Json.Linq;
 using SimpleSolitaire.Model;
 using SimpleSolitaire.Model.Enum;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 
@@ -50,6 +48,8 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private Image _countIndicatorImage;
         [SerializeField] private Sprite _countIndicatorSpriteActive;
         [SerializeField] private Sprite _countIndicatorSpriteInActive;
+        [SerializeField] private ParticleSystem _particles;
+        [SerializeField] private ParticleSystem _particlesRed;
 
         [Header("Hint data: ")] public List<Card> IsAvailableForMoveCardArray = new List<Card>();
         public List<HintElement> Hints = new List<HintElement>();
@@ -71,6 +71,12 @@ namespace SimpleSolitaire.Controller
             
             set
             {
+                if (value < _availableCountLevels)
+                    _particles.Play();
+
+                if (value > _availableCountLevels)
+                    _particlesRed.Play();
+
                 _availableCountLevels = value;
                 _countIndicator.text = value.ToString();// > 0 ? value.ToString() : "";
                 _hintButtonImage.sprite = value > 0 ? _hintButtonSpriteActive : _hintButtonSpriteInActive;

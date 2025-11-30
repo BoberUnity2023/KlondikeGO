@@ -24,6 +24,8 @@ namespace BloomLines
         [SerializeField] private Image _imageCounter;
         [SerializeField] private Sprite _spriteCounterActive;
         [SerializeField] private Sprite _spriteCounterInActive;
+        [SerializeField] private ParticleSystem _particles;
+        [SerializeField] private ParticleSystem _particlesRed;
 
         private List<Card> _targetOpenCards = new List<Card>();
         private Card _cardOpen;
@@ -36,7 +38,13 @@ namespace BloomLines
         {
             get { return _count; }
             set 
-            { 
+            {
+                if (_count > value)
+                    _particles.Play();
+
+                if (value > _count)
+                    _particlesRed.Play();
+
                 _count = value;
                 _counterIndicator.text = value.ToString();
                 _imageCounter.sprite = _count > 0 ? _spriteCounterActive : _spriteCounterInActive;

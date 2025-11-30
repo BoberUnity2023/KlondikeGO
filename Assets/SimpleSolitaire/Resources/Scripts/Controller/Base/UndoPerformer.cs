@@ -20,6 +20,8 @@ namespace SimpleSolitaire.Controller
         [SerializeField] protected Animator _undoButtonAnim;
         [SerializeField] protected Text _undoAvailableCountsText;
         [SerializeField] protected GameObject _undoAvailableIcon;
+        [SerializeField] private ParticleSystem _particles;
+        [SerializeField] private ParticleSystem _particlesRed;
 
         [Header("Options:")]
         [Tooltip("If TRUE UndoLogic will be available only AvailableUndoCounts times. After that need to watch ads for getting new undo uses.")]
@@ -43,7 +45,7 @@ namespace SimpleSolitaire.Controller
         public virtual void Undo(bool removeOnlyState = false)
         {
             if (StatesData.States.Count > 0)
-            {
+            {  
                 if (removeOnlyState)
                 {
                     StatesData.States.RemoveAt(StatesData.States.Count - 1);
@@ -56,6 +58,7 @@ namespace SimpleSolitaire.Controller
                     AvailableUndoCounts--;
                     _undoAvailableCountsText.text = AvailableUndoCounts.ToString();
                     _undoAvailableIcon.SetActive(AvailableUndoCounts > 0);
+                    _particles.Play();
                 }
                 else if (IsCountable && AvailableUndoCounts == 0)
                 {
@@ -144,6 +147,7 @@ namespace SimpleSolitaire.Controller
                 _undoAvailableCountsText.text = AvailableUndoCounts.ToString();
                 _undoAvailableCountsText.enabled = true;
                 _undoAvailableIcon.SetActive(AvailableUndoCounts > 0);
+                _particlesRed.Play();
             }
         }
 

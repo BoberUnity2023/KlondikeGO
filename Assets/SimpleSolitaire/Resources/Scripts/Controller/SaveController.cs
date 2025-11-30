@@ -420,8 +420,13 @@ public class SaveController : MonoBehaviour
 #if Yandex
             if (_saveType == SaveType.Yandex)
             {
-                YG2.saves.Gold = value;
-                YG2.SaveProgress();
+                if (YG2.isSDKEnabled)
+                {
+                    YG2.saves.Gold = value;
+                    YG2.SaveProgress();
+                }
+                else
+                    Debug.LogError("Error Save.Gold: YG SDK was not enabled");
             }
 #endif
             if (_saveType == SaveType.Json)
@@ -505,8 +510,13 @@ public class SaveController : MonoBehaviour
 #if Yandex
             if (_saveType == SaveType.Yandex)
             {
-                YG2.saves.PlayedGames = value;
-                YG2.SaveProgress();
+                if (YG2.isSDKEnabled)
+                {
+                    YG2.saves.PlayedGames = value;
+                    YG2.SaveProgress();
+                }
+                else
+                    Debug.LogError("Error Save.PlayedGames: YG SDK was not enabled");
             }
 #endif
             if (_saveType == SaveType.Json)

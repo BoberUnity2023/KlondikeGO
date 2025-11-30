@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEngine.UI;
 using SimpleSolitaire.Controller;
+using BloomLines.Ads;
 #if GAME_PUSH
 using GamePush;
 #endif
 using Platform = SimpleSolitaire.Controller.Platform;
-using System.Security.Cryptography;
 
 public class RewardedVideoController : MonoBehaviour
 {
@@ -15,8 +15,9 @@ public class RewardedVideoController : MonoBehaviour
     [SerializeField] private BuyWindow _buyWindow;
     [SerializeField] private UndoPerformer _undoPerformer;
     [SerializeField] private HintManager _hintManager;
-    [SerializeField] private EveryDayBonus _everyDayBonus;    
-    private int _reward = 300;    
+    [SerializeField] private EveryDayBonus _everyDayBonus;
+    private int _reward = 300;
+    private YandexAdapter _yandexAdapter;
 
     public int Id { get; set; }
 
@@ -30,19 +31,29 @@ public class RewardedVideoController : MonoBehaviour
     private void Start()
     {
         if (_gameManager.Platform == Platform.GD)
-        {            
+        {
+#if GD
             GameDistribution.Instance.PreloadRewardedAd();
             GameDistribution.OnRewardedVideoSuccess += Reward;
             GameDistribution.OnRewardedVideoFailure += RewardError;
+#endif
+        }
+
+        if (_gameManager.Platform == Platform.Yandex)
+        {
+            _yandexAdapter = new YandexAdapter();
+            _yandexAdapter.Initialize();
         }
     }
 
     private void OnDestroy()
     {
         if (_gameManager.Platform == Platform.GD)
-        {            
+        {
+#if GD
             GameDistribution.OnRewardedVideoSuccess -= Reward;
             GameDistribution.OnRewardedVideoFailure -= RewardError;
+#endif
         }
     }
 
@@ -98,43 +109,45 @@ public class RewardedVideoController : MonoBehaviour
 
     public void RewardError()//OK
     {
-        
+
     }
 
     public void PressRewardedVideo(int id)
     {
         Debug.Log("PressRewardedVideo(" + id + ")");
         Id = id;
-//        if (_gameManager.Platform == Platform.Ok)
-//        {
-//            //OKManager.ShowLoadedAd();
-//#if GAME_PUSH
-//            GP_Ads.ShowRewarded(id.ToString(), OnRewardedReward, OnRewardedStart, OnRewardedClose);
-//#endif
-//        }
-
-        //if (_gameManager.Platform == Platform.VK)
-        //{            
-            BloomLines.Controllers.AdsController.ShowRewarded((success) =>
+        //        if (_gameManager.Platform == Platform.Ok)
+        //        {
+        //            //OKManager.ShowLoadedAd();
+        //#if GAME_PUSH
+        //            GP_Ads.ShowRewarded(id.ToString(), OnRewardedReward, OnRewardedStart, OnRewardedClose);
+        //#endif
+        //        }
+#if GAME_PUSH
+        if (_gameManager.Platform == Platform.Ok || _gameManager.Platform == Platform.VK || _gameManager.Platform == Platform.GD)
+        {
+            GP_Ads.ShowRewarded(string.Empty, null, null, OnReward);
+            /*BloomLines.Controllers.AdsController.ShowRewarded((success) =>
             {
                 if (success)
                 {
                     OnRewardedReward(id.ToString());
-                    //var gameModeState = SaveManager.GameModeState;
-                    //gameModeState.ContinueGameCount++;
-
-                    //Close();
-
-                    //EventsManager.Publish(new ReviveEvent());
                 }
-            });
-        //}        
+            });*/
+            //if (_gameManager.Platform == Platform.GD)
+            //{
+            //    GameDistribution.Instance.ShowRewardedAd();
+            //    GameDistribution.Instance.PreloadRewardedAd();
+            //}
+        }
+#endif
 
-        //if (_gameManager.Platform == Platform.GD)
-        //{
-        //    GameDistribution.Instance.ShowRewardedAd();
-        //    GameDistribution.Instance.PreloadRewardedAd();
-        //}
+#if Yandex
+        if (_gameManager.Platform == Platform.Yandex)
+        {
+            _yandexAdapter.ShowRewarded(OnReward);            
+        }
+#endif
     }
 
     public void OnRewardedReward(string id)
@@ -156,5 +169,21 @@ public class RewardedVideoController : MonoBehaviour
         //_game.HasFocus = true;
         //if (!result)
         //    RewardedError();
+    }
+
+    private void OnFail()
+    {
+        Debug.Log("OnFail: " + Id);        
+    }
+
+    private void OnReward(bool result)
+    {
+        if (result)
+        {
+            Debug.Log("OnRewardedReward: " + Id);
+            Rewarded(Id);
+        }
+        else
+            OnFail();
     }
 }
