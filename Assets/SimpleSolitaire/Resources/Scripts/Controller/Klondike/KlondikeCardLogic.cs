@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using SimpleSolitaire.Model.Config;
 using SimpleSolitaire.Model.Enum;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -164,15 +165,30 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         protected override void InitDeckCards()
         {
+            StartCoroutine(InitDeckCardsCoroutine());
+        }
+
+        private IEnumerator InitDeckCardsCoroutine()
+        {
             for (int i = 0; i < BottomDeckArray.Length; i++)
             {
                 Deck bottomDeck = BottomDeckArray[i];
 
                 for (int j = 0; j < i + 1; j++)
                 {
-                    bottomDeck.PushCard(PackDeck.Pop());
-                }
+                    Card card = PackDeck.Pop();
+                    bottomDeck.PushCard(card);
 
+                    Vector3 endvalue = bottomDeck.transform.position - Vector3.up * GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_CLOSED) * j;
+                    card.transform.DOMove(endvalue, 0.15f);
+                    if (j == i)
+                        card.transform.DOScaleX(0, 0.15f).OnComplete(() => card.transform.DOScaleX(1, 0.15f));
+                    card.transform.SetAsLastSibling();
+                    yield return new WaitForSeconds(0.18f);
+                    card.transform.SetAsLastSibling();
+                    //bottomDeck.UpdateCardsPosition(true);
+                }
+                
                 bottomDeck.UpdateCardsPosition(true);
                 bottomDeck.UpdateDraggableStatus();
             }
@@ -181,6 +197,7 @@ namespace SimpleSolitaire.Controller
             PackDeck.UpdateDraggableStatus();
 
             WasteDeck.UpdateCardsPosition(true);
+            HintManagerComponent.UpdateAvailableForDragCards();
         }
 
         /// <summary>

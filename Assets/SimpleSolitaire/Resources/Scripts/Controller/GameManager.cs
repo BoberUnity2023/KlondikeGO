@@ -42,7 +42,8 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private Animator _settingsPanelAnimator;
         [SerializeField] protected GameObject _buttonHint;        
         [SerializeField] private ToggleGroup _levelToggleGroup;
-        [SerializeField] private GameObject _bonusGold;        
+        [SerializeField] private GameObject _bonusGold;
+        [SerializeField] private BottomMenu _bottomMenu;
 
         [Header("Ads Components:")]        
         [SerializeField] private GameObject _adsLayer;
@@ -506,6 +507,7 @@ namespace SimpleSolitaire.Controller
 
             StopGameTimer();
             _congratManagerComponent.CongratulationTextFill();
+            _bottomMenu.PressDown();
 
             _timeWinLabel.text = _timeLabel.text;//"YOUR TIME: "
             _scoreWinLabel.text = score.ToString();//"YOUR SCORE: "
@@ -597,6 +599,7 @@ namespace SimpleSolitaire.Controller
             _cardLogic.Shuffle(false);
             _undoPerformComponent.ResetUndoStates();
             _hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[Level];
+            _bottomMenu.PressUp();
             StatisticsController.Instance.PlayedGames?.Invoke();            
         }
 
@@ -1129,6 +1132,8 @@ namespace SimpleSolitaire.Controller
                 _cardLayer.SetActive(true);
                 _cardLogic.Shuffle(false);
                 _winLayer.SetActive(false);
+                _bottomMenu.PressUp();
+
                 if (Game == Game.Spider)
                     StartCoroutine(AfterStartEffectPlayed(2.5f));
                 if (Game == Game.Klondike || Game == Game.Solitaire)
@@ -1180,6 +1185,7 @@ namespace SimpleSolitaire.Controller
                 _winLayer.SetActive(false);
                 _cardLayer.SetActive(true);
                 _cardLogic.Shuffle(true);
+                _bottomMenu.PressUp();
                 //StartCoroutine(AfterStartEffectPlayed(2.5f));
                 _undoPerformComponent.ResetUndoStates();
                 //_adsController.TryShowInterstitial();

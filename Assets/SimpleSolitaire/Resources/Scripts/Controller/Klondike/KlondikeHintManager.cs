@@ -12,7 +12,7 @@ namespace SimpleSolitaire.Controller
     {
         protected override IEnumerator HintTranslate(HintData data)
         {
-            IsHintProcess = true;
+            IsHintProcess = true;         
 
             //List<HintElement> hints = data.Type == HintType.AutoComplete ? AutoCompleteHints : Hints;
             List<HintElement> hints = AutoCompleteHints;
@@ -46,8 +46,10 @@ namespace SimpleSolitaire.Controller
             Vector3 toPosition = hint.ToPosition;
 
             float distance = Vector3.Distance(fromPosition, toPosition);
-            float moveTime = distance / Public.CardSpeed + 0.2f;
-            //Debug.Log("distance: " + distance);
+            float moveTime = distance / Public.CardSpeed + 0.25f;
+            if (data.Type == HintType.AutoComplete)
+                moveTime *= 0.5f;
+
             float jumpPower = Random.Range(-200, 200);
 
             hintCard.transform.DOLocalJump(toPosition, jumpPower, 1, moveTime).SetEase(Ease.InOutQuad).OnUpdate(
@@ -57,12 +59,8 @@ namespace SimpleSolitaire.Controller
                     );
                         
             hintCard.DragEffect("On");
-            var t = 0f;
-            while (t < 1)
-            {
-                t += Time.deltaTime / moveTime;// data.HintTime;
-                yield return new WaitForEndOfFrame();
-            }
+            yield return new WaitForSeconds(moveTime + 0.1f);            
+            
             hintCard.DragEffect("Off");
             if (IsHasHint() && data.Type == HintType.Hint)
             {
@@ -75,8 +73,18 @@ namespace SimpleSolitaire.Controller
             if (data.Type != HintType.Hint)
             {
                 _cardLogicComponent.OnDragEnd(hintCard);
-            }            
+            }
+            yield return new WaitForSeconds(0.5f);
+            UpdateAvailableForDragCards();
             IsHintProcess = false;            
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyUp(KeyCode.U)) 
+            {
+                UpdateAvailableForDragCards();
+            }
         }
 
         /// <summary>
@@ -84,6 +92,7 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         public override void GenerateHints(bool isAutoComplete = false)
         {
+            Debug.Log("Generate Hints");
             CurrentHintIndex = 0;
             AutoCompleteHints = new List<HintElement>();
             Hints = new List<HintElement>();

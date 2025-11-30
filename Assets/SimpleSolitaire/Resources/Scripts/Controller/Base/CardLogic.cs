@@ -527,7 +527,7 @@ namespace SimpleSolitaire.Controller
 #endif
                 PackDeck.PushCard(card);
             }
-
+ 
             InitDeckCards();
             SetPackDeckBg();
             HintManagerComponent.UpdateAvailableForDragCards();

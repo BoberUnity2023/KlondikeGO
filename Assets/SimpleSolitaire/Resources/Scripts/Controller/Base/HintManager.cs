@@ -134,7 +134,7 @@ namespace SimpleSolitaire.Controller
         /// <summary>
         /// Called automatically when auto complete action is active.
         /// </summary>
-        public void HintAndSet(float time = 0.75f)
+        public void HintAndSet(float time = 0.25f)
         {
             var data = new HintData(
                 hintTime: time,

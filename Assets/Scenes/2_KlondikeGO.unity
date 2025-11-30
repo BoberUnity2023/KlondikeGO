@@ -16550,6 +16550,7 @@ MonoBehaviour:
   _buttonHint: {fileID: 2284100042079886694}
   _levelToggleGroup: {fileID: 1643351211311627998}
   _bonusGold: {fileID: 0}
+  _bottomMenu: {fileID: 1547255732}
   _adsLayer: {fileID: 5617590231118671825}
   _adsLayerHints: {fileID: 5617590229899908002}
   _watchButton: {fileID: 5617590230941010991}
@@ -80668,7 +80669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fda100f7afcfffb43b9f652e9f4e9991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mode: 1
+  Mode: 0
   IsAutoCompleteActive: 0
   HintSetTransitionTime: 0.25
   HintComponent: {fileID: 418428742}
@@ -116554,18 +116555,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1201489651}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1799995722}
-        m_TargetAssemblyTypeName: AdsController, Assembly-CSharp
-        m_MethodName: TryShow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
