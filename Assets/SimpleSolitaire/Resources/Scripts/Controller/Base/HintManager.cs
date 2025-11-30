@@ -314,7 +314,8 @@ namespace SimpleSolitaire.Controller
             {
                 case DeckType.DECK_TYPE_BOTTOM:
                 {
-                    var spaceY = _cardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_OPENED);
+                        float scale = _gameManager.ScreenController.CanvasScaler.referenceResolution.y / UnityEngine.Screen.height;
+                        var spaceY = _cardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_OPENED) * scale;
                     return new Vector3(0,spaceY,0);
 
                 }

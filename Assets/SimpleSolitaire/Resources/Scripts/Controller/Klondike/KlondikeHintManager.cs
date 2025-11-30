@@ -51,7 +51,7 @@ namespace SimpleSolitaire.Controller
             float jumpPower = Random.Range(-200, 200);
 
             hintCard.transform.DOLocalJump(toPosition, jumpPower, 1, moveTime).SetEase(Ease.InOutQuad).OnUpdate(
-                    ()=> hint.HintCard.Deck.SetPositionFromCard(hintCard,
+                    () => hint.HintCard.Deck.SetPositionFromCard(hintCard,
                     hintCard.transform.localPosition.x,
                     hintCard.transform.localPosition.y)
                     );

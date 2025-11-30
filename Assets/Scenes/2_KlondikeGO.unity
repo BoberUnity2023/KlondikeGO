@@ -6876,6 +6876,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -160
       objectReference: {fileID: 0}
+    - target: {fileID: 340534005286727362, guid: 2ec135cc55d81a047909558246ef6ae6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 340534006149981300, guid: 2ec135cc55d81a047909558246ef6ae6, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
@@ -9853,6 +9857,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3644890049810303149, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385255006755202303, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222325893047240484, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}
@@ -14797,6 +14805,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5385255006755202303, guid: 299719e98755aa542b2575e7e9ddd6a6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9222325893047240484, guid: 299719e98755aa542b2575e7e9ddd6a6, type: 3}
       propertyPath: m_Name
       value: ParticlesCounterRed
@@ -15326,7 +15338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5480401297381544734, guid: 6c8abf02761f889478b83d8610a260c7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -198.03174
+      value: -198.03192
       objectReference: {fileID: 0}
     - target: {fileID: 5480401297381544734, guid: 6c8abf02761f889478b83d8610a260c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -30276,7 +30288,7 @@ ParticleSystem:
       m_RotationOrder: 4
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
-  scalingMode: 1
+  scalingMode: 0
   randomSeed: 0
   InitialModule:
     serializedVersion: 3
@@ -42478,6 +42490,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5385255006755202303, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9222325893047240484, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}
       propertyPath: m_Name
       value: ParticlesCounterGreen
@@ -50935,6 +50951,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3644890049810303149, guid: 299719e98755aa542b2575e7e9ddd6a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385255006755202303, guid: 299719e98755aa542b2575e7e9ddd6a6, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222325893047240484, guid: 299719e98755aa542b2575e7e9ddd6a6, type: 3}
@@ -80389,7 +80409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5480401297381544734, guid: 6c8abf02761f889478b83d8610a260c7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -110.26611
+      value: -110.26596
       objectReference: {fileID: 0}
     - target: {fileID: 5480401297381544734, guid: 6c8abf02761f889478b83d8610a260c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -83024,6 +83044,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5385255006755202303, guid: 299719e98755aa542b2575e7e9ddd6a6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9222325893047240484, guid: 299719e98755aa542b2575e7e9ddd6a6, type: 3}
       propertyPath: m_Name
       value: ParticlesCounterRed
@@ -85405,6 +85429,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3644890049810303149, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385255006755202303, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222325893047240484, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}
@@ -103484,6 +103512,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5385255006755202303, guid: 299719e98755aa542b2575e7e9ddd6a6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9222325893047240484, guid: 299719e98755aa542b2575e7e9ddd6a6, type: 3}
       propertyPath: m_Name
       value: ParticlesCounterRed
@@ -105810,6 +105842,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3644890049810303149, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385255006755202303, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9222325893047240484, guid: 70bc203bd03a4dd4ab59f77e583cc138, type: 3}

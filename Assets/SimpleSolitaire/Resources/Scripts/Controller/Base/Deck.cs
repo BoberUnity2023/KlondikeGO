@@ -247,9 +247,10 @@ namespace SimpleSolitaire.Controller
                     break;
                 }
             }
+            float scale = _gameManagerComponent.ScreenController.CanvasScaler.referenceResolution.y / UnityEngine.Screen.height;
 
             var verticalSpace =
-                CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_OPENED);
+                CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_OPENED)*scale;
 
             int m = 0;
             for (int j = i; j < CardsArray.Count; j++)
