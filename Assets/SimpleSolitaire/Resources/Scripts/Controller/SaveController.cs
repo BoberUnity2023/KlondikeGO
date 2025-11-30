@@ -743,12 +743,12 @@ public class SaveController : MonoBehaviour
 
     private void Start()
     {
-        SetSaveType();        
+        SetSaveType();
         //FillSaveFromPlayerPrefsOrStorage();
-
+#if Yandex
         if (_saveType == SaveType.Yandex)
         {
-            Save save = new Save();            
+            //Save save = new Save();            
             // Проверяем запустился ли плагин
             //if (YG2.SDKEnabled == true)
             //{
@@ -760,7 +760,7 @@ public class SaveController : MonoBehaviour
             //}
             FillSaveFromYandex();
         }
-
+#endif
         if (_saveType == SaveType.Json)
             FillSaveFromPlayerPrefs();
     }
@@ -881,7 +881,7 @@ public class SaveController : MonoBehaviour
         Save.NoAds = PlayerPrefs.GetInt(KeyNoAds) == 1 || save.NoAds;
         //VKManager.Instance.StorageSave();
     }
-
+#if Yandex
     public void FillSaveFromYandex()
     {
         Save.TakenDayBonuses = new bool[5];
@@ -910,7 +910,7 @@ public class SaveController : MonoBehaviour
         Save.LongestPartyTime = Mathf.Max(PlayerPrefs.GetInt(KeyLongestPartyTime, 0), YG2.saves.LongestPartyTime);
         Save.NoAds = PlayerPrefs.GetInt(KeyNoAds) == 1 || YG2.saves.NoAds;        
     }
-
+# endif
     private void FillSaveReset()
     {
         Save.TakenDayBonuses = new bool[5];
@@ -941,7 +941,7 @@ public class SaveController : MonoBehaviour
 #if GAME_PUSH
         GP_Player.Set(KeyJson, _json);
         GP_Player.Sync();
-# endif
+#endif
         //Debug.Log("Set JSON: " + _json);
     }
 }

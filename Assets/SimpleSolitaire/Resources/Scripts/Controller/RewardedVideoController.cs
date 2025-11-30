@@ -17,7 +17,9 @@ public class RewardedVideoController : MonoBehaviour
     [SerializeField] private HintManager _hintManager;
     [SerializeField] private EveryDayBonus _everyDayBonus;
     private int _reward = 300;
+#if Yandex
     private YandexAdapter _yandexAdapter;
+#endif
 
     public int Id { get; set; }
 
@@ -41,8 +43,10 @@ public class RewardedVideoController : MonoBehaviour
 
         if (_gameManager.Platform == Platform.Yandex)
         {
+#if Yandex
             _yandexAdapter = new YandexAdapter();
             _yandexAdapter.Initialize();
+#endif
         }
     }
 
