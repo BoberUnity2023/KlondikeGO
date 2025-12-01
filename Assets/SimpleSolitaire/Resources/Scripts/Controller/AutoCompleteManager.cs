@@ -30,19 +30,12 @@ namespace SimpleSolitaire.Controller
         private bool _isCanComplete = true;
 
         private bool _autoCompleteFeatureEnable = true;
-
-        public void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                CompleteGame();
-            }
-        }
-
+        [SerializeField] private bool _autoCompletePressed;
+        
         public void SetEnableAutoCompleteFeature(bool state)
         {
             _autoCompleteFeatureEnable = state;
-            AutoCompleteHintButtonObj.SetActive(_isCanComplete && state && CheckAvailabilityByMode());
+            AutoCompleteHintButtonObj.SetActive(_isCanComplete && state && CheckAvailabilityByMode() && !_autoCompletePressed);
         }
 
         /// <summary>
@@ -57,7 +50,7 @@ namespace SimpleSolitaire.Controller
                 return;
             }
 
-            bool isAvailable = CheckAvailabilityByMode();
+            bool isAvailable = CheckAvailabilityByMode() && !_autoCompletePressed;
 
             AutoCompleteHintButtonObj.SetActive(isAvailable);
         }
@@ -119,6 +112,7 @@ namespace SimpleSolitaire.Controller
         {
             if (_isCanComplete)
             {
+                _autoCompletePressed = true;
                 _isCanComplete = false;
                 StopAutoComplete();
                 AutoCompleteHintButtonObj.SetActive(false);

@@ -25,7 +25,7 @@ namespace SimpleSolitaire.Controller
     public abstract class CardLogic : MonoBehaviour
     {
         protected Vector3[] Corners;
-        [SerializeField] private GameManager _gameManager;
+        [SerializeField] protected GameManager _gameManager;
         [SerializeField] private HintManager _hintManager;
         [SerializeField] protected RectTransform CorrectlyDeck;
         

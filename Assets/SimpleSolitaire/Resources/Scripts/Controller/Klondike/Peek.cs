@@ -4,7 +4,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.ParticleSystem;
 
 namespace BloomLines
 {
@@ -24,6 +23,7 @@ namespace BloomLines
         [SerializeField] private Sprite _spriteCounterInActive;
         [SerializeField] private ParticleSystem _particles;
         [SerializeField] private ParticleSystem _particlesRed;
+        [SerializeField] private Button[] _buttons;
         private List<Card> _closeCards;
         private bool _isProcess;
         private bool _isCardsRotateCloseing;
@@ -73,7 +73,13 @@ namespace BloomLines
 
             Count--;   
             _isProcess = true;
-            _backgroundBlocker.SetActive(true);            
+            _backgroundBlocker.SetActive(true); 
+
+            foreach (Button button in _buttons) 
+            {
+                button.interactable = false;
+            }
+
             _closeCards = CloseCards;
 
             foreach (Card card in _closeCards)
@@ -122,6 +128,11 @@ namespace BloomLines
             _backgroundBlocker.SetActive(false);            
             _isProcess = false;
             _isCardsRotateCloseing = false;
+
+            foreach (Button button in _buttons)
+            {
+                button.interactable = true;
+            }
         }
 
         private void UpdateCardsPositionInDecks()

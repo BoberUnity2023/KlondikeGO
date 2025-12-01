@@ -13,6 +13,7 @@ using UnityEngine.UI;
 using UnityEngine.UI.Extensions;
 using BloomLines.Controllers;
 using BloomLines;
+using UnityEngine.SceneManagement;
 //using YG;
 
 namespace SimpleSolitaire.Controller
@@ -69,85 +70,57 @@ namespace SimpleSolitaire.Controller
 
         //[SerializeField]
         //public LeaderboardYG _leaderboardYG;
-        [SerializeField]
-        protected HintManager _hintManager;
+        [SerializeField] protected HintManager _hintManager;
 
         public ScreenController ScreenController;
 
         public TabLeaderboard TabLeaderboard;
 
-        [SerializeField]
-        private AdsController _adsController;
+        [SerializeField] private AdsController _adsController;
+
+        private AudioController _audioController;
+        public AudioController AudioController => _audioController;
 
         [Header("Layers:")]
-        [SerializeField]
-        protected GameObject _newGameLayer;
-        [SerializeField]
-        protected GameObject _backgroundBlocker;
-        [SerializeField]
-        protected GameObject _cardLayer;
-        [SerializeField]
-        private GameObject _winLayer;
-        [SerializeField]
-        private GameObject _settingLayer;
-        [SerializeField]
-        private GameObject _visualLayer;
-        [SerializeField]
-        private GameObject _shopLayer;        
-        [SerializeField]
-        private GameObject _statisticLayer;
-        [SerializeField]
-        private GameObject _exitLayer;
-        [SerializeField]
-        private GameObject _continueLayer;
-        [SerializeField]
-        private GameObject _tutorialLayer;
-        [SerializeField]
-        private GameObject _leaderboardLayer;
-        [SerializeField]
-        private BuyWindow _buyWindow;
-        [SerializeField]
-        private GameObject _restartWindow;
-        [SerializeField]
-        private GameObject _clickBlocker;
-        [SerializeField]
-        private GameObject _clickBlockerPanels;
-        [SerializeField]
-        private GameObject _everyDayBonusWindow;
-        [SerializeField]
-        private GameObject _inviteFriendButton;
-
-        public Text DebugLayer;
+        [SerializeField] protected GameObject _newGameLayer;
+        [SerializeField] protected GameObject _backgroundBlockerDark;
+        [SerializeField] protected GameObject _backgroundBlockerAlpha;
+        [SerializeField] protected GameObject _cardLayer;
+        [SerializeField] private GameObject _winLayer;
+        [SerializeField] private GameObject _settingLayer;
+        [SerializeField] private GameObject _visualLayer;
+        [SerializeField] private GameObject _shopLayer;        
+        [SerializeField] private GameObject _statisticLayer;
+        [SerializeField] private GameObject _exitLayer;
+        [SerializeField] private GameObject _continueLayer;
+        [SerializeField] private GameObject _tutorialLayer;
+        [SerializeField] private GameObject _leaderboardLayer;
+        [SerializeField] private BuyWindow _buyWindow;
+        [SerializeField] private GameObject _restartWindow;
+        [SerializeField] private GameObject _clickBlocker;
+        [SerializeField] private GameObject _clickBlockerPanels;
+        [SerializeField] private GameObject _everyDayBonusWindow;
+        [SerializeField] private GameObject _inviteFriendButton;
 
         [Header("Labels:")]
-        [SerializeField]
-        private Text _timeLabel;
-        [SerializeField]
-        private Text _scoreLabel;
-        [SerializeField]
-        private Text _goldLabel;        
-        [SerializeField]
-        private Text _stepsLabel;
-        [SerializeField]
-        private Text _timeWinLabel;
-        [SerializeField]
-        private Text _scoreWinLabel;
-        [SerializeField]
-        private Text _stepsWinLabel;
+        [SerializeField] private Text _timeLabel;
+        [SerializeField] private Text _scoreLabel;
+        [SerializeField] private Text _goldLabel;        
+        [SerializeField] private Text _stepsLabel;
+        [SerializeField] private Text _timeWinLabel;
+        [SerializeField] private Text _scoreWinLabel;
+        [SerializeField] private Text _stepsWinLabel;
 
         [Header("Switchers:")]
-        [SerializeField]
-        private SwitchSpriteComponent _soundSwitcher;        
+        [SerializeField] private SwitchSpriteComponent _soundSwitcher;        
 
         [Space(5f)]
-        [SerializeField]
-        private TableLayoutGroup _settingsRef;
+        [SerializeField] private TableLayoutGroup _settingsRef;
 
         [Header("Settings:")]
         public bool UseLoadLastGameOption;
 
-        [SerializeField]
-        private int[] MoveFromWasteToPackPrices;//Штраф за переворот колоды
+        [SerializeField] private int[] MoveFromWasteToPackPrices;//Штраф за переворот колоды
 
         public SaveController Save => _saveController;
         public GamePushController GamePush { get; set; }
@@ -161,15 +134,6 @@ namespace SimpleSolitaire.Controller
         {
             get
             {
-                //_gold = PlayerPrefs.GetInt(_goldKey);
-                //if (Platform == Platform.Yandex) 
-                //    _gold = YandexGame.savesData.Gold;
-
-                /*if (Platform == Platform.Ok ||
-                    Platform == Platform.VK ||
-                    Platform == Platform.GD)
-                    _gold = PlayerPrefs.GetInt("Gold");*/
-
                 return Save.Gold; //_gold;
             }
             set
@@ -183,20 +147,6 @@ namespace SimpleSolitaire.Controller
                 _goldLabel.text = gold.ToString();
 
                 Save.Gold = gold;
-
-                //if (Platform == Platform.Ok ||
-                //    Platform == Platform.VK ||
-                //    Platform == Platform.GD)
-                //{ 
-                //    PlayerPrefs.SetInt("Gold", _gold);
-                //    PlayerPrefs.Save();
-                //}                
-
-                //if (Platform == Platform.Yandex)
-                //{
-                //    //YandexGame.savesData.Gold = _gold;
-                //    //YandexGame.SaveProgress();
-                //}                    
             }
         }
 
@@ -220,8 +170,7 @@ namespace SimpleSolitaire.Controller
         private Platform _platform;
 
         private readonly string _appearTrigger = "Appear";
-        private readonly string _disappearTrigger = "Disappear";
-        //private readonly string _bestScoreKey = "WinBestScore";
+        private readonly string _disappearTrigger = "Disappear";        
         private readonly string _showBottomBarKey = "ShowBar";
 
         private int _timeCount;
@@ -232,19 +181,13 @@ namespace SimpleSolitaire.Controller
         private int _level;
         private int _levelSelected;
 
-        private Coroutine _timeCoroutine;
-        private AudioController _audioController;
-        public AudioController AudioController => _audioController; 
-
+        private Coroutine _timeCoroutine;  
         private RewardAdsType _currentAdsType = RewardAdsType.None;
-
         private bool _highlightDraggableEnable;
         private bool _soundEnable;
         //private bool _autoCompleteEnable;
         private bool _isBarActive;
-
-        protected float _windowAnimationTime = 0.42f;
-        //private float _startTime;
+        protected float _windowAnimationTime = 0.42f;        
 
         public event Action OnGameStart;
         public event Action OnGameWin;
@@ -441,7 +384,7 @@ namespace SimpleSolitaire.Controller
                 InitMenuView(false);
                 _cardLayer.SetActive(false);
                 _newGameLayer.SetActive(true);
-                _backgroundBlocker.SetActive(true);
+                _backgroundBlockerDark.SetActive(true);
                 AppearWindow(_newGameLayer);
             }
         }
@@ -543,14 +486,15 @@ namespace SimpleSolitaire.Controller
             //Debug.Log("Experience: " + YandexGame.savesData.Experience);
             //YandexGame.NewLeaderboardScores("advanced", YandexGame.savesData.Experience);
 #endif
-            StartCoroutine(AfterWin(2.5f));           
+            StartCoroutine(AfterWin(2.0f));           
         }
 
         private IEnumerator AfterWin(float time)
         {
             yield return new WaitForSeconds(time);
             _cardLayer.SetActive(false);
-            _winLayer.SetActive(true);            
+            _winLayer.SetActive(true);  
+            _backgroundBlockerDark.SetActive(true);
             AppearWindow(_winLayer);            
         }
 
@@ -584,10 +528,11 @@ namespace SimpleSolitaire.Controller
         /// <summary>
         /// Click on new game button.
         /// </summary>
-        public void OnClickWinNewGame()
+        public void OnClickWinNewGame()//DoNotUse
         {
             _winLayer.SetActive(false);
             _cardLayer.SetActive(!_statisticLayer.activeInHierarchy && !_winLayer.activeInHierarchy);
+            _backgroundBlockerDark.SetActive(false);
             /*DisappearWindow(_winLayer, OnWindowDisappeared);
 
             void OnWindowDisappeared()
@@ -598,9 +543,21 @@ namespace SimpleSolitaire.Controller
 
             _cardLogic.Shuffle(false);
             _undoPerformComponent.ResetUndoStates();
-            _hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[Level];
-            _bottomMenu.PressUp();
+            _hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[Level];            
             StatisticsController.Instance.PlayedGames?.Invoke();            
+        }
+
+        public void OnClickReloadGame()
+        {            
+            StatisticsController.Instance.PlayedGames?.Invoke();
+            DisappearWindow(_winLayer, OnWindowDisappeared);
+
+            void OnWindowDisappeared()
+            {
+                _winLayer.SetActive(false);
+                _backgroundBlockerDark.SetActive(false);
+                SceneManager.LoadScene(0); 
+            }            
         }
 
         /// <summary>
@@ -637,7 +594,7 @@ namespace SimpleSolitaire.Controller
         protected void AppearGameLayer()
         {
             _newGameLayer.SetActive(true);
-            _backgroundBlocker.SetActive(true);
+            _backgroundBlockerDark.SetActive(true);
             InitCardLogic();
             AppearWindow(_newGameLayer);
         }
@@ -646,7 +603,7 @@ namespace SimpleSolitaire.Controller
         {
             _cardLayer.SetActive(false);
             _leaderboardLayer.SetActive(true);
-            _backgroundBlocker.SetActive(true);
+            _backgroundBlockerDark.SetActive(true);
 
             if (_cardLogic is KlondikeCardLogic klondikeLogic)
             {
@@ -717,7 +674,7 @@ namespace SimpleSolitaire.Controller
         public void OnClickTryRestartBtn()
         {
             _restartWindow.SetActive(true); 
-            _backgroundBlocker.SetActive(true);
+            _backgroundBlockerDark.SetActive(true);
             AppearWindow(_restartWindow);
         }
 
@@ -732,7 +689,7 @@ namespace SimpleSolitaire.Controller
             StartCoroutine(InvokeAction(delegate
             {
                 _restartWindow.SetActive(false);
-                _backgroundBlocker.SetActive(false);
+                _backgroundBlockerDark.SetActive(false);
             }, 0.42f));
         }
 
@@ -1062,7 +1019,7 @@ namespace SimpleSolitaire.Controller
 
         public void OnClickShoplBtn()
         {
-            _backgroundBlocker.SetActive(true);
+            _backgroundBlockerDark.SetActive(true);
             _cardLayer.SetActive(false);
             _shopLayer.SetActive(true);
             AppearWindow(_shopLayer);
@@ -1075,7 +1032,7 @@ namespace SimpleSolitaire.Controller
             {
                 _shopLayer.SetActive(false);
                 _cardLayer.SetActive(!_statisticLayer.activeInHierarchy);
-                _backgroundBlocker.SetActive(false);
+                _backgroundBlockerDark.SetActive(false);
             }
         }
         #endregion
@@ -1128,11 +1085,11 @@ namespace SimpleSolitaire.Controller
                 StatisticsController.Instance.PlayedGames?.Invoke();                
                 _cardLogic.OnNewGameStart();
                 _newGameLayer.SetActive(false);
-                _backgroundBlocker.SetActive(false);
+                _backgroundBlockerDark.SetActive(false);
+                _backgroundBlockerAlpha.SetActive(true);
                 _cardLayer.SetActive(true);
                 _cardLogic.Shuffle(false);
-                _winLayer.SetActive(false);
-                _bottomMenu.PressUp();
+                _winLayer.SetActive(false);                
 
                 if (Game == Game.Spider)
                     StartCoroutine(AfterStartEffectPlayed(2.5f));
@@ -1181,11 +1138,11 @@ namespace SimpleSolitaire.Controller
                 StatisticsController.Instance.PlayedGames?.Invoke();
                 _cardLogic.OnNewGameStart();
                 _newGameLayer.SetActive(false);
-                _backgroundBlocker.SetActive(false);
+                _backgroundBlockerDark.SetActive(false);
+                _backgroundBlockerAlpha.SetActive(true);
                 _winLayer.SetActive(false);
                 _cardLayer.SetActive(true);
-                _cardLogic.Shuffle(true);
-                _bottomMenu.PressUp();
+                _cardLogic.Shuffle(true);                
                 //StartCoroutine(AfterStartEffectPlayed(2.5f));
                 _undoPerformComponent.ResetUndoStates();
                 //_adsController.TryShowInterstitial();
@@ -1205,7 +1162,7 @@ namespace SimpleSolitaire.Controller
             void OnModalLayerDisappeared()
             {
                 _newGameLayer.SetActive(false);
-                _backgroundBlocker.SetActive(false);
+                _backgroundBlockerDark.SetActive(false);
                 _cardLayer.SetActive(true);
             }
         }    
@@ -1218,7 +1175,7 @@ namespace SimpleSolitaire.Controller
             { 
                 _leaderboardLayer.SetActive(false); 
                 _cardLayer.SetActive(true);
-                _backgroundBlocker.SetActive(false);
+                _backgroundBlockerDark.SetActive(false);
             }, 0.42f)
                 );*/
         }
@@ -1227,8 +1184,15 @@ namespace SimpleSolitaire.Controller
         {
             _leaderboardLayer.SetActive(false);
             _cardLayer.SetActive(true);
-            _backgroundBlocker.SetActive(false);
-        }        
+            _backgroundBlockerDark.SetActive(false);
+        }  
+        
+        public void OnInitDecksComplete()//Карты выложены на стол
+        {
+            _backgroundBlockerAlpha.SetActive(false);
+            _bottomMenu.PressUp();
+            Peek.SetButtonSprite();
+        }
         #endregion
 
         /// <summary>
@@ -1386,11 +1350,6 @@ namespace SimpleSolitaire.Controller
             _level = level;
             _levelSelected = level;
             Debug.Log("Difficulty Level: " + level);            
-        }
-
-        public void PressClearDebug()
-        {
-            DebugLayer.text = "";
         }
 
         public void PressResetSaveProgress()

@@ -198,6 +198,7 @@ namespace SimpleSolitaire.Controller
 
             WasteDeck.UpdateCardsPosition(true);
             HintManagerComponent.UpdateAvailableForDragCards();
+            _gameManager.OnInitDecksComplete();
         }
 
         /// <summary>
