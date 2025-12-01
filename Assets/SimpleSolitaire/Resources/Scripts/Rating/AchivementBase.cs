@@ -9,6 +9,8 @@ public class AchivementBase : MonoBehaviour
     [SerializeField] private string _titleKey;
     [SerializeField] private string _descriptionKey;
     [SerializeField] private int _targetProgress;
+    [SerializeField] private bool _saved;
+    private int _progress;
 
     public int Id { get; set;}
     public GameManager Hub { get; set; }
@@ -18,11 +20,20 @@ public class AchivementBase : MonoBehaviour
     {
         get 
         {
-            return  Hub.Stats.GetAchivementProgress(Id);
+            if (_saved)
+                return  Hub.Stats.GetAchivementProgress(Id);
+            
+            return _progress;
         }
         set
         {
-            Hub.Stats.SetAchivementProgress(Id, value);
+            if (IsComplete)
+                return;
+
+            _progress = value;
+
+            if (_saved || _progress >= _targetProgress) 
+                Hub.Stats.SetAchivementProgress(Id, value);
         }
     }
 
@@ -34,6 +45,9 @@ public class AchivementBase : MonoBehaviour
 
     protected virtual void Start()
     {
+        if (!_saved)
+            _progress = Hub.Stats.GetAchivementProgress(Id);
+
         if (IsComplete)
             _achivementUI.ShowComplete();
         else

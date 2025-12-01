@@ -57,7 +57,7 @@ public class GameDistribution : MonoBehaviour
     {
         try 
         { 
-#if GD
+#if GD && !UNITY_EDITOR
             Debug.Log("GD SDK Init");
             SDK_Init(GAME_KEY);
             StartCoroutine(AfterInit());

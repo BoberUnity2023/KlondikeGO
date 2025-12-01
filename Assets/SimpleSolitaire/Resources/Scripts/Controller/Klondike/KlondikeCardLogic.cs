@@ -183,8 +183,16 @@ namespace SimpleSolitaire.Controller
                     //card.transform.DOMove(endvalue, 0.15f).SetEase(Ease.InOutQuad);
                     int jumpPower = (int)(-200 / _gameManager.ScreenController.ScaleFactor);
                     card.transform.DOJump(endvalue, jumpPower, 1, 0.15f).SetEase(Ease.InOutQuad);
+                    //card.DragEffect("On");
+                    GameManagerComponent.AudioController.Play(AudioController.AudioType.CardTake);
                     if (j == i)
-                        card.transform.DOScaleX(0, 0.15f).OnComplete(() => card.transform.DOScaleX(1, 0.15f));
+                        card.transform.DOScaleX(0, 0.15f).OnComplete(() => 
+                        { 
+                            card.transform.DOScaleX(1, 0.15f);
+                            //card.DragEffect("Off");
+                            GameManagerComponent.AudioController.Play(AudioController.AudioType.CardPut);
+                        });
+
                     card.transform.SetAsLastSibling();
                     yield return new WaitForSeconds(0.18f);
                     card.transform.SetAsLastSibling();

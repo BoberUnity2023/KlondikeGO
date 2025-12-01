@@ -49,7 +49,7 @@ namespace SimpleSolitaire.Controller
             float moveTime = distance / Public.CardSpeed + 0.25f;
             
             if (data.Type == HintType.AutoComplete)
-                moveTime *= 0.65f;
+                moveTime *= 0.7f;
 
             float jumpPower = Random.Range(-200, 200);
 

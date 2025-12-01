@@ -14,6 +14,7 @@ using UnityEngine.UI.Extensions;
 using BloomLines.Controllers;
 using BloomLines;
 using UnityEngine.SceneManagement;
+using YG;
 //using YG;
 
 namespace SimpleSolitaire.Controller
@@ -1192,6 +1193,9 @@ namespace SimpleSolitaire.Controller
             _backgroundBlockerAlpha.SetActive(false);
             _bottomMenu.PressUp();
             Peek.SetButtonSprite();
+#if Yandex
+            YG2.GameReadyAPI();
+#endif
         }
         #endregion
 
@@ -1352,9 +1356,9 @@ namespace SimpleSolitaire.Controller
             Debug.Log("Difficulty Level: " + level);            
         }
 
-        public void PressResetSaveProgress()
+        public void PressResetProgress()
         {
-            //YandexGame.ResetSaveProgress();
+            Save.ResetProgress();
         }
 
         public void AddBonusGold()
@@ -1369,8 +1373,7 @@ namespace SimpleSolitaire.Controller
         private IEnumerator AfterAddBonusGold(float time)
         {
             yield return new WaitForSeconds(time);
-            Gold += 100 * (Level + 1);
-            
+            Gold += 100 * (Level + 1);            
         }
 
         public void Hint()

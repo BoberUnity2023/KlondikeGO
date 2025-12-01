@@ -18,7 +18,7 @@ public class LocalizeController : MonoBehaviour
     { 
         _langs = I2.Loc.LocalizationManager.GetAllLanguages();
 
-#if Yandex
+#if Yandex && !UNITY_EDITOR
         YG2.onSwitchLang += OnChangeLanguage;
         OnChangeLanguage(YG2.envir.language);
 #endif
@@ -30,13 +30,10 @@ public class LocalizeController : MonoBehaviour
 #endif
 
 #if UNITY_EDITOR
-        OnChangeLanguage("en");
+        //OnChangeLanguage("en");
 #endif
-        //YandexGame.SwitchLangEvent += OnChangeLanguage;
-        //YandexGame.InitLang();
-        string language = SystemLanguageIndex;
-        OnChangeLanguage(language);
-        
+        //string language = SystemLanguageIndex;
+        //OnChangeLanguage(language);
     }
 
     private void Update()

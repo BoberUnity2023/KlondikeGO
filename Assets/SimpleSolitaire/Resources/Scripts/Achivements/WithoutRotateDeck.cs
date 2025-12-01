@@ -4,7 +4,7 @@ namespace BloomLines
 {
     public class WithoutRotateDeck : AchivementBase
     {
-        //–азложить пась€нс без использовани€ подсказок
+        //–азложить пась€нс не переворачива€ колоду
         private bool _usedRotate;
 
         protected override void Start()

@@ -5,8 +5,7 @@ namespace BloomLines
 {
     public class Blitz : AchivementBase
     {
-        //Пройти игру менее чем за 3 минуты
-        //Пройти пасьянс менее чем за 20 минут        
+        //Пройти игру менее чем за 3 минуты              
         private int _timeCount;
         protected override void Start()
         {
