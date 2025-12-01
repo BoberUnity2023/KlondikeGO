@@ -215,5 +215,13 @@ namespace SimpleSolitaire.Screen
                 deck.UpdateCardsPosition(false);
             }
         }
+
+        public float ScaleFactor
+        {
+            get
+            {
+                return CanvasScaler.referenceResolution.y / UnityEngine.Screen.height;
+            }
+        }
     }
 }

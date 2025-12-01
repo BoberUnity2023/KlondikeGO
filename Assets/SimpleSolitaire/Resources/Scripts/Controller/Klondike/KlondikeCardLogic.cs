@@ -180,7 +180,9 @@ namespace SimpleSolitaire.Controller
                     bottomDeck.PushCard(card);
 
                     Vector3 endvalue = bottomDeck.transform.position - Vector3.up * GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_CLOSED) * j;
-                    card.transform.DOMove(endvalue, 0.15f);
+                    //card.transform.DOMove(endvalue, 0.15f).SetEase(Ease.InOutQuad);
+                    int jumpPower = (int)(-200 / _gameManager.ScreenController.ScaleFactor);
+                    card.transform.DOJump(endvalue, jumpPower, 1, 0.15f).SetEase(Ease.InOutQuad);
                     if (j == i)
                         card.transform.DOScaleX(0, 0.15f).OnComplete(() => card.transform.DOScaleX(1, 0.15f));
                     card.transform.SetAsLastSibling();
