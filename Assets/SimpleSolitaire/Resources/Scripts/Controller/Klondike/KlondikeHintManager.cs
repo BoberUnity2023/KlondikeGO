@@ -47,8 +47,9 @@ namespace SimpleSolitaire.Controller
 
             float distance = Vector3.Distance(fromPosition, toPosition);
             float moveTime = distance / Public.CardSpeed + 0.25f;
+            
             if (data.Type == HintType.AutoComplete)
-                moveTime *= 0.5f;
+                moveTime *= 0.65f;
 
             float jumpPower = Random.Range(-200, 200);
 
@@ -74,17 +75,9 @@ namespace SimpleSolitaire.Controller
             {
                 _cardLogicComponent.OnDragEnd(hintCard);
             }
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);//wait 0.15sec from hintCard.Deck.UpdateCardsPosition(false)
             UpdateAvailableForDragCards();
             IsHintProcess = false;            
-        }
-
-        private void Update()
-        {
-            if (Input.GetKeyUp(KeyCode.U)) 
-            {
-                UpdateAvailableForDragCards();
-            }
         }
 
         /// <summary>
