@@ -209,6 +209,10 @@ namespace SimpleSolitaire.Controller
 #if VK
             _inviteFriendButton.SetActive(true);
 #endif
+
+#if Yandex
+            YG2.GameReadyAPI();
+#endif
         }
 
         /// <summary>
@@ -909,8 +913,17 @@ namespace SimpleSolitaire.Controller
 
             void OnWindowDisappeared()
             {
-                _adsLayerMagicWand.SetActive(false);
-                //_cardLayer.SetActive(true);
+                _adsLayerMagicWand.SetActive(false);                
+            }
+        }
+
+        public void OnClickAdsPeekCloseBtn()
+        {
+            DisappearWindow(_adsLayerPeek, OnWindowDisappeared);
+
+            void OnWindowDisappeared()
+            {
+                _adsLayerPeek.SetActive(false);                
             }
         }
 
@@ -1193,9 +1206,6 @@ namespace SimpleSolitaire.Controller
             _backgroundBlockerAlpha.SetActive(false);
             _bottomMenu.PressUp();
             Peek.SetButtonSprite();
-#if Yandex
-            YG2.GameReadyAPI();
-#endif
         }
         #endregion
 

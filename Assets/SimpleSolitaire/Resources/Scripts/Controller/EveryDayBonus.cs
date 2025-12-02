@@ -24,7 +24,7 @@ public class EveryDayBonus : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         if (IsOtherLayerActive)
-            StartCoroutine(TryShow(6f));
+            StartCoroutine(TryShow(12f));
         else
             StartCoroutine(Show(0.5f));
     }

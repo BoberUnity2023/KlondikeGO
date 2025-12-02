@@ -94000,7 +94000,7 @@ PrefabInstance:
       objectReference: {fileID: 1201489651}
     - target: {fileID: 2666273158075733689, guid: 85f8c0d49112b1b45a7b3eb5e92ae9f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClickAdsMagicWandCloseBtn
+      value: OnClickAdsPeekCloseBtn
       objectReference: {fileID: 0}
     - target: {fileID: 2666273158075733689, guid: 85f8c0d49112b1b45a7b3eb5e92ae9f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
