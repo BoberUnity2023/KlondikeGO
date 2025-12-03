@@ -80767,6 +80767,7 @@ MonoBehaviour:
   HintComponent: {fileID: 418428742}
   CardLogicComponent: {fileID: 404369808}
   AutoCompleteHintButtonObj: {fileID: 2284100040142913487}
+  _bottomMenu: {fileID: 1547255732}
   _autoCompletePressed: 0
 --- !u!1 &1545063823
 GameObject:

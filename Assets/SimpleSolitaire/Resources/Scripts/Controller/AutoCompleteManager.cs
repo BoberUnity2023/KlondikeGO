@@ -24,6 +24,7 @@ namespace SimpleSolitaire.Controller
         public HintManager HintComponent;
         public CardLogic CardLogicComponent;
         public GameObject AutoCompleteHintButtonObj;
+        [SerializeField] private BottomMenu _bottomMenu;
 
         private IEnumerator _doubleClickAutoCompleteCoroutine;
         private IEnumerator _autoCompleteCoroutine;
@@ -31,6 +32,7 @@ namespace SimpleSolitaire.Controller
 
         private bool _autoCompleteFeatureEnable = true;
         [SerializeField] private bool _autoCompletePressed;
+
         
         public void SetEnableAutoCompleteFeature(bool state)
         {
@@ -118,6 +120,7 @@ namespace SimpleSolitaire.Controller
                 AutoCompleteHintButtonObj.SetActive(false);
                 _autoCompleteCoroutine = CompleteCoroutine();                
                 StartCoroutine(_autoCompleteCoroutine);
+                _bottomMenu.PressDown();
             }
         }
 

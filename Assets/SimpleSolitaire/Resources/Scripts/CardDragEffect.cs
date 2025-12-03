@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SimpleSolitaire.Controller;
 using Coffee.UIEffects;
+using DG.Tweening;
 
 public class CardDragEffect : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class CardDragEffect : MonoBehaviour
     private List<Card> _cardsToTop;
     private AudioController _audioController;
     private bool _isEffectStarted;
+    private Tweener _tween;
 
     public void On(List<Card> cardsToTop = null)
     {
@@ -34,6 +36,11 @@ public class CardDragEffect : MonoBehaviour
                 item.GetComponent<CardDragEffect>().SetCardLightOn();
             }
         }
+
+        if (_tween != null)
+            _tween.Kill();
+
+        _tween = transform.DOScale(1.15f, 0.15f);
 
         if (_audioController == null)
             _audioController = FindAnyObjectByType<AudioController>();
@@ -66,6 +73,11 @@ public class CardDragEffect : MonoBehaviour
         else
             ReturnShadowSize();
 
+        if (_tween != null)
+            _tween.Kill();
+
+        _tween = transform.DOScale(1f, 0.15f);
+
         _uIShiny.Play();        
 
         _audioController.Play(AudioController.AudioType.CardPut);
@@ -88,7 +100,12 @@ public class CardDragEffect : MonoBehaviour
         _shineAnimator.SetTrigger("On");
 
         _iconAnimator.ResetTrigger("Off");
-        _iconAnimator.SetTrigger("On");        
+        _iconAnimator.SetTrigger("On");
+
+        if (_tween != null)
+            _tween.Kill();
+
+        _tween = transform.DOScale(1.15f, 0.15f);
     }
 
     private void SetCardLightOff()
@@ -98,6 +115,11 @@ public class CardDragEffect : MonoBehaviour
 
         _iconAnimator.ResetTrigger("On");
         _iconAnimator.SetTrigger("Off");
+
+        if (_tween != null)
+            _tween.Kill();
+
+        _tween = transform.DOScale(1.0f, 0.15f);
     }
 
     public void Reset()
