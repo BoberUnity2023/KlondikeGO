@@ -702,6 +702,7 @@ namespace SimpleSolitaire.Controller
         {            
             _everyDayBonusWindow.SetActive(true);
             AppearWindow(_everyDayBonusWindow);
+            _backgroundBlockerDark.SetActive(true);
         }
 
         public void OnClickEveryDayBonusCloseBtn()
@@ -709,12 +710,14 @@ namespace SimpleSolitaire.Controller
             DisappearWindow(_everyDayBonusWindow, OnWindowDisappeared);
             void OnWindowDisappeared()
             {
-                
-            }
-            StartCoroutine(InvokeAction(delegate
-            {
                 _everyDayBonusWindow.SetActive(false);
-            }, 0.42f));
+                _backgroundBlockerDark.SetActive(false);
+            }
+            //StartCoroutine(InvokeAction(delegate
+            //{
+                //_everyDayBonusWindow.SetActive(false);
+                //_backgroundBlockerDark.SetActive(false);
+            //}, 0.42f));
         }
 
         public void OnClickMagicWand()
