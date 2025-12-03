@@ -17,6 +17,9 @@ namespace SimpleSolitaire.Controller
         [SerializeField] protected GameManager _gameMgrComponent;
         [SerializeField] protected HintManager _hintComponent;
         [SerializeField] protected Button _undoButton;
+        [SerializeField] private Image _buttonImage;
+        [SerializeField] private Sprite _spriteActive;
+        [SerializeField] private Sprite _spriteInActive;
         [SerializeField] protected Animator _undoButtonAnim;
         [SerializeField] protected Text _undoAvailableCountsText;
         [SerializeField] protected GameObject _undoAvailableIcon;
@@ -171,7 +174,9 @@ namespace SimpleSolitaire.Controller
                 _undoButtonAnim.SetBool(_undoBtnAnimationKey, true);
             }
 
-            _undoButton.interactable = (IsCountable) ? StatesData.States.Count != 0 : isHasUndoState;
+            bool _isActibe = (IsCountable) ? StatesData.States.Count != 0 : isHasUndoState;
+            _undoButton.interactable = _isActibe;
+            _buttonImage.sprite = _isActibe ? _spriteActive : _spriteInActive;
 
             _undoAvailableCountsText.text = AvailableUndoCounts.ToString();
             _undoAvailableCountsText.enabled = IsCountable && isHasUndoState;
