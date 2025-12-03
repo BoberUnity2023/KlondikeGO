@@ -46,7 +46,7 @@ namespace SimpleSolitaire.Controller
         /// Update card position in game by solitaire style
         /// </summary>
         /// <param name="firstTime">If it first game update</param>
-        public override void UpdateCardsPosition(bool firstTime)
+        public override void UpdateCardsPosition(bool firstTime, bool fromUndo = false)
         {
             if (CardsCount == 0)
             {

@@ -11,7 +11,7 @@ namespace SimpleSolitaire.Controller
         /// Update card position in game by solitaire style
         /// </summary>
         /// <param name="firstTime">If it first game update</param>
-        public override void UpdateCardsPosition(bool firstTime)
+        public override void UpdateCardsPosition(bool firstTime, bool fromUndo = false)
         {
             for (int i = 0; i < CardsArray.Count; i++)
             {
@@ -62,9 +62,13 @@ namespace SimpleSolitaire.Controller
                         }
                     }
 
-                    if (i == CardsArray.Count - 1)
+                    if (i == CardsArray.Count - 1)//Верхняя карта
                     {
-                        if (firstTime || Type != DeckType.DECK_TYPE_BOTTOM)
+                        card.IsDraggable = true;
+                        //card.CardStatus = 1;
+                        //card.UpdateCardImg();
+                        ////Fixing...
+                        if (firstTime || Type != DeckType.DECK_TYPE_BOTTOM || fromUndo)
                         {
                             card.IsDraggable = true;
                             card.CardStatus = 1;
@@ -85,7 +89,7 @@ namespace SimpleSolitaire.Controller
                             }
                             else
                                 card.IsDraggable = true;
-                        }                         
+                        }  //*/
                     }
                     else
                     {

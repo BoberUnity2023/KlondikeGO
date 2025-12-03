@@ -189,7 +189,7 @@ namespace SimpleSolitaire.Controller
         /// Update card position in game by solitaire style
         /// </summary>
         /// <param name="firstTime">If it first game update</param>
-        public abstract void UpdateCardsPosition(bool firstTime);
+        public abstract void UpdateCardsPosition(bool firstTime, bool fromUndo = false);
 
         /// <summary>
         /// After set positions <see cref="UpdateCardsPosition(bool)"/> game show for user available cards and not available.

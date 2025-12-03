@@ -130,7 +130,7 @@ namespace SimpleSolitaire.Controller
                     }
                 }
 
-                deck.UpdateCardsPosition(false);
+                deck.UpdateCardsPosition(false, true);
             }
         }
 
