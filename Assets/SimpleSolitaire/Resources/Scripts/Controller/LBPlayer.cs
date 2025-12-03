@@ -26,8 +26,9 @@ public class LBPlayer : MonoBehaviour
 
     private void LoadAvatar(string url)
     {
-        if (gameObject.activeInHierarchy)
-            StartCoroutine(LoadTextureFromWeb(url));
+        _avatar.gameObject.SetActive(false);
+        //if (gameObject.activeInHierarchy)
+        //    StartCoroutine(LoadTextureFromWeb(url));
     }
 
     private IEnumerator LoadTextureFromWeb(string url)

@@ -1354,7 +1354,7 @@ namespace SimpleSolitaire.Controller
 
         public void PressAddGold()
         {
-            Gold += 100;
+            Gold += 1000;
         }
 
         public void PressClearPrefs()

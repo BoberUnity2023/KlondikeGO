@@ -34,6 +34,7 @@ public class TabLeaderboard : MonoBehaviour
     [SerializeField] private GameObject _loadingScreen;
     [SerializeField] private LBPlayer[] _lBPlayers;
     private long _lastUpdateTimestamp;
+    private bool _isInited;
   
     public int Rank { get; set; }
 
@@ -90,6 +91,16 @@ public class TabLeaderboard : MonoBehaviour
         _thisPlayerGamePush.Set("Begemot", FormatNumbers.Format(5278000), "10", "https://games.pikabu.ru/static/0/images/def_avatar/games.png");
         _loadingScreen.SetActive(false);
 #endif
+#endif
+    }
+
+    private void OnDestroy()
+    {
+#if Yandex
+        if ( _isInited)
+        {
+            YG2.onGetLeaderboard -= OnGetLeaderboardYandex;
+        }        
 #endif
     }
 
@@ -157,6 +168,7 @@ public class TabLeaderboard : MonoBehaviour
 #if Yandex  
     public void InitializeYandex()
     {
+        _isInited = true;
         YG2.onGetLeaderboard += OnGetLeaderboardYandex;
         GetLeaderboard();
         SetThisPlayer();
@@ -201,5 +213,5 @@ public class TabLeaderboard : MonoBehaviour
         _thisPlayerYandex.SetActive(platform == Platform.Yandex);
         bool isPlatformGamePush = platform == Platform.VK || platform == Platform.Ok;
         _thisPlayerGamePush.gameObject.SetActive(isPlatformGamePush);
-    }
+    }    
 }
