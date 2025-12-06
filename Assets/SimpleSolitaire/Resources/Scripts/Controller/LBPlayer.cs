@@ -1,4 +1,3 @@
-using SimpleSolitaire.Controller;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -21,15 +20,20 @@ public class LBPlayer : MonoBehaviour
         if (_rank != null)
             _rank.text = rank;
 
-        if (url.Substring(0, 4) == "http")
-            LoadAvatar(url);
-        else
-            _avatar.enabled = false;        
+        TryLoadAvatar(url);
     }    
 
-    private void LoadAvatar(string url)
+    private void TryLoadAvatar(string url)
     {
         Debug.Log("Avatar: " + url);
+
+        if (url.Length < 4 || 
+            url.Substring(0, 4) != "http")
+        {
+            _avatar.enabled = false;
+            return; 
+        }
+
         StartCoroutine(LoadTextureFromWeb(url));
     }
 
