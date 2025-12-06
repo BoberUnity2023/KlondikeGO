@@ -14,7 +14,10 @@ using UnityEngine.UI.Extensions;
 using BloomLines.Controllers;
 using BloomLines;
 using UnityEngine.SceneManagement;
+using System.Runtime.InteropServices;
+#if Yandex
 using YG;
+#endif
 //using YG;
 
 namespace SimpleSolitaire.Controller
@@ -32,6 +35,13 @@ namespace SimpleSolitaire.Controller
         Yandex,
         VK,        
         GD
+    }
+
+    public enum Device
+    {
+        Editor,
+        Desktop,
+        Mobile
     }
 
 
@@ -170,6 +180,51 @@ namespace SimpleSolitaire.Controller
         public Platform Platform => _platform;
         private Platform _platform;
 
+        public Device Device
+        {
+            get
+            {
+                if (Application.platform == RuntimePlatform.WindowsEditor)
+                    return Device.Desktop;// Editor;
+#if Yandex
+                if (Platform == Platform.Yandex)
+                {
+                    if (YG.YG2.envir.isDesktop)
+                        return Device.Desktop;
+
+                    if (YG.YG2.envir.isMobile ||
+                        YG.YG2.envir.isTablet ||
+                        YG.YG2.envir.isTV)
+                        return Device.Mobile;
+                }
+#endif
+                if (_isMobile)
+                    return Device.Mobile;
+
+                if (!_isMobile)
+                    return Device.Desktop;
+
+                if (Platform == Platform.Ok ||
+                    Platform == Platform.VK)
+                {
+                    
+                }
+
+                //if (Platform == Platform.GamePush)
+                //{
+                //    _isMobile = GP_Device.IsMobile();
+                //    //Debug.Log("GP Is Mobile: " + _isMobile);
+                //    if (_isMobile)
+                //        return Device.Mobile;
+
+                //    if (!_isMobile)
+                //        return Device.Desktop;
+                //}
+                Debug.LogError("Device error");
+                return Device.Desktop;//TODO: DLL
+            }
+        }
+
         private readonly string _appearTrigger = "Appear";
         private readonly string _disappearTrigger = "Disappear";        
         private readonly string _showBottomBarKey = "ShowBar";
@@ -188,7 +243,12 @@ namespace SimpleSolitaire.Controller
         private bool _soundEnable;
         //private bool _autoCompleteEnable;
         private bool _isBarActive;
-        protected float _windowAnimationTime = 0.42f;        
+        protected float _windowAnimationTime = 0.42f;
+#if !UNITY_EDITOR && UNITY_WEBGL
+        [DllImport("__Internal")]
+        private static extern bool IsMobile();
+#endif
+        private bool _isMobile;
 
         public event Action OnGameStart;
         public event Action OnGameWin;
@@ -202,7 +262,10 @@ namespace SimpleSolitaire.Controller
         public event Action OnClick;
 
         private void Awake()
-        {            
+        {
+#if !UNITY_EDITOR && UNITY_WEBGL
+        _isMobile = IsMobile();
+#endif
             InitializeGame();
 
             _inviteFriendButton.SetActive(false);

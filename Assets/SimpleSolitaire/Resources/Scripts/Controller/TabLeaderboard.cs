@@ -144,11 +144,11 @@ public class TabLeaderboard : MonoBehaviour
             string playerScore = FormatNumbers.Format(players[i].score);
             string playerRank = players[i].position.ToString();
             string playerAvatar = players[i].avatar;
-            Debug.Log("PLAYER: " + i);            
-            Debug.Log("PLAYER.ID: " + players[i].id);
-            Debug.Log("PLAYER.SCORE: " + playerScore);
-            Debug.Log("PLAYER.NAME: " + playerName);
-            Debug.Log("PLAYER.POSITION: " + playerRank);
+            //Debug.Log("PLAYER: " + i);            
+            //Debug.Log("PLAYER.ID: " + players[i].id);
+            //Debug.Log("PLAYER.SCORE: " + playerScore);
+            //Debug.Log("PLAYER.NAME: " + playerName);
+            //Debug.Log("PLAYER.POSITION: " + playerRank);
 
             try
             {
@@ -201,7 +201,11 @@ public class TabLeaderboard : MonoBehaviour
             int playerRank = lbData.players[i].rank;
             string playerScore = FormatNumbers.Format(lbData.players[i].score);
             string playerAvatar = lbData.players[i].photo;
-            
+            //TODO: ????? Temp
+            if (_gameManager.Device == Device.Mobile)
+            {
+                playerAvatar = "";
+            }
             _lBPlayers[i].Set(playerName, playerScore, playerRank.ToString(), playerAvatar);
         }
     }
@@ -213,5 +217,5 @@ public class TabLeaderboard : MonoBehaviour
         _thisPlayerYandex.SetActive(platform == Platform.Yandex);
         bool isPlatformGamePush = platform == Platform.VK || platform == Platform.Ok;
         _thisPlayerGamePush.gameObject.SetActive(isPlatformGamePush);
-    }    
+    }
 }

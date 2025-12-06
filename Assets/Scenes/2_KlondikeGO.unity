@@ -24965,6 +24965,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameManager: {fileID: 411655882}
+  CLComponent: {fileID: 404369808}
+  GameBG: {fileID: 195708251}
   BackgroundVisual:
     Previews:
     - {fileID: 21300000, guid: 91153f542cfd3a14b8d72f0021c4c36b, type: 3}
@@ -25104,7 +25106,6 @@ MonoBehaviour:
     - {fileID: 21300000, guid: 934da7ee9b3409d4e9e0e636dfb39302, type: 3}
     - {fileID: 21300000, guid: 1ed5fbeda37510941b24133c9244a2e2, type: 3}
     - {fileID: 21300000, guid: b2f5a859ec55a76429a43b66907702bc, type: 3}
-    - {fileID: 21300000, guid: ad23a7f7b1b2ed64382984d113e19108, type: 3}
     Current: {fileID: 0}
     Elements:
     - {fileID: 5050795123933260486}
@@ -25118,13 +25119,10 @@ MonoBehaviour:
     - {fileID: 1620226350}
     - {fileID: 1437968774}
     - {fileID: 1478820390}
-    - {fileID: 1265478365}
-    Prices: 00000000d0070000ac0d00008813000070170000581b0000401f00002823000010270000e02e0000983a0000204e0000
+    Prices: 00000000d0070000ac0d00008813000070170000581b0000401f00002823000010270000e02e0000983a0000
     VisualName: 
     DefaultName: Front1
     SaveName: CurrentFront
-  GameBG: {fileID: 195708251}
-  CLComponent: {fileID: 404369808}
 --- !u!1 &651445448
 GameObject:
   m_ObjectHideFlags: 0
@@ -64915,6 +64913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Card Front (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2970291933187708257, guid: 2efc9b243365fa24ba8b59c2e9485c62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6274448234391813410, guid: 2efc9b243365fa24ba8b59c2e9485c62, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -65025,17 +65027,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6274448234391813410, guid: 2efc9b243365fa24ba8b59c2e9485c62, type: 3}
   m_PrefabInstance: {fileID: 1265478363}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1265478365 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8908172466470924281, guid: 2efc9b243365fa24ba8b59c2e9485c62, type: 3}
-  m_PrefabInstance: {fileID: 1265478363}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9725d6b4afb66c448156f9690f4fe12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1267739141
 GameObject:
   m_ObjectHideFlags: 0
@@ -107867,7 +107858,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -95}
-  m_SizeDelta: {x: 250, y: 100}
+  m_SizeDelta: {x: 400, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &514560039663294701
 MonoBehaviour:

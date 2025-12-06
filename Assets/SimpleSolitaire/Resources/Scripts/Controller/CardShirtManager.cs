@@ -33,6 +33,8 @@ namespace SimpleSolitaire.Controller
     public class CardShirtManager : MonoBehaviour
     {
         [SerializeField] private GameManager _gameManager;
+        [SerializeField] private CardLogic CLComponent;
+        [SerializeField] private Image GameBG;        
         public static CardShirtManager Instance;
 
         public CardVisualData VisualData => new CardVisualData(back: CardBackVisual.VisualName, front: CardFrontVisual.VisualName);
@@ -41,8 +43,7 @@ namespace SimpleSolitaire.Controller
         [Header("Card back:")] public GameVisual CardBackVisual;
         [Header("Card front:")] public GameVisual CardFrontVisual;
         
-        public Image GameBG;
-        public CardLogic CLComponent;
+        
 
         private readonly string _animationActionTrigger = "Action";
         //private readonly string _animationNonActionTrigger = "NonAction";

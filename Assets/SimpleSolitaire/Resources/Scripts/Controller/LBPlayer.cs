@@ -1,3 +1,4 @@
+using SimpleSolitaire.Controller;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -8,7 +9,7 @@ public class LBPlayer : MonoBehaviour
     [SerializeField] private Text _name;
     [SerializeField] private Text _score;
     [SerializeField] private Text _rank;
-    [SerializeField] private Image _avatar;
+    [SerializeField] private Image _avatar;    
 
     public void Set(string name, string score, string rank, string url)
     {
@@ -20,15 +21,16 @@ public class LBPlayer : MonoBehaviour
         if (_rank != null)
             _rank.text = rank;
 
-        if (url.Length > 3)
+        if (url.Substring(0, 4) == "http")
             LoadAvatar(url);
+        else
+            _avatar.enabled = false;        
     }    
 
     private void LoadAvatar(string url)
     {
-        _avatar.gameObject.SetActive(false);
-        //if (gameObject.activeInHierarchy)
-        //    StartCoroutine(LoadTextureFromWeb(url));
+        Debug.Log("Avatar: " + url);
+        StartCoroutine(LoadTextureFromWeb(url));
     }
 
     private IEnumerator LoadTextureFromWeb(string url)

@@ -228,10 +228,10 @@ namespace BloomLines
             
             float moveTime = distance / Public.CardSpeed + 0.2f;
             int numJumps = (int)(distance / 300);
-            cardClose.transform.DOLocalJump(toPosition, 80, numJumps, moveTime).SetEase(Ease.InSine);
             cardClose.DragEffect("On");
+            _stars.EffectStart(cardClose.transform);
 
-            _stars.EffectStart(cardClose.transform);            
+            cardClose.transform.DOLocalJump(toPosition, 80, numJumps, moveTime).SetEase(Ease.InSine);
 
             yield return new WaitForSeconds(moveTime);
 
@@ -239,8 +239,8 @@ namespace BloomLines
             cardClose.DragEffect("Off");
             if (!isMoveToPack)
             {
-                cardClose.transform.DOScaleX(0, 0.15f);
-                yield return new WaitForSeconds(0.15f);
+                cardClose.transform.DOScaleX(0, 0.2f);
+                yield return new WaitForSeconds(0.2f);
             }           
             
             Deck deckFinish = isMoveToPack ? _klondikeCardLogic.PackDeck : cardOpen.Deck;
@@ -248,8 +248,8 @@ namespace BloomLines
             cardClose.Deck = deckFinish;
             if (!isMoveToPack)
             {
-                deckFinish.UpdateCardsPosition(false);
-                cardClose.transform.DOScaleX(1, 0.15f);
+                deckFinish.UpdateCardsPosition(false, true);
+                cardClose.transform.DOScaleX(1, 0.2f);
             }
             _stars.EffectStop();
             _isProcess = false;
