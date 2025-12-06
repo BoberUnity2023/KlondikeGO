@@ -723,6 +723,12 @@ public class SaveController : MonoBehaviour
         return _output;
     }
 
+    private void Awake()
+    {
+        if (GP_Init.isReady)
+            OnGamePushInit();
+    }
+
     // Подписываемся на событие GetDataEvent в OnEnable
     private void OnEnable()
     {
@@ -930,6 +936,7 @@ public class SaveController : MonoBehaviour
         _json = GP_Player.GetString(KeyJson); 
         Save = JsonUtility.FromJson<Save>(_json);
         FillSaveFromPlayerPrefsOrStorage(Save);
+        _game.Gold = Save.Gold;
         Debug.Log("Get JSON: " + _json);
 #endif
     }

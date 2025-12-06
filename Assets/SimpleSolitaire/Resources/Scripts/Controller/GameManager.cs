@@ -152,7 +152,7 @@ namespace SimpleSolitaire.Controller
                 int gold = Save.Gold;
 
                 if (value > gold)
-                    Stats.GoldForAllTime += value - gold;
+                    Save.Experience += value - gold;
 
                 gold = Mathf.Max(0, value);
                 _goldLabel.text = gold.ToString();
@@ -297,26 +297,27 @@ namespace SimpleSolitaire.Controller
 
         public void LoadGold()
         {
-            Gold = Save.Gold;
-            //if (Platform == Platform.Ok ||
-            //    Platform == Platform.VK ||
-            //    Platform == Platform.GD)
-            //{
+            if (Platform == Platform.Yandex)
+                Gold = Save.Gold;
+        //    //if (Platform == Platform.Ok ||
+        //    //    Platform == Platform.VK ||
+        //    //    Platform == Platform.GD)
+        //    //{
                 
-            //}
+        //    //}
 
-            //if (Platform == Platform.Yandex)
-            //{
-            //    // Проверяем запустился ли плагин
-            //    //if (YandexGame.SDKEnabled == true)
-            //    //{
-            //    //    // Если запустился, то запускаем Ваш метод
-            //    //    GetData();
+        //    //if (Platform == Platform.Yandex)
+        //    //{
+        //    //    // Проверяем запустился ли плагин
+        //    //    //if (YandexGame.SDKEnabled == true)
+        //    //    //{
+        //    //    //    // Если запустился, то запускаем Ваш метод
+        //    //    //    GetData();
 
-            //    //    // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
-            //    //    // но он запустится при вызове события GetDataEvent, после прогрузки плагина
-            //    //}
-            //}
+        //    //    //    // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
+        //    //    //    // но он запустится при вызове события GetDataEvent, после прогрузки плагина
+        //    //    //}
+        //    //}
         }
 
         private void Start()
