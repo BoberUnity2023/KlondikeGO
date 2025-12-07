@@ -7,9 +7,9 @@ namespace BloomLines
     {
         //Пройти игру менее чем за 3 минуты              
         private int _timeCount;
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             Debug.Log("Blitz.IsComplete: " + IsComplete.ToString());
             Hub.OnGameWin += OnGameWin;
             Hub.OnGameStart += OnGameStart;

@@ -2,12 +2,11 @@ namespace BloomLines
 {
     public class WinGamesToday : AchivementBase
     {
-        //Разложить 30 партий за 1 день
-        private bool _usedRotate;
+        //Разложить 30 партий за 1 день       
 
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();            
+            base.Init();            
             Hub.OnGameWin += OnGameWin;
             Hub.OnLastVisitNoToday += OnLastVisitNoToday;
         }

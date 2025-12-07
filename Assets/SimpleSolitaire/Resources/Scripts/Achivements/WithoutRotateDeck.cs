@@ -7,9 +7,9 @@ namespace BloomLines
         //–азложить пась€нс не переворачива€ колоду
         private bool _usedRotate;
 
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             Hub.OnGameWin += OnGameWin;
             Hub.OnGameStart += OnGameStart;
             Hub.OnRotateDeck += OnRotateDeck;

@@ -43,7 +43,7 @@ public class AchivementBase : MonoBehaviour
 
     public Sprite Icon => _icon;
 
-    protected virtual void Start()
+    public virtual void Init()
     {
         if (!_saved)
             _progress = Hub.Stats.GetAchivementProgress(Id);

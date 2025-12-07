@@ -17,12 +17,13 @@ public class AchivementsController: MonoBehaviour
         }
     }
 
-    private void Awake()
+    public void Init()
     {
         for (int i = 0; i < _achivements.Length; i++)
         {            
             _achivements[i].Id = i;
-            _achivements[i].Hub = _hub;            
+            _achivements[i].Hub = _hub;
+            _achivements[i].Init();
         }
     }
 

@@ -6,9 +6,9 @@ namespace BloomLines
     {
         //Открыть 3 любых колоды
 
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             Hub.OnBoughtDeck += OnBoughtDeck;
             Progress = Count;
         }

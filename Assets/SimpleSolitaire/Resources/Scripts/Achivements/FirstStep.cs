@@ -3,9 +3,9 @@ namespace BloomLines
     public class FirstStep : AchivementBase
     {
         //Пройти первую игру
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             Hub.OnGameWin += OnGameWin;
         }
 

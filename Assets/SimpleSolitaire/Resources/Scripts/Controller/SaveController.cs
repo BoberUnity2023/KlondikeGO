@@ -723,10 +723,33 @@ public class SaveController : MonoBehaviour
         return _output;
     }
 
+    public void Init()
+    {
+        Debug.Log("SaveController.Init(Start)");
+        SetSaveType();        
+#if Yandex
+        if (_saveType == SaveType.Yandex)
+        {            
+            FillSaveFromYandex();
+        }
+#endif
+        if (_saveType == SaveType.Json)
+        {
+#if GAME_PUSH
+            if (GP_Init.isReady)
+                OnGamePushInit();
+            else
+                FillSaveFromPlayerPrefs();
+#endif
+        }
+        else
+            FillSaveFromPlayerPrefs();
+        Debug.Log("SaveController.Init(Complete)");
+    }
+
     private void Awake()
     {
-        if (GP_Init.isReady)
-            OnGamePushInit();
+        
     }
 
     // Подписываемся на событие GetDataEvent в OnEnable
@@ -749,26 +772,7 @@ public class SaveController : MonoBehaviour
 
     private void Start()
     {
-        SetSaveType();
-        //FillSaveFromPlayerPrefsOrStorage();
-#if Yandex
-        if (_saveType == SaveType.Yandex)
-        {
-            //Save save = new Save();            
-            // Проверяем запустился ли плагин
-            //if (YG2.SDKEnabled == true)
-            //{
-            //    // Если запустился, то запускаем Ваш метод
-            //    GetData();
-
-            //    // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
-            //    // но он запустится при вызове события GetDataEvent, после прогрузки плагина
-            //}
-            FillSaveFromYandex();
-        }
-#endif
-        if (_saveType == SaveType.Json)
-            FillSaveFromPlayerPrefs();
+        
     }
 
     // Ваш метод, который будет запускаться в старте
@@ -885,7 +889,7 @@ public class SaveController : MonoBehaviour
         Save.FastestPartyTime = Mathf.Max(PlayerPrefs.GetInt(KeyFastestPartyTime, 0), save.FastestPartyTime);
         Save.LongestPartyTime = Mathf.Max(PlayerPrefs.GetInt(KeyLongestPartyTime, 0), save.LongestPartyTime);
         Save.NoAds = PlayerPrefs.GetInt(KeyNoAds) == 1 || save.NoAds;
-        //VKManager.Instance.StorageSave();
+        //VKManager.Instance.StorageSave();        
     }
 #if Yandex
     public void FillSaveFromYandex()

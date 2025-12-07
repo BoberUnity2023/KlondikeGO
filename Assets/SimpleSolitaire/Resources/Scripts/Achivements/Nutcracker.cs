@@ -4,9 +4,9 @@ namespace BloomLines
     {
         //Сделать 500 кликов за 1 игру        
 
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             Hub.OnGameStart += OnGameStart;
             Hub.OnGameWin += OnGameWin;
             Hub.OnClick += OnClick;            

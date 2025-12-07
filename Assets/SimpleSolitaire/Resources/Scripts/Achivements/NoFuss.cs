@@ -4,9 +4,9 @@ namespace BloomLines
     {
         //Пройти пасьянс менее чем за 20 минут
         private int _timeCount;
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             Hub.OnGameWin += OnGameWin;
             Hub.OnGameStart += OnGameStart;
             Hub.OnTimeCount += OnTimeCount;

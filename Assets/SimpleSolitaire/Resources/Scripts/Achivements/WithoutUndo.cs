@@ -5,9 +5,9 @@ namespace BloomLines
         //Выиграть игру не делая отмены хода
         private bool _usedUndo;
 
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             Hub.OnGameWin += OnGameWin;
             Hub.OnGameStart += OnGameStart;
             Hub.OnUndo += OnUndo;

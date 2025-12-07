@@ -6,9 +6,9 @@ namespace BloomLines
     {
         //Выиграть 5 игр подряд
         private const string _key = "AchGoldSeriesRound";
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             Hub.OnGameWin += OnGameWin;
             Hub.OnGameStart += OnGameStart;            
         }

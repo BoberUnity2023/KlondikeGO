@@ -16566,6 +16566,7 @@ MonoBehaviour:
   _levelToggleGroup: {fileID: 1643351211311627998}
   _bonusGold: {fileID: 0}
   _bottomMenu: {fileID: 1547255732}
+  _topMenu: {fileID: 106218721338321114}
   _adsLayer: {fileID: 5617590231118671825}
   _adsLayerHints: {fileID: 5617590229899908002}
   _watchButton: {fileID: 5617590230941010991}
@@ -16578,6 +16579,7 @@ MonoBehaviour:
   _undoPerformComponent: {fileID: 1008506454}
   _tutorialComponent: {fileID: 485656423}
   _autoCompleteComponent: {fileID: 1543854655}
+  _achivementsController: {fileID: 209749454}
   _magicWand: {fileID: 1158493230}
   _peek: {fileID: 1845750739}
   _hintManager: {fileID: 418428742}
@@ -107161,7 +107163,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.95}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 150.00024}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &106218721338321113
 GameObject:
@@ -107172,6 +107174,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 106218721338321112}
+  - component: {fileID: 106218721338321115}
+  - component: {fileID: 106218721338321114}
   m_Layer: 5
   m_Name: Top
   m_TagString: Untagged
@@ -107179,6 +107183,41 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &106218721338321114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106218721338321113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39c55eff487c6934b8b60fc7dcdd87a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BloomLines.TopMenu
+  _animator: {fileID: 106218721338321115}
+--- !u!95 &106218721338321115
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106218721338321113}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c09139f41595a1c44a2adafe085db467, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &106218721437189113
 RectTransform:
   m_ObjectHideFlags: 0

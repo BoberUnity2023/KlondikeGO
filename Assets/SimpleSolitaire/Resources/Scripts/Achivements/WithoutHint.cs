@@ -5,9 +5,9 @@ namespace BloomLines
         //–азложить пась€нс без использовани€ подсказок
         private bool _usedHint;
 
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             Hub.OnGameWin += OnGameWin;
             Hub.OnGameStart += OnGameStart;
             Hub.OnHint += OnHint;

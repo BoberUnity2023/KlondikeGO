@@ -62,6 +62,7 @@ public class TabLeaderboard : MonoBehaviour
 #endif
 
 #if GAME_PUSH
+#if !UNITY_EDITOR
         if (GP_Init.isReady)
         {
             Debug.Log("GP_LB Fetching...");
@@ -74,6 +75,7 @@ public class TabLeaderboard : MonoBehaviour
         }
         else
             Debug.Log("GP_LB is not ready");
+#endif
 #if UNITY_EDITOR
         for (int i = 0; i < 50; i++)
         {

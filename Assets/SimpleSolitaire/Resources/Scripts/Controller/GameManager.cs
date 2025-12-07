@@ -14,7 +14,7 @@ using UnityEngine.UI.Extensions;
 using BloomLines.Controllers;
 using BloomLines;
 using UnityEngine.SceneManagement;
-using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;//Исп-ся
 #if Yandex
 using YG;
 #endif
@@ -56,6 +56,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private ToggleGroup _levelToggleGroup;
         [SerializeField] private GameObject _bonusGold;
         [SerializeField] private BottomMenu _bottomMenu;
+        [SerializeField] private TopMenu _topMenu;
 
         [Header("Ads Components:")]        
         [SerializeField] private GameObject _adsLayer;
@@ -72,6 +73,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] protected UndoPerformer _undoPerformComponent;
         [SerializeField] private TutorialManager _tutorialComponent;
         [SerializeField] private AutoCompleteManager _autoCompleteComponent;
+        [SerializeField] private AchivementsController _achivementsController;
 
         [SerializeField] private MagicWand _magicWand;
         public MagicWand MagicWand => _magicWand;
@@ -261,7 +263,7 @@ namespace SimpleSolitaire.Controller
         public event Action OnLastVisitNoToday;
         public event Action OnClick;
 
-        private void Awake()
+        private void Start()
         {
 #if !UNITY_EDITOR && UNITY_WEBGL
         _isMobile = IsMobile();
@@ -276,6 +278,20 @@ namespace SimpleSolitaire.Controller
 #if Yandex
             YG2.GameReadyAPI();
 #endif
+
+            if (Game == Game.Klondike)
+            {
+                _levelSelected = 1;
+                SetLevel(1);
+            }
+
+            if (Game == Game.Spider)
+            {
+                _levelSelected = 0;
+                SetLevel(0);
+            }
+
+            StartCoroutine(InitGameState());
         }
 
         /// <summary>
@@ -288,8 +304,10 @@ namespace SimpleSolitaire.Controller
             SetPlatform();
             _soundEnable = true;            
             _isBarActive = true;
+            _saveController.Init();
             Stats = new Stats(this);
-            LoadGold();              
+            //LoadGold();
+            _achivementsController.Init();
             _cardLogic.SubscribeEvents();
             _audioController = AudioController.Instance;
             _goldLabel.text = Gold.ToString();            
@@ -297,8 +315,9 @@ namespace SimpleSolitaire.Controller
 
         public void LoadGold()
         {
-            if (Platform == Platform.Yandex)
-                Gold = Save.Gold;
+            //if (Platform == Platform.Yandex)
+            _goldLabel.text = Save.Gold.ToString();
+            //Debug.Log("LoadGold(" + Gold.ToString() + ")");
         //    //if (Platform == Platform.Ok ||
         //    //    Platform == Platform.VK ||
         //    //    Platform == Platform.GD)
@@ -320,22 +339,10 @@ namespace SimpleSolitaire.Controller
         //    //}
         }
 
-        private void Start()
-        {
-            if (Game == Game.Klondike)
-            {
-                _levelSelected = 1;
-                SetLevel(1);
-            }
-
-            if (Game == Game.Spider)
-            {
-                _levelSelected = 0;
-                SetLevel(0);
-            }
-
-            StartCoroutine(InitGameState());
-        }
+        //private void Start()
+        //{
+            
+        //}
 
         private void SetPlatform()
         {
@@ -520,6 +527,7 @@ namespace SimpleSolitaire.Controller
             StopGameTimer();
             _congratManagerComponent.CongratulationTextFill();
             _bottomMenu.PressDown();
+            _topMenu.Hide();
 
             _timeWinLabel.text = _timeLabel.text;//"YOUR TIME: "
             _scoreWinLabel.text = score.ToString();//"YOUR SCORE: "
@@ -1272,6 +1280,7 @@ namespace SimpleSolitaire.Controller
         {
             _backgroundBlockerAlpha.SetActive(false);
             _bottomMenu.PressUp();
+            _topMenu.Show();
             Peek.SetButtonSprite();
         }
         #endregion

@@ -26,8 +26,9 @@ public class LBPlayer : MonoBehaviour
     private void TryLoadAvatar(string url)
     {
         Debug.Log("Avatar: " + url);
-
-        if (url.Length < 4 || 
+        if (url == null ||
+            url == "" ||
+            url.Length < 4 ||
             url.Substring(0, 4) != "http")
         {
             _avatar.enabled = false;

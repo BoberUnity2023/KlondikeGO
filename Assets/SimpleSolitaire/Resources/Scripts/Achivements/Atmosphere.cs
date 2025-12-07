@@ -6,9 +6,9 @@ namespace BloomLines
     {
         //Открыть 3 любых фона
 
-        protected override void Start()
+        public override void Init()
         {
-            base.Start();
+            base.Init();
             Hub.OnBoughtBackground += OnBoughtBackground;
             Progress = Count;
         }
