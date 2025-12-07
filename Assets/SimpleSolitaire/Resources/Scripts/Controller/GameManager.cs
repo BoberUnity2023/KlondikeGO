@@ -96,6 +96,7 @@ namespace SimpleSolitaire.Controller
 
         [Header("Layers:")]
         [SerializeField] protected GameObject _newGameLayer;
+        [SerializeField] protected GameObject _newGameLayerButtonClose;
         [SerializeField] protected GameObject _backgroundBlockerDark;
         [SerializeField] protected GameObject _backgroundBlockerAlpha;
         [SerializeField] protected GameObject _cardLayer;
@@ -310,7 +311,8 @@ namespace SimpleSolitaire.Controller
             _achivementsController.Init();
             _cardLogic.SubscribeEvents();
             _audioController = AudioController.Instance;
-            _goldLabel.text = Gold.ToString();            
+            _goldLabel.text = Gold.ToString();
+            _newGameLayerButtonClose.SetActive(false);
         }
 
         public void LoadGold()
@@ -674,6 +676,8 @@ namespace SimpleSolitaire.Controller
             _backgroundBlockerDark.SetActive(true);
             InitCardLogic();
             AppearWindow(_newGameLayer);
+            _bottomMenu.PressDown();
+            _topMenu.Hide();
         }
 
         public void OnClickLeaderboardBtn()
@@ -1174,6 +1178,7 @@ namespace SimpleSolitaire.Controller
                 StatisticsController.Instance.PlayedGames?.Invoke();                
                 _cardLogic.OnNewGameStart();
                 _newGameLayer.SetActive(false);
+                _newGameLayerButtonClose.SetActive(true);
                 _backgroundBlockerDark.SetActive(false);
                 _backgroundBlockerAlpha.SetActive(true);
                 _cardLayer.SetActive(true);
@@ -1227,11 +1232,14 @@ namespace SimpleSolitaire.Controller
                 StatisticsController.Instance.PlayedGames?.Invoke();
                 _cardLogic.OnNewGameStart();
                 _newGameLayer.SetActive(false);
+                _newGameLayerButtonClose.SetActive(true);
                 _backgroundBlockerDark.SetActive(false);
                 _backgroundBlockerAlpha.SetActive(true);
                 _winLayer.SetActive(false);
                 _cardLayer.SetActive(true);
-                _cardLogic.Shuffle(true);                
+                _cardLogic.Shuffle(true);
+                _bottomMenu.PressDown();
+                _topMenu.Hide();
                 //StartCoroutine(AfterStartEffectPlayed(2.5f));
                 _undoPerformComponent.ResetUndoStates();
                 //_adsController.TryShowInterstitial();
@@ -1247,6 +1255,8 @@ namespace SimpleSolitaire.Controller
         public void OnClickModalClose()
         {
             DisappearWindow(_newGameLayer, OnModalLayerDisappeared);
+            _bottomMenu.PressUp();
+            _topMenu.Show();
 
             void OnModalLayerDisappeared()
             {

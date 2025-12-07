@@ -16587,6 +16587,7 @@ MonoBehaviour:
   TabLeaderboard: {fileID: 183045844}
   _adsController: {fileID: 1799995722}
   _newGameLayer: {fileID: 8100257424269241353}
+  _newGameLayerButtonClose: {fileID: 598305096}
   _backgroundBlockerDark: {fileID: 8100257423277689379}
   _backgroundBlockerAlpha: {fileID: 1829649615}
   _cardLayer: {fileID: 404369805}
@@ -23212,6 +23213,11 @@ MonoBehaviour:
   mGUI_ShowCallback: 0
   mLocalizeTarget: {fileID: 1933232046}
   mLocalizeTargetName: I2.Loc.LocalizeTarget_UnityUI_Text
+--- !u!1 &598305096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1249689041945343594, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
+  m_PrefabInstance: {fileID: 4060404963505938211}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &599522566
 GameObject:
   m_ObjectHideFlags: 0
