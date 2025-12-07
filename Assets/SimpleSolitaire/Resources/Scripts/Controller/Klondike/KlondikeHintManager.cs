@@ -58,8 +58,9 @@ namespace SimpleSolitaire.Controller
                     hintCard.transform.localPosition.x,
                     hintCard.transform.localPosition.y)
                     );
-                        
-            hintCard.DragEffect("On");
+
+            List<Card> cardsToTop = hintCard.Deck.SetCardsToTop(hintCard);//Движение стопки карт
+            hintCard.DragEffect("On", cardsToTop);
             yield return new WaitForSeconds(moveTime + 0.1f);            
             
             hintCard.DragEffect("Off");
