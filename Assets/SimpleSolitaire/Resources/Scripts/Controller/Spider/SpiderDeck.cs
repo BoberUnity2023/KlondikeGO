@@ -8,7 +8,7 @@ namespace SimpleSolitaire.Controller
 {
     public class SpiderDeck : Deck
     {        
-        protected override void UpdateCardsActiveStatus()
+        public override void UpdateCardsActiveStatus()
         {
             if (Type == DeckType.DECK_TYPE_ACE || Type == DeckType.DECK_TYPE_WASTE)
             {

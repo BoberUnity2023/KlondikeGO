@@ -46,8 +46,11 @@ public class LocalizeController : MonoBehaviour
 #if Yandex
         YG2.onSwitchLang -= OnChangeLanguage;
 #endif
-    }
 
+#if GAME_PUSH
+        GP_Language.OnChangeLanguage -= GPOnChangeLanguage;
+#endif
+    }
     private void OnChangeLanguage(string lang)
     {
         Debug.Log("Language: " + lang);

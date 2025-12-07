@@ -194,7 +194,7 @@ namespace SimpleSolitaire.Controller
         /// <summary>
         /// After set positions <see cref="UpdateCardsPosition(bool)"/> game show for user available cards and not available.
         /// </summary>
-        protected virtual void UpdateCardsActiveStatus()
+        public virtual void UpdateCardsActiveStatus()
         {
             int compareNum = 4;
             if (Type == DeckType.DECK_TYPE_ACE || Type == DeckType.DECK_TYPE_WASTE || Type == DeckType.DECK_TYPE_PACK)

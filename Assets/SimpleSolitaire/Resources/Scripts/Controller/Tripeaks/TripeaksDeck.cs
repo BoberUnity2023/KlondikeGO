@@ -8,7 +8,7 @@ namespace SimpleSolitaire.Controller
     {
         private TripeaksCardLogic _tripeaksCardLogic => CardLogicComponent as TripeaksCardLogic;
 
-        protected override void UpdateCardsActiveStatus()
+        public override void UpdateCardsActiveStatus()
         {
             if (Type == DeckType.DECK_TYPE_WASTE)
             {

@@ -83,8 +83,8 @@ namespace BloomLines
             bool hasPair = FindPair();
             if (hasPair)
             {
-                Debug.Log("MagicWand: " + "OpenCard: " + _cardOpen.GetTypeName() + _cardOpen.Number);
-                Debug.Log("MagicWand: " + "CloseCard: " + _cardClose.GetTypeName() + _cardClose.Number);
+                //Debug.Log("MagicWand: " + "OpenCard: " + _cardOpen.GetTypeName() + _cardOpen.Number);
+                //Debug.Log("MagicWand: " + "CloseCard: " + _cardClose.GetTypeName() + _cardClose.Number);
                 Count--;
                 StartCoroutine(MagicWindTranslate(_cardClose, _cardOpen, OnComplete));
             }
@@ -111,7 +111,14 @@ namespace BloomLines
             SetButtonSprite();
             _hintManager.GenerateHints();
             _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Bonus);
+            //StartCoroutine(AfterOnComplete());
         }
+
+        //private IEnumerator AfterOnComplete()
+        //{
+        //    yield return new WaitForSeconds(0.5f);
+            
+        //}
 
         private bool FindPair()
         {            
@@ -249,6 +256,7 @@ namespace BloomLines
             if (!isMoveToPack)
             {
                 deckFinish.UpdateCardsPosition(false, true);
+                deckFinish.UpdateCardsActiveStatus();
                 cardClose.transform.DOScaleX(1, 0.2f);
             }
             _stars.EffectStop();

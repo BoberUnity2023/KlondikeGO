@@ -21,6 +21,10 @@ public class GamePushController : MonoBehaviour
         else
             Destroy(gameObject);
 #endif
+
+#if !GAME_PUSH
+    Destroy(gameObject);
+#endif
     }
 
     private void OnEnable()
@@ -49,7 +53,7 @@ public class GamePushController : MonoBehaviour
     {        
         Debug.Log("GamePush starting...");
 
-# if UNITY_EDITOR
+#if UNITY_EDITOR
         OnPluginReady();
 #endif
 
