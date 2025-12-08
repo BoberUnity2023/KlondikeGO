@@ -19,6 +19,15 @@ namespace BloomLines.Controllers
         private void Awake()
         {
             Debug.Log("KlondikeGO v." + Application.version + " started success");
+#if Yandex
+            if (YG.YG2.isSDKEnabled)
+                Debug.Log("YG SDK Inited success!");
+            else
+            {
+                Debug.Log("YG SDK Init starting...");
+                YG.YG2.StartInit(); 
+            }
+#endif
         }
 
         private /*async*/ void Start()
@@ -30,12 +39,15 @@ namespace BloomLines.Controllers
             AnalyticsController.SendEvent("applicaton_start");
             //Debug.Log("GamePush initing...(1)");
 
-//#if GAME_PUSH
-//            await GP_Init.Ready;
-//            Debug.Log("GamePush initing...(2)");
-//            AnalyticsController.SendEvent("applicaton_gp_inited");
-//            Debug.Log("GamePush inited success");
-//#endif
+            //#if GAME_PUSH
+            //            await GP_Init.Ready;
+            //            Debug.Log("GamePush initing...(2)");
+            //            AnalyticsController.SendEvent("applicaton_gp_inited");
+            //            Debug.Log("GamePush inited success");
+            //#endif
+
+            
+
 
 #if CRAZY_GAMES
             Debug.Log("PreLauncherController.Initialize()");

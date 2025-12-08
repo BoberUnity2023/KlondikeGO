@@ -11,12 +11,14 @@ namespace BloomLines
         
         void Start()
         {
+            if (!YG.YG2.isSDKEnabled)
+                YG.YG2.StartInit();
 #if Yandex && !UNITY_EDITOR
-        YG2.onSwitchLang += OnChangeLanguage;
-        OnChangeLanguage(YG2.envir.language);
+        YG.YG2.onSwitchLang += OnChangeLanguage;
+        OnChangeLanguage(YG.YG2.envir.language);
 #endif
 
-#if GAME_PUSH            
+#if GAME_PUSH
             GamePush.GP_Language.OnChangeLanguage += GPOnChangeLanguage;
             OnChangeLanguage(GamePush.GP_Language.CurrentISO());
 #endif
@@ -29,7 +31,7 @@ namespace BloomLines
         private void OnDestroy()
         {
 #if Yandex && !UNITY_EDITOR
-        YG2.onSwitchLang -= OnChangeLanguage;        
+        YG.YG2.onSwitchLang -= OnChangeLanguage;        
 #endif
 
 #if GAME_PUSH
