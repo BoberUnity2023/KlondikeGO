@@ -90,7 +90,7 @@ namespace SimpleSolitaire.Controller
         public TabLeaderboard TabLeaderboard;
 
         [SerializeField] private AdsController _adsController;
-
+        [SerializeField] private RewardedVideoController _rewardedVideoController;
         private AudioController _audioController;
         public AudioController AudioController => _audioController;
 
@@ -309,6 +309,7 @@ namespace SimpleSolitaire.Controller
             Stats = new Stats(this);
             //LoadGold();
             _achivementsController.Init();
+            _rewardedVideoController.Init();
             _cardLogic.SubscribeEvents();
             _audioController = AudioController.Instance;
             _goldLabel.text = Gold.ToString();

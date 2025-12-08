@@ -16677,6 +16677,7 @@ MonoBehaviour:
   ScreenController: {fileID: 1815770008}
   TabLeaderboard: {fileID: 183045844}
   _adsController: {fileID: 1799995722}
+  _rewardedVideoController: {fileID: 377076554}
   _newGameLayer: {fileID: 8100257424269241353}
   _newGameLayerButtonClose: {fileID: 598305096}
   _backgroundBlockerDark: {fileID: 8100257423277689379}

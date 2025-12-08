@@ -30,7 +30,7 @@ public class RewardedVideoController : MonoBehaviour
     //private void OnDisable() => YandexGame.RewardVideoEvent -= Rewarded;
 
     // Подписанный метод получения награды
-    private void Start()
+    public void Init()
     {
         if (_gameManager.Platform == Platform.GD)
         {
