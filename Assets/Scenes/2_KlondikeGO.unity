@@ -109910,6 +109910,8 @@ MonoBehaviour:
   _finishTo: {fileID: 7858875765009938030}
   _timeFailMin: 2
   _timeFailMax: 4
+  _isSound: 0
+  _audioController: {fileID: 0}
 --- !u!1 &1021645822202011362
 GameObject:
   m_ObjectHideFlags: 0
@@ -125370,6 +125372,8 @@ MonoBehaviour:
   _finishTo: {fileID: 4967828332585768355}
   _timeFailMin: 1
   _timeFailMax: 1.5
+  _isSound: 1
+  _audioController: {fileID: 321646398}
 --- !u!114 &6287561705036588199
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using DG.Tweening;
+using SimpleSolitaire.Controller;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Pool;
@@ -15,10 +16,17 @@ namespace BloomLines
         [SerializeField] private Transform _finishTo;
         [SerializeField] private float _timeFailMin;
         [SerializeField] private float _timeFailMax;
+        [SerializeField] private bool _isSound;
+        [SerializeField] private SimpleSolitaire.Controller.AudioController _audioController;
 
         private void Start()
         {
             StartCoroutine(TryAdd());
+        }
+
+        public void Init(SimpleSolitaire.Controller.AudioController audioController)
+        {
+            _audioController = audioController;
         }
 
         private IEnumerator TryAdd()
@@ -35,14 +43,19 @@ namespace BloomLines
                 if (!obj.activeInHierarchy)
                 {
                     obj.SetActive(true);
-                    obj.transform.position = Vector3.Lerp(_startFrom.position, _startTo.position, Random.value);
-                    //obj.transform.localScale = Vector3.one * Random.Range(0.8f, 1);
+                    obj.transform.position = Vector3.Lerp(_startFrom.position, _startTo.position, Random.value);                    
                     Vector3 end = Vector3.Lerp(_finishFrom.position, _finishTo.position, Random.value);
                     float time = Random.Range(_timeFailMin, _timeFailMax);
-                    obj.transform.DOMove(end, time).OnComplete(()=> obj.SetActive(false));
+                    obj.transform.DOMove(end, time).OnComplete(() => { obj.SetActive(false); OnComplete(); });
                     return;
                 }
             }
+        }
+
+        private void OnComplete()
+        {
+            if (_isSound)
+                _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Hint);
         }
     }
 }
