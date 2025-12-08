@@ -41,11 +41,9 @@ namespace BloomLines.Controllers
                 yield return null;
 #endif
 #endif*/
-            Debug.Log("Scene1.LoadGame(2)");
-            SaveManager.LoadAll(); // Загружаем сохранения
-            Debug.Log("Scene1.LoadGame(3)");
+            //Debug.Log("Scene1.LoadGame(2)");
+            //SaveManager.LoadAll(); // Загружаем сохранения
             //IAPController.LoadPurchases(); // Загружаем покупки
-            Debug.Log("Scene1.LoadGame(4)");
             //var gameState = SaveManager.GameState; // Ставим нужную громкость
             //var audioMixer = Resources.Load<AudioMixer>("AudioMixer");
             //audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80f, 0f, gameState.MusicVolume));

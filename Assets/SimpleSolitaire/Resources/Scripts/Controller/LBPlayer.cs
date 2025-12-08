@@ -34,8 +34,8 @@ public class LBPlayer : MonoBehaviour
             _avatar.enabled = false;
             return; 
         }
-
-        StartCoroutine(LoadTextureFromWeb(url));
+        if (gameObject.activeSelf)
+            StartCoroutine(LoadTextureFromWeb(url));
     }
 
     private IEnumerator LoadTextureFromWeb(string url)
