@@ -9,9 +9,9 @@ using BloomLines.Controllers;
 using System.Collections.Generic;
 
 
-#if CONSOLE
-using QFSW.QC;
-#endif
+//#if CONSOLE
+//using QFSW.QC;
+//#endif
 
 namespace BloomLines.Managers
 {
@@ -204,9 +204,9 @@ namespace BloomLines.Managers
                 _cloudSaveAdapter.Sync();
         }
 
-#if CONSOLE
-        [Command("save")]
-#endif
+//#if CONSOLE
+//        [Command("save")]
+//#endif
         public static void Save(SaveType type)
         {
             switch (type)
@@ -220,39 +220,39 @@ namespace BloomLines.Managers
             }
         }
 
-#if CONSOLE
-        [Command("set_skin_pack")]
-        private static void SetSkinPack(string id)
-        {
-            var skinPack = GameAssets.GetSkinPackData(id);
-            if(skinPack == null)
-            {
-                Debug.LogError("Missing SkinPack with id: " + id);
-                return;
-            }
+//#if CONSOLE
+//        [Command("set_skin_pack")]
+//        private static void SetSkinPack(string id)
+//        {
+//            var skinPack = GameAssets.GetSkinPackData(id);
+//            if(skinPack == null)
+//            {
+//                Debug.LogError("Missing SkinPack with id: " + id);
+//                return;
+//            }
 
-            GameState.SkinPack = id;
-            EventsManager.Publish(new UpdateSkinPackEvent());
-        }
+//            GameState.SkinPack = id;
+//            EventsManager.Publish(new UpdateSkinPackEvent());
+//        }
 
-        [Command("set_task_stage")]
-        private static void SetTaskStage(int stage)
-        {
-            if(GameModeState != null)
-            {
-                var balanceData = GameAssets.BalanceData;
-                GameModeState.CompletedTasksCount = stage * balanceData.TasksCountInStage;
-            }
-        }
+//        [Command("set_task_stage")]
+//        private static void SetTaskStage(int stage)
+//        {
+//            if(GameModeState != null)
+//            {
+//                var balanceData = GameAssets.BalanceData;
+//                GameModeState.CompletedTasksCount = stage * balanceData.TasksCountInStage;
+//            }
+//        }
 
-        [Command("add_coins")]
-        private static void AddCoins(int count)
-        {
-            if (GameModeState != null)
-            {
-                EventsManager.Publish(new AddedScoreEvent(count));
-            }
-        }
-#endif
+//        [Command("add_coins")]
+//        private static void AddCoins(int count)
+//        {
+//            if (GameModeState != null)
+//            {
+//                EventsManager.Publish(new AddedScoreEvent(count));
+//            }
+//        }
+//#endif
     }
 }

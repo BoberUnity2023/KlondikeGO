@@ -27299,7 +27299,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d8361f3187dff004aa92b2e4e120c430, type: 3}
+    m_Font: {fileID: 12800000, guid: f114a3526e5a9014f9c948c6fdd2182d, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -51869,7 +51869,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d8361f3187dff004aa92b2e4e120c430, type: 3}
+    m_Font: {fileID: 12800000, guid: f114a3526e5a9014f9c948c6fdd2182d, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -111206,7 +111206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041D\u041E\u0412\u0410\u042F \u0418\u0413\u0420\u0410"
+  m_Text: NEW GAME
 --- !u!224 &1249672606367933881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -113170,7 +113170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_Text
-      value: "\u041C\u041E\u041D\u0415\u0422\u042B"
+      value: COINS
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_FontData.m_Font
@@ -113407,7 +113407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_Text
-      value: "\u0421\u042B\u0413\u0420\u0410\u041D\u041E \u041F\u0410\u0420\u0422\u0418\u0419"
+      value: GAMES PLAYED
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_FontData.m_Font
@@ -113704,7 +113704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_Text
-      value: "\u0412\u0420\u0415\u041C\u042F"
+      value: TIME
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_FontData.m_Font
@@ -113942,7 +113942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_Text
-      value: "\u041B\u0418\u0427\u041D\u042B\u0419 \u0420\u0415\u041A\u041E\u0420\u0414"
+      value: PERSONAL BEST
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_FontData.m_Font
@@ -114321,7 +114321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_Text
-      value: "\u041B\u0423\u0427\u0428\u0415\u0415 \u0412\u0420\u0415\u041C\u042F"
+      value: BEST TIME
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_FontData.m_Font
@@ -114555,7 +114555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_Text
-      value: "\u0421\u041B\u041E\u0416\u041D\u041E\u0421\u0422\u042C"
+      value: Difficulty
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_FontData.m_Font
@@ -114975,7 +114975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_Text
-      value: "\u0411\u041E\u041D\u0423\u0421 \u0417\u0410 \u0412\u0420\u0415\u041C\u042F"
+      value: TIME BONUS
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_FontData.m_Font
@@ -115201,7 +115201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_Text
-      value: "\u041E\u0427\u041A\u0418"
+      value: SCORE
       objectReference: {fileID: 0}
     - target: {fileID: 887977235643099794, guid: 471ce57b474d88648bfe985cb3e12c85, type: 3}
       propertyPath: m_FontData.m_Font
@@ -119839,7 +119839,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d8361f3187dff004aa92b2e4e120c430, type: 3}
+    m_Font: {fileID: 12800000, guid: f114a3526e5a9014f9c948c6fdd2182d, type: 3}
     m_FontSize: 34
     m_FontStyle: 0
     m_BestFit: 0
@@ -124013,7 +124013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3d8b1c5b35b0ba24ab11227445ecc38d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -124115,7 +124115,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d8361f3187dff004aa92b2e4e120c430, type: 3}
+    m_Font: {fileID: 12800000, guid: f114a3526e5a9014f9c948c6fdd2182d, type: 3}
     m_FontSize: 26
     m_FontStyle: 0
     m_BestFit: 0
@@ -126139,7 +126139,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041D\u041E\u0412\u0410\u042F \u0418\u0413\u0420\u0410"
+  m_Text: NEW GAME
 --- !u!224 &6138783438360341452
 RectTransform:
   m_ObjectHideFlags: 0
@@ -136555,7 +136555,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: d8361f3187dff004aa92b2e4e120c430, type: 3}
+    m_Font: {fileID: 12800000, guid: f114a3526e5a9014f9c948c6fdd2182d, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -136567,7 +136567,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u041E\u0417\u0414\u0420\u0410\u0412\u041B\u042F\u0415\u041C!"
+  m_Text: CONGRATULATIONS!
 --- !u!1 &8520521408067614570
 GameObject:
   m_ObjectHideFlags: 0

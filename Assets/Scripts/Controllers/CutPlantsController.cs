@@ -4,9 +4,9 @@ using BloomLines.Managers;
 using BloomLines.Tools;
 using UnityEngine;
 
-#if CONSOLE
-using QFSW.QC;
-#endif
+//#if CONSOLE
+////using QFSW.QC;
+//#endif
 
 namespace BloomLines.Controllers
 {
@@ -52,9 +52,9 @@ namespace BloomLines.Controllers
             EventsManager.Publish(new CutPlantSpawnedEvent(cutPlant));
         }
 
-#if CONSOLE
-        [Command("add_crystal_flowers")]
-#endif
+//#if CONSOLE
+//        [Command("add_crystal_flowers")]
+//#endif
         public void AddCrystalFlowers(int count)
         {
             count = Mathf.Clamp(count, 0, 50);

@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using BloomLines.Assets;
 using UnityEngine;
 
-#if CONSOLE
-using QFSW.QC;
-#endif
+//#if CONSOLE
+//using QFSW.QC;
+//#endif
 
 namespace BloomLines.Managers
 {
@@ -47,9 +47,9 @@ namespace BloomLines.Managers
 
             return data;
         }
-#if CONSOLE
-        [Command("get_balance_info")]
-#endif
+//#if CONSOLE
+//        [Command("get_balance_info")]
+//#endif
         private static void GetBalanceInfo()
         {
             var data = Get();

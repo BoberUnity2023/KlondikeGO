@@ -3,9 +3,9 @@ using BloomLines.Managers;
 using BloomLines.Tutorial;
 using UnityEngine;
 
-#if CONSOLE
-using QFSW.QC;
-#endif
+//#if CONSOLE
+//using QFSW.QC;
+//#endif
 
 namespace BloomLines.Controllers
 {
@@ -94,26 +94,26 @@ namespace BloomLines.Controllers
             return gameState.CompletedTutorials.Contains(tutorialId);
         }
 
-#if CONSOLE
-        [Command("reset_all_tutorials")]
-        private static void ResetAllTutorials()
-        {
-            var gameState = SaveManager.GameState;
-            gameState.CompletedTutorials.Clear();
+//#if CONSOLE
+//        [Command("reset_all_tutorials")]
+//        private static void ResetAllTutorials()
+//        {
+//            var gameState = SaveManager.GameState;
+//            gameState.CompletedTutorials.Clear();
 
-            SaveManager.Save(SaveType.Game);
-        }
+//            SaveManager.Save(SaveType.Game);
+//        }
 
-        [Command("complete_tutorial")]
-        private static void CompleteTutorial(string tutorialId)
-        {
-            var gameState = SaveManager.GameState;
-            gameState.CompletedTutorials.Add(tutorialId);
+//        //[Command("complete_tutorial")]
+//        private static void CompleteTutorial(string tutorialId)
+//        {
+//            var gameState = SaveManager.GameState;
+//            gameState.CompletedTutorials.Add(tutorialId);
 
-            SaveManager.Save(SaveType.Game);
+//            SaveManager.Save(SaveType.Game);
 
-            Debug.LogWarning("Restart Game");
-        }
-#endif
+//            Debug.LogWarning("Restart Game");
+//        }
+//#endif
     }
 }
