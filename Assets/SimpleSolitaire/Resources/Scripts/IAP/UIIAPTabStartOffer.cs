@@ -12,27 +12,24 @@ using BloomLines.UI;
 
 namespace BloomLines.UI
 {
-    public class UIIAPTabNoAds : UIIAPTabBase
+    public class UIIAPTabStartOffer : UIIAPTabBase
     {
         //[SerializeField] private TextMeshProUGUI _title;
         [SerializeField] private GameManager _gameManager;
-        [SerializeField] private AdsController _adsController;
+        [SerializeField] private HintManager _hintManager;
+        [SerializeField] private MagicWand _magicWand;
+        [SerializeField] private Peek _peek;
+        [SerializeField] private UndoPerformer _undoPerformer;
+        [SerializeField] private int _gold;
 
         protected override void OnClick()
         {
-            if (_gameManager.Save.NoAds)
-            {
-                Debug.Log("NoAds was purchased yet!");
-                return; 
-            }
-
             if (IAPController.CanPurchase(_purchaseId))
             {
                 base.OnClick();
             }
             else
             {
-                Debug.Log("You can not purchase NoAds :(");
                 //var gameState = SaveManager.GameState;
                 //SetSkinPack(gameState.SkinPack == "skin_pack_1" ? "skin_pack_2" : "skin_pack_1");
             }    
@@ -44,21 +41,23 @@ namespace BloomLines.UI
 
             if (result)
             {
-                Debug.Log("NoAds was purchased Success!");
-                _gameManager.Save.NoAds = true;
-                _adsController.CloseSticky();
+                _gameManager.Gold += _gold;
+                _hintManager.AvailableCountLevels += 3;
+                _magicWand.Count += 3;
+                _peek.Count += 3;
+                _undoPerformer.AvailableUndoCounts += 3;
+                _undoPerformer.ActivateUndoButton();
             }
         }
 
         protected override void UpdatePurchase()
         {
-            var isPurchased = _gameManager.Save.NoAds;// IAPController.IsPurchased(_purchaseId);
+            var isPurchased = IAPController.IsPurchased(_purchaseId);
             var canPurchase = IAPController.CanPurchase(_purchaseId);
 
             if (isPurchased)
             {
                 _priceLegacy.text = "---";//LocalizationManager.GetTranslation("Main/change");//TODO: Куплено
-                _btn.interactable = false;
             }
             else if (canPurchase)
             {

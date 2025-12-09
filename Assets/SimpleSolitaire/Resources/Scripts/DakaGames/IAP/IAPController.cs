@@ -46,23 +46,23 @@ namespace BloomLines.Controllers
 
         // Проверка куплен ли товар
         public static bool IsPurchased(string id)
-        {
+        {            
             //var gameState = SaveManager.GameState;//TODO
 
 #if UNITY_EDITOR
-            BloomLines.Saving.GameState gameState = SaveManager.GameState;
-            if (gameState == null)
-            {
-                Debug.LogWarning("gameState == null");
-                return false;
-            }
+            //BloomLines.Saving.GameState gameState = SaveManager.GameState;
+            //if (gameState == null)
+            //{
+            //    Debug.LogWarning("gameState == null");
+            //    return false;
+            //}
 
-            if (gameState.Purchased == null)
-            {
-                Debug.LogWarning("gameState.Purchased == null");
-                return false;
-            }
-            return gameState.Purchased.Contains(id);
+            //if (gameState.Purchased == null)
+            //{
+            //    Debug.LogWarning("gameState.Purchased == null");
+            //    return false;
+            //}
+            //return gameState.Purchased.Contains(id);
 #endif
 
             if (_iapAdapter == null)
@@ -127,15 +127,15 @@ namespace BloomLines.Controllers
         // Покупка удалась
         private static void PurchaseCompleted(string id)
         {
-            var gameState = SaveManager.GameState;
+            //var gameState = SaveManager.GameState;
 
-            if (!gameState.Purchased.Contains(id))
-                gameState.Purchased.Add(id);
+            //if (!gameState.Purchased.Contains(id))
+            //    gameState.Purchased.Add(id);
 
             switch (id)
             {
                 case NO_ADS:
-                    AdsController.CloseSticky();
+                    //AdsController.CloseSticky();
                     break;
                 case START_OFFER:
                     break;
@@ -148,7 +148,7 @@ namespace BloomLines.Controllers
             }
 
             //SaveManager.Save(SaveType.Game);
-            SaveManager.Sync();
+            //SaveManager.Sync();
         }
     }
 }

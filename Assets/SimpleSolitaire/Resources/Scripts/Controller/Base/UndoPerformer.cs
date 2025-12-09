@@ -39,7 +39,7 @@ namespace SimpleSolitaire.Controller
         public abstract UndoData StatesData { get; set; }
         protected abstract string LastGameKey { get; }
 
-        protected int AvailableUndoCounts = 0;
+        public int AvailableUndoCounts = 0;
         private readonly string _undoBtnAnimationKey = "IsAnimate";
 
         /// <summary>
