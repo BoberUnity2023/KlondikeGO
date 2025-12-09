@@ -86,7 +86,7 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         public override void GenerateHints(bool isAutoComplete = false)
         {
-            Debug.Log("Generate Hints");
+            //Debug.Log("Generate Hints");
             CurrentHintIndex = 0;
             AutoCompleteHints = new List<HintElement>();
             Hints = new List<HintElement>();

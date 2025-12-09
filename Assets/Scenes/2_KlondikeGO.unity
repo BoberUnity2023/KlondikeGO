@@ -16679,6 +16679,7 @@ MonoBehaviour:
   _adsController: {fileID: 1799995722}
   _rewardedVideoController: {fileID: 377076554}
   _newGameLayer: {fileID: 8100257424269241353}
+  _newGameLayerCanvasGroup: {fileID: 8100257424269241357}
   _newGameLayerButtonClose: {fileID: 598305096}
   _backgroundBlockerDark: {fileID: 8100257423277689379}
   _backgroundBlockerAlpha: {fileID: 1829649615}
@@ -129227,6 +129228,7 @@ GameObject:
   - component: {fileID: 8100257424269241354}
   - component: {fileID: 8100257424269241355}
   - component: {fileID: 8100257424269241356}
+  - component: {fileID: 8100257424269241357}
   m_Layer: 5
   m_Name: NewGameLayer
   m_TagString: Untagged
@@ -129285,6 +129287,18 @@ MonoBehaviour:
   - {fileID: 2146494581}
   - {fileID: 415066587}
   - {fileID: 1413520081}
+--- !u!225 &8100257424269241357
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8100257424269241353}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!222 &8134293724020771597
 CanvasRenderer:
   m_ObjectHideFlags: 0

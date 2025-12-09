@@ -96,6 +96,7 @@ namespace SimpleSolitaire.Controller
 
         [Header("Layers:")]
         [SerializeField] protected GameObject _newGameLayer;
+        [SerializeField] protected CanvasGroup _newGameLayerCanvasGroup;
         [SerializeField] protected GameObject _newGameLayerButtonClose;
         [SerializeField] protected GameObject _backgroundBlockerDark;
         [SerializeField] protected GameObject _backgroundBlockerAlpha;
@@ -275,11 +276,6 @@ namespace SimpleSolitaire.Controller
 #if VK
             _inviteFriendButton.SetActive(true);
 #endif
-
-#if Yandex
-            YG2.GameReadyAPI();
-#endif
-
             if (Game == Game.Klondike)
             {
                 _levelSelected = 1;
@@ -463,9 +459,22 @@ namespace SimpleSolitaire.Controller
                 InitMenuView(false);
                 _cardLayer.SetActive(false);
                 _newGameLayer.SetActive(true);
+#if Yandex
+                _newGameLayerCanvasGroup.interactable = false;
+#endif
                 _backgroundBlockerDark.SetActive(true);
                 AppearWindow(_newGameLayer);
+                StartCoroutine(AfterInitGameState(_windowAnimationTime * 0.5f));
             }
+        }
+
+        private IEnumerator AfterInitGameState(float time)
+        {
+            yield return new WaitForSeconds(time);
+#if Yandex
+            _newGameLayerCanvasGroup.interactable = true;
+            YG2.GameReadyAPI();            
+#endif
         }
 
         /// <summary>
