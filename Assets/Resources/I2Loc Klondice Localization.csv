@@ -1,90 +1,91 @@
 Keys,Russian,English,Turkish,Spanish,German
-ads,РЕКЛАМА ЧЕРЕЗ:,AD IN:,REKLAM İÇİNDE:,ANUNCIO EN:,ANZEIGE IN:
-again,ЗАНОВО?,RESTART,YENİDEN BAŞLAT,REINICIAR,NEUSTART
-back,РУБАШКА,BACK,GERİ,VOLVER,ZURÜCK
-background,ФОН,BACKGROUND,ARKA PLAN,ANTECEDENTES,HINTERGRUND
-best_time,ЛУЧШЕЕ ВРЕМЯ,BEST TIME,EN İYİ ZAMAN,MEJOR TIEMPO,BESTE ZEIT
-buy,КУПИТЬ ЗА,BUY FOR,SATIN AL,PAGAR,KAUFEN FÜR
+ads,РЕКЛАМА ЧЕРЕЗ:,AD IN:,REKLAM İLE:,PUBLICIDAD A TRAVÉS DE:,WERBUNG ÜBER:
+again,ЗАНОВО?,RESTART?,YENİDEN?,¿REINICIAR?,NOCHMAL?
+back,РУБАШКА,CARD BACK,KART ARKASI,REVERSO,KARTENRÜCKSEITE
+background,ФОН,BG,ARKA PLAN,FONDO,HINTERGRUND
+best_time,ЛУЧШЕЕ ВРЕМЯ,BEST TIME,EN İYİ SÜRE,MEJOR TIEMPO,BESTE ZEIT
+buy,КУПИТЬ ЗА,BUY FOR,SATIN AL,COMPRAR POR,KAUFEN FÜR
 cancel,ОТМЕНА,CANCEL,İPTAL,CANCELAR,ABBRECHEN
 cards,КАРТЫ,CARDS,KARTLAR,CARTAS,KARTEN
-coins,МОНЕТЫ,COINS,JET,MONEDAS,MÜNZEN
-congratulations,ПОЗДРАВЛЯЕМ!,CONGRATULATIONS!,TEBRİKLER!,¡FELICITACIONES!,HERZLICHEN GLÜCKWUNSCH!
+coins,МОНЕТЫ,COINS,PARALAR,MONEDAS,MÜNZEN
+congratulations,ПОЗДРАВЛЯЕМ!,CONGRATULATIONS!,TEBRİKLER!,¡FELICIDADES!,GLÜCKWUNSCH!
 daily_bonus,ДНЕВНАЯ НАГРАДА,DAILY REWARD,GÜNLÜK ÖDÜL,RECOMPENSA DIARIA,TÄGLICHE BELOHNUNG
 day,ДЕНЬ,DAY,GÜN,DÍA,TAG
-deck,КОЛОДА,DECK,DESTE,BAMBA,DECK
-difficulty,Сложность,Difficulty,ZORLUK,DIFICULTAD,SCHWIERIGKEITSGRAD
-easy,Лёгкий,Easy,KOLAY,FÁCIL,EINFACH
-get,ПОЛУЧИТЬ,GET,AL,OBTENER,WERDEN
-hard,Мастер ,Hard,ZOR,DIFÍCIL,SCHWER
-lay_out,РАЗЛОЖИТЬ,LAY OUT,YERLEŞTİRMEK,DISPONER,AUSLEGEN
-middle,Средний,Normal,NORMAL,NORMAL,NORMAL
+deck,КОЛОДА,DECK,DESTE,BARAJA,STAPEL
+difficulty,Сложность,Difficulty,Zorluk,Dificultad,Schwierigkeit
+easy,Лёгкий,Easy,Kolay,Fácil,Leicht
+get,ПОЛУЧИТЬ,COLLECT,KAZAN,OBTENER,ERHALTEN
+hard,Мастер ,Master,Usta,Maestro,Meister
+lay_out,РАЗЛОЖИТЬ,DEAL,DAĞIT,REPARTIR,AUSTEILEN
+middle,Средний,Medium,Orta,Medio,Mittel
 new_game,НОВАЯ ИГРА,NEW GAME,YENİ OYUN,NUEVO JUEGO,NEUES SPIEL
 no,НЕТ,NO,HAYIR,NO,NEIN
-personal_record,ЛИЧНЫЙ РЕКОРД,PERSONAL BEST,KİŞİSEL EN İYİ,MEJOR MARCA PERSONAL,PERSÖNLICHE BESTLEISTUNG
-play,ИГРАТЬ,PLAY,OYNA,JUGAR,SPIELEN
-played_games,СЫГРАНО ПАРТИЙ,GAMES PLAYED,OYNAYAN OYUNLAR,JUEGOS JUGADOS,GESPIELTE SPIELE
-rating,РЕЙТИНГ,RATING,DERECELENDİRME,CALIFICACIÓN,BEWERTUNG
+personal_record,ЛИЧНЫЙ РЕКОРД,PERSONAL BEST,KİŞİSEL REKOR,RÉCORD PERSONAL,PERSÖNLICHER REKORD
+play,ИГРАТЬ,PLAY,OYNAT,JUGAR,SPIELEN
+played_games,СЫГРАНО ПАРТИЙ,GAMES PLAYED,OYNANAN OYUNLAR,PARTIDAS JUGADAS,SPIELE GESPIELT
+rating,РЕЙТИНГ,LEADERBOARD,SIRALAMA,CLASIFICACIÓN,RANGLISTE
 restart,РЕСТАРТ,RESTART,YENİDEN BAŞLAT,REINICIAR,NEUSTART
 rules,ПРАВИЛА ИГРЫ,GAME RULES,OYUN KURALLARI,REGLAS DEL JUEGO,SPIELREGELN
-score,ОЧКИ,SCORE,PUAN,PUNTUACIÓN,PUNKTE
-sec,СЕК,SEC,SN,SEG,SEKUNDEN
-settings,НАСТРОЙКИ,SETTINGS,AYARLAR,CONFIGURACIÓN,EINSTELLUNGEN
+score,ОЧКИ,SCORE,PUAN,PUNTOS,PUNKTE
+sec,СЕК,SEC,SN,SEG,SEK
+settings,НАСТРОЙКИ,SETTINGS,AYARLAR,AJUSTES,EINSTELLUNGEN
 sound,ЗВУК,SOUND,SES,SONIDO,TON
-time,ВРЕМЯ,TIME,ZAMAN,TIEMPO,ZEIT
-time_bonus,БОНУС ЗА ВРЕМЯ,TIME BONUS,ZAMAN BONUSU,BONIFICACIÓN DE TIEMPO,ZEITBONUS
-x2,УДВОИТЬ,DOUBLE,ÇİFT,DOBLE,DOPPELT
+time,ВРЕМЯ,TIME,SÜRE,TIEMPO,ZEIT
+time_bonus,БОНУС ЗА ВРЕМЯ,TIME BONUS,SÜRE BONUSU,BONO DE TIEMPO,ZEITBONUS
+x2,УДВОИТЬ,DOUBLE,İKİYE KATLA,DUPLICAR,VERDOPPELN
 yes,ДА,YES,EVET,SÍ,JA
-purchase,ПОКУПКА,PURCHASE,SATIN ALMAK,COMPRA,KAUFEN
-rules,ПРАВИЛА ИГРЫ,RULES OF THE GAME ,OYUNUN KURALLARI ,REGLAS DEL JUEGO ,SPIELREGELN 
-tut_stacks,Стопки,Stacks ,,,
-tut_page1,"Цель - переместить все карты в стопки, раскладывая их по мастям от туза до короля. Т, 2, 3 … 10, В, Д, К","The goal is to move all the cards into piles, arranging them by suit from Ace to King. A, 2, 3… 10, J, Q, K ",,,
-tut_page2,"Карты можно перемещать из столбца в столбец, в порядке убывания, чередуя красные и черные карты. ","Cards can be moved from column to column, in descending order, alternating red and black cards. ",,,
-tut_page3,"Если нужных карт нет - просто нажми на колоду и здесь появятся дополнительные карты, которые помогут вам найти решение!","If you don't have the cards you need, just click on the deck and additional cards will appear to help you find a solution! ",,,
-tut_page4,"Порядок сортировки в каждой стопке следующий: Т, 2, 3 … 9, 10, В, Д, К","The sorting order in each stack is as follows: T, 2, 3 … 9, 10,  J, Q, K ",,,
-shop,МАГАЗИН,SHOP,SHOP(T),SHOP(Es),SHOP(G)
-your_level,Твой уровень,Your level,Your level,Your level,Your level
-ads_disable,Отключить рекламу,Disable ads,Disable ads,Disable ads,Disable ads
-start_offer,Набор новичка,Start offer,Start offer,Start offer,Start offer
-done,Выполнено,Done,Done,,
-ach_first_step,Первый шаг,First step,,,
-ach_desc_done_first_game,Пройти первую игру,Complete first game,,,
-ach_master_soliter,Мастер Солитера,Soliter Master,,,
-ach_desc_done_100_games,Выиграть 100 игр,Complete 100 games,,,
-ach_without_mistake,Без права на ошибку,No room for error ,,,
-ach_desc_without_undo,Выиграть игру не делая отмены хода,Win a game without undoing a move ,,,
-ach_blitz_soliter,Блиц-пасьянс,Blitz-soliter,,,
-ach_desc_done_faster_3min,Пройти игру менее чем за 3 минуты,Complete the game in less than 3 minutes ,,,
-ach_gold_series,Золотая серия,Gold series,,,
-ach_desc_win_5games,Выиграть 5 игр подряд,Win 5 games in a row ,,,
-ach_my_atmosphere,Своя атмосфера,Its own atmosphere ,,,
-ach_desc_open_3backs,Открыть 3 любых фона,Open any 3 backgrounds ,,,
-ach_card_collector,Коллекционер карт,Card collector ,,,
-ach_desc_open_3decks,Открыть 3 любые колоды,Open any 3 decks ,,,
-ach_to_tooth,На зубок,To the tooth ,,,
-ach_desc_win_without_help,Разложить пасьянс без использования подсказок,Play solitaire without using hints ,,,
-ach_impossible_possible,Невозможное — возможно,The impossible is possible ,,,
-ach_desc_without_turning_deck,Разложить пасьянс не переворачивая колоду,Play solitaire without turning the deck over ,,,
-ach_this_my_life,Это моя жизнь,This is my life ,,,
-ach_desc_play_30games_in_day,Разложить 30 партий за 1 день,Play 30 games in 1 day ,,,
-ach_nutcracker,Щелкунчик,Nutcracker ,,,
-ach_desc_500clics_in_game,Сделать 500 кликов за 1 игру,Make 500 clicks in 1 game ,,,
-ach_no_fuss,Без суеты,No fuss ,,,
-ach_desc_complete_less_20min,Пройти пасьянс менее чем за 20 минут,Complete Solitaire in less than 20 minutes ,,,
-player_newbie,Новичок,Newbie,,,
-player_gamer,Игрок,Gamer,,,
-player_profi,Профи,Profi,,,
-player_master,Мастер ,Master,,,
-player_legend,Легенда,Legend,,,
-experience,Опыт,Experience,,,
-rating_personal,ЛИЧНЫЙ,Personal,,,
-rating_global,МИРОВОЙ,Global,,,
-rating_achivements,ДОСТИЖЕНИЯ,Achivements,,,
-rating_stats,СТАТИСТИКА,Stats,,,
-stats_score,Очков за всё время:,All-time score:,,,
-stats_coins,Монеты за всё время:,All time coins: ,,,
-stats_games,Игр сыграно:,Played games:,,,
-stats_wins,Побед:,Wins:,,,
-stats_losts,Поражений:,Losts:,,,
-stats_percent_wins,Процент побед:,Win percentage: ,,,
-stats_party_fastest,Самая быстрая партия:,Fastest game:,,,
-stats_party_longest,Самая долгая партия:,Longest game: ,,,
+purchase,ПОКУПКА,PURCHASE,SATIN ALIM,COMPRA,KAUF
+rules,ПРАВИЛА ИГРЫ,GAME RULES,OYUN KURALLARI,REGLAS DEL JUEGO,SPIELREGELN
+tut_stacks,Стопки,Stacks,Temeller,Fundaciones,Fundamente
+tut_page1,"Цель - переместить все карты в стопки, раскладывая их по мастям от туза до короля. Т, 2, 3 … 10, В, Д, К","The goal is to move all cards to the foundations, sorting them by suit from Ace to King: A, 2, 3 … 10, J, Q, K","Amaç — tüm kartları As’tan Papaz’a kadar sıralı şekilde, takımlara göre temellere taşımaktır: A, 2, 3 … 10, V, D, K","El objetivo es mover todas las cartas a las fundaciones, ordenándolas por palo desde el As hasta el Rey: A, 2, 3 … 10, J, Q, K","Ziel — alle Karten in die Fundamente zu legen, nach Farben sortiert von Ass bis König: A, 2, 3 … 10, B, D, K"
+tut_page2,"Карты можно перемещать из столбца в столбец, в порядке убывания, чередуя красные и черные карты. ","Cards can be moved between tableau columns in descending order, alternating red and black cards.","Kartlar, kırmızı ve siyah renkler sırayla olacak şekilde azalan düzende sütunlar arasında taşınabilir.","Las cartas se pueden mover entre columnas en orden descendente, alternando cartas rojas y negras.","Karten können zwischen den Spalten in absteigender Reihenfolge verschoben werden, wobei abwechselnd rote und schwarze Karten gelegt werden."
+tut_page3,"Если нужных карт нет - просто нажми на колоду и здесь появятся дополнительные карты, которые помогут вам найти решение!",If the needed cards are not available – just tap the stock and extra cards will appear to help you find the solution!,Gerekli kart yoksa — sadece desteye dokunun ve çözüm bulmanıza yardımcı olacak ek kartlar görünecektir!,Si no hay cartas útiles — simplemente toca la baraja y aparecerán cartas adicionales que te ayudarán a encontrar la solución.,"Wenn die benötigten Karten fehlen — einfach auf den Talon tippen und zusätzliche Karten erscheinen, die dir helfen, die Lösung zu finden!"
+tut_page4,"Порядок сортировки в каждой стопке следующий: Т, 2, 3 … 9, 10, В, Д, К","The sorting order in each stacks is: A, 2, 3 … 9, 10, J, Q, K","Her temel yığınına sıralama şu şekildedir: A, 2, 3 … 9, 10, V, D, K","El orden en cada fundación es: A, 2, 3 … 9, 10, J, Q, K","Die Reihenfolge in jedem Fundament ist: A, 2, 3 … 9, 10, B, D, K"
+shop,МАГАЗИН,STORE,MAĞAZA,TIENDA,SHOP
+your_level,Твой уровень,Your level,Seviyen,Tu nivel,Dein Level
+ads_disable,Отключить рекламу,Remove ads,Reklamları kaldır,Desactivar anuncios,Werbung entfernen
+start_offer,Набор новичка,Starter pack,Yeni başlayan paketi,Paquete de principiante,Starter-Paket
+done,Выполнено,Completed,Tamamlandı,Completado,Abgeschlossen
+speed,СКОРОСТЬ,SPEED,HIZ,VELOCIDAD,Geschwindigkeit
+ach_first_step,Первый шаг,First step,İlk adım,Primer paso,Erster Schritt
+ach_desc_done_first_game,Пройти первую игру,Win your first game,İlk oyunu kazan,Gana tu primera partida,Gewinne dein erstes Spiel
+ach_master_soliter,Мастер Солитера,Solitaire master,İskambil ustası,Maestro del solitario,Solitärmeister
+ach_desc_done_100_games,Выиграть 100 игр,Win 100 games,100 oyun kazan,Gana 100 partidas,100 Spiele gewinnen
+ach_without_mistake,Без права на ошибку,Flawless,Hata yok,Sin margen de error,Fehlerfrei
+ach_desc_without_undo,Выиграть игру не делая отмены хода,Win a game without using undo,Hamle geri almadan oyunu kazan,Gana sin usar deshacer,Ein Spiel ohne Rückgängig gewinnen
+ach_blitz_soliter,Блиц-пасьянс,Speed solitaire,Hızlı iskambil,Solitario exprés,Blitz-Solitär
+ach_desc_done_faster_3min,Пройти игру менее чем за 3 минуты,Win a game in under 3 minutes,3 dakikadan kısa sürede oyunu tamamla,Completa una partida en menos de 3 minutos,Ein Spiel in unter 3 Minuten abschließen
+ach_gold_series,Золотая серия,Golden streak,Altın seri,Racha dorada,Goldene Serie
+ach_desc_win_5games,Выиграть 5 игр подряд,Win 5 games in a row,5 oyunu art arda kazan,Gana 5 partidas seguidas,5 Spiele hintereinander gewinnen
+ach_my_atmosphere,Своя атмосфера,Right vibes,Kendi atmosferi,Buen ambiente,Eigene Atmosphäre
+ach_desc_open_3backs,Открыть 3 любых фона,Unlock any 3 backgrounds,3 arka plan aç,Desbloquea 3 fondos,3 Hintergründe freischalten
+ach_card_collector,Коллекционер карт,Card collector,Kart koleksiyoncusu,Coleccionista de cartas,Kartensammler
+ach_desc_open_3decks,Открыть 3 любые колоды,Unlock any 3 decks,Herhangi 3 desteyi aç,Desbloquea 3 barajas,3 Kartendecks freischalten
+ach_to_tooth,На зубок,By heart,Ezbere,De memoria,Auswendig
+ach_desc_win_without_help,Разложить пасьянс без использования подсказок,Win a game without using hints,İpucu kullanmadan oyunu tamamla,Completa un solitario sin usar pistas,Solitär ohne Hinweise lösen
+ach_impossible_possible,Невозможное — возможно,Impossible is possible,İmkânsız — mümkün,Lo imposible es posible,Unmöglich ist möglich
+ach_desc_without_turning_deck,Разложить пасьянс не переворачивая колоду,Win a game without drawing cards from the deck,Desteden kart çevirmeden oyunu kazan,Gana sin robar cartas del mazo,Ein Spiel ohne Karten vom Talon aufzudecken gewinnen
+ach_this_my_life,Это моя жизнь,This is my life,Bu benim hayatım,Esta es mi vida,Das ist mein Leben
+ach_desc_play_30games_in_day,Разложить 30 партий за 1 день,Complete 30 games in 1 day,1 günde 30 oyun tamamla,Completa 30 partidas en 1 día,30 Spiele an einem Tag abschließen
+ach_nutcracker,Щелкунчик,Click master,Fındıkkıran,Cascanueces,Nussknacker
+ach_desc_500clics_in_game,Сделать 500 кликов за 1 игру,Make 500 clicks in 1 game,1 oyunda 500 tıklama yap,Haz 500 clics en una partida,500 Klicks in einem Spiel
+ach_no_fuss,Без суеты,No rush,Sakin ol,Sin prisa,Ohne Eile
+ach_desc_complete_less_20min,Пройти пасьянс менее чем за 20 минут,Win a game in under 20 minutes,20 dakikadan kısa sürede oyunu kazan,Completa una partida en menos de 20 minutos,Ein Spiel in unter 20 Minuten gewinnen
+player_newbie,Новичок,Beginner,Acemi,Principiante,Anfänger
+player_gamer,Игрок,Player,Oyuncu,Jugador,Spieler
+player_profi,Профи,Pro,Profesyonel,Profesional,Profi
+player_master,Мастер ,Master,Usta,Maestro,Meister
+player_legend,Легенда,Legend,Efsane,Leyenda,Legende
+experience,Опыт,XP,XP,XP,EP
+rating_personal,ЛИЧНЫЙ,PERSONAL,KİŞİSEL,PERSONAL,PERSÖNLICH
+rating_global,МИРОВОЙ,GLOBAL,DÜNYA,MUNDIAL,WELTWEIT
+rating_achivements,ДОСТИЖЕНИЯ,ACHIEVEMENTS,BAŞARILAR,LOGROS,ERFOLGE
+rating_stats,СТАТИСТИКА,STATISTICS,İSTATİSTİK,ESTADÍSTICAS,STATISTIK
+stats_score,Очков за всё время:,Total score:,Toplam puan:,Puntos totales:,Gesamtpunkte:
+stats_coins,Монеты за всё время:,Total coins:,Toplam paralar:,Monedas totales:,Gesamtmünzen:
+stats_games,Игр сыграно:,Games played:,Oynanan oyunlar:,Partidas jugadas:,Spiele gespielt:
+stats_wins,Побед:,Wins:,Galibiyetler:,Victorias:,Siege:
+stats_losts,Поражений:,Losses:,Mağlubiyetler:,Derrotas:,Niederlagen:
+stats_percent_wins,Процент побед:,Win rate:,Galibiyet yüzdesi:,Porcentaje de victorias:,Siegquote:
+stats_party_fastest,Самая быстрая партия:,Fastest game:,En hızlı oyun:,Partida más rápida:,Schnellstes Spiel:
+stats_party_longest,Самая долгая партия:,Longest game:,En uzun oyun:,Partida más larga:,Längstes Spiel:

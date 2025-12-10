@@ -23,9 +23,9 @@ MonoBehaviour:
       Languages:
       - "\u0420\u0415\u041A\u041B\u0410\u041C\u0410 \u0427\u0415\u0420\u0415\u0417:"
       - 'AD IN:'
-      - "REKLAM \u0130\xC7\u0130NDE:"
-      - 'ANUNCIO EN:'
-      - 'ANZEIGE IN:'
+      - "REKLAM \u0130LE:"
+      - "PUBLICIDAD A TRAV\xC9S DE:"
+      - "WERBUNG \xDCBER:"
       Flags: 0000000000
       Languages_Touch: []
     - Term: again
@@ -33,10 +33,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0417\u0410\u041D\u041E\u0412\u041E?"
-      - RESTART
-      - "YEN\u0130DEN BA\u015ELAT"
-      - REINICIAR
-      - NEUSTART
+      - RESTART?
+      - "YEN\u0130DEN?"
+      - "\xBFREINICIAR?"
+      - NOCHMAL?
       Flags: 0000000000
       Languages_Touch: []
     - Term: back
@@ -44,10 +44,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0420\u0423\u0411\u0410\u0428\u041A\u0410"
-      - BACK
-      - "GER\u0130"
-      - VOLVER
-      - "ZUR\xDCCK"
+      - CARD BACK
+      - KART ARKASI
+      - REVERSO
+      - "KARTENR\xDCCKSEITE"
       Flags: 0000000000
       Languages_Touch: []
     - Term: background
@@ -55,9 +55,9 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0424\u041E\u041D"
-      - BACKGROUND
+      - BG
       - ARKA PLAN
-      - ANTECEDENTES
+      - FONDO
       - HINTERGRUND
       Flags: 0000000000
       Languages_Touch: []
@@ -67,7 +67,7 @@ MonoBehaviour:
       Languages:
       - "\u041B\u0423\u0427\u0428\u0415\u0415 \u0412\u0420\u0415\u041C\u042F"
       - BEST TIME
-      - "EN \u0130Y\u0130 ZAMAN"
+      - "EN \u0130Y\u0130 S\xDCRE"
       - MEJOR TIEMPO
       - BESTE ZEIT
       Flags: 0000000000
@@ -79,7 +79,7 @@ MonoBehaviour:
       - "\u041A\u0423\u041F\u0418\u0422\u042C \u0417\u0410"
       - BUY FOR
       - SATIN AL
-      - PAGAR
+      - COMPRAR POR
       - "KAUFEN F\xDCR"
       Flags: 0000000000
       Languages_Touch: []
@@ -111,7 +111,7 @@ MonoBehaviour:
       Languages:
       - "\u041C\u041E\u041D\u0415\u0422\u042B"
       - COINS
-      - JET
+      - PARALAR
       - MONEDAS
       - "M\xDCNZEN"
       Flags: 0000000000
@@ -123,8 +123,8 @@ MonoBehaviour:
       - "\u041F\u041E\u0417\u0414\u0420\u0410\u0412\u041B\u042F\u0415\u041C!"
       - CONGRATULATIONS!
       - "TEBR\u0130KLER!"
-      - "\xA1FELICITACIONES!"
-      - "HERZLICHEN GL\xDCCKWUNSCH!"
+      - "\xA1FELICIDADES!"
+      - "GL\xDCCKWUNSCH!"
       Flags: 0000000000
       Languages_Touch: []
     - Term: daily_bonus
@@ -156,8 +156,8 @@ MonoBehaviour:
       - "\u041A\u041E\u041B\u041E\u0414\u0410"
       - DECK
       - DESTE
-      - BAMBA
-      - DECK
+      - BARAJA
+      - STAPEL
       Flags: 0000000000
       Languages_Touch: []
     - Term: difficulty
@@ -166,9 +166,9 @@ MonoBehaviour:
       Languages:
       - "\u0421\u043B\u043E\u0436\u043D\u043E\u0441\u0442\u044C"
       - Difficulty
-      - ZORLUK
-      - DIFICULTAD
-      - SCHWIERIGKEITSGRAD
+      - Zorluk
+      - Dificultad
+      - Schwierigkeit
       Flags: 0000000000
       Languages_Touch: []
     - Term: easy
@@ -177,9 +177,9 @@ MonoBehaviour:
       Languages:
       - "\u041B\u0451\u0433\u043A\u0438\u0439"
       - Easy
-      - KOLAY
-      - "F\xC1CIL"
-      - EINFACH
+      - Kolay
+      - "F\xE1cil"
+      - Leicht
       Flags: 0000000000
       Languages_Touch: []
     - Term: get
@@ -187,10 +187,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041F\u041E\u041B\u0423\u0427\u0418\u0422\u042C"
-      - GET
-      - AL
+      - COLLECT
+      - KAZAN
       - OBTENER
-      - WERDEN
+      - ERHALTEN
       Flags: 0000000000
       Languages_Touch: []
     - Term: hard
@@ -198,10 +198,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041C\u0430\u0441\u0442\u0435\u0440 "
-      - Hard
-      - ZOR
-      - "DIF\xCDCIL"
-      - SCHWER
+      - Master
+      - Usta
+      - Maestro
+      - Meister
       Flags: 0000000000
       Languages_Touch: []
     - Term: lay_out
@@ -209,10 +209,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0420\u0410\u0417\u041B\u041E\u0416\u0418\u0422\u042C"
-      - LAY OUT
-      - "YERLE\u015ET\u0130RMEK"
-      - DISPONER
-      - AUSLEGEN
+      - DEAL
+      - "DA\u011EIT"
+      - REPARTIR
+      - AUSTEILEN
       Flags: 0000000000
       Languages_Touch: []
     - Term: middle
@@ -220,10 +220,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0421\u0440\u0435\u0434\u043D\u0438\u0439"
-      - Normal
-      - NORMAL
-      - NORMAL
-      - NORMAL
+      - Medium
+      - Orta
+      - Medio
+      - Mittel
       Flags: 0000000000
       Languages_Touch: []
     - Term: new_game
@@ -254,9 +254,9 @@ MonoBehaviour:
       Languages:
       - "\u041B\u0418\u0427\u041D\u042B\u0419 \u0420\u0415\u041A\u041E\u0420\u0414"
       - PERSONAL BEST
-      - "K\u0130\u015E\u0130SEL EN \u0130Y\u0130"
-      - MEJOR MARCA PERSONAL
-      - "PERS\xD6NLICHE BESTLEISTUNG"
+      - "K\u0130\u015E\u0130SEL REKOR"
+      - "R\xC9CORD PERSONAL"
+      - "PERS\xD6NLICHER REKORD"
       Flags: 0000000000
       Languages_Touch: []
     - Term: play
@@ -265,7 +265,7 @@ MonoBehaviour:
       Languages:
       - "\u0418\u0413\u0420\u0410\u0422\u042C"
       - PLAY
-      - OYNA
+      - OYNAT
       - JUGAR
       - SPIELEN
       Flags: 0000000000
@@ -276,9 +276,9 @@ MonoBehaviour:
       Languages:
       - "\u0421\u042B\u0413\u0420\u0410\u041D\u041E \u041F\u0410\u0420\u0422\u0418\u0419"
       - GAMES PLAYED
-      - OYNAYAN OYUNLAR
-      - JUEGOS JUGADOS
-      - GESPIELTE SPIELE
+      - OYNANAN OYUNLAR
+      - PARTIDAS JUGADAS
+      - SPIELE GESPIELT
       Flags: 0000000000
       Languages_Touch: []
     - Term: rating
@@ -286,10 +286,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0420\u0415\u0419\u0422\u0418\u041D\u0413"
-      - RATING
-      - "DERECELEND\u0130RME"
-      - "CALIFICACI\xD3N"
-      - BEWERTUNG
+      - LEADERBOARD
+      - SIRALAMA
+      - "CLASIFICACI\xD3N"
+      - RANGLISTE
       Flags: 0000000000
       Languages_Touch: []
     - Term: restart
@@ -308,10 +308,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041F\u0420\u0410\u0412\u0418\u041B\u0410 \u0418\u0413\u0420\u042B"
-      - 'RULES OF THE GAME '
-      - 'OYUNUN KURALLARI '
-      - 'REGLAS DEL JUEGO '
-      - 'SPIELREGELN '
+      - GAME RULES
+      - OYUN KURALLARI
+      - REGLAS DEL JUEGO
+      - SPIELREGELN
       Flags: 0000000000
       Languages_Touch: []
     - Term: score
@@ -321,7 +321,7 @@ MonoBehaviour:
       - "\u041E\u0427\u041A\u0418"
       - SCORE
       - PUAN
-      - "PUNTUACI\xD3N"
+      - PUNTOS
       - PUNKTE
       Flags: 0000000000
       Languages_Touch: []
@@ -333,7 +333,7 @@ MonoBehaviour:
       - SEC
       - SN
       - SEG
-      - SEKUNDEN
+      - SEK
       Flags: 0000000000
       Languages_Touch: []
     - Term: settings
@@ -343,7 +343,7 @@ MonoBehaviour:
       - "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418"
       - SETTINGS
       - AYARLAR
-      - "CONFIGURACI\xD3N"
+      - AJUSTES
       - EINSTELLUNGEN
       Flags: 0000000000
       Languages_Touch: []
@@ -364,7 +364,7 @@ MonoBehaviour:
       Languages:
       - "\u0412\u0420\u0415\u041C\u042F"
       - TIME
-      - ZAMAN
+      - "S\xDCRE"
       - TIEMPO
       - ZEIT
       Flags: 0000000000
@@ -375,8 +375,8 @@ MonoBehaviour:
       Languages:
       - "\u0411\u041E\u041D\u0423\u0421 \u0417\u0410 \u0412\u0420\u0415\u041C\u042F"
       - TIME BONUS
-      - ZAMAN BONUSU
-      - "BONIFICACI\xD3N DE TIEMPO"
+      - "S\xDCRE BONUSU"
+      - BONO DE TIEMPO
       - ZEITBONUS
       Flags: 0000000000
       Languages_Touch: []
@@ -386,9 +386,9 @@ MonoBehaviour:
       Languages:
       - "\u0423\u0414\u0412\u041E\u0418\u0422\u042C"
       - DOUBLE
-      - "\xC7\u0130FT"
-      - DOBLE
-      - DOPPELT
+      - "\u0130K\u0130YE KATLA"
+      - DUPLICAR
+      - VERDOPPELN
       Flags: 0000000000
       Languages_Touch: []
     - Term: yes
@@ -408,9 +408,9 @@ MonoBehaviour:
       Languages:
       - "\u041F\u041E\u041A\u0423\u041F\u041A\u0410"
       - PURCHASE
-      - SATIN ALMAK
+      - SATIN ALIM
       - COMPRA
-      - KAUFEN
+      - KAUF
       Flags: 0000000000
       Languages_Touch: []
     - Term: tut_stacks
@@ -418,10 +418,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0421\u0442\u043E\u043F\u043A\u0438"
-      - 'Stacks '
-      - 
-      - 
-      - 
+      - Stacks
+      - Temeller
+      - Fundaciones
+      - Fundamente
       Flags: 0000000000
       Languages_Touch: []
     - Term: tut_page1
@@ -434,11 +434,15 @@ MonoBehaviour:
         \u043F\u043E \u043C\u0430\u0441\u0442\u044F\u043C \u043E\u0442 \u0442\u0443\u0437\u0430
         \u0434\u043E \u043A\u043E\u0440\u043E\u043B\u044F. \u0422, 2, 3 \u2026 10,
         \u0412, \u0414, \u041A"
-      - "The goal is to move all the cards into piles, arranging them by suit from
-        Ace to King. A, 2, 3\u2026 10, J, Q, K "
-      - 
-      - 
-      - 
+      - "The goal is to move all cards to the foundations, sorting them by suit from
+        Ace to King: A, 2, 3 \u2026 10, J, Q, K"
+      - "Ama\xE7 \u2014 t\xFCm kartlar\u0131 As\u2019tan Papaz\u2019a kadar s\u0131ral\u0131
+        \u015Fekilde, tak\u0131mlara g\xF6re temellere ta\u015F\u0131makt\u0131r:
+        A, 2, 3 \u2026 10, V, D, K"
+      - "El objetivo es mover todas las cartas a las fundaciones, orden\xE1ndolas
+        por palo desde el As hasta el Rey: A, 2, 3 \u2026 10, J, Q, K"
+      - "Ziel \u2014 alle Karten in die Fundamente zu legen, nach Farben sortiert
+        von Ass bis K\xF6nig: A, 2, 3 \u2026 10, B, D, K"
       Flags: 0000000000
       Languages_Touch: []
     - Term: tut_page2
@@ -450,11 +454,14 @@ MonoBehaviour:
         \u0432 \u043F\u043E\u0440\u044F\u0434\u043A\u0435 \u0443\u0431\u044B\u0432\u0430\u043D\u0438\u044F,
         \u0447\u0435\u0440\u0435\u0434\u0443\u044F \u043A\u0440\u0430\u0441\u043D\u044B\u0435
         \u0438 \u0447\u0435\u0440\u043D\u044B\u0435 \u043A\u0430\u0440\u0442\u044B. "
-      - 'Cards can be moved from column to column, in descending order, alternating
-        red and black cards. '
-      - 
-      - 
-      - 
+      - Cards can be moved between tableau columns in descending order, alternating
+        red and black cards.
+      - "Kartlar, k\u0131rm\u0131z\u0131 ve siyah renkler s\u0131rayla olacak \u015Fekilde
+        azalan d\xFCzende s\xFCtunlar aras\u0131nda ta\u015F\u0131nabilir."
+      - Las cartas se pueden mover entre columnas en orden descendente, alternando
+        cartas rojas y negras.
+      - "Karten k\xF6nnen zwischen den Spalten in absteigender Reihenfolge verschoben
+        werden, wobei abwechselnd rote und schwarze Karten gelegt werden."
       Flags: 0000000000
       Languages_Touch: []
     - Term: tut_page3
@@ -468,11 +475,14 @@ MonoBehaviour:
         \u043A\u0430\u0440\u0442\u044B, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
         \u043F\u043E\u043C\u043E\u0433\u0443\u0442 \u0432\u0430\u043C \u043D\u0430\u0439\u0442\u0438
         \u0440\u0435\u0448\u0435\u043D\u0438\u0435!"
-      - 'If you don''t have the cards you need, just click on the deck and additional
-        cards will appear to help you find a solution! '
-      - 
-      - 
-      - 
+      - "If the needed cards are not available \u2013 just tap the stock and extra
+        cards will appear to help you find the solution!"
+      - "Gerekli kart yoksa \u2014 sadece desteye dokunun ve \xE7\xF6z\xFCm bulman\u0131za
+        yard\u0131mc\u0131 olacak ek kartlar g\xF6r\xFCnecektir!"
+      - "Si no hay cartas \xFAtiles \u2014 simplemente toca la baraja y aparecer\xE1n
+        cartas adicionales que te ayudar\xE1n a encontrar la soluci\xF3n."
+      - "Wenn die ben\xF6tigten Karten fehlen \u2014 einfach auf den Talon tippen
+        und zus\xE4tzliche Karten erscheinen, die dir helfen, die L\xF6sung zu finden!"
       Flags: 0000000000
       Languages_Touch: []
     - Term: tut_page4
@@ -483,11 +493,11 @@ MonoBehaviour:
         \u0432 \u043A\u0430\u0436\u0434\u043E\u0439 \u0441\u0442\u043E\u043F\u043A\u0435
         \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439: \u0422, 2, 3 \u2026
         9, 10, \u0412, \u0414, \u041A"
-      - "The sorting order in each stack is as follows: T, 2, 3 \u2026 9, 10,  J,
-        Q, K "
-      - 
-      - 
-      - 
+      - "The sorting order in each stacks is: A, 2, 3 \u2026 9, 10, J, Q, K"
+      - "Her temel y\u0131\u011F\u0131n\u0131na s\u0131ralama \u015Fu \u015Fekildedir:
+        A, 2, 3 \u2026 9, 10, V, D, K"
+      - "El orden en cada fundaci\xF3n es: A, 2, 3 \u2026 9, 10, J, Q, K"
+      - "Die Reihenfolge in jedem Fundament ist: A, 2, 3 \u2026 9, 10, B, D, K"
       Flags: 0000000000
       Languages_Touch: []
     - Term: shop
@@ -495,10 +505,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041C\u0410\u0413\u0410\u0417\u0418\u041D"
+      - STORE
+      - "MA\u011EAZA"
+      - TIENDA
       - SHOP
-      - SHOP(T)
-      - SHOP(Es)
-      - SHOP(G)
       Flags: 0000000000
       Languages_Touch: []
     - Term: your_level
@@ -507,9 +517,9 @@ MonoBehaviour:
       Languages:
       - "\u0422\u0432\u043E\u0439 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
       - Your level
-      - Your level
-      - Your level
-      - Your level
+      - Seviyen
+      - Tu nivel
+      - Dein Level
       Flags: 0000000000
       Languages_Touch: []
     - Term: ads_disable
@@ -517,10 +527,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041E\u0442\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u043A\u043B\u0430\u043C\u0443"
-      - Disable ads
-      - Disable ads
-      - Disable ads
-      - Disable ads
+      - Remove ads
+      - "Reklamlar\u0131 kald\u0131r"
+      - Desactivar anuncios
+      - Werbung entfernen
       Flags: 0000000000
       Languages_Touch: []
     - Term: start_offer
@@ -528,10 +538,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041D\u0430\u0431\u043E\u0440 \u043D\u043E\u0432\u0438\u0447\u043A\u0430"
-      - Start offer
-      - Start offer
-      - Start offer
-      - Start offer
+      - Starter pack
+      - "Yeni ba\u015Flayan paketi"
+      - Paquete de principiante
+      - Starter-Paket
       Flags: 0000000000
       Languages_Touch: []
     - Term: done
@@ -539,10 +549,21 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E"
-      - Done
-      - Done
-      - 
-      - 
+      - Completed
+      - "Tamamland\u0131"
+      - Completado
+      - Abgeschlossen
+      Flags: 0000000000
+      Languages_Touch: []
+    - Term: speed
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u0421\u041A\u041E\u0420\u041E\u0421\u0422\u042C"
+      - SPEED
+      - HIZ
+      - VELOCIDAD
+      - Geschwindigkeit
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_first_step
@@ -551,9 +572,9 @@ MonoBehaviour:
       Languages:
       - "\u041F\u0435\u0440\u0432\u044B\u0439 \u0448\u0430\u0433"
       - First step
-      - 
-      - 
-      - 
+      - "\u0130lk ad\u0131m"
+      - Primer paso
+      - Erster Schritt
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_done_first_game
@@ -562,10 +583,10 @@ MonoBehaviour:
       Languages:
       - "\u041F\u0440\u043E\u0439\u0442\u0438 \u043F\u0435\u0440\u0432\u0443\u044E
         \u0438\u0433\u0440\u0443"
-      - Complete first game
-      - 
-      - 
-      - 
+      - Win your first game
+      - "\u0130lk oyunu kazan"
+      - Gana tu primera partida
+      - Gewinne dein erstes Spiel
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_master_soliter
@@ -573,10 +594,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041C\u0430\u0441\u0442\u0435\u0440 \u0421\u043E\u043B\u0438\u0442\u0435\u0440\u0430"
-      - Soliter Master
-      - 
-      - 
-      - 
+      - Solitaire master
+      - "\u0130skambil ustas\u0131"
+      - Maestro del solitario
+      - "Solit\xE4rmeister"
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_done_100_games
@@ -584,10 +605,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0412\u044B\u0438\u0433\u0440\u0430\u0442\u044C 100 \u0438\u0433\u0440"
-      - Complete 100 games
-      - 
-      - 
-      - 
+      - Win 100 games
+      - 100 oyun kazan
+      - Gana 100 partidas
+      - 100 Spiele gewinnen
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_without_mistake
@@ -595,10 +616,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0411\u0435\u0437 \u043F\u0440\u0430\u0432\u0430 \u043D\u0430 \u043E\u0448\u0438\u0431\u043A\u0443"
-      - 'No room for error '
-      - 
-      - 
-      - 
+      - Flawless
+      - Hata yok
+      - Sin margen de error
+      - Fehlerfrei
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_without_undo
@@ -608,10 +629,10 @@ MonoBehaviour:
       - "\u0412\u044B\u0438\u0433\u0440\u0430\u0442\u044C \u0438\u0433\u0440\u0443
         \u043D\u0435 \u0434\u0435\u043B\u0430\u044F \u043E\u0442\u043C\u0435\u043D\u044B
         \u0445\u043E\u0434\u0430"
-      - 'Win a game without undoing a move '
-      - 
-      - 
-      - 
+      - Win a game without using undo
+      - Hamle geri almadan oyunu kazan
+      - Gana sin usar deshacer
+      - "Ein Spiel ohne R\xFCckg\xE4ngig gewinnen"
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_blitz_soliter
@@ -619,10 +640,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0411\u043B\u0438\u0446-\u043F\u0430\u0441\u044C\u044F\u043D\u0441"
-      - Blitz-soliter
-      - 
-      - 
-      - 
+      - Speed solitaire
+      - "H\u0131zl\u0131 iskambil"
+      - "Solitario expr\xE9s"
+      - "Blitz-Solit\xE4r"
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_done_faster_3min
@@ -631,10 +652,10 @@ MonoBehaviour:
       Languages:
       - "\u041F\u0440\u043E\u0439\u0442\u0438 \u0438\u0433\u0440\u0443 \u043C\u0435\u043D\u0435\u0435
         \u0447\u0435\u043C \u0437\u0430 3 \u043C\u0438\u043D\u0443\u0442\u044B"
-      - 'Complete the game in less than 3 minutes '
-      - 
-      - 
-      - 
+      - Win a game in under 3 minutes
+      - "3 dakikadan k\u0131sa s\xFCrede oyunu tamamla"
+      - Completa una partida en menos de 3 minutos
+      - "Ein Spiel in unter 3 Minuten abschlie\xDFen"
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_gold_series
@@ -642,10 +663,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0417\u043E\u043B\u043E\u0442\u0430\u044F \u0441\u0435\u0440\u0438\u044F"
-      - Gold series
-      - 
-      - 
-      - 
+      - Golden streak
+      - "Alt\u0131n seri"
+      - Racha dorada
+      - Goldene Serie
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_win_5games
@@ -653,10 +674,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0412\u044B\u0438\u0433\u0440\u0430\u0442\u044C 5 \u0438\u0433\u0440 \u043F\u043E\u0434\u0440\u044F\u0434"
-      - 'Win 5 games in a row '
-      - 
-      - 
-      - 
+      - Win 5 games in a row
+      - 5 oyunu art arda kazan
+      - Gana 5 partidas seguidas
+      - 5 Spiele hintereinander gewinnen
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_my_atmosphere
@@ -664,10 +685,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0421\u0432\u043E\u044F \u0430\u0442\u043C\u043E\u0441\u0444\u0435\u0440\u0430"
-      - 'Its own atmosphere '
-      - 
-      - 
-      - 
+      - Right vibes
+      - Kendi atmosferi
+      - Buen ambiente
+      - "Eigene Atmosph\xE4re"
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_open_3backs
@@ -676,10 +697,10 @@ MonoBehaviour:
       Languages:
       - "\u041E\u0442\u043A\u0440\u044B\u0442\u044C 3 \u043B\u044E\u0431\u044B\u0445
         \u0444\u043E\u043D\u0430"
-      - 'Open any 3 backgrounds '
-      - 
-      - 
-      - 
+      - Unlock any 3 backgrounds
+      - "3 arka plan a\xE7"
+      - Desbloquea 3 fondos
+      - "3 Hintergr\xFCnde freischalten"
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_card_collector
@@ -688,10 +709,10 @@ MonoBehaviour:
       Languages:
       - "\u041A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u043E\u043D\u0435\u0440
         \u043A\u0430\u0440\u0442"
-      - 'Card collector '
-      - 
-      - 
-      - 
+      - Card collector
+      - Kart koleksiyoncusu
+      - Coleccionista de cartas
+      - Kartensammler
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_open_3decks
@@ -700,10 +721,10 @@ MonoBehaviour:
       Languages:
       - "\u041E\u0442\u043A\u0440\u044B\u0442\u044C 3 \u043B\u044E\u0431\u044B\u0435
         \u043A\u043E\u043B\u043E\u0434\u044B"
-      - 'Open any 3 decks '
-      - 
-      - 
-      - 
+      - Unlock any 3 decks
+      - "Herhangi 3 desteyi a\xE7"
+      - Desbloquea 3 barajas
+      - 3 Kartendecks freischalten
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_to_tooth
@@ -711,10 +732,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041D\u0430 \u0437\u0443\u0431\u043E\u043A"
-      - 'To the tooth '
-      - 
-      - 
-      - 
+      - By heart
+      - Ezbere
+      - De memoria
+      - Auswendig
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_win_without_help
@@ -724,10 +745,10 @@ MonoBehaviour:
       - "\u0420\u0430\u0437\u043B\u043E\u0436\u0438\u0442\u044C \u043F\u0430\u0441\u044C\u044F\u043D\u0441
         \u0431\u0435\u0437 \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u043D\u0438\u044F
         \u043F\u043E\u0434\u0441\u043A\u0430\u0437\u043E\u043A"
-      - 'Play solitaire without using hints '
-      - 
-      - 
-      - 
+      - Win a game without using hints
+      - "\u0130pucu kullanmadan oyunu tamamla"
+      - Completa un solitario sin usar pistas
+      - "Solit\xE4r ohne Hinweise l\xF6sen"
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_impossible_possible
@@ -736,10 +757,10 @@ MonoBehaviour:
       Languages:
       - "\u041D\u0435\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0435 \u2014
         \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E"
-      - 'The impossible is possible '
-      - 
-      - 
-      - 
+      - Impossible is possible
+      - "\u0130mk\xE2ns\u0131z \u2014 m\xFCmk\xFCn"
+      - Lo imposible es posible
+      - "Unm\xF6glich ist m\xF6glich"
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_without_turning_deck
@@ -749,10 +770,10 @@ MonoBehaviour:
       - "\u0420\u0430\u0437\u043B\u043E\u0436\u0438\u0442\u044C \u043F\u0430\u0441\u044C\u044F\u043D\u0441
         \u043D\u0435 \u043F\u0435\u0440\u0435\u0432\u043E\u0440\u0430\u0447\u0438\u0432\u0430\u044F
         \u043A\u043E\u043B\u043E\u0434\u0443"
-      - 'Play solitaire without turning the deck over '
-      - 
-      - 
-      - 
+      - Win a game without drawing cards from the deck
+      - "Desteden kart \xE7evirmeden oyunu kazan"
+      - Gana sin robar cartas del mazo
+      - Ein Spiel ohne Karten vom Talon aufzudecken gewinnen
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_this_my_life
@@ -760,10 +781,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u042D\u0442\u043E \u043C\u043E\u044F \u0436\u0438\u0437\u043D\u044C"
-      - 'This is my life '
-      - 
-      - 
-      - 
+      - This is my life
+      - "Bu benim hayat\u0131m"
+      - Esta es mi vida
+      - Das ist mein Leben
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_play_30games_in_day
@@ -772,10 +793,10 @@ MonoBehaviour:
       Languages:
       - "\u0420\u0430\u0437\u043B\u043E\u0436\u0438\u0442\u044C 30 \u043F\u0430\u0440\u0442\u0438\u0439
         \u0437\u0430 1 \u0434\u0435\u043D\u044C"
-      - 'Play 30 games in 1 day '
-      - 
-      - 
-      - 
+      - Complete 30 games in 1 day
+      - "1 g\xFCnde 30 oyun tamamla"
+      - "Completa 30 partidas en 1 d\xEDa"
+      - "30 Spiele an einem Tag abschlie\xDFen"
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_nutcracker
@@ -783,10 +804,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0429\u0435\u043B\u043A\u0443\u043D\u0447\u0438\u043A"
-      - 'Nutcracker '
-      - 
-      - 
-      - 
+      - Click master
+      - "F\u0131nd\u0131kk\u0131ran"
+      - Cascanueces
+      - Nussknacker
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_500clics_in_game
@@ -795,10 +816,10 @@ MonoBehaviour:
       Languages:
       - "\u0421\u0434\u0435\u043B\u0430\u0442\u044C 500 \u043A\u043B\u0438\u043A\u043E\u0432
         \u0437\u0430 1 \u0438\u0433\u0440\u0443"
-      - 'Make 500 clicks in 1 game '
-      - 
-      - 
-      - 
+      - Make 500 clicks in 1 game
+      - "1 oyunda 500 t\u0131klama yap"
+      - Haz 500 clics en una partida
+      - 500 Klicks in einem Spiel
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_no_fuss
@@ -806,10 +827,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0411\u0435\u0437 \u0441\u0443\u0435\u0442\u044B"
-      - 'No fuss '
-      - 
-      - 
-      - 
+      - No rush
+      - Sakin ol
+      - Sin prisa
+      - Ohne Eile
       Flags: 0000000000
       Languages_Touch: []
     - Term: ach_desc_complete_less_20min
@@ -818,10 +839,10 @@ MonoBehaviour:
       Languages:
       - "\u041F\u0440\u043E\u0439\u0442\u0438 \u043F\u0430\u0441\u044C\u044F\u043D\u0441
         \u043C\u0435\u043D\u0435\u0435 \u0447\u0435\u043C \u0437\u0430 20 \u043C\u0438\u043D\u0443\u0442"
-      - 'Complete Solitaire in less than 20 minutes '
-      - 
-      - 
-      - 
+      - Win a game in under 20 minutes
+      - "20 dakikadan k\u0131sa s\xFCrede oyunu kazan"
+      - Completa una partida en menos de 20 minutos
+      - Ein Spiel in unter 20 Minuten gewinnen
       Flags: 0000000000
       Languages_Touch: []
     - Term: player_newbie
@@ -829,10 +850,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041D\u043E\u0432\u0438\u0447\u043E\u043A"
-      - Newbie
-      - 
-      - 
-      - 
+      - Beginner
+      - Acemi
+      - Principiante
+      - "Anf\xE4nger"
       Flags: 0000000000
       Languages_Touch: []
     - Term: player_gamer
@@ -840,10 +861,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0418\u0433\u0440\u043E\u043A"
-      - Gamer
-      - 
-      - 
-      - 
+      - Player
+      - Oyuncu
+      - Jugador
+      - Spieler
       Flags: 0000000000
       Languages_Touch: []
     - Term: player_profi
@@ -851,10 +872,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041F\u0440\u043E\u0444\u0438"
+      - Pro
+      - Profesyonel
+      - Profesional
       - Profi
-      - 
-      - 
-      - 
       Flags: 0000000000
       Languages_Touch: []
     - Term: player_master
@@ -863,9 +884,9 @@ MonoBehaviour:
       Languages:
       - "\u041C\u0430\u0441\u0442\u0435\u0440 "
       - Master
-      - 
-      - 
-      - 
+      - Usta
+      - Maestro
+      - Meister
       Flags: 0000000000
       Languages_Touch: []
     - Term: player_legend
@@ -874,9 +895,9 @@ MonoBehaviour:
       Languages:
       - "\u041B\u0435\u0433\u0435\u043D\u0434\u0430"
       - Legend
-      - 
-      - 
-      - 
+      - Efsane
+      - Leyenda
+      - Legende
       Flags: 0000000000
       Languages_Touch: []
     - Term: experience
@@ -884,10 +905,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041E\u043F\u044B\u0442"
-      - Experience
-      - 
-      - 
-      - 
+      - XP
+      - XP
+      - XP
+      - EP
       Flags: 0000000000
       Languages_Touch: []
     - Term: rating_personal
@@ -895,10 +916,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041B\u0418\u0427\u041D\u042B\u0419"
-      - Personal
-      - 
-      - 
-      - 
+      - PERSONAL
+      - "K\u0130\u015E\u0130SEL"
+      - PERSONAL
+      - "PERS\xD6NLICH"
       Flags: 0000000000
       Languages_Touch: []
     - Term: rating_global
@@ -906,10 +927,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041C\u0418\u0420\u041E\u0412\u041E\u0419"
-      - Global
-      - 
-      - 
-      - 
+      - GLOBAL
+      - "D\xDCNYA"
+      - MUNDIAL
+      - WELTWEIT
       Flags: 0000000000
       Languages_Touch: []
     - Term: rating_achivements
@@ -917,10 +938,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0414\u041E\u0421\u0422\u0418\u0416\u0415\u041D\u0418\u042F"
-      - Achivements
-      - 
-      - 
-      - 
+      - ACHIEVEMENTS
+      - "BA\u015EARILAR"
+      - LOGROS
+      - ERFOLGE
       Flags: 0000000000
       Languages_Touch: []
     - Term: rating_stats
@@ -928,10 +949,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0421\u0422\u0410\u0422\u0418\u0421\u0422\u0418\u041A\u0410"
-      - Stats
-      - 
-      - 
-      - 
+      - STATISTICS
+      - "\u0130STAT\u0130ST\u0130K"
+      - "ESTAD\xCDSTICAS"
+      - STATISTIK
       Flags: 0000000000
       Languages_Touch: []
     - Term: stats_score
@@ -939,10 +960,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041E\u0447\u043A\u043E\u0432 \u0437\u0430 \u0432\u0441\u0451 \u0432\u0440\u0435\u043C\u044F:"
-      - 'All-time score:'
-      - 
-      - 
-      - 
+      - 'Total score:'
+      - 'Toplam puan:'
+      - 'Puntos totales:'
+      - 'Gesamtpunkte:'
       Flags: 0000000000
       Languages_Touch: []
     - Term: stats_coins
@@ -950,10 +971,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041C\u043E\u043D\u0435\u0442\u044B \u0437\u0430 \u0432\u0441\u0451 \u0432\u0440\u0435\u043C\u044F:"
-      - 'All time coins: '
-      - 
-      - 
-      - 
+      - 'Total coins:'
+      - 'Toplam paralar:'
+      - 'Monedas totales:'
+      - "Gesamtm\xFCnzen:"
       Flags: 0000000000
       Languages_Touch: []
     - Term: stats_games
@@ -961,10 +982,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0418\u0433\u0440 \u0441\u044B\u0433\u0440\u0430\u043D\u043E:"
-      - 'Played games:'
-      - 
-      - 
-      - 
+      - 'Games played:'
+      - 'Oynanan oyunlar:'
+      - 'Partidas jugadas:'
+      - 'Spiele gespielt:'
       Flags: 0000000000
       Languages_Touch: []
     - Term: stats_wins
@@ -973,9 +994,9 @@ MonoBehaviour:
       Languages:
       - "\u041F\u043E\u0431\u0435\u0434:"
       - 'Wins:'
-      - 
-      - 
-      - 
+      - 'Galibiyetler:'
+      - 'Victorias:'
+      - 'Siege:'
       Flags: 0000000000
       Languages_Touch: []
     - Term: stats_losts
@@ -983,10 +1004,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041F\u043E\u0440\u0430\u0436\u0435\u043D\u0438\u0439:"
-      - 'Losts:'
-      - 
-      - 
-      - 
+      - 'Losses:'
+      - "Ma\u011Flubiyetler:"
+      - 'Derrotas:'
+      - 'Niederlagen:'
       Flags: 0000000000
       Languages_Touch: []
     - Term: stats_percent_wins
@@ -994,10 +1015,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u041F\u0440\u043E\u0446\u0435\u043D\u0442 \u043F\u043E\u0431\u0435\u0434:"
-      - 'Win percentage: '
-      - 
-      - 
-      - 
+      - 'Win rate:'
+      - "Galibiyet y\xFCzdesi:"
+      - 'Porcentaje de victorias:'
+      - 'Siegquote:'
       Flags: 0000000000
       Languages_Touch: []
     - Term: stats_party_fastest
@@ -1007,9 +1028,9 @@ MonoBehaviour:
       - "\u0421\u0430\u043C\u0430\u044F \u0431\u044B\u0441\u0442\u0440\u0430\u044F
         \u043F\u0430\u0440\u0442\u0438\u044F:"
       - 'Fastest game:'
-      - 
-      - 
-      - 
+      - "En h\u0131zl\u0131 oyun:"
+      - "Partida m\xE1s r\xE1pida:"
+      - 'Schnellstes Spiel:'
       Flags: 0000000000
       Languages_Touch: []
     - Term: stats_party_longest
@@ -1017,10 +1038,10 @@ MonoBehaviour:
       Description: 
       Languages:
       - "\u0421\u0430\u043C\u0430\u044F \u0434\u043E\u043B\u0433\u0430\u044F \u043F\u0430\u0440\u0442\u0438\u044F:"
-      - 'Longest game: '
-      - 
-      - 
-      - 
+      - 'Longest game:'
+      - 'En uzun oyun:'
+      - "Partida m\xE1s larga:"
+      - "L\xE4ngstes Spiel:"
       Flags: 0000000000
       Languages_Touch: []
     CaseInsensitiveTerms: 0
