@@ -13,7 +13,7 @@ namespace SimpleSolitaire.Model.Config
         public static string DiamondTextureName = "diamond";
         public static string ClubTextureName = "club";
         public static string HeartTextureName = "heart";
-        public static float CardSpeed = 1300f;
+        public static float CardSpeed = 1500f;
 
         public static int CARD_NUMS_OF_SUIT = 13;
 

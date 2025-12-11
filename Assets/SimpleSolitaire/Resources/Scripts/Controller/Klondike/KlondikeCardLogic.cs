@@ -168,7 +168,7 @@ namespace SimpleSolitaire.Controller
             StartCoroutine(InitDeckCardsCoroutine());
         }
 
-        private IEnumerator InitDeckCardsCoroutine()
+        private IEnumerator InitDeckCardsCoroutine()//Раздача пасьянса
         {
             for (int i = 0; i < BottomDeckArray.Length; i++)
             {
@@ -179,14 +179,14 @@ namespace SimpleSolitaire.Controller
                     Card card = PackDeck.Pop();
                     bottomDeck.PushCard(card);
 
-                    Vector3 endvalue = bottomDeck.transform.position - Vector3.up * GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_CLOSED) * j;
-                    //card.transform.DOMove(endvalue, 0.15f).SetEase(Ease.InOutQuad);
+                    Vector3 endvalue = bottomDeck.transform.position - Vector3.up * GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_CLOSED) * j;                    
                     int jumpPower = (int)(-200 / _gameManager.ScreenController.ScaleFactor);
                     card.transform.DOJump(endvalue, jumpPower, 1, 0.15f).SetEase(Ease.InOutQuad);
                     //card.DragEffect("On");
                     GameManagerComponent.AudioController.Play(AudioController.AudioType.CardTake);
+                    float timeCard = 0.2f - _gameManager.Speed * 0.1f + 0.08f;
                     if (j == i)
-                        card.transform.DOScaleX(0, 0.15f).OnComplete(() => 
+                        card.transform.DOScaleX(0, timeCard).OnComplete(() => 
                         { 
                             card.transform.DOScaleX(1, 0.15f);
                             //card.DragEffect("Off");
@@ -194,9 +194,8 @@ namespace SimpleSolitaire.Controller
                         });
 
                     card.transform.SetAsLastSibling();
-                    yield return new WaitForSeconds(0.18f);
-                    card.transform.SetAsLastSibling();
-                    //bottomDeck.UpdateCardsPosition(true);
+                    
+                    yield return new WaitForSeconds(timeCard + 0.03f);                    
                 }
                 
                 bottomDeck.UpdateCardsPosition(true);
@@ -306,9 +305,10 @@ namespace SimpleSolitaire.Controller
                         Card card = PackDeck.Pop();
                         card.transform.SetAsLastSibling();
                         Vector3 to = WasteDeck.WasteNewCardPosition;
+                        float time = _gameManager.Speed == 2 ? 0.2f : 0.3f;//
                         Sequence sequence = DOTween.Sequence();
-                        sequence.Join(card.transform.DOMove(to, 0.3f));
-                        sequence.Join(card.transform.DOScaleX(0, 0.3f).SetEase(Ease.InQuart).OnComplete(() =>
+                        sequence.Join(card.transform.DOMove(to, time));
+                        sequence.Join(card.transform.DOScaleX(0, time).SetEase(Ease.InQuart).OnComplete(() =>
                         {
                             WasteDeck.PushCard(card);
                             PackDeck.UpdateCardsPosition(false);
@@ -317,7 +317,7 @@ namespace SimpleSolitaire.Controller
                             {
                                 AudioCtrl.Play(AudioController.AudioType.MoveToWaste);
                             }
-                            card.transform.DOScaleX(1, 0.3f).SetEase(Ease.OutSine);
+                            card.transform.DOScaleX(1, time).SetEase(Ease.OutSine);
                             ActionAfterEachStep();
                         }));
                                                 

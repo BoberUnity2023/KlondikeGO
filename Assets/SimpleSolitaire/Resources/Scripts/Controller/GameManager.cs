@@ -57,6 +57,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private GameObject _bonusGold;
         [SerializeField] private BottomMenu _bottomMenu;
         [SerializeField] private TopMenu _topMenu;
+        [SerializeField] private ButtonSpeed _buttonSpeed;
 
         [Header("Ads Components:")]        
         [SerializeField] private GameObject _adsLayer;
@@ -229,6 +230,8 @@ namespace SimpleSolitaire.Controller
             }
         }
 
+        public float Speed { get; set; }
+
         private readonly string _appearTrigger = "Appear";
         private readonly string _disappearTrigger = "Disappear";        
         private readonly string _showBottomBarKey = "ShowBar";
@@ -310,6 +313,7 @@ namespace SimpleSolitaire.Controller
             _audioController = AudioController.Instance;
             _goldLabel.text = Gold.ToString();
             _newGameLayerButtonClose.SetActive(false);
+            Speed = _buttonSpeed.Speed;
         }
 
         public void LoadGold()
@@ -1248,6 +1252,7 @@ namespace SimpleSolitaire.Controller
                 _winLayer.SetActive(false);
                 _cardLayer.SetActive(true);
                 _cardLogic.Shuffle(true);
+                _hintManager.RestartGame();
                 _bottomMenu.PressDown();
                 _topMenu.Hide();
                 //StartCoroutine(AfterStartEffectPlayed(2.5f));

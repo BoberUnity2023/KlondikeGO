@@ -233,7 +233,7 @@ namespace BloomLines
 
             float distance = Vector3.Distance(fromPosition, toPosition);
             
-            float moveTime = distance / Public.CardSpeed + 0.2f;
+            float moveTime = distance / Public.CardSpeed + 0.4f;
             int numJumps = (int)(distance / 300);
             cardClose.DragEffect("On");
             _stars.EffectStart(cardClose.transform);

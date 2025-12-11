@@ -116,21 +116,21 @@ namespace SimpleSolitaire.Controller
                 case 0:
                     {
                         _undoPerformComponent.DefaultUndoCounts = _undoPerformComponent.DefaultUndoCountsLevels[0];
-                        _hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[0];
+                        //_hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[0];
                         //_buttonHint.SetActive(true);
                         break;
                     }
                 case 1:
                     {
                         _undoPerformComponent.DefaultUndoCounts = _undoPerformComponent.DefaultUndoCountsLevels[1];
-                        _hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[1];
+                        //_hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[1];
                         //_buttonHint.SetActive(true);
                         break;
                     }
                 case 2:
                     {
                         _undoPerformComponent.DefaultUndoCounts = _undoPerformComponent.DefaultUndoCountsLevels[2];
-                        _hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[0];
+                        //_hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[0];
                         //_buttonHint.SetActive(false);
                         break;
                     }

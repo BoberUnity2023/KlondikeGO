@@ -36,7 +36,7 @@ namespace SimpleSolitaire.Controller
     {
         [Header("Components: ")] [SerializeField]
         protected CardLogic _cardLogicComponent;
-        [SerializeField] private GameManager _gameManager;
+        [SerializeField] protected GameManager _gameManager;
         [SerializeField] protected MagicWand _magicWand;
         [SerializeField] private AutoCompleteManager _autoCompleteComponent;
         [SerializeField] private InterVideoAds _adsManager;
@@ -78,7 +78,7 @@ namespace SimpleSolitaire.Controller
                     _particlesRed.Play();
 
                 _availableCountLevels = value;
-                _countIndicator.text = value.ToString();// > 0 ? value.ToString() : "";
+                _countIndicator.text = value.ToString();
                 _hintButtonImage.sprite = value > 0 ? _hintButtonSpriteActive : _hintButtonSpriteInActive;
                 _countIndicatorImage.sprite = value > 0 ? _countIndicatorSpriteActive : _countIndicatorSpriteInActive;
             } 
@@ -322,6 +322,11 @@ namespace SimpleSolitaire.Controller
                 default:
                     return Vector3.zero;
             }
+        }
+
+        public void RestartGame()
+        {
+            AvailableCountLevels = 3;
         }
 
         protected void OnDestroy()

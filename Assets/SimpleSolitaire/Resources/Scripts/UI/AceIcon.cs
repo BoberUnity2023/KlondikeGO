@@ -20,6 +20,11 @@ namespace BloomLines
             StartCoroutine(Interval(1));
         }
 
+        private void OnDisable()
+        {
+            StopAllCoroutines();           
+        }
+
         private IEnumerator Interval(float time)
         {
             yield return new WaitForSeconds(time);
@@ -41,7 +46,8 @@ namespace BloomLines
 
         private void SetSprite()
         {
-            int index = FreeSuits[MyFreeIndex];
+            int myFreeIndex = MyFreeIndex;
+            int index = FreeSuits[myFreeIndex];
             _image.sprite = _sprites[index];            
         }
 
@@ -98,6 +104,9 @@ namespace BloomLines
                 {
                     if (_index == i)
                         return output;
+
+                    if (_decks[i].CardsArray == null)
+                        Debug.LogError("_decks[i].CardsArray == null");
 
                     if (_decks[i].CardsArray.Count == 0)
                         output++;

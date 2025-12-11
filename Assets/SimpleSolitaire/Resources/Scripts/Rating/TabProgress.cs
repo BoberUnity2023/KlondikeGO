@@ -43,8 +43,8 @@ public class TabProgress : MonoBehaviour
     {
         for (int i = 0; i < _progressLines.Length; i++)
         {
-            _progressLines[i].SetAlpha(i > level ? 0.2f : 1);
-            _progressLines[i].SetTitleColor(i < level ? Color.gray : new Color(1, 0.8f, 0, 1));
+            _progressLines[i].SetAlpha(i == level ? 1 : 0.5f);
+            //_progressLines[i].SetTitleColor(i < level ? Color.gray : new Color(1, 0.8f, 0, 1));
             _progressLines[i].SetMedalShiny(i == level);
 
             if (i <= level)

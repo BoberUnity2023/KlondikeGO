@@ -36,12 +36,13 @@ namespace SimpleSolitaire.Controller
                         //Debug.LogWarning("WasteHorizontalSpace: " + wasteHorizontalSpace + " CanvasHeight: " + canvasScaler.referenceResolution.y);                        
                         
                         card.IsDraggable = false;
+                        float time = _gameManagerComponent.Speed * 0.1f + 0.15f;
 
                         if (i == CardsArray.Count - 1)
                         {                            
                             if (IsNecessaryMove(card))
                             {
-                                card.transform.DOMove(WasteCardPosition(0), 0.3f).OnComplete(() => card.IsDraggable = true); 
+                                card.transform.DOMove(WasteCardPosition(0), time).OnComplete(() => card.IsDraggable = true); 
                             }
                         }
 
@@ -49,7 +50,7 @@ namespace SimpleSolitaire.Controller
                         {                            
                             if (IsNecessaryMove(card))
                             {
-                                card.transform.DOMove(WasteCardPosition(1), 0.3f);
+                                card.transform.DOMove(WasteCardPosition(1), time);
                             }
                         }
 
@@ -57,7 +58,7 @@ namespace SimpleSolitaire.Controller
                         {                            
                             if (IsNecessaryMove(card))
                             {
-                                card.transform.DOMove(WasteCardPosition(2), 0.3f);
+                                card.transform.DOMove(WasteCardPosition(2), time);
                             }
                         }
                     }

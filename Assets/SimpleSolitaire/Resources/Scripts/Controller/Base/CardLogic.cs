@@ -423,12 +423,13 @@ namespace SimpleSolitaire.Controller
         protected void MoveFromWasteToPack()
         {
             int cardNums = WasteDeck.CardsCount;
+            float time = _gameManager.Speed == 2 ? 0.2f : 0.3f;//
             for (int i = 0; i < cardNums; i++)
             {
-                WasteDeck.CardsArray[i].transform.DOMove(PackDeck.transform.position, 0.3f);
+                WasteDeck.CardsArray[i].transform.DOMove(PackDeck.transform.position, time);
             }
 
-            StartCoroutine(MoveFromWasteToPackCoroutine(0.33f));
+            StartCoroutine(MoveFromWasteToPackCoroutine(time + 0.03f));
         }
 
         private IEnumerator MoveFromWasteToPackCoroutine(float time)
