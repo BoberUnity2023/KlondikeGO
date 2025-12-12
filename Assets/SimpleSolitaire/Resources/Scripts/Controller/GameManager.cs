@@ -1207,7 +1207,10 @@ namespace SimpleSolitaire.Controller
                     ScreenController.Active = true;
                 }
                 _undoPerformComponent.ResetUndoStates();
-                //_adsController.TryShowInterstitial();
+                if (Platform == Platform.Yandex)
+                {
+                    _adsController.TryShowInterstitial();
+                }
                 OnGameStart?.Invoke();
                 _magicWand.StartParty();
                 _peek.StartParty();
@@ -1257,9 +1260,12 @@ namespace SimpleSolitaire.Controller
                 _topMenu.Hide();
                 //StartCoroutine(AfterStartEffectPlayed(2.5f));
                 _undoPerformComponent.ResetUndoStates();
-                //_adsController.TryShowInterstitial();
                 _magicWand.StartParty();
                 _peek.StartParty();
+                if (Platform == Platform.Yandex)
+                {
+                    _adsController.TryShowInterstitial();
+                }
                 OnGameStart?.Invoke();
             }
         }

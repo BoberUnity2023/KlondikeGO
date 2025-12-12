@@ -15,6 +15,9 @@ namespace BloomLines
 
         private void OnEnable()
         {
+            if (!IsFree)
+                return;
+
             StopAllCoroutines();
             SetSprite();
             StartCoroutine(Interval(1));
@@ -35,15 +38,7 @@ namespace BloomLines
                 StartCoroutine(Interval(1));
             }
         }
-
-        //private void Update()
-        //{
-        //    if (IsFree)
-        //    {
-        //        SetSprite();                
-        //    }
-        //}
-
+ 
         private void SetSprite()
         {
             int myFreeIndex = MyFreeIndex;
@@ -58,9 +53,9 @@ namespace BloomLines
 
             return -1;
         }
-               
 
-        List<int> FreeSuits
+
+        private List<int> FreeSuits
         {
             get
             {
@@ -76,7 +71,7 @@ namespace BloomLines
             }
         }
 
-        List<int> BusySuits
+        private List<int> BusySuits
         {
             get
             {
@@ -95,7 +90,7 @@ namespace BloomLines
             }
         }
 
-        int MyFreeIndex
+        private int MyFreeIndex
         {
             get 
             {
@@ -115,7 +110,7 @@ namespace BloomLines
             }
         }
 
-        bool IsFree
+        private bool IsFree
         {
             get
             {

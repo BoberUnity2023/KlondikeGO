@@ -26,7 +26,7 @@ namespace SimpleSolitaire.Controller
     {
         protected Vector3[] Corners;
         [SerializeField] protected GameManager _gameManager;
-        [SerializeField] private HintManager _hintManager;
+        [SerializeField] protected HintManager _hintManager;
         [SerializeField] protected RectTransform CorrectlyDeck;
         
         public Color DraggableColor;

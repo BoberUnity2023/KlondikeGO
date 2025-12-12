@@ -280,7 +280,7 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         public override void OnClickPack()
         {
-            if (!PackDeck.HasCards && !WasteDeck.HasCards)
+            if ((!PackDeck.HasCards && !WasteDeck.HasCards) || _hintManager.IsHintProcess)
             {
                 if (AudioCtrl != null)
                 {

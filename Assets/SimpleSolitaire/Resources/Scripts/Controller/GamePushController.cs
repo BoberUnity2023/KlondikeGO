@@ -14,16 +14,16 @@ public class GamePushController : MonoBehaviour
 
     private void Awake()
     {
+#if !GAME_PUSH
+    Destroy(gameObject);
+#endif
+
 #if GAME_PUSH
         Debug.Log("GamePush Awake()");
         if (IsSingle)        
             DontDestroyOnLoad(gameObject);
         else
             Destroy(gameObject);
-#endif
-
-#if !GAME_PUSH
-    Destroy(gameObject);
 #endif
     }
 

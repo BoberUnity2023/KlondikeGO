@@ -27,7 +27,15 @@ public class AdsController : MonoBehaviour
         {
             //_vkManager.ShowBanners();
             //_vkManager.WebAppTrackEvent();
-        }            
+        }
+
+        if (_gameManager.Platform == Platform.Yandex)
+        {
+#if Yandex
+            if (!_gameManager.Save.NoAds)
+                YG.YG2.StickyAdActivity(true);
+#endif
+        }
     }
 
     public void TryShowInterstitial()
