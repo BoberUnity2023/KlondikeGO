@@ -57,7 +57,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private GameObject _bonusGold;
         [SerializeField] private BottomMenu _bottomMenu;
         [SerializeField] private TopMenu _topMenu;
-        [SerializeField] private ButtonSpeed _buttonSpeed;
+        [SerializeField] private ButtonSpeed _buttonSpeed;       
 
         [Header("Ads Components:")]        
         [SerializeField] private GameObject _adsLayer;
@@ -81,6 +81,9 @@ namespace SimpleSolitaire.Controller
 
         [SerializeField] private Peek _peek;
         public Peek Peek => _peek;
+
+        [SerializeField] private DisableButtons _disableButtons;
+        public DisableButtons DisableButtons => _disableButtons;
 
         //[SerializeField]
         //public LeaderboardYG _leaderboardYG;
@@ -459,7 +462,7 @@ namespace SimpleSolitaire.Controller
             else
             {
                 _cardLogic.InitCardLogic();
-                _cardLogic.Shuffle(false);
+                //_cardLogic.Shuffle(false);
                 InitMenuView(false);
                 _cardLayer.SetActive(false);
                 _newGameLayer.SetActive(true);
@@ -699,6 +702,8 @@ namespace SimpleSolitaire.Controller
             _cardLayer.SetActive(false);
             _leaderboardLayer.SetActive(true);
             _backgroundBlockerDark.SetActive(true);
+            _bottomMenu.PressDown();
+            DisableButtons.Deactivate();
 
             if (_cardLogic is KlondikeCardLogic klondikeLogic)
             {
@@ -770,6 +775,8 @@ namespace SimpleSolitaire.Controller
         {
             _restartWindow.SetActive(true); 
             _backgroundBlockerDark.SetActive(true);
+            _bottomMenu.PressDown();
+            DisableButtons.Deactivate();
             AppearWindow(_restartWindow);
         }
 
@@ -785,6 +792,8 @@ namespace SimpleSolitaire.Controller
             {
                 _restartWindow.SetActive(false);
                 _backgroundBlockerDark.SetActive(false);
+                //_bottomMenu.PressUp();
+                DisableButtons.Activate();
             }, 0.42f));
         }
 
@@ -1110,7 +1119,9 @@ namespace SimpleSolitaire.Controller
         public void OnClickVisualBtn()
         {
             _cardLayer.SetActive(false);
-            _visualLayer.SetActive(true);
+            _visualLayer.SetActive(true);            
+            _bottomMenu.PressDown();
+            DisableButtons.Deactivate();
             AppearWindow(_settingLayer);
         }        
         public void OnClickVisualLayerCloseBtn()
@@ -1119,7 +1130,9 @@ namespace SimpleSolitaire.Controller
 
             void OnWindowDisappeared()
             {
-                _visualLayer.SetActive(false);
+                _visualLayer.SetActive(false);                
+                _bottomMenu.PressUp();
+                DisableButtons.Activate();
                 _cardLayer.SetActive(!_statisticLayer.activeInHierarchy);
             }
         }
@@ -1127,8 +1140,11 @@ namespace SimpleSolitaire.Controller
         public void OnClickShoplBtn()
         {
             _backgroundBlockerDark.SetActive(true);
+            _bottomMenu.PressDown();
+            DisableButtons.Deactivate();
             _cardLayer.SetActive(false);
-            _shopLayer.SetActive(true);
+            _shopLayer.SetActive(true);           
+            
             AppearWindow(_shopLayer);
         }
         public void OnClickShopLayerCloseBtn()
@@ -1140,6 +1156,8 @@ namespace SimpleSolitaire.Controller
                 _shopLayer.SetActive(false);
                 _cardLayer.SetActive(!_statisticLayer.activeInHierarchy);
                 _backgroundBlockerDark.SetActive(false);
+                _bottomMenu.PressUp();
+                DisableButtons.Activate();
             }
         }
         #endregion
@@ -1305,6 +1323,8 @@ namespace SimpleSolitaire.Controller
             _leaderboardLayer.SetActive(false);
             _cardLayer.SetActive(true);
             _backgroundBlockerDark.SetActive(false);
+            _bottomMenu.PressUp();
+            DisableButtons.Activate();
         }  
         
         public void OnInitDecksComplete()//Карты выложены на стол

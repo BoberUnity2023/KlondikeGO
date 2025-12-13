@@ -21,6 +21,7 @@ namespace SimpleSolitaire.Controller
         public float HintSetTransitionTime = 0.2f;
 
         [Header("Components")]
+        [SerializeField] private GameManager _gameManager;
         public HintManager HintComponent;
         public CardLogic CardLogicComponent;
         public GameObject AutoCompleteHintButtonObj;
@@ -121,6 +122,7 @@ namespace SimpleSolitaire.Controller
                 _autoCompleteCoroutine = CompleteCoroutine();                
                 StartCoroutine(_autoCompleteCoroutine);
                 _bottomMenu.PressDown();
+                _gameManager.DisableButtons.Deactivate();
             }
         }
 

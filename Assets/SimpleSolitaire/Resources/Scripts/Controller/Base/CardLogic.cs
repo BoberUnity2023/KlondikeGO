@@ -135,11 +135,15 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         protected virtual void GenerateRandomCardNums()
         {
-            GenerateRandomCardNums1();
+            if (_gameManager.Save.PlayedGames <= 1)
+                GenerateRandomCardNums3();
+            else
+                GenerateRandomCardNums1();
         }
 
         private void GenerateRandomCardNums1()
         {
+            Debug.Log("Generate Solitare");
             int cardNums = CardNums;
             int[] tagArray = new int[cardNums];
             int i = 0;
@@ -194,52 +198,53 @@ namespace SimpleSolitaire.Controller
 
         private void GenerateRandomCardNums3()
         {
+            Debug.Log("Firat Solitare");
             //Open Layer
-            CardNumberArray[51] = 44;//T diamond
-            CardNumberArray[49] = 39;
-            CardNumberArray[46] = 26; //T club
-            CardNumberArray[42] = 48;
-            CardNumberArray[37] = 47;
-            CardNumberArray[31] = 46;
-            CardNumberArray[24] = 32;
+            CardNumberArray[51] = 44; //6 diamond
+            CardNumberArray[49] = 39; //T diamond
+            CardNumberArray[46] = 46; //8 diamond
+            CardNumberArray[42] = 48; //10 diamond
+            CardNumberArray[37] = 34; //9 club
+            CardNumberArray[31] = 26; //T club
+            CardNumberArray[24] = 32; //7 club
             //Closed 1 Layer
             CardNumberArray[50] = 40;
             CardNumberArray[47] = 25;
             CardNumberArray[43] = 49;//J diamond
             CardNumberArray[38] = 41;
-            CardNumberArray[32] = 51;
-            CardNumberArray[25] = 29;//4 club
+            CardNumberArray[32] = 4;
+            CardNumberArray[25] = 16;//4 heart
             //Closed 2 Layer
             CardNumberArray[48] = 38;
-            CardNumberArray[44] = 42;//4 diamond
+            CardNumberArray[44] = 31;//6 club
             CardNumberArray[39] = 28;
-            CardNumberArray[33] = 35;
-            CardNumberArray[26] = 34;
+            CardNumberArray[33] = 36;//J club
+            CardNumberArray[26] = 47; //9 diamond
             //Closed 3 Layer
             CardNumberArray[45] = 33;
             CardNumberArray[40] = 45;
-            CardNumberArray[34] = 31;
+            CardNumberArray[34] = 42; //4 diamond
             CardNumberArray[27] = 17;
             //Closed 4 Layer
             CardNumberArray[41] = 43;//5 diamond
-            CardNumberArray[35] = 36;//J club
-            CardNumberArray[28] = 10;//D spade
+            CardNumberArray[35] = 30;
+            CardNumberArray[28] = 1;//2 spade
             //Closed 5 Layer
             CardNumberArray[36] = 24; //D heart
-            CardNumberArray[29] = 50; //D diamond
+            CardNumberArray[29] = 9; 
             //Closed 5 Layer
             CardNumberArray[30] = 37;//D diamond
             //Open Deck
             CardNumberArray[0] = 0;
             CardNumberArray[1] = 22;
             CardNumberArray[2] = 12;
-            CardNumberArray[3] = 16;
-            CardNumberArray[4] = 4;
+            CardNumberArray[3] = 29;//4 club
+            CardNumberArray[4] = 23;
             CardNumberArray[5] = 14;
             CardNumberArray[6] = 19;
             CardNumberArray[7] = 21;
             CardNumberArray[8] = 8;
-            CardNumberArray[9] = 9;            
+            CardNumberArray[9] = 51;            
             CardNumberArray[10] = 27; //2 club
             CardNumberArray[11] = 11;
             CardNumberArray[12] = 2;
@@ -247,13 +252,13 @@ namespace SimpleSolitaire.Controller
             CardNumberArray[14] = 5;
             CardNumberArray[15] = 15;
             CardNumberArray[16] = 3;
-            CardNumberArray[17] = 30;
+            CardNumberArray[17] = 35;
             CardNumberArray[18] = 18;
             CardNumberArray[19] = 6;
             CardNumberArray[20] = 20;
             CardNumberArray[21] = 7;
-            CardNumberArray[22] = 1;
-            CardNumberArray[23] = 23;
+            CardNumberArray[22] = 10;//D spade
+            CardNumberArray[23] = 50; //D diamond
         }
 
         //Open cards 51, 49, 46, 42, 37, 31, 24
