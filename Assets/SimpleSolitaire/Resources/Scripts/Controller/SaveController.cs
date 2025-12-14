@@ -66,6 +66,8 @@ public class SaveController : MonoBehaviour
 
     public string KeyAchivementProgress => "AchivementProgress";
 
+    public string KeySound => "Sound";
+
     public string KeyCards => "cards";
     public string KeyCardBacks => "cardbacks";
     public string KeyBackgrounds => "backgrounds";
@@ -181,6 +183,19 @@ public class SaveController : MonoBehaviour
             return PlayerPrefs.GetInt(KeyTakenDayBonuses + day.ToString(), 0) == 1;
         }
         return false;
+    }
+
+    public bool Sound
+    {
+        get 
+        { 
+            return PlayerPrefs.GetInt(KeySound, 1) == 1; 
+        }
+
+        set
+        {
+            PlayerPrefs.SetInt(KeySound, value ? 1 : 0);
+        }
     }
 
     public void SetTakenDayBonuses(int day, bool value)

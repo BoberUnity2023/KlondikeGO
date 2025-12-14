@@ -305,7 +305,7 @@ namespace SimpleSolitaire.Controller
             Application.targetFrameRate = 300;
 
             SetPlatform();
-            _soundEnable = true;            
+            _soundEnable = Save.Sound;            
             _isBarActive = true;
             _saveController.Init();
             Stats = new Stats(this);
@@ -1393,6 +1393,7 @@ namespace SimpleSolitaire.Controller
         public void OnClickSoundSwitch()
         {
             _soundEnable = !_soundEnable;
+            Save.Sound = _soundEnable;
             _soundSwitcher.UpdateSwitchImg(_soundEnable);
 
             if (_audioController != null)
