@@ -20,7 +20,7 @@ public class TabProgress : MonoBehaviour
     public void SetExperience(int value)
     {
         int level = Mathf.Min(_needExperience.Length - 1, Level);
-        Debug.Log("Exp. Level: " + level);
+        Debug.Log("Exp : " + level);
         _experienceIndicator.text = value.ToString() + " /" + _needExperience[level].ToString();
         SetProgressLines(level);
     }

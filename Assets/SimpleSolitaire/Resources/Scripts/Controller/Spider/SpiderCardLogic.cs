@@ -37,15 +37,15 @@ namespace SimpleSolitaire.Controller
             TempSuitsType = type;
             if (type == SpiderSuitsType.OneSuit)
             {
-                GameManagerComponent.SetLevel(0);
+                GameManagerComponent.SetDifficulty(0);
             }
             if (type == SpiderSuitsType.TwoSuits)
             {
-                GameManagerComponent.SetLevel(1);
+                GameManagerComponent.SetDifficulty(1);
             }
             if (type == SpiderSuitsType.FourSuits)
             {
-                GameManagerComponent.SetLevel(2);
+                GameManagerComponent.SetDifficulty(2);
             }
 
         }

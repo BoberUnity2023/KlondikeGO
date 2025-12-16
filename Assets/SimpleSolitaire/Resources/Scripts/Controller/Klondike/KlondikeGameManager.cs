@@ -18,10 +18,10 @@ namespace SimpleSolitaire.Controller
             base.OnStatisticsLayerClosed();
         }
 
-        public override void SetLevel(int level)
+        public override void SetDifficulty(int difficulty)
         {
-            base.SetLevel(level);
-            switch (level)
+            base.SetDifficulty(difficulty);
+            switch (difficulty)
             {
                 case 0:
                     {
@@ -49,7 +49,7 @@ namespace SimpleSolitaire.Controller
                     }
                 default:
                     {
-                        Debug.LogError("Error 1265. Unknown level");
+                        Debug.LogError("Error 1265. Unknown difficulty");
                         _klondikeCardLogic.CurrentDifficultyType = KlondikeDifficultyType.Easy;
                         _undoPerformComponent.DefaultUndoCounts = _undoPerformComponent.DefaultUndoCountsLevels[0];
                         _hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[0];

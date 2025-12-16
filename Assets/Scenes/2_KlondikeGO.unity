@@ -16901,6 +16901,7 @@ MonoBehaviour:
   _settingsPanelAnimator: {fileID: 0}
   _buttonHint: {fileID: 2284100042079886694}
   _levelToggleGroup: {fileID: 1643351211311627998}
+  _rulesToggleGroup: {fileID: 7554150399267303826}
   _bonusGold: {fileID: 0}
   _bottomMenu: {fileID: 1547255732}
   _topMenu: {fileID: 106218721338321114}
@@ -25175,6 +25176,10 @@ PrefabInstance:
     - target: {fileID: 1249689041945343594, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -43894,18 +43899,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1201489651}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1547255732}
         m_TargetAssemblyTypeName: BottomMenu, Assembly-CSharp
         m_MethodName: PressUp
@@ -53816,7 +53809,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -79100,18 +79093,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1201489651}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1336024251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90060,18 +90041,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SimpleSolitaire.Controller.KlondikeGameManager,
           Assembly-CSharp
         m_MethodName: OnClickShoplBtn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1201489651}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -102687,7 +102656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
@@ -110185,18 +110154,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1201489651}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2002721447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116113,18 +116070,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 321646397}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!224 &653503715494015640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -117359,6 +117304,10 @@ PrefabInstance:
       value: CloseButtonField
       objectReference: {fileID: 0}
     - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 411655882}
@@ -118178,18 +118127,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1201489651}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!222 &1637608727870587227
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -118247,6 +118184,10 @@ PrefabInstance:
     - target: {fileID: 1249689041945343594, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
       propertyPath: m_Name
       value: CloseButtonField
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -122528,18 +122469,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1201489651}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &2284100041830982133
 GameObject:
   m_ObjectHideFlags: 0
@@ -123804,9 +123733,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SimpleSolitaire.Controller.GameManager, Assembly-CSharp
-        m_MethodName: OnClickLevel
+      - m_Target: {fileID: 411655882}
+        m_TargetAssemblyTypeName: SimpleSolitaire.Controller.KlondikeGameManager,
+          Assembly-CSharp
+        m_MethodName: OnClickSetDifficulty
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -123816,7 +123746,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!222 &3064390829750700368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -124171,7 +124101,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!222 &3210821251860873075
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -125506,6 +125436,10 @@ PrefabInstance:
       value: CloseButtonField
       objectReference: {fileID: 0}
     - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1249689041945343596, guid: 45a485d759bb13f49ac6c9324867f361, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 411655882}
@@ -126753,9 +126687,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SimpleSolitaire.Controller.GameManager, Assembly-CSharp
-        m_MethodName: OnClickLevel
+      - m_Target: {fileID: 411655882}
+        m_TargetAssemblyTypeName: SimpleSolitaire.Controller.KlondikeGameManager,
+          Assembly-CSharp
+        m_MethodName: OnClickSetDifficulty
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -128815,9 +128750,10 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SimpleSolitaire.Controller.GameManager, Assembly-CSharp
-        m_MethodName: OnClickLevel
+      - m_Target: {fileID: 411655882}
+        m_TargetAssemblyTypeName: SimpleSolitaire.Controller.KlondikeGameManager,
+          Assembly-CSharp
+        m_MethodName: OnClickSetDifficulty
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -128989,18 +128925,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SimpleSolitaire.Controller.KlondikeGameManager,
           Assembly-CSharp
         m_MethodName: ShowTutorialLayer
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 321646397}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -130555,18 +130479,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SimpleSolitaire.Controller.KlondikeGameManager,
           Assembly-CSharp
         m_MethodName: OnClickModalRandom
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 321646397}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

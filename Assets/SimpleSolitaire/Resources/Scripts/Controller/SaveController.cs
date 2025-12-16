@@ -68,6 +68,12 @@ public class SaveController : MonoBehaviour
 
     public string KeySound => "Sound";
 
+    public string KeyDifficulty => "Difficulty";
+
+    public string KeySpeed => "Speed";
+
+    public string KeyRules => "Rules";
+
     public string KeyCards => "cards";
     public string KeyCardBacks => "cardbacks";
     public string KeyBackgrounds => "backgrounds";
@@ -195,6 +201,46 @@ public class SaveController : MonoBehaviour
         set
         {
             PlayerPrefs.SetInt(KeySound, value ? 1 : 0);
+        }
+    }
+
+    public int Difficulty
+    {
+        get
+        {
+            return PlayerPrefs.GetInt(KeyDifficulty, 1);
+        }
+
+        set
+        {
+            Debug.Log("Difficulty Saved: " + value);
+            PlayerPrefs.SetInt(KeyDifficulty, value);
+        }
+    }
+
+    public int Speed
+    {
+        get
+        {
+            return PlayerPrefs.GetInt(KeySpeed, 1);
+        }
+
+        set
+        {
+            PlayerPrefs.SetInt(KeySpeed, value);
+        }
+    }
+
+    public int Rules//1 rules; 3 rules
+    {
+        get
+        {
+            return PlayerPrefs.GetInt(KeyRules, 1);
+        }
+
+        set
+        {
+            PlayerPrefs.SetInt(KeyRules, value);
         }
     }
 
@@ -872,7 +918,7 @@ public class SaveController : MonoBehaviour
         Save.FastestWinTime = PlayerPrefs.GetInt(KeyFastestWinTime, 0);
         Save.FastestPartyTime = PlayerPrefs.GetInt(KeyFastestPartyTime, 0);
         Save.LongestPartyTime = PlayerPrefs.GetInt(KeyLongestPartyTime, 0);
-        Save.NoAds = PlayerPrefs.GetInt(KeyNoAds) == 1;
+        Save.NoAds = PlayerPrefs.GetInt(KeyNoAds) == 1;        
 
         //VKManager.Instance.StorageSave();
     }

@@ -54,6 +54,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private Animator _settingsPanelAnimator;
         [SerializeField] protected GameObject _buttonHint;        
         [SerializeField] private ToggleGroup _levelToggleGroup;
+        [SerializeField] private ToggleGroup _rulesToggleGroup;
         [SerializeField] private GameObject _bonusGold;
         [SerializeField] private BottomMenu _bottomMenu;
         [SerializeField] private TopMenu _topMenu;
@@ -171,13 +172,13 @@ namespace SimpleSolitaire.Controller
 
         public int GoldForParty { get; set; }
 
-        public int Level => _level;
+        public int Difficulty => Save.Difficulty;
 
         public int MoveFromWasteToPackPrice
         {
             get
             {
-                return MoveFromWasteToPackPrices[Level];
+                return MoveFromWasteToPackPrices[Difficulty];
             }
         }
 
@@ -244,8 +245,6 @@ namespace SimpleSolitaire.Controller
         private int _scoreCount;
         private int _timeBonus;
         private int _gold;
-        private int _level;
-        private int _levelSelected;
 
         private Coroutine _timeCoroutine;  
         private RewardAdsType _currentAdsType = RewardAdsType.None;
@@ -277,24 +276,6 @@ namespace SimpleSolitaire.Controller
         _isMobile = IsMobile();
 #endif
             InitializeGame();
-
-            _inviteFriendButton.SetActive(false);
-#if VK
-            _inviteFriendButton.SetActive(true);
-#endif
-            if (Game == Game.Klondike)
-            {
-                _levelSelected = 1;
-                SetLevel(1);
-            }
-
-            if (Game == Game.Spider)
-            {
-                _levelSelected = 0;
-                SetLevel(0);
-            }
-
-            StartCoroutine(InitGameState());
         }
 
         /// <summary>
@@ -305,50 +286,27 @@ namespace SimpleSolitaire.Controller
             Application.targetFrameRate = 300;
 
             SetPlatform();
-            _soundEnable = Save.Sound;            
+            SetInviteButton();
+
             _isBarActive = true;
             _saveController.Init();
             Stats = new Stats(this);
-            //LoadGold();
+            
             _achivementsController.Init();
             _rewardedVideoController.Init();
             _cardLogic.SubscribeEvents();
             _audioController = AudioController.Instance;
+            _soundEnable = Save.Sound;
+            SetSound(_soundEnable);
+            Debug.Log("Sound: " + _soundEnable.ToString());
+
+            SetDifficulty(Save.Difficulty);
+            SetRulesToggle();
             _goldLabel.text = Gold.ToString();
             _newGameLayerButtonClose.SetActive(false);
-            Speed = _buttonSpeed.Speed;
+            Speed = Save.Speed;
+            StartCoroutine(InitGameState());
         }
-
-        public void LoadGold()
-        {
-            //if (Platform == Platform.Yandex)
-            _goldLabel.text = Save.Gold.ToString();
-            //Debug.Log("LoadGold(" + Gold.ToString() + ")");
-        //    //if (Platform == Platform.Ok ||
-        //    //    Platform == Platform.VK ||
-        //    //    Platform == Platform.GD)
-        //    //{
-                
-        //    //}
-
-        //    //if (Platform == Platform.Yandex)
-        //    //{
-        //    //    // Проверяем запустился ли плагин
-        //    //    //if (YandexGame.SDKEnabled == true)
-        //    //    //{
-        //    //    //    // Если запустился, то запускаем Ваш метод
-        //    //    //    GetData();
-
-        //    //    //    // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
-        //    //    //    // но он запустится при вызове события GetDataEvent, после прогрузки плагина
-        //    //    //}
-        //    //}
-        }
-
-        //private void Start()
-        //{
-            
-        //}
 
         private void SetPlatform()
         {
@@ -363,6 +321,15 @@ namespace SimpleSolitaire.Controller
                 _platform = Platform.GD;
 
             Debug.Log("GameManager Platform: " + _platform.ToString());
+        }
+
+        private void SetInviteButton()
+        {
+            bool visible = false;            
+#if VK
+            visible = true;
+#endif
+            _inviteFriendButton.SetActive(visible);
         }
 
         /// <summary>
@@ -465,7 +432,14 @@ namespace SimpleSolitaire.Controller
                 //_cardLogic.Shuffle(false);
                 InitMenuView(false);
                 _cardLayer.SetActive(false);
+
+                SetDifficultyToggle();
+
+                _klondikeCardLogic.CurrentRule = Save.Rules == 3 ? DeckRule.THREE_RULE : DeckRule.ONE_RULE;
+                SetRulesToggle();
+
                 _newGameLayer.SetActive(true);
+                
 #if Yandex
                 _newGameLayerCanvasGroup.interactable = false;
 #endif
@@ -534,11 +508,11 @@ namespace SimpleSolitaire.Controller
             var score = _scoreCount + _timeBonus;
 
             if (Game == Game.Klondike)
-                GoldForParty = score * (Level + 1) / 10;
+                GoldForParty = score * (Difficulty + 1) / 10;
             if (Game == Game.Spider)
-                GoldForParty = score * 3 * (Level + 1) / 10;
+                GoldForParty = score * 3 * (Difficulty + 1) / 10;
             if (Game == Game.Solitaire)
-                GoldForParty = score * 3 * (Level + 1) / 10;
+                GoldForParty = score * 3 * (Difficulty + 1) / 10;
 
             Gold += GoldForParty;
             SetBestValuesToPrefs(score);
@@ -639,7 +613,7 @@ namespace SimpleSolitaire.Controller
 
             _cardLogic.Shuffle(false);
             _undoPerformComponent.ResetUndoStates();
-            _hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[Level];            
+            _hintManager.AvailableCountLevels = _hintManager.DefaultCountsLevels[Difficulty];            
             StatisticsController.Instance.PlayedGames?.Invoke();            
         }
 
@@ -674,17 +648,33 @@ namespace SimpleSolitaire.Controller
             else if (_cardLogic is FreecellCardLogic freecellLogic)
             {
                 freecellLogic.InitFreecellToggles();
-            }            
-
-            _levelToggleGroup.SetAllTogglesOff();
-            Toggle[] toggles = _levelToggleGroup.GetComponentsInChildren<Toggle>();
-            toggles[Level].isOn = true;
+            }  
+            
             AppearGameLayer();            
         }
 
-        public void OnClickLevel(int level)
+        private void SetDifficultyToggle()
+        {            
+            Toggle[] toggles = _levelToggleGroup.GetComponentsInChildren<Toggle>();
+            toggles[Difficulty].isOn = true;
+        }
+
+        private void SetRulesToggle()
+        {            
+            Toggle[] toggles = _rulesToggleGroup.GetComponentsInChildren<Toggle>();
+            int index = Save.Rules == 3 ? 1 : 0;
+            toggles[index].isOn = true;
+        }
+
+        public void OnClickSetDifficulty(int difficulty)
+        {            
+            SetDifficulty(difficulty);
+        }
+
+        public virtual void SetDifficulty(int difficulty)
         {
-            _levelSelected = level;
+            Save.Difficulty = difficulty;
+            Debug.Log("Set Difficulty : " + difficulty);
         }
 
         protected void AppearGameLayer()
@@ -778,11 +768,14 @@ namespace SimpleSolitaire.Controller
             _bottomMenu.PressDown();
             DisableButtons.Deactivate();
             AppearWindow(_restartWindow);
+            _audioController.Play(AudioController.AudioType.ButtonClick);
         }
 
         public void OnClickTryRestartCloseBtn()
         {
             DisappearWindow(_restartWindow, OnWindowDisappeared);
+            _audioController.Play(AudioController.AudioType.ButtonClick);
+
             void OnWindowDisappeared()
             {
                 _winLayer.SetActive(false);                
@@ -1089,6 +1082,7 @@ namespace SimpleSolitaire.Controller
         public void OnClickSettingBtn()
         {
             DisappearWindow(_newGameLayer, OnModalLayerDisappeared);
+            _audioController.Play(AudioController.AudioType.ButtonClick);
 
             void OnModalLayerDisappeared()
             {
@@ -1107,6 +1101,7 @@ namespace SimpleSolitaire.Controller
         public void OnClickSettingLayerCloseBtn()
         {
             DisappearWindow(_settingLayer, OnWindowDisappeared);
+            _audioController.Play(AudioController.AudioType.ButtonClick);
 
             void OnWindowDisappeared()
             {
@@ -1123,10 +1118,12 @@ namespace SimpleSolitaire.Controller
             _bottomMenu.PressDown();
             DisableButtons.Deactivate();
             AppearWindow(_settingLayer);
+            _audioController.Play(AudioController.AudioType.ButtonClick);
         }        
         public void OnClickVisualLayerCloseBtn()
         {
             DisappearWindow(_visualLayer, OnWindowDisappeared);
+            _audioController.Play(AudioController.AudioType.ButtonClick);
 
             void OnWindowDisappeared()
             {
@@ -1143,13 +1140,15 @@ namespace SimpleSolitaire.Controller
             _bottomMenu.PressDown();
             DisableButtons.Deactivate();
             _cardLayer.SetActive(false);
-            _shopLayer.SetActive(true);           
-            
+            _shopLayer.SetActive(true);
+            _audioController.Play(AudioController.AudioType.ButtonClick);
+
             AppearWindow(_shopLayer);
         }
         public void OnClickShopLayerCloseBtn()
         {
             DisappearWindow(_shopLayer, OnWindowDisappeared);
+            _audioController.Play(AudioController.AudioType.ButtonClick);
 
             void OnWindowDisappeared()
             {
@@ -1169,6 +1168,7 @@ namespace SimpleSolitaire.Controller
         public void OnClickStatisticBtn()
         {
             StartCoroutine(InvokeAction(delegate { OnClickSettingLayerCloseBtn(); Invoke(nameof(OnStatisticAppearing), _windowAnimationTime); }, 0f));
+            _audioController.Play(AudioController.AudioType.ButtonClick);
         }
 
         /// <summary>
@@ -1186,6 +1186,7 @@ namespace SimpleSolitaire.Controller
         public void OnClickStatisticLayerCloseBtn()
         {
             DisappearWindow(_statisticLayer, OnStatisticsLayerClosed);
+            _audioController.Play(AudioController.AudioType.ButtonClick);
         }
 
         protected virtual void OnStatisticsLayerClosed()
@@ -1206,7 +1207,7 @@ namespace SimpleSolitaire.Controller
             void OnWindowDisappeared()
             {
                 Stats.PlayedGames++;
-                SetLevel(_levelSelected);
+                SetDifficulty(Save.Difficulty);
                 StatisticsController.Instance.PlayedGames?.Invoke();                
                 _cardLogic.OnNewGameStart();
                 _newGameLayer.SetActive(false);
@@ -1232,6 +1233,8 @@ namespace SimpleSolitaire.Controller
                 OnGameStart?.Invoke();
                 _magicWand.StartParty();
                 _peek.StartParty();
+
+                _audioController.Play(AudioController.AudioType.ButtonClick);
             }
         }
 
@@ -1285,6 +1288,7 @@ namespace SimpleSolitaire.Controller
                     _adsController.TryShowInterstitial();
                 }
                 OnGameStart?.Invoke();
+                _audioController.Play(AudioController.AudioType.ButtonClick);
             }
         }
 
@@ -1296,6 +1300,7 @@ namespace SimpleSolitaire.Controller
             DisappearWindow(_newGameLayer, OnModalLayerDisappeared);
             _bottomMenu.PressUp();
             _topMenu.Show();
+            _audioController.Play(AudioController.AudioType.ButtonClick);
 
             void OnModalLayerDisappeared()
             {
@@ -1308,6 +1313,7 @@ namespace SimpleSolitaire.Controller
         public void OnClickLeaderboardClose()
         {
             DisappearWindow(_leaderboardLayer, OnLeaderboardLayerDisappeared);
+            _audioController.Play(AudioController.AudioType.ButtonClick);
             /*StartCoroutine(InvokeAction
                 (delegate 
             { 
@@ -1394,13 +1400,18 @@ namespace SimpleSolitaire.Controller
         {
             _soundEnable = !_soundEnable;
             Save.Sound = _soundEnable;
-            _soundSwitcher.UpdateSwitchImg(_soundEnable);
+            SetSound(_soundEnable);            
+        } 
+        
+        private void SetSound(bool state)
+        {
+            _soundSwitcher.UpdateSwitchImg(state);
 
             if (_audioController != null)
             {
-                _audioController.SetMute(!_soundEnable);
+                _audioController.SetMute(!state);
             }
-        }   
+        }
 
         /// <summary>
         /// Start game timer.
@@ -1485,14 +1496,7 @@ namespace SimpleSolitaire.Controller
         public void PressClearPrefs()
         {
             PlayerPrefs.DeleteAll();
-        }
-
-        public virtual void SetLevel(int level)
-        {
-            _level = level;
-            _levelSelected = level;
-            Debug.Log("Difficulty Level: " + level);            
-        }
+        }        
 
         public void PressResetProgress()
         {
@@ -1503,7 +1507,7 @@ namespace SimpleSolitaire.Controller
         {
             GameObject bonusObject = Instantiate(_bonusGold, ScreenController.CanvasScaler.transform);
             Bonus bonus = bonusObject.GetComponent<Bonus>();
-            bonus.SetIndicatorors(Level);
+            bonus.SetIndicatorors(Difficulty);
             StartCoroutine(AfterAddBonusGold(1));
             _audioController.Play(AudioController.AudioType.Bonus);
         }
@@ -1511,7 +1515,7 @@ namespace SimpleSolitaire.Controller
         private IEnumerator AfterAddBonusGold(float time)
         {
             yield return new WaitForSeconds(time);
-            Gold += 100 * (Level + 1);            
+            Gold += 100 * (Difficulty + 1);            
         }
 
         public void Hint()

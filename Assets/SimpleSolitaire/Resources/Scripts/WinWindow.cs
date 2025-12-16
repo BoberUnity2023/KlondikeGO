@@ -50,17 +50,17 @@ public class WinWindow : MonoBehaviour
 
     private void SetDifficultyIndicator()
     {
-        if (_gameManager.Level == 0)
+        if (_gameManager.Difficulty == 0)
         { 
             _difficultyIndicator.text = _localizedEasy;//"À≈√ »…"
             _x.text = "x1";
         }
-        if (_gameManager.Level == 1)
+        if (_gameManager.Difficulty == 1)
         { 
             _difficultyIndicator.text = _localizedMiddle; //"C–≈ƒÕ»…";
             _x.text = "x2";
         }
-        if (_gameManager.Level == 2)
+        if (_gameManager.Difficulty == 2)
         { 
             _difficultyIndicator.text = _localizedHard; //"Ã¿—“≈–";
             _x.text = "x3";

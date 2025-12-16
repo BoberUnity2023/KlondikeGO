@@ -6,18 +6,17 @@ namespace BloomLines
     public class ButtonSpeed : MonoBehaviour
     {
         [SerializeField] private GameManager _gameManager;
-        [SerializeField] private GameObject[] _points;
-        private string _key = "Speed";//0, 1, 2
+        [SerializeField] private GameObject[] _points;        
 
         private void Start()
         {
-            int speed = Speed;
+            int speed = _gameManager.Save.Speed;
             SetSpeed(speed);
         }
 
         public void OnClick()
         {
-            int speed = Speed;
+            int speed = _gameManager.Save.Speed;
             speed += 1;
             if (speed > 2)
                 speed = 0;
@@ -26,25 +25,11 @@ namespace BloomLines
 
         private void SetSpeed(int speed)
         {
-            Speed = speed;
+            _gameManager.Save.Speed = speed;
             for (int i = 0; i < 3; i++)
             {
                 _points[i].SetActive(i <= speed);
             }            
-        }
-
-        public int Speed
-        {
-            get
-            {
-                return PlayerPrefs.GetInt(_key, 1);
-            }
-
-            set
-            {
-                PlayerPrefs.SetInt(_key, value);
-                _gameManager.Speed = value;
-            }
         }
     }
 }

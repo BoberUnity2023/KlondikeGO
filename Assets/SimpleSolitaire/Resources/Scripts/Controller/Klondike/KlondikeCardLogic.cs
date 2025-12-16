@@ -400,12 +400,12 @@ namespace SimpleSolitaire.Controller
 
         public void OnToggleChangeRule(int rule)
         {
+            _gameManager.Save.Rules = rule;
             if (rule == 1)            
-                CurrentRule = DeckRule.ONE_RULE;
+                CurrentRule = DeckRule.ONE_RULE; 
 
             if (rule == 3)
                 CurrentRule = DeckRule.THREE_RULE;
-
         }
     }
 }

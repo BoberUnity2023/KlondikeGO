@@ -12,9 +12,9 @@ namespace SimpleSolitaire.Controller
             _spiderCardLogic.InitSuitsToggles();
         }
 
-        public override void SetLevel(int level)
+        public override void SetDifficulty(int level)
         {
-            base.SetLevel(level);
+            base.SetDifficulty(level);
             switch (level)
             {
                 case 0:
