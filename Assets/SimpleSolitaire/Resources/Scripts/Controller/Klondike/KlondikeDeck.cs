@@ -36,7 +36,7 @@ namespace SimpleSolitaire.Controller
                         //Debug.LogWarning("WasteHorizontalSpace: " + wasteHorizontalSpace + " CanvasHeight: " + canvasScaler.referenceResolution.y);                        
                         
                         card.IsDraggable = false;
-                        float time = _gameManagerComponent.Speed * 0.1f + 0.15f;
+                        float time = _gameManagerComponent.Save.Speed * 0.1f + 0.15f;
 
                         if (i == CardsArray.Count - 1)
                         {                            

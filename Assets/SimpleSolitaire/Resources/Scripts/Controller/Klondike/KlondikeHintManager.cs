@@ -47,13 +47,13 @@ namespace SimpleSolitaire.Controller
 
             float distance = Vector3.Distance(fromPosition, toPosition);
             float moveTime = distance / Public.CardSpeed + 0.20f;
-            if (_gameManager.Speed == 0)
+            if (_gameManager.Save.Speed == 0)
                 moveTime *= 1.5f;
-            if (_gameManager.Speed == 2)
+            if (_gameManager.Save.Speed == 2)
                 moveTime *= 0.5f;
 
             //if (data.Type == HintType.AutoComplete)
-            //    moveTime *= 0.7f;
+            //    moveTime *= 0.3f;
 
             float jumpPower = Random.Range(-200, 200);
 
@@ -64,11 +64,14 @@ namespace SimpleSolitaire.Controller
                     );
 
             List<Card> cardsToTop = hintCard.Deck.SetCardsToTop(hintCard);//Движение стопки карт
+
             hintCard.DragEffect("On", cardsToTop);
-            float addTime = _gameManager.Speed == 2 ? 0.05f : 0.1f;
-            yield return new WaitForSeconds(moveTime + addTime);            
-            
+
+            float addTime = _gameManager.Save.Speed == 2 ? 0.05f : 0.1f;
+            yield return new WaitForSeconds(moveTime + addTime);
+
             hintCard.DragEffect("Off");
+
             if (IsHasHint() && data.Type == HintType.Hint)
             {
                 hintCard.Deck.UpdateCardsPosition(false);
@@ -82,9 +85,12 @@ namespace SimpleSolitaire.Controller
                 _cardLogicComponent.OnDragEnd(hintCard);
             }
             //float time = _gameManager.Speed * 0.1f;
-            yield return new WaitForSeconds(0.18f/*time*/);//wait 0.15sec from hintCard.Deck.UpdateCardsPosition(false)
+            float t = 0.18f;
+            if (data.Type != HintType.AutoComplete)
+                t = 0.05f;
+            yield return new WaitForSeconds(t);//wait 0.15sec from hintCard.Deck.UpdateCardsPosition(false)
             UpdateAvailableForDragCards();
-            IsHintProcess = false;            
+            IsHintProcess = false;
         }
 
         /// <summary>

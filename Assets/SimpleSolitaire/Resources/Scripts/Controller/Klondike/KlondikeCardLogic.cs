@@ -181,23 +181,26 @@ namespace SimpleSolitaire.Controller
 
                     Vector3 endvalue = bottomDeck.transform.position - Vector3.up * GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_VERTICAL_BOTTOM_CLOSED) * j;                    
                     int jumpPower = (int)(-200 / _gameManager.ScreenController.ScaleFactor);
-                    card.transform.DOJump(endvalue, jumpPower, 1, 0.15f).SetEase(Ease.InOutQuad);
+                    
+                    float timeCard = 0.2f - _gameManager.Save.Speed * 0.1f + 0.1f;
+                    
+                    card.transform.DOJump(endvalue, jumpPower, 1, timeCard).SetEase(Ease.InOutQuad);
                     //card.DragEffect("On");
                     GameManagerComponent.AudioController.Play(AudioController.AudioType.CardTake);
-                    float timeCard = 0.2f - _gameManager.Speed * 0.1f + 0.08f;
+                    
                     if (j == i)
                         card.transform.DOScaleX(0, timeCard).OnComplete(() => 
                         { 
-                            card.transform.DOScaleX(1, 0.15f);
+                            card.transform.DOScaleX(1, timeCard);
                             //card.DragEffect("Off");
                             GameManagerComponent.AudioController.Play(AudioController.AudioType.CardPut);
                         });
 
                     card.transform.SetAsLastSibling();
                     
-                    yield return new WaitForSeconds(timeCard + 0.03f);                    
+                    yield return new WaitForSeconds(timeCard);                    
                 }
-                
+                //yield return new WaitForSeconds(0.1f);
                 bottomDeck.UpdateCardsPosition(true);
                 bottomDeck.UpdateDraggableStatus();
             }
@@ -305,7 +308,7 @@ namespace SimpleSolitaire.Controller
                         Card card = PackDeck.Pop();
                         card.transform.SetAsLastSibling();
                         Vector3 to = WasteDeck.WasteNewCardPosition;
-                        float time = _gameManager.Speed == 2 ? 0.2f : 0.3f;//
+                        float time = _gameManager.Save.Speed == 2 ? 0.2f : 0.3f;//
                         Sequence sequence = DOTween.Sequence();
                         sequence.Join(card.transform.DOMove(to, time));
                         sequence.Join(card.transform.DOScaleX(0, time).SetEase(Ease.InQuart).OnComplete(() =>

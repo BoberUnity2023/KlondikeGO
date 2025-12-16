@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2181.143
     height: 1138.2858
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Console
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 332}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 25
+  controlID: 48
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -274,7 +274,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 167
+  controlID: 157
   draggingID: 0
 --- !u!114 &12
 MonoBehaviour:
@@ -302,7 +302,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 168
+  controlID: 158
   draggingID: 0
 --- !u!114 &13
 MonoBehaviour:
@@ -1115,7 +1115,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: fefaffff68b7000038b800002eba000050bb000016bc000046bd0000a6bd0000c6bd0000cabf000016c20000b6c200006ac3000012c40000b4c600009cca00000ecd0000accd00006ad1000076d200007ad200008ad20000b6d20000a4d40000aed40000aad7000022d8000030d80000
+      m_ExpandedIDs: fefaffff68b7000038b800005ed20000a4d40000aed40000f0d4000008d80000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 

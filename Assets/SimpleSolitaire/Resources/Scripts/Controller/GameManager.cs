@@ -234,7 +234,7 @@ namespace SimpleSolitaire.Controller
             }
         }
 
-        public float Speed { get; set; }
+        //public float Speed { get; set; }
 
         private readonly string _appearTrigger = "Appear";
         private readonly string _disappearTrigger = "Disappear";        
@@ -304,7 +304,7 @@ namespace SimpleSolitaire.Controller
             SetRulesToggle();
             _goldLabel.text = Gold.ToString();
             _newGameLayerButtonClose.SetActive(false);
-            Speed = Save.Speed;
+            //Speed = Save.Speed;
             StartCoroutine(InitGameState());
         }
 
@@ -439,13 +439,12 @@ namespace SimpleSolitaire.Controller
                 SetRulesToggle();
 
                 _newGameLayer.SetActive(true);
-                
-#if Yandex
-                _newGameLayerCanvasGroup.interactable = false;
-#endif
                 _backgroundBlockerDark.SetActive(true);
                 AppearWindow(_newGameLayer);
+#if Yandex
+                _newGameLayerCanvasGroup.interactable = false;
                 StartCoroutine(AfterInitGameState(_windowAnimationTime * 0.5f));
+#endif
             }
         }
 
