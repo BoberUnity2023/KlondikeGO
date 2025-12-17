@@ -772,12 +772,15 @@ public class SaveController : MonoBehaviour
 
     public int ConvertStringToInt(string value)
     {
+        if (value == null) 
+            return 0;
+
         int _output;
 
         bool success = Int32.TryParse(value, out _output);
         if (!success)
         {
-            Debug.LogWarning("Error ConvertStringToInt failed! Value:" + value);
+            Debug.Log("Error ConvertStringToInt failed! Value:(" + value + ")");
             return 0;
         }
 

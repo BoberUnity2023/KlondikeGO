@@ -431,7 +431,10 @@ namespace SimpleSolitaire.Controller
             float time = _gameManager.Save.Speed == 2 ? 0.2f : 0.3f;//
             for (int i = 0; i < cardNums; i++)
             {
-                WasteDeck.CardsArray[i].transform.DOMove(PackDeck.transform.position, time);
+                //WasteDeck.CardsArray[i].transform.DOMove(PackDeck.transform.position, time);
+                Sequence sequence = DOTween.Sequence();
+                sequence.Append(WasteDeck.CardsArray[i].transform.DOMove(PackDeck.transform.position, time));
+                sequence.Join(WasteDeck.CardsArray[i].transform.DOScaleX(0, time * 0.5f).SetDelay(time * 0.5f));                
             }
 
             StartCoroutine(MoveFromWasteToPackCoroutine(time + 0.03f));
@@ -443,7 +446,9 @@ namespace SimpleSolitaire.Controller
             int cardNums = WasteDeck.CardsCount;
             for (int i = 0; i < cardNums; i++)
             {
-                PackDeck.PushCard(WasteDeck.Pop());
+                Card card = WasteDeck.Pop();
+                PackDeck.PushCard(card);
+                card.transform.DOScaleX(1, 0.15f);
             }
 
             PackDeck.UpdateCardsPosition(false);

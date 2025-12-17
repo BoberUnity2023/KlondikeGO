@@ -53,13 +53,13 @@ namespace BloomLines.Controllers
 
             yield return new WaitForSeconds(0.5f);
 
-            _progressBarFill.DOFillAmount(1f, 0.6f).SetEase(_curve);
+            _progressBarFill.DOFillAmount(1f, 1.0f).SetEase(_curve);
 
             //SaveManager.LoadAll(); // Загружаем сохранения
             //IAPController.LoadPurchases(); // Загружаем покупки
 
-            yield return new WaitForSeconds(0.6f);
-            Debug.Log("Scene1.LoadGame(4)");
+            yield return new WaitForSeconds(1.0f);
+            //Debug.Log("Scene1.LoadGame(4)");
             SceneManager.LoadScene("2_KlondikeGO");
         }        
     }    

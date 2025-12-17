@@ -197,7 +197,7 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         public void ResetUndoStates()
         {
-            _undoButtonAnim.SetBool(_undoBtnAnimationKey, false);
+            //_undoButtonAnim.SetBool(_undoBtnAnimationKey, false);
             AvailableUndoCounts = DefaultUndoCounts;
             StatesData.States.Clear();
             ActivateUndoButton();

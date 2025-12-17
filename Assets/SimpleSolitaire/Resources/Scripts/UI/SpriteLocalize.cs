@@ -8,14 +8,15 @@ namespace BloomLines
         [SerializeField] private Image _image;
         [SerializeField] private Sprite _spriteRus;
         [SerializeField] private Sprite _spriteEng;
-        
-        void Start()
+
+        private void Start()
         {
+#if Yandex
             if (!YG.YG2.isSDKEnabled)
                 YG.YG2.StartInit();
-#if Yandex && !UNITY_EDITOR
-        YG.YG2.onSwitchLang += OnChangeLanguage;
-        OnChangeLanguage(YG.YG2.envir.language);
+
+            YG.YG2.onSwitchLang += OnChangeLanguage;
+            OnChangeLanguage(YG.YG2.envir.language);
 #endif
 
 #if GAME_PUSH
