@@ -16905,6 +16905,7 @@ MonoBehaviour:
   _rulesToggleGroup: {fileID: 7554150399267303826}
   _bonusGold: {fileID: 0}
   _bottomMenu: {fileID: 1547255732}
+  _logoCorner: {fileID: 1001299262}
   _topMenu: {fileID: 106218721338321114}
   _buttonSpeed: {fileID: 1806219789}
   _adsLayer: {fileID: 5617590231118671825}
@@ -53038,13 +53039,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1001299261}
+  - component: {fileID: 1001299263}
+  - component: {fileID: 1001299262}
   m_Layer: 5
-  m_Name: Logo
+  m_Name: LogoCorner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1001299261
 RectTransform:
   m_ObjectHideFlags: 0
@@ -53062,9 +53065,44 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -125, y: 70}
+  m_AnchoredPosition: {x: -200, y: 100}
   m_SizeDelta: {x: 204.80005, y: 137.59998}
   m_Pivot: {x: 0.4, y: 0.4}
+--- !u!114 &1001299262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001299260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc542986f2f5094685a7354dd8dfce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BloomLines.LogoCorner
+  _animator: {fileID: 1001299263}
+--- !u!95 &1001299263
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001299260}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8323e763a67975a4c8784194423ca631, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1003207883
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -88333,7 +88371,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mode: 1
   IsAutoCompleteActive: 0
-  HintSetTransitionTime: 0.25
+  HintSetTransitionTime: 0.02
   _gameManager: {fileID: 411655882}
   HintComponent: {fileID: 418428742}
   CardLogicComponent: {fileID: 404369808}
@@ -88689,6 +88727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonUp: {fileID: 205712226}
   _buttonDown: {fileID: 2089771731}
+  _animator: {fileID: 1547255731}
 --- !u!1 &1548204840
 GameObject:
   m_ObjectHideFlags: 0
@@ -128969,7 +129008,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1041664340499921748, guid: 7f84cd9e34b374e45b15f84020613146, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2122290244381953206, guid: 7f84cd9e34b374e45b15f84020613146, type: 3}
       propertyPath: _localizeController
@@ -128985,7 +129024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4395744063156335619, guid: 7f84cd9e34b374e45b15f84020613146, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5530906601643754335, guid: 7f84cd9e34b374e45b15f84020613146, type: 3}
       propertyPath: m_Pivot.x
@@ -129021,11 +129060,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5530906601643754335, guid: 7f84cd9e34b374e45b15f84020613146, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.4
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5530906601643754335, guid: 7f84cd9e34b374e45b15f84020613146, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.4
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 5530906601643754335, guid: 7f84cd9e34b374e45b15f84020613146, type: 3}
       propertyPath: m_LocalPosition.x

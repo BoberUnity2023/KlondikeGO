@@ -7,12 +7,11 @@ public class BottomMenu : MonoBehaviour
 {
     [SerializeField] private Button _buttonUp;
     [SerializeField] private Button _buttonDown;
-    private Animator _animator;
+    [SerializeField] private Animator _animator;
     private bool _isUp;
 
-    void Start()
-    {
-        _animator = GetComponent<Animator>();
+    private void Start()
+    {        
         _isUp = false;
     }
 

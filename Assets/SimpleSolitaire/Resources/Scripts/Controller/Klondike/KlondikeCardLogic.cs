@@ -170,6 +170,7 @@ namespace SimpleSolitaire.Controller
 
         private IEnumerator InitDeckCardsCoroutine()//Раздача пасьянса
         {
+            _gameManager.LogoCorner.Show();
             for (int i = 0; i < BottomDeckArray.Length; i++)
             {
                 Deck bottomDeck = BottomDeckArray[i];
@@ -211,6 +212,7 @@ namespace SimpleSolitaire.Controller
             WasteDeck.UpdateCardsPosition(true);
             HintManagerComponent.UpdateAvailableForDragCards();
             _gameManager.OnInitDecksComplete();
+            _gameManager.LogoCorner.Hide();
         }
 
         /// <summary>

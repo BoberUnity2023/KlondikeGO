@@ -57,6 +57,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private ToggleGroup _rulesToggleGroup;
         [SerializeField] private GameObject _bonusGold;
         [SerializeField] private BottomMenu _bottomMenu;
+        [SerializeField] private LogoCorner _logoCorner;
         [SerializeField] private TopMenu _topMenu;
         [SerializeField] private ButtonSpeed _buttonSpeed;       
 
@@ -101,6 +102,8 @@ namespace SimpleSolitaire.Controller
 
         [SerializeField] private LocalizeController _localizeController;
         public LocalizeController LocalizeController => _localizeController;
+
+        public LogoCorner LogoCorner => _logoCorner;
 
         public string Language => LocalizeController.Language;
 
