@@ -14,6 +14,8 @@ public class LocalizeController : MonoBehaviour
     [SerializeField] private List<string> _langs;
     public event Action<string> ChangeLanguage;
 
+    public string Language { get; private set; }
+
     private async void Start()
     { 
         _langs = I2.Loc.LocalizationManager.GetAllLanguages();
@@ -54,6 +56,7 @@ public class LocalizeController : MonoBehaviour
     private void OnChangeLanguage(string lang)
     {
         Debug.Log("Language: " + lang);
+        Language = lang;
         int id = 1;
 
         switch (lang)

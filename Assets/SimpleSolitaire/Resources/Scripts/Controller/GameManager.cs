@@ -99,6 +99,11 @@ namespace SimpleSolitaire.Controller
         private AudioController _audioController;
         public AudioController AudioController => _audioController;
 
+        [SerializeField] private LocalizeController _localizeController;
+        public LocalizeController LocalizeController => _localizeController;
+
+        public string Language => LocalizeController.Language;
+
         [Header("Layers:")]
         [SerializeField] protected GameObject _newGameLayer;
         [SerializeField] protected CanvasGroup _newGameLayerCanvasGroup;

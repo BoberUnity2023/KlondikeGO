@@ -16928,6 +16928,7 @@ MonoBehaviour:
   TabLeaderboard: {fileID: 183045844}
   _adsController: {fileID: 1799995722}
   _rewardedVideoController: {fileID: 377076554}
+  _localizeController: {fileID: 1031484264}
   _newGameLayer: {fileID: 8100257424269241353}
   _newGameLayerCanvasGroup: {fileID: 8100257424269241357}
   _newGameLayerButtonClose: {fileID: 598305096}

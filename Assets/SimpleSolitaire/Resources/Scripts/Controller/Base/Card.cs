@@ -219,10 +219,27 @@ namespace SimpleSolitaire.Controller
         protected string GetTexture()
         {
             CardVisualData visualData = CardShirtManager.Instance.VisualData;
-            
+
             return  CardStatus == 0 
                 ? $"{Public.PATH_TO_CARD_BACKS_IN_RESOURCES}{visualData.Back}" 
-                : $"{Public.PATH_TO_CARD_FRONTS_IN_RESOURCES}{visualData.Front}/{GetTypeName()}{Number}";
+                : $"{Public.PATH_TO_CARD_FRONTS_IN_RESOURCES}{visualData.Front}/{GetTypeName()}{Number}{Prefix}";
+        }
+
+        string Prefix//Rus - "" Eng - Eng Only Front1
+        {
+            get
+            {
+                string visualName = CardShirtManager.Instance.CardFrontVisual.VisualName;
+                string lang = CardLogicComponent.GameManagerComponent.Language;
+                bool isTranslated = Number == 1 || Number == 11 || Number == 12;
+
+                if (visualName == "Front1" && 
+                    lang != "ru" && 
+                    isTranslated)
+                    return "Eng";
+
+                return "";
+            }            
         }
 
         /// <summary>
