@@ -1,4 +1,5 @@
 ﻿using BloomLines;
+using Coffee.UIEffects;
 using SimpleSolitaire.Model;
 using SimpleSolitaire.Model.Enum;
 using System.Collections;
@@ -42,6 +43,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private InterVideoAds _adsManager;
         [SerializeField] private Button _hintButton;
         [SerializeField] private Image _hintButtonImage;
+        [SerializeField] protected UIShiny _buttonShiny;
         [SerializeField] private Sprite _hintButtonSpriteActive;
         [SerializeField] private Sprite _hintButtonSpriteInActive;
         [SerializeField] private Text _countIndicator;
@@ -91,7 +93,7 @@ namespace SimpleSolitaire.Controller
         /// Call hint animation.
         /// </summary>
         protected void Hint(HintData data)
-        {
+        { 
             if (Hints.Count > 0 && !IsHintProcess && gameObject.activeInHierarchy)
             {
                 if (data.HintButtonPressed)
@@ -150,6 +152,8 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         public void HintButtonAction()
         {
+            _buttonShiny.Play();
+
             if (AvailableCountLevels <= 0)
             {
                 _gameManager.OnClickNoHinsButton();

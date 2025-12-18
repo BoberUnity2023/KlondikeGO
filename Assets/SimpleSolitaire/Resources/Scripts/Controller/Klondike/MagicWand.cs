@@ -1,3 +1,4 @@
+using Coffee.UIEffects;
 using DG.Tweening;
 using SimpleSolitaire.Controller;
 using SimpleSolitaire.Model.Config;
@@ -17,6 +18,7 @@ namespace BloomLines
         [SerializeField] private SimpleSolitaire.Controller.AudioController _audioController;
         [SerializeField] private Transform _buttonField;
         [SerializeField] private Image _buttonImage;
+        [SerializeField] private UIShiny _buttonShiny;
         [SerializeField] private Sprite _spriteActive;
         [SerializeField] private Sprite _spriteInActive;
         [SerializeField] private MagicWangScreenStars _stars;
@@ -66,6 +68,8 @@ namespace BloomLines
 
         public void OnClickButton()
         {
+            _buttonShiny.Play();
+
             if (Count <= 0)
             {
                 _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Error);
@@ -79,7 +83,7 @@ namespace BloomLines
                 _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Error);
                 return;
             }
-                
+            
             bool hasPair = FindPair();
             if (hasPair)
             {

@@ -5,6 +5,7 @@ using SimpleSolitaire.Model.Enum;
 using UnityEngine;
 using UnityEngine.UI;
 using Newtonsoft.Json;
+using Coffee.UIEffects;
 
 namespace SimpleSolitaire.Controller
 {
@@ -18,6 +19,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] protected HintManager _hintComponent;
         [SerializeField] protected Button _undoButton;
         [SerializeField] private Image _buttonImage;
+        [SerializeField] protected UIShiny _buttonShiny;
         [SerializeField] private Sprite _spriteActive;
         [SerializeField] private Sprite _spriteInActive;
         [SerializeField] protected Animator _undoButtonAnim;
@@ -48,7 +50,8 @@ namespace SimpleSolitaire.Controller
         public virtual void Undo(bool removeOnlyState = false)
         {
             if (StatesData.States.Count > 0)
-            {  
+            {
+                _buttonShiny.Play();
                 if (removeOnlyState)
                 {
                     StatesData.States.RemoveAt(StatesData.States.Count - 1);
@@ -71,6 +74,7 @@ namespace SimpleSolitaire.Controller
 
                 _hintComponent.IsHintWasUsed = false;
                 _cardLogicComponent.IsNeedResetPack = false;
+                
 
                 for (int i = 0; i < _cardLogicComponent.AllDeckArray.Length; i++)
                 {

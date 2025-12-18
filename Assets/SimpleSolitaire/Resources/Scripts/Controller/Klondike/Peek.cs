@@ -1,3 +1,4 @@
+using Coffee.UIEffects;
 using DG.Tweening;
 using SimpleSolitaire.Controller;
 using System.Collections;
@@ -15,6 +16,7 @@ namespace BloomLines
         [SerializeField] private SimpleSolitaire.Controller.AudioController _audioController;
         [SerializeField] private GameObject _backgroundBlocker;
         [SerializeField] private Image _buttonImage;
+        [SerializeField] private UIShiny _buttonShiny;
         [SerializeField] private Sprite _spriteActive;
         [SerializeField] private Sprite _spriteInActive;
         [SerializeField] private Text _counterIndicator;
@@ -61,6 +63,8 @@ namespace BloomLines
 
         public void OnClickButton()
         {
+            _buttonShiny.Play();
+
             if (Count <= 0)
             {
                 _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Error);
