@@ -132,6 +132,7 @@ namespace SimpleSolitaire.Controller
         private IEnumerator CompleteCoroutine()
         {
             IsAutoCompleteActive = true;
+            _gameManager.LogoCorner.Show();
             HintComponent.UpdateAvailableForAutoCompleteCards();
 
             while (HintComponent.IsHasHint())
@@ -140,7 +141,7 @@ namespace SimpleSolitaire.Controller
 
                 yield return new WaitWhile(() => HintComponent.IsHintProcess);
             }
-
+            _gameManager.LogoCorner.Hide();
             IsAutoCompleteActive = false;
             HintComponent.UpdateAvailableForDragCards();
         }

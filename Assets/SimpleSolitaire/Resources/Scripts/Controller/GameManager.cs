@@ -91,6 +91,9 @@ namespace SimpleSolitaire.Controller
         //public LeaderboardYG _leaderboardYG;
         [SerializeField] protected HintManager _hintManager;
 
+        [SerializeField] private AutoCompleteManager _autoCompleteManager;
+        public AutoCompleteManager AutoCompleteManager => _autoCompleteManager;
+
         public ScreenController ScreenController;
 
         public TabLeaderboard TabLeaderboard;

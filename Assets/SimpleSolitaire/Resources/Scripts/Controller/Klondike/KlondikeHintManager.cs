@@ -36,7 +36,8 @@ namespace SimpleSolitaire.Controller
             
             HintElement hint = hints[CurrentHintIndex];
             Card hintCard = hint.HintCard;
-            hintCard.Deck.UpdateCardsPosition(false);
+            if (data.Type != HintType.AutoComplete)
+                hintCard.Deck.UpdateCardsPosition(false);
 
             CurrentHintSiblingIndex = hintCard.transform.GetSiblingIndex();
 
@@ -52,8 +53,8 @@ namespace SimpleSolitaire.Controller
             if (_gameManager.Save.Speed == 2)
                 moveTime *= 0.5f;
 
-            //if (data.Type == HintType.AutoComplete)
-            //    moveTime *= 0.3f;
+            if (data.Type == HintType.AutoComplete)
+                moveTime *= 0.5f;
 
             float jumpPower = Random.Range(-200, 200);
 
@@ -67,7 +68,7 @@ namespace SimpleSolitaire.Controller
 
             hintCard.DragEffect("On", cardsToTop);
 
-            float addTime = _gameManager.Save.Speed == 2 ? 0.05f : 0.1f;
+            float addTime = _gameManager.Save.Speed == 2 ? 0.025f : 0.05f;
             yield return new WaitForSeconds(moveTime + addTime);
 
             hintCard.DragEffect("Off");
@@ -80,15 +81,23 @@ namespace SimpleSolitaire.Controller
                 CurrentHintIndex = CurrentHintIndex == hints.Count - 1 ? CurrentHintIndex = 0 : CurrentHintIndex + 1;
             }
 
+            if (data.Type == HintType.AutoComplete)
+            {
+                hintCard.transform.localPosition = toPosition;
+            }
+
             if (data.Type != HintType.Hint)
             {
                 _cardLogicComponent.OnDragEnd(hintCard);
             }
-            //float time = _gameManager.Speed * 0.1f;
-            float t = 0.18f;
+
             if (data.Type != HintType.AutoComplete)
-                t = 0.05f;
-            yield return new WaitForSeconds(t);//wait 0.15sec from hintCard.Deck.UpdateCardsPosition(false)
+            {
+                float t = 0.18f;
+                //t = _gameManager.Save.Speed == 2 ? 0.025f : 0.05f;
+                yield return new WaitForSeconds(t);//wait 0.15sec from hintCard.Deck.UpdateCardsPosition(false)
+            }
+
             UpdateAvailableForDragCards();
             IsHintProcess = false;
         }
@@ -98,7 +107,7 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         public override void GenerateHints(bool isAutoComplete = false)
         {
-            //Debug.Log("Generate Hints");
+            Debug.Log("Generate Hints");
             CurrentHintIndex = 0;
             AutoCompleteHints = new List<HintElement>();
             Hints = new List<HintElement>();

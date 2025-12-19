@@ -13,6 +13,7 @@ namespace SimpleSolitaire.Controller
         /// <param name="firstTime">If it first game update</param>
         public override void UpdateCardsPosition(bool firstTime, bool fromUndo = false)
         {
+            bool isAutoComplete = _gameManagerComponent.AutoCompleteManager.IsAutoCompleteActive;
             for (int i = 0; i < CardsArray.Count; i++)
             {
                 Card card = (Card) CardsArray[i];
@@ -36,7 +37,7 @@ namespace SimpleSolitaire.Controller
                         //Debug.LogWarning("WasteHorizontalSpace: " + wasteHorizontalSpace + " CanvasHeight: " + canvasScaler.referenceResolution.y);                        
                         
                         card.IsDraggable = false;
-                        float time = _gameManagerComponent.Save.Speed * 0.1f + 0.15f;
+                        float time = 0.2f - _gameManagerComponent.Save.Speed * 0.1f + 0.15f;
 
                         if (i == CardsArray.Count - 1)
                         {                            
@@ -69,7 +70,7 @@ namespace SimpleSolitaire.Controller
                         //card.CardStatus = 1;
                         //card.UpdateCardImg();
                         ////Fixing...
-                        if (firstTime || Type != DeckType.DECK_TYPE_BOTTOM || fromUndo)
+                        if (firstTime || Type != DeckType.DECK_TYPE_BOTTOM || fromUndo || isAutoComplete)
                         {
                             card.IsDraggable = true;
                             card.CardStatus = 1;
@@ -128,7 +129,11 @@ namespace SimpleSolitaire.Controller
                     {                        
                         spaces += space * spaceMultiplier;
                         curPos = deckPos - new Vector3(0, spaces, 0);
-                        card.gameObject.transform.DOMove(curPos, 0.15f); 
+
+                        if (isAutoComplete)
+                            card.gameObject.transform.position = curPos;
+                        else
+                            card.gameObject.transform.DOMove(curPos, 0.15f);
                     }
                 }
             }

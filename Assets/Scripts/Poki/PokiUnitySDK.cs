@@ -108,7 +108,9 @@ public class PokiUnitySDK : MonoBehaviour {
 #if Poki
 #if UNITY_EDITOR
 		Debug.Log("PokiUnitySDK: Initializing");
-		if (_initializing || _ready) {
+		if (_initializing || _ready) 
+		{
+			return;
 			throw new PokiException ("PokiUnitySDK is already initializing");
 		}
 		_initializing = true;
@@ -116,8 +118,10 @@ public class PokiUnitySDK : MonoBehaviour {
 		// after 500ms, call ready
 		Invoke("ready", 0.5f);
 #else
-		if (_initializing || _ready) {
-			throw new PokiException ("PokiUnitySDK is already initializing");
+		if (_initializing || _ready) 
+		{
+			return;
+			//throw new PokiException ("PokiUnitySDK is already initializing");
 		}
 		_initializing = true;
 		JS_PokiSDK_initPokiBridge(PokiUnitySDK.Instance.name);

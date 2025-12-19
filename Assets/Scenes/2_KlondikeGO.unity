@@ -16925,6 +16925,7 @@ MonoBehaviour:
   _peek: {fileID: 1845750739}
   _disableButtons: {fileID: 536849789}
   _hintManager: {fileID: 418428742}
+  _autoCompleteManager: {fileID: 1543854655}
   ScreenController: {fileID: 1815770008}
   TabLeaderboard: {fileID: 183045844}
   _adsController: {fileID: 1799995722}
