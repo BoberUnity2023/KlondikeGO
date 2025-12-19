@@ -66,6 +66,7 @@ namespace SimpleSolitaire.Controller
 
                     if (i == CardsArray.Count - 1)//Верхняя карта
                     {
+                        card.CardDragEffect.ReturnShadowSize();
                         card.IsDraggable = true;
                         //card.CardStatus = 1;
                         //card.UpdateCardImg();

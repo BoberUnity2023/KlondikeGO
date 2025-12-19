@@ -11,6 +11,7 @@ namespace SimpleSolitaire.Controller
     public abstract class Card : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private CanvasScaler _canvasScaler;
+        [SerializeField] private CardDragEffect _dragEffect;
         public int CardType = 0;
         public int CardNumber = 0;
         public int Number = 0;
@@ -37,6 +38,8 @@ namespace SimpleSolitaire.Controller
 
         private string _cachedSpritePath = string.Empty;
         private MoveTransformTo _moveTransformTo;
+
+        public CardDragEffect CardDragEffect => _dragEffect; 
 
         public MoveTransformTo MoveTransformTo
         {

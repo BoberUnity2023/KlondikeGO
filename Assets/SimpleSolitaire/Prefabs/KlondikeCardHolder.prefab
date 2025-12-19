@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canvasScaler: {fileID: 0}
+  _dragEffect: {fileID: 76511554302043185}
   CardType: 0
   CardNumber: 0
   Number: 0

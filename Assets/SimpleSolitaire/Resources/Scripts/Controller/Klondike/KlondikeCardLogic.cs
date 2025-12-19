@@ -184,7 +184,7 @@ namespace SimpleSolitaire.Controller
                     int jumpPower = (int)(-200 / _gameManager.ScreenController.ScaleFactor);
                     
                     float timeCard = 0.2f - _gameManager.Save.Speed * 0.1f + 0.1f;
-                    
+                    card.CardDragEffect.ReturnShadowSize();
                     card.transform.DOJump(endvalue, jumpPower, 1, timeCard).SetEase(Ease.InOutQuad);
                     //card.DragEffect("On");
                     GameManagerComponent.AudioController.Play(AudioController.AudioType.CardTake);

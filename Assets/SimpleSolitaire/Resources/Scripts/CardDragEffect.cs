@@ -89,7 +89,7 @@ public class CardDragEffect : MonoBehaviour
         ReturnShadowSize();        
     }
 
-    private void ReturnShadowSize()//Fix 2025
+    public void ReturnShadowSize()//Fix 2025
     {
         _shadowRectTransform.sizeDelta = new Vector2(154, 210);
     }
