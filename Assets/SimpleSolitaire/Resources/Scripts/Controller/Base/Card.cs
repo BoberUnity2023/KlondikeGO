@@ -234,11 +234,12 @@ namespace SimpleSolitaire.Controller
             {
                 string visualName = CardShirtManager.Instance.CardFrontVisual.VisualName;
                 string lang = CardLogicComponent.GameManagerComponent.Language;
-                bool isTranslated = Number == 1 || Number == 11 || Number == 12;
+                bool isTranslatedDeck = visualName == "Front1" || visualName == "Front2";
+                bool isTranslatedCard = Number == 1 || Number == 11 || Number == 12;
 
-                if (visualName == "Front1" && 
+                if (isTranslatedDeck && 
                     lang != "ru" && 
-                    isTranslated)
+                    isTranslatedCard)
                     return "Eng";
 
                 return "";

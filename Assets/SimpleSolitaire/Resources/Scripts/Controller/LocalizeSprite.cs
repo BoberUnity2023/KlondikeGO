@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using YG.Insides;
 
 public class LocalizeSprite : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class LocalizeSprite : MonoBehaviour
     {
         _spriteRu = _image.sprite;
         _localizeController.ChangeLanguage += OnChangeLanguage;
+        OnChangeLanguage(_localizeController.Language);
     }
 
     private void OnDestroy()

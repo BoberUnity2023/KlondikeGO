@@ -827,8 +827,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BloomLines.SpriteLocalize
   _image: {fileID: 2031117816}
-  _spriteRus: {fileID: -2569741563160484569, guid: f7109bb91199c7d45a6a07a2165cfd06, type: 3}
-  _spriteEng: {fileID: -4977913437712122117, guid: f7109bb91199c7d45a6a07a2165cfd06, type: 3}
+  _spriteRus: {fileID: 536138767083856003, guid: f7109bb91199c7d45a6a07a2165cfd06, type: 3}
+  _spriteEng: {fileID: 3580008911415471065, guid: f7109bb91199c7d45a6a07a2165cfd06, type: 3}
 --- !u!114 &2031117816 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7617488520826870374, guid: 7f84cd9e34b374e45b15f84020613146, type: 3}
