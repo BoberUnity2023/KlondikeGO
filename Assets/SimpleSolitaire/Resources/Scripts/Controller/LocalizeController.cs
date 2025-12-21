@@ -32,7 +32,7 @@ public class LocalizeController : MonoBehaviour
 #endif
 
 #if UNITY_EDITOR
-        //OnChangeLanguage("en");
+        OnChangeLanguage("ru");
 #endif
         //string language = SystemLanguageIndex;
         //OnChangeLanguage(language);

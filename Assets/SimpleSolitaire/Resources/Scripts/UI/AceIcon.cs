@@ -1,4 +1,5 @@
 using SimpleSolitaire.Controller;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,8 +16,8 @@ namespace BloomLines
 
         private void OnEnable()
         {
-            if (!IsFree)
-                return;
+            //if (!IsFree)
+            //    return;
 
             StopAllCoroutines();
             SetSprite();
@@ -32,18 +33,26 @@ namespace BloomLines
         {
             yield return new WaitForSeconds(time);
 
-            if (IsFree)
-            {
+            //if (IsFree)
+            //{
                 SetSprite();
                 StartCoroutine(Interval(1));
-            }
+            //}
         }
  
         private void SetSprite()
         {
-            int myFreeIndex = MyFreeIndex;
-            int index = FreeSuits[myFreeIndex];
-            _image.sprite = _sprites[index];            
+            if (IsFree)
+            {
+                int myFreeIndex = MyFreeIndex;
+                int index = FreeSuits[myFreeIndex];
+                _image.sprite = _sprites[index];
+            }
+            else//TODO
+            {
+                int index = _decks[_index].CardsArray[0].CardType;
+                _image.sprite = _sprites[index]; 
+            }
         }
 
         int Type(Deck deck)
