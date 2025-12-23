@@ -28,14 +28,13 @@ public class Stats
     {
         get
         {
-            return PlayerPrefs.GetInt("GoldForAllTime", 0);
+            return Save.GoldForAllTime;
         }
 
-        set
-        {
-            PlayerPrefs.SetInt("GoldForAllTime", value);
-            PlayerPrefs.Save();
-        }
+        //set
+        //{
+        //    Save.GoldForAllTime = value;
+        //}
     }
 
     public int PlayedGames

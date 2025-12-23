@@ -813,6 +813,7 @@ MonoBehaviour:
     Score: 0
     Gold: 0
     Experience: 0
+    GoldForAllTime: 0
     PlayedGames: 0
     Wins: 0
     Losts: 0
@@ -2370,7 +2371,7 @@ RectTransform:
   m_GameObject: {fileID: 85260677}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6019354731728059827}
@@ -2378,7 +2379,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -6.0000033, y: 220}
-  m_SizeDelta: {x: 427, y: 255}
+  m_SizeDelta: {x: 856, y: 510}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &85260679
 MonoBehaviour:
@@ -2417,7 +2418,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f114a3526e5a9014f9c948c6fdd2182d, type: 3}
-    m_FontSize: 22
+    m_FontSize: 44
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -2428,8 +2429,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "The goal is to move all the cards into piles, arranging them by suit from
-    Ace to King. A, 2, 3\u2026 10, J, Q, K "
+  m_Text: "\u0426\u0435\u043B\u044C - \u043F\u0435\u0440\u0435\u043C\u0435\u0441\u0442\u0438\u0442\u044C
+    \u0432\u0441\u0435 \u043A\u0430\u0440\u0442\u044B \u0432 \u0441\u0442\u043E\u043F\u043A\u0438,
+    \u0440\u0430\u0441\u043A\u043B\u0430\u0434\u044B\u0432\u0430\u044F \u0438\u0445
+    \u043F\u043E \u043C\u0430\u0441\u0442\u044F\u043C \u043E\u0442 \u0442\u0443\u0437\u0430
+    \u0434\u043E \u043A\u043E\u0440\u043E\u043B\u044F. \u0422, 2, 3 \u2026 10, \u0412,
+    \u0414, \u041A"
 --- !u!222 &85260681
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3805,7 +3810,7 @@ RectTransform:
   m_GameObject: {fileID: 122421490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6019354731939375576}
@@ -3813,7 +3818,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 220}
-  m_SizeDelta: {x: 427, y: 255}
+  m_SizeDelta: {x: 856, y: 510}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &122421492
 MonoBehaviour:
@@ -3852,7 +3857,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f114a3526e5a9014f9c948c6fdd2182d, type: 3}
-    m_FontSize: 22
+    m_FontSize: 44
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -9208,7 +9213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 894671116}
+  mTarget: {fileID: 465570398}
 --- !u!1 &253176966
 GameObject:
   m_ObjectHideFlags: 0
@@ -10973,7 +10978,7 @@ RectTransform:
   m_GameObject: {fileID: 293067608}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6019354733462056528}
@@ -10981,7 +10986,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 220}
-  m_SizeDelta: {x: 427, y: 255}
+  m_SizeDelta: {x: 856, y: 510}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &293067610
 MonoBehaviour:
@@ -11020,7 +11025,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f114a3526e5a9014f9c948c6fdd2182d, type: 3}
-    m_FontSize: 22
+    m_FontSize: 44
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -19044,7 +19049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'RULES OF THE GAME '
+  m_Text: "\u041F\u0420\u0410\u0412\u0418\u041B\u0410 \u0418\u0413\u0420\u042B"
 --- !u!222 &465570399
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25756,7 +25761,7 @@ MonoBehaviour:
     - {fileID: 1437968774}
     - {fileID: 1478820390}
     - {fileID: 1265478365}
-    Prices: 00000000d0070000ac0d00008813000070170000581b0000401f00002823000010270000e02e0000983a0000983a0000
+    Prices: 00000000d0070000ac0d00008813000070170000581b0000401f000010270000983a0000204e000050c30000a0860100
     VisualName: 
     DefaultName: Front1
     SaveName: CurrentFront
@@ -101078,7 +101083,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Stacks '
+  m_Text: "\u0421\u0442\u043E\u043F\u043A\u0438"
 --- !u!222 &1766408364
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -105889,6 +105894,7 @@ MonoBehaviour:
     Score: 0
     Gold: 0
     Experience: 0
+    GoldForAllTime: 0
     PlayedGames: 0
     Wins: 0
     Losts: 0
@@ -112088,7 +112094,7 @@ RectTransform:
   m_GameObject: {fileID: 2065649512}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6019354732251673624}
@@ -112096,7 +112102,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 220}
-  m_SizeDelta: {x: 427, y: 255}
+  m_SizeDelta: {x: 856, y: 510}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2065649514
 MonoBehaviour:
@@ -112135,7 +112141,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f114a3526e5a9014f9c948c6fdd2182d, type: 3}
-    m_FontSize: 22
+    m_FontSize: 44
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2

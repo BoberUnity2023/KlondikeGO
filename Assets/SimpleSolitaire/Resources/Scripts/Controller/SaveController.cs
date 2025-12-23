@@ -22,6 +22,7 @@ public enum SaveType
     public int Score;
     public int Gold;
     public int Experience;
+    public int GoldForAllTime;
     public int PlayedGames;
     public int Wins;
     public int Losts;
@@ -47,6 +48,8 @@ public class SaveController : MonoBehaviour
     public string KeyGold => "Gold";
 
     public string KeyExperience => "Experience";
+
+    public string KeyGoldForAllTime => "GoldForAllTime";
 
     public string KeyPlayedGames => "PlayedGames";
 
@@ -476,6 +479,10 @@ public class SaveController : MonoBehaviour
 
         set
         {
+            int gold = value - Save.Gold;
+            if (gold > 0)
+                GoldForAllTime += gold;
+
             PlayerPrefs.SetInt(KeyGold, value);
             PlayerPrefs.Save();
 #if Yandex
@@ -536,6 +543,48 @@ public class SaveController : MonoBehaviour
             if (_saveType == SaveType.Json)
             {                
                 Save.Experience = value;
+                SetSaveToJson();
+            }
+        }
+    }
+
+    public int GoldForAllTime
+    {
+        get
+        {
+#if Yandex
+            if (_saveType == SaveType.Yandex)
+                return YG2.saves.GoldForAllTime;
+#endif
+            int fromPrefs = PlayerPrefs.GetInt(KeyGoldForAllTime);
+
+            if (_saveType == SaveType.Prefs)
+                return fromPrefs;
+
+            if (_saveType == SaveType.Json)
+                return Mathf.Max(Save.GoldForAllTime, fromPrefs);
+
+            return 0;
+        }
+
+        set
+        {
+            PlayerPrefs.SetInt(KeyGoldForAllTime, value);
+            PlayerPrefs.Save();
+#if GAME_PUSH
+            GP_Player.SetScore(value);
+            GP_Player.Sync(SyncStorageType.cloud);
+#endif
+#if Yandex
+            if (_saveType == SaveType.Yandex)
+            {
+                YG2.saves.GoldForAllTime = value;
+                YG2.SaveProgress();                
+            }
+#endif
+            if (_saveType == SaveType.Json)
+            {
+                Save.GoldForAllTime = value;
                 SetSaveToJson();
             }
         }
@@ -916,6 +965,7 @@ public class SaveController : MonoBehaviour
         Save.LastVisitTime = PlayerPrefs.GetString(KeyLastVisitTime, "0");
         Save.Score = PlayerPrefs.GetInt(KeyGold, 0);
         Save.Experience = PlayerPrefs.GetInt(KeyExperience, 0);
+        Save.GoldForAllTime = PlayerPrefs.GetInt(KeyGoldForAllTime, 0);
         Save.Wins = PlayerPrefs.GetInt(KeyWins, 0);
         Save.Losts = PlayerPrefs.GetInt(KeyLosts, 0);
         Save.FastestWinTime = PlayerPrefs.GetInt(KeyFastestWinTime, 0);
@@ -947,6 +997,7 @@ public class SaveController : MonoBehaviour
         Save.Gold = Mathf.Max(PlayerPrefs.GetInt(KeyGold, 0), save.Gold);
         Save.Score = Mathf.Max(PlayerPrefs.GetInt(KeyGold, 0), save.Score);
         Save.Experience = Mathf.Max(PlayerPrefs.GetInt(KeyExperience, 0), save.Experience);
+        Save.GoldForAllTime = Mathf.Max(PlayerPrefs.GetInt(KeyGoldForAllTime, 0), save.GoldForAllTime);
         Save.Wins = Mathf.Max(PlayerPrefs.GetInt(KeyWins, 0), save.Wins);
         Save.Losts = Mathf.Max(PlayerPrefs.GetInt(KeyLosts, 0), save.Losts);
         Save.FastestWinTime = Mathf.Max(PlayerPrefs.GetInt(KeyFastestWinTime, 0), save.FastestWinTime);
@@ -977,6 +1028,7 @@ public class SaveController : MonoBehaviour
         Save.Gold = Mathf.Max(PlayerPrefs.GetInt(KeyGold, 0), YG2.saves.Gold);
         Save.Score = Mathf.Max(PlayerPrefs.GetInt(KeyGold, 0), YG2.saves.Score);
         Save.Experience = Mathf.Max(PlayerPrefs.GetInt(KeyExperience, 0), YG2.saves.Experience);
+        Save.GoldForAllTime = Mathf.Max(PlayerPrefs.GetInt(KeyGoldForAllTime, 0), YG2.saves.GoldForAllTime);
         Save.Wins = Mathf.Max(PlayerPrefs.GetInt(KeyWins, 0), YG2.saves.Wins);
         Save.Losts = Mathf.Max(PlayerPrefs.GetInt(KeyLosts, 0), YG2.saves.Losts);
         Save.FastestWinTime = Mathf.Max(PlayerPrefs.GetInt(KeyFastestWinTime, 0), YG2.saves.FastestWinTime);

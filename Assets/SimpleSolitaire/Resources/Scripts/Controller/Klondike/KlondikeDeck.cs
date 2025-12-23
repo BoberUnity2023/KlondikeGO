@@ -30,36 +30,39 @@ namespace SimpleSolitaire.Controller
                     {
                         card.gameObject.transform.position = gameObject.transform.position;
                     }
-                    else if (Type == DeckType.DECK_TYPE_WASTE)
+                    else
                     {
-                        var wasteHorizontalSpace = CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_HORIONTAL_WASTE);
-                        //CanvasScaler canvasScaler = FindFirstObjectByType<CanvasScaler>();
-                        //Debug.LogWarning("WasteHorizontalSpace: " + wasteHorizontalSpace + " CanvasHeight: " + canvasScaler.referenceResolution.y);                        
-                        
-                        card.IsDraggable = false;
-                        float time = 0.2f - _gameManagerComponent.Save.Speed * 0.1f + 0.15f;
+                        if (Type == DeckType.DECK_TYPE_WASTE)
+                        {
+                            var wasteHorizontalSpace = CardLogicComponent.GetSpaceFromDictionary(DeckSpacesTypes.DECK_SPACE_HORIONTAL_WASTE);
+                            //CanvasScaler canvasScaler = FindFirstObjectByType<CanvasScaler>();
+                            //Debug.LogWarning("WasteHorizontalSpace: " + wasteHorizontalSpace + " CanvasHeight: " + canvasScaler.referenceResolution.y);                        
 
-                        if (i == CardsArray.Count - 1)
-                        {                            
-                            if (IsNecessaryMove(card))
+                            card.IsDraggable = false;
+                            float time = 0.2f - _gameManagerComponent.Save.Speed * 0.1f + 0.15f;
+
+                            if (i == CardsArray.Count - 1)
                             {
-                                card.transform.DOMove(WasteCardPosition(0), time).OnComplete(() => card.IsDraggable = true); 
+                                if (IsNecessaryMove(card))
+                                {
+                                    card.transform.DOMove(WasteCardPosition(0), time).OnComplete(() => card.IsDraggable = true);
+                                }
                             }
-                        }
 
-                        if (i == CardsArray.Count - 2)
-                        {                            
-                            if (IsNecessaryMove(card))
+                            if (i == CardsArray.Count - 2)
                             {
-                                card.transform.DOMove(WasteCardPosition(1), time);
+                                if (IsNecessaryMove(card))
+                                {
+                                    card.transform.DOMove(WasteCardPosition(1), time).OnComplete(() => card.IsDraggable = false);
+                                }
                             }
-                        }
 
-                        if (i == CardsArray.Count - 3)
-                        {                            
-                            if (IsNecessaryMove(card))
+                            if (i == CardsArray.Count - 3)
                             {
-                                card.transform.DOMove(WasteCardPosition(2), time);
+                                if (IsNecessaryMove(card))
+                                {
+                                    card.transform.DOMove(WasteCardPosition(2), time).OnComplete(() => card.IsDraggable = false);
+                                }
                             }
                         }
                     }
@@ -76,6 +79,9 @@ namespace SimpleSolitaire.Controller
                             card.IsDraggable = true;
                             card.CardStatus = 1;
                             card.UpdateCardImg();
+
+                            if (card.Deck.Type == DeckType.DECK_TYPE_WASTE)
+                                UpdateDraggableStatus();
                         }
                         else
                         {                            
@@ -235,6 +241,23 @@ namespace SimpleSolitaire.Controller
                         isDraggable = false;
                         card.IsDraggable = isDraggable;
                     }
+                }
+            }
+
+            if (Type == DeckType.DECK_TYPE_WASTE)
+            {
+                if (CardsCount == 0)
+                {
+                    return;
+                }
+
+                Card topCard = CardsArray[CardsArray.Count - 1]; 
+                topCard.IsDraggable = true;
+
+                for (int i = CardsArray.Count - 2; i >= 0; i--)
+                {
+                    Card card = CardsArray[i];                    
+                    card.IsDraggable = false;                    
                 }
             }
         }

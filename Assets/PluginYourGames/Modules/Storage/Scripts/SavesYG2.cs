@@ -9,6 +9,7 @@ namespace YG
         public int Score;
         public int Gold;
         public int Experience;
+        public int GoldForAllTime;
         public int PlayedGames;
         public int Wins;
         public int Losts;
