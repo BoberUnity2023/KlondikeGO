@@ -113,16 +113,10 @@ namespace BloomLines
         {
             Debug.Log("MagicWand: OnComplete()");
             SetButtonSprite();
+            _hintManager.UpdateAvailableForDragCards();
             _hintManager.GenerateHints();
-            _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Bonus);
-            //StartCoroutine(AfterOnComplete());
+            _audioController.Play(SimpleSolitaire.Controller.AudioController.AudioType.Bonus);            
         }
-
-        //private IEnumerator AfterOnComplete()
-        //{
-        //    yield return new WaitForSeconds(0.5f);
-            
-        //}
 
         private bool FindPair()
         {            
@@ -187,7 +181,8 @@ namespace BloomLines
                     if (card.CardStatus == 0 && 
                         card.Number == targetOpenCard.Number - 1 &&
                         card.CardColor != targetOpenCard.CardColor &&
-                        card.Deck != targetOpenCard.Deck)
+                        card.Deck != targetOpenCard.Deck &&
+                        card.Number != 1)
                     { 
                         return card;
                     }
@@ -255,11 +250,14 @@ namespace BloomLines
             }           
             
             Deck deckFinish = isMoveToPack ? _klondikeCardLogic.PackDeck : cardOpen.Deck;
-            deckFinish.CardsArray.Add(cardClose);
-            cardClose.Deck = deckFinish;
+            deckFinish.PushCard(cardClose);
+            //deckFinish.CardsArray.Add(cardClose);
+            //cardClose.Deck = deckFinish;
             if (!isMoveToPack)
             {
+                _klondikeCardLogic.OnDragEnd(cardClose);
                 deckFinish.UpdateCardsPosition(false, true);
+                deckFinish.UpdateDraggableStatus();
                 deckFinish.UpdateCardsActiveStatus();
                 cardClose.transform.DOScaleX(1, 0.2f);
             }
