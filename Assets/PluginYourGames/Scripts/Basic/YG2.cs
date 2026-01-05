@@ -39,8 +39,9 @@ namespace YG
         public static bool nowInterAdv;
         public static bool nowRewardAdv;
         public static Action onAdvNotification, onOpenAnyAdv, onCloseAnyAdv, onErrorAnyAdv;
-
+#if Yandex
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+#endif
         private static void Initialize()
         {
 #if UNITY_EDITOR

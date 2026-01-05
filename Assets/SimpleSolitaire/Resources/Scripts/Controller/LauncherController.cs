@@ -27,24 +27,24 @@ namespace BloomLines.Controllers
             //VibrationAssets.Vibration.Init();
 #endif
 
-            _progressBarFill.DOFillAmount(0.3f, 0.5f).SetEase(_curve);
-
 #if VK
-            //VK vk = FindObjectsByType<VK>(FindObjectsSortMode.None);
+            VK vk = FindAnyObjectByType<VK>();
 #endif
 
-            /*#if !UNITY_EDITOR//TODO: CloudSave
-            #if OK
-                        Debug.Log("OKController.SaveLoaded");
-                        while (!OKController.SaveLoaded)
-                            yield return null;
-            #endif
+            _progressBarFill.DOFillAmount(0.3f, 0.5f).SetEase(_curve);
 
-            #if VK
-                        while (!VKController.SaveLoaded)
-                            yield return null;
-            #endif
-            #endif*/
+/*#if !UNITY_EDITOR//TODO: CloudSave
+#if OK
+            Debug.Log("OKController.SaveLoaded");
+            while (!OKController.SaveLoaded)
+                yield return null;
+#endif
+
+#if VK
+            while (!VKController.SaveLoaded)
+                yield return null;
+#endif
+#endif*/
             //Debug.Log("Scene1.LoadGame(2)");
             //SaveManager.LoadAll(); // Загружаем сохранения
             //IAPController.LoadPurchases(); // Загружаем покупки
@@ -63,6 +63,13 @@ namespace BloomLines.Controllers
             //IAPController.LoadPurchases(); // Загружаем покупки
 
             yield return new WaitForSeconds(1.0f);
+
+#if VK
+            Debug.Log("VK Storage Loading...");
+            while (!vk.IsSaveLoaded)
+                yield return null;
+            Debug.Log("VK Storage Loaded success");
+#endif            
             //Debug.Log("Scene1.LoadGame(4)");
             SceneManager.LoadScene("2_KlondikeGO");
         }        

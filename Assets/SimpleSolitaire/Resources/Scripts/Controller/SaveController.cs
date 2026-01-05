@@ -1,3 +1,4 @@
+using BloomLines.Helpers;
 using GamePush;
 using SimpleSolitaire.Controller;
 using System;
@@ -81,7 +82,7 @@ public class SaveController : MonoBehaviour
     public string KeyCardBacks => "cardbacks";
     public string KeyBackgrounds => "backgrounds";
 
-    public string KeyJson => "json";
+    public string KeyJson => "json";//Usrd in VK
 
     public bool IsStorageReceived { get; set; }
 
@@ -1061,6 +1062,30 @@ public class SaveController : MonoBehaviour
 #endif
     }
 
+    public void OnGetStorageVK(string json)
+    {
+        if (json == "")
+        {
+            Debug.Log("OnGetStorageVK: Default");
+            Save save = new Save();
+            FillSaveFromPlayerPrefsOrStorage(save);
+        }
+
+        if (!string.IsNullOrEmpty(json))
+        {
+            Debug.Log("OnGetStorageVK: " + json);
+
+            //string decompressedJson = StringCompressor.DecompressStringBrotli(json);
+            //Debug.Log("OnGetStorageVK.decompressedJson: " + decompressedJson);
+            Save = JsonUtility.FromJson<Save>(json);
+            FillSaveFromPlayerPrefsOrStorage(Save);
+        }
+        else
+        {
+            Debug.LogError("OnGetStorageVK: json IsNullOrEmpty");
+        }
+    }
+
     private void SetSaveToJson()//GP
     {
        // Debug.Log("Setting json...");
@@ -1069,6 +1094,10 @@ public class SaveController : MonoBehaviour
         GP_Player.Set(KeyJson, _json);
         GP_Player.Sync();
 #endif
-        //Debug.Log("Set JSON: " + _json);
+#if VK
+        var json = JsonUtility.ToJson(Save);
+        string compressedJson = StringCompressor.CompressStringBrotli(json);
+        Application.ExternalCall("storageSet", KeyJson, compressedJson);
+#endif        
     }
 }

@@ -83,18 +83,19 @@ namespace BloomLines.Saving.Adapters
 
         public override bool HasSave<T>()
         {
-            var type = typeof(T);
+            return true;
+            //var type = typeof(T);
 
-            if (type == typeof(GameState))
-            {
-                return !string.IsNullOrEmpty(VKController.Storage.GameStateJson);
-            }
-            else if (type == typeof(GameModeState))
-            {
-                return !string.IsNullOrEmpty(VKController.Storage.GameModeStateJson);
-            }
+            //if (type == typeof(GameState))
+            //{
+            //    return !string.IsNullOrEmpty(VKController.Storage.GameStateJson);
+            //}
+            //else if (type == typeof(GameModeState))
+            //{
+            //    return !string.IsNullOrEmpty(VKController.Storage.GameModeStateJson);
+            //}
 
-            return false;
+            //return false;
         }
 
         protected override string LoadJson<T>()
@@ -102,14 +103,14 @@ namespace BloomLines.Saving.Adapters
             var type = typeof(T);
             string json = string.Empty;
 
-            if (type == typeof(GameState))
-            {
-                json = VKController.Storage.GameStateJson;
-            }
-            else if (type == typeof(GameModeState))
-            {
-                json = VKController.Storage.GameModeStateJson;
-            }
+            //if (type == typeof(GameState))
+            //{
+            //    json = VKController.Storage.GameStateJson;
+            //}
+            //else if (type == typeof(GameModeState))
+            //{
+            //    json = VKController.Storage.GameModeStateJson;
+            //}
 
             return json;
         }
@@ -118,14 +119,14 @@ namespace BloomLines.Saving.Adapters
         {
             var type = typeof(T);
 
-            if (type == typeof(GameState))
-            {
-                VKController.Storage.GameStateJson = json;
-            }
-            else if (type == typeof(GameModeState))
-            {
-                VKController.Storage.GameModeStateJson = json;
-            }
+            //if (type == typeof(GameState))
+            //{
+            //    VKController.Storage.GameStateJson = json;
+            //}
+            //else if (type == typeof(GameModeState))
+            //{
+            //    VKController.Storage.GameModeStateJson = json;
+            //}
         }
     }
 }

@@ -60,11 +60,6 @@ public class GamePushController : MonoBehaviour
 #if GAME_PUSH
         await GP_Init.Ready;
 
-        if (GP_Init.isReady)
-            Debug.Log("GamePush isReady!");
-        else
-            Debug.Log("GamePush failed");
-
         GP_Init.OnReady += OnPluginReady;
         GP_Leaderboard.OnFetchSuccess += OnFetchLeaderboardSuccess;
         GP_Leaderboard.OnFetchPlayerRatingSuccess += OnFetchPlayerRatingSuccess;

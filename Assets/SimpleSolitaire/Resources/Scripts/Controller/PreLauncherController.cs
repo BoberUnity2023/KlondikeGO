@@ -30,25 +30,9 @@ namespace BloomLines.Controllers
 #endif
         }
 
-        private /*async*/ void Start()
+        private void Start()
         {
-            //Debug.Log("GamePush initing...");
-            //var audioMixer = Resources.Load<AudioMixer>("AudioMixer");
-            //audioMixer.SetFloat("MusicVolume", -80f);
-            //audioMixer.SetFloat("SoundVolume", -80f);
             AnalyticsController.SendEvent("applicaton_start");
-            //Debug.Log("GamePush initing...(1)");
-
-            //#if GAME_PUSH
-            //            await GP_Init.Ready;
-            //            Debug.Log("GamePush initing...(2)");
-            //            AnalyticsController.SendEvent("applicaton_gp_inited");
-            //            Debug.Log("GamePush inited success");
-            //#endif
-
-            
-
-
 #if CRAZY_GAMES
             Debug.Log("PreLauncherController.Initialize()");
             CrazyGamesController.Initialize();
