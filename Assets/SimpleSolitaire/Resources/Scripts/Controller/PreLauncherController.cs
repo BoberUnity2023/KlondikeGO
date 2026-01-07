@@ -6,6 +6,7 @@ using GoogleMobileAds.Ump.Api;
 
 #if GAME_PUSH
 using GamePush;
+using System.Collections;
 #endif
 
 #if CRAZY_GAMES
@@ -62,7 +63,7 @@ namespace BloomLines.Controllers
         private void LoadGame()
         {
             Debug.Log("LoadGame()");
-            SceneManager.LoadScene("1_Launcher");
+            SceneManager.LoadScene("1_Launcher");            
         }
 
         private void OnCrazyGamesPluginInited()//Crazy

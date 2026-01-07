@@ -49,7 +49,12 @@ public class GamePushController : MonoBehaviour
 #endif
     }
 
-    private async void Start()
+    private void Start()
+    {
+        TryInit();
+    }
+
+    private async void TryInit()
     {        
         Debug.Log("GamePush starting...");
 
@@ -66,6 +71,7 @@ public class GamePushController : MonoBehaviour
 
         OnPluginReady();
 #endif
+
     }
 
     private void OnApplicationQuit()
@@ -81,9 +87,7 @@ public class GamePushController : MonoBehaviour
                 _gameManager = FindFirstObjectByType<GameManager>();
 
             _gameManager.GamePush = this;
-        }
-        //if (GP_Init.isReady)
-        //    Init();
+        }        
     }
 
     private void OnPluginReady()

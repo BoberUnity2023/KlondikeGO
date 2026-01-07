@@ -33,10 +33,10 @@ namespace BloomLines
         {
             InitBridge();
             StartCoroutine(LoadStorage());
-            StartCoroutine(BannerLogic(30));
+            StartCoroutine(BannerLogic(30));            
         }
 
-        void OnEnable()
+        private void OnEnable()
         {            
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
@@ -73,6 +73,10 @@ namespace BloomLines
         {
             yield return new WaitForSeconds(0.2f);
             Application.ExternalCall("storageGet", "json");
+#if UNITY_EDITOR
+            IsSaveLoaded = true;
+            Json = "";
+#endif
         }
 
         private IEnumerator BannerLogic(float time)

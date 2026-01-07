@@ -849,11 +849,15 @@ public class SaveController : MonoBehaviour
 #endif
         if (_saveType == SaveType.Json)
         {
-#if GAME_PUSH
+#if GAME_PUSH && !VK && !OK
             if (GP_Init.isReady)
                 OnGamePushInit();
             else
                 FillSaveFromPlayerPrefs();
+#endif
+
+#if VK || OK
+            LoadFromStorageVK();
 #endif
         }
         else
@@ -1062,35 +1066,38 @@ public class SaveController : MonoBehaviour
 #endif
     }
 
-    public void OnGetStorageVK(string json)
+    private void LoadFromStorageVK()
     {
-        if (json == "")
+        if (_json == "")
         {
-            Debug.Log("OnGetStorageVK: Default");
-            Save save = new Save();
-            FillSaveFromPlayerPrefsOrStorage(save);
+            Debug.Log("SaveController.OnGetStorageVK: Default");
+            Save = new Save();
+            FillSaveFromPlayerPrefsOrStorage(Save);
         }
 
-        if (!string.IsNullOrEmpty(json))
+        if (!string.IsNullOrEmpty(_json))
         {
-            Debug.Log("OnGetStorageVK: " + json);
-
-            //string decompressedJson = StringCompressor.DecompressStringBrotli(json);
-            //Debug.Log("OnGetStorageVK.decompressedJson: " + decompressedJson);
-            Save = JsonUtility.FromJson<Save>(json);
+            Debug.Log("SaveController.OnGetStorageVK: " + _json);
+            Save = JsonUtility.FromJson<Save>(_json);
             FillSaveFromPlayerPrefsOrStorage(Save);
         }
         else
         {
-            Debug.LogError("OnGetStorageVK: json IsNullOrEmpty");
+            Debug.LogWarning("SaveController.OnGetStorageVK: json IsNullOrEmpty");
         }
+    }
+
+    public void OnGetStorageVK(string json)
+    {
+        Debug.Log("SaveController.OnGetStorageVK: " + _json);
+        _json = json;        
     }
 
     private void SetSaveToJson()//GP
     {
        // Debug.Log("Setting json...");
         _json = JsonUtility.ToJson(Save);
-#if GAME_PUSH
+#if GAME_PUSH && !VK && !OK
         GP_Player.Set(KeyJson, _json);
         GP_Player.Sync();
 #endif

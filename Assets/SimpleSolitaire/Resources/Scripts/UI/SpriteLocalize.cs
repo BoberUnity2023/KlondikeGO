@@ -19,7 +19,11 @@ namespace BloomLines
             OnChangeLanguage(YG.YG2.envir.language);
 #endif
 
-#if GAME_PUSH
+#if VK || OK
+            OnChangeLanguage("ru");            
+#endif
+
+#if GAME_PUSH && !VK && !OK
             GamePush.GP_Language.OnChangeLanguage += GPOnChangeLanguage;
             OnChangeLanguage(GamePush.GP_Language.CurrentISO());
 #endif
@@ -35,7 +39,7 @@ namespace BloomLines
         YG.YG2.onSwitchLang -= OnChangeLanguage;        
 #endif
 
-#if GAME_PUSH
+#if GAME_PUSH && !VK && !OK
             GamePush.GP_Language.OnChangeLanguage -= GPOnChangeLanguage;
 #endif
         }

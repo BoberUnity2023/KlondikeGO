@@ -164,6 +164,12 @@ namespace SimpleSolitaire.Controller
                 return;
             }
 
+            if (Deck == null)
+            {
+                //Debug.LogError("Card.Deck == null! Card: " + Number + GetTypeName());
+                return;
+            }
+
             switch (Deck.Type)
             {
                 case DeckType.DECK_TYPE_PACK:
@@ -185,7 +191,6 @@ namespace SimpleSolitaire.Controller
                     OnTapToPlace();
                 } 
                     break;
-
             }
         }
 
@@ -196,6 +201,7 @@ namespace SimpleSolitaire.Controller
 
             if (CardLogicComponent.AutoCompleteComponent.IsAutoCompleteActive || !IsDraggable)
             {
+                //Возможен баг - верхняя картв DeckPack !IsDraggable
                 return;
             }
 
