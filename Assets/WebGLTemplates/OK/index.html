@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>{{{ PRODUCT_NAME }}}</title>
+    <title>KlondikeGO</title>
     <link rel="stylesheet" href="TemplateData/style.css">
 
     <script>
-    const overlayBackgroundColor = "{{{ OVERLAY_BACKGROUND_COLOR.replace(/ /g, '') }}}";
-    const progressBarFillColor = "{{{ PROGRESS_BAR_FILL_COLOR.replace(/ /g, '') }}}";
-    const progressBarBackgroundColor = "{{{ PROGRESS_BAR_BACKGROUND_COLOR.replace(/ /g, '') }}}";
-    const progressBarBorderColor = "{{{ PROGRESS_BAR_BORDER_COLOR.replace(/ /g, '') }}}";
-    const backgroundFileName = "{{{ BACKGROUND_IMAGE_FILE.replace(/ /g, '') }}}";
+    const overlayBackgroundColor = "";
+    const progressBarFillColor = "";
+    const progressBarBackgroundColor = "";
+    const progressBarBorderColor = "";
+    const backgroundFileName = "";
     </script>
 
     <style>
@@ -42,7 +42,7 @@
 
 </head>
 
-<body class="{{{ SPLASH_SCREEN_STYLE.toLowerCase() }}}">
+<body class="dark">
     <div id="unity-container" class="unity-desktop">
         <canvas id="unity-canvas"></canvas>
     </div>
@@ -59,22 +59,22 @@
     <script type="text/javascript" src="//api.ok.ru/js/fapi5.js"></script>
     <script>
     const buildUrl = "Build";
-    const loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+    const loaderUrl = buildUrl + "/OK.loader.js";
     const config = {
-      dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
-      workerUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
-      frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
-      codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
+      dataUrl: buildUrl + "/OK.data.unityweb",
+      workerUrl: buildUrl + "/OK.data.unityweb",
+      frameworkUrl: buildUrl + "/OK.framework.js.unityweb",
+      codeUrl: buildUrl + "/OK.wasm.unityweb",
       // #if MEMORY_FILENAME
-      //   memoryUrl: buildUrl + "/{{{ MEMORY_FILENAME }}}",
+      //   memoryUrl: buildUrl + "/",
       // #endif
       // #if SYMBOLS_FILENAME
-      //   symbolsUrl: buildUrl + "/{{{ SYMBOLS_FILENAME }}}",
+      //   symbolsUrl: buildUrl + "/",
       // #endif
       streamingAssetsUrl: "StreamingAssets",
-      companyName: "{{{ COMPANY_NAME }}}",
-      productName: "{{{ PRODUCT_NAME }}}",
-      productVersion: "{{{ PRODUCT_VERSION }}}",
+      companyName: "DakaGames",
+      productName: "KlondikeGO",
+      productVersion: "0.0.188",
     };
 
     const container = document.querySelector("#unity-container");
@@ -109,7 +109,7 @@
     }
 
     // #if BACKGROUND_FILENAME
-    // canvas.style.background = "url('" + buildUrl + "/{{{ BACKGROUND_FILENAME.replace(/'/g, '%27') }}}') center / cover";
+    // canvas.style.background = "url('" + buildUrl + "/') center / cover";
     // #endif
 
     loadingCover.style.display = "";
@@ -183,10 +183,10 @@
 
         function API_callback(method, result, data) {
             var str = "{ \"method\": \"" + method + "\", \"result\": \"" + result + "\", \"data\": " + data + " }";
-            window.unityInstance.SendMessage('OKHandle', 'OnGetCallback', str);
+            window.unityInstance.SendMessage('OKController', 'OnGetCallback', str);
             var mobId = FAPI.Util.getRequestParameters()["mob_platform"];
             if (mobId == null) mobId = "platform indefined";
-            window.unityInstance.SendMessage('OKHandle', 'OnGetTargetPlatform', mobId);
+            window.unityInstance.SendMessage('OKController', 'OnGetTargetPlatform', mobId);
         }
 
         function loadFromOKStorage(key) {
@@ -197,7 +197,7 @@
                 var value = (data && data.data && data.data.save) ? data.data.save : "";
                 console.log("OKLoad -" + " Status: " + status + " Data: " + data + " Error: " + error + " : " + value);
 
-                window.unityInstance.SendMessage("OKHandle", "OnGetStorage", value);
+                window.unityInstance.SendMessage("OKController", "OnGetStorage", value);
             });
         }
 

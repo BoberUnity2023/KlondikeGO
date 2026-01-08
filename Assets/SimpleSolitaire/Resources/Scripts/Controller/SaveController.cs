@@ -1101,10 +1101,17 @@ public class SaveController : MonoBehaviour
         GP_Player.Set(KeyJson, _json);
         GP_Player.Sync();
 #endif
-#if VK
+#if VK || OK
         var json = JsonUtility.ToJson(Save);
         string compressedJson = StringCompressor.CompressStringBrotli(json);
-        Application.ExternalCall("storageSet", KeyJson, compressedJson);
-#endif        
+        string functionname = "";
+#if VK        
+        functionname = "storageSet";
+#endif
+#if OK
+        functionname = "saveToOKStorage";
+#endif
+        Application.ExternalCall(functionname, KeyJson, compressedJson);
+#endif
     }
 }

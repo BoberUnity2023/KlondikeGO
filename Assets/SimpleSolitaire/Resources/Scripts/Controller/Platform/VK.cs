@@ -1,78 +1,30 @@
 using BloomLines.Helpers;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace BloomLines
 {
-    public class VK : MonoBehaviour
-    {
-        private SaveController _saveController;
-        private int _loadedScene;
-        public string Json { get; private set; }
-        public bool IsSaveLoaded { get; private set; }
-
-        private void Awake()
-        {
-#if !VK
-    Destroy(gameObject);
-#endif
-
-#if VK
-            Debug.Log("VK Awake()");
-            if (IsSingle)
-                DontDestroyOnLoad(gameObject);
-            else
-                Destroy(gameObject);
-#endif
-        }
+    public class VK : PlatformController
+    {        
 #if VK
         private void Start()
         {
             InitBridge();
             StartCoroutine(LoadStorage());
-            StartCoroutine(BannerLogic(30));            
-        }
-
-        private void OnEnable()
-        {            
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-
-        private void OnDisable()
-        {            
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
-
-        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-        {
-            Debug.Log("OnSceneLoaded: " + scene.name);
-            _loadedScene = scene.buildIndex;
-            if (scene.name == "2_KlondikeGO")
-            {
-                _saveController = FindFirstObjectByType<SaveController>();
-
-                if (_saveController == null)
-                { 
-                    Debug.LogError("VK. SaveController == null");
-                    return;
-                }
-
-                _saveController.OnGetStorageVK(Json);
-            }
-        }
+            StartCoroutine(BannerLogic(30));
+        }        
 
         private void InitBridge()
         {
-            Application.ExternalCall("initBridge");            
+            Application.ExternalCall("initBridge");
         }
 
         private IEnumerator LoadStorage()
         {
             yield return new WaitForSeconds(0.2f);
             Application.ExternalCall("storageGet", "json");
+
 #if UNITY_EDITOR
             IsSaveLoaded = true;
             Json = "";
@@ -136,6 +88,7 @@ namespace BloomLines
             if (!string.IsNullOrEmpty(json))
             {
                 string decompressedJson = StringCompressor.DecompressStringBrotli(json);
+                Debug.Log("VK Storage Decompressed success: " + decompressedJson);
                 Json = decompressedJson;
             }
             else
@@ -144,20 +97,6 @@ namespace BloomLines
                 Json = "";
             }
             IsSaveLoaded = true;
-        }
-
-
-        private bool IsSingle
-        {
-            get
-            {
-                VK[] _gPCs = FindObjectsByType<VK>(FindObjectsSortMode.None);
-
-                if (_gPCs.Length > 1)
-                    return false;
-                else
-                    return true;
-            }
         }
 
         public void SendResult(string text)
