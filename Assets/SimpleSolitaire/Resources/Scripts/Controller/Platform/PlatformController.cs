@@ -54,17 +54,9 @@ namespace BloomLines
             }
         }
 
-        private bool IsSingle
+        protected virtual bool IsSingle
         {
-            get
-            {
-                PlatformController[] platformControllers = FindObjectsByType<PlatformController>(FindObjectsSortMode.None);
-
-                if (platformControllers.Length > 1)
-                    return false;
-                else
-                    return true;
-            }
+            get { return true; }
         }
     }
 }

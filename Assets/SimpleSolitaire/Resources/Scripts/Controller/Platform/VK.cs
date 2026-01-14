@@ -108,6 +108,19 @@ namespace BloomLines
         {
             Debug.Log("ResultBanners: " + text);
         }
+
+        protected override bool IsSingle
+        {
+            get
+            {
+                VK[] vks = FindObjectsByType<VK>(FindObjectsSortMode.None);
+
+                if (vks.Length > 1)
+                    return false;
+                else
+                    return true;
+            }
+        }
 #endif
     }
 }

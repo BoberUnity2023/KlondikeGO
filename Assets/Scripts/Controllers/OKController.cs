@@ -33,7 +33,7 @@ namespace BloomLines.Controllers
 
         public const string StorageKey = "save";
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        //[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void Initialize()
         {
 #if OK

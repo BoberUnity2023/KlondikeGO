@@ -81,6 +81,19 @@ namespace BloomLines
 
             Debug.Log("OK Callback: " + arg1);
         }
+
+        protected override bool IsSingle
+        {
+            get 
+            {
+                OK[] oks = FindObjectsByType<OK>(FindObjectsSortMode.None);
+
+                if (oks.Length > 1)
+                    return false;
+                else
+                    return true;
+            }
+        }
 #endif
     }
 }

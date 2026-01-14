@@ -31,6 +31,10 @@ namespace BloomLines.Controllers
             VK vk = FindAnyObjectByType<VK>();
 #endif
 
+#if OK
+            OK ok = FindAnyObjectByType<OK>();
+#endif
+
             _progressBarFill.DOFillAmount(0.3f, 0.5f).SetEase(_curve);
 
 /*#if !UNITY_EDITOR//TODO: CloudSave
@@ -64,12 +68,19 @@ namespace BloomLines.Controllers
 
             yield return new WaitForSeconds(1.0f);
 
-#if VK
+#if VK && !UNITY_EDITOR
             Debug.Log("VK Storage Loading...");
             while (!vk.IsSaveLoaded)
                 yield return null;
             Debug.Log("VK Storage Loaded success");
-#endif            
+#endif
+
+#if OK && !UNITY_EDITOR
+            Debug.Log("OK Storage Loading...");
+            while (!ok.IsSaveLoaded)
+                yield return null;
+            Debug.Log("OK Storage Loaded success");
+#endif 
             //Debug.Log("Scene1.LoadGame(4)");
             SceneManager.LoadScene("2_KlondikeGO");
         }        
