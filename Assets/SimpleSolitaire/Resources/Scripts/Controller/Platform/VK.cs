@@ -22,7 +22,7 @@ namespace BloomLines
 
         private IEnumerator LoadStorage()
         {
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
             Application.ExternalCall("storageGet", "json");
 
 #if UNITY_EDITOR
@@ -75,7 +75,7 @@ namespace BloomLines
             Application.ExternalCall("VKWebAppShowInviteBox");
         }
 
-        public void OnGetStorage(string json)
+        public void OnGetStorage(string json)//from index.html
         {
             Debug.Log("VK Storage Loaded success: " + json);
 

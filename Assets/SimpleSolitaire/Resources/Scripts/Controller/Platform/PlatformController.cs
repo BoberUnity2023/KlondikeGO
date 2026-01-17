@@ -38,19 +38,12 @@ namespace BloomLines
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            Debug.Log("OnSceneLoaded: " + scene.name);
+            Debug.Log("PlatformController.OnSceneLoaded: " + scene.name);
             _loadedScene = scene.buildIndex;
             if (scene.name == "2_KlondikeGO")
             {
                 _saveController = FindFirstObjectByType<SaveController>();
-
-                if (_saveController == null)
-                {
-                    Debug.LogError("VK. SaveController == null");
-                    return;
-                }
-
-                _saveController.OnGetStorageVK(Json);
+                _saveController.OnGetStorage(Json);
             }
         }
 

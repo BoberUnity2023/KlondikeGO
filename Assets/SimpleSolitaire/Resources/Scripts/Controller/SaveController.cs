@@ -82,9 +82,7 @@ public class SaveController : MonoBehaviour
     public string KeyCardBacks => "cardbacks";
     public string KeyBackgrounds => "backgrounds";
 
-    public string KeyJson => "json";//Usrd in VK
-
-    public bool IsStorageReceived { get; set; }
+    public string KeyJson => "json";//Used in VK    
 
     private string _json;
 
@@ -472,7 +470,8 @@ public class SaveController : MonoBehaviour
 
             if (_saveType == SaveType.Json)
             {
-                return Mathf.Max(Save.Gold, PlayerPrefs.GetInt(KeyGold, 0));
+                return Save.Gold;
+                //return Mathf.Max(Save.Gold, PlayerPrefs.GetInt(KeyGold, 0));
             }            
             
             return 0;
@@ -517,10 +516,11 @@ public class SaveController : MonoBehaviour
             int fromPrefs = PlayerPrefs.GetInt(KeyExperience);
             
             if (_saveType == SaveType.Prefs)            
-                return fromPrefs;            
+                return fromPrefs;
 
-            if (_saveType == SaveType.Json)            
-                return Mathf.Max(Save.Experience, fromPrefs);
+            if (_saveType == SaveType.Json)
+                return Save.Experience;
+                //return Mathf.Max(Save.Experience, fromPrefs);
 
             return 0;
         }
@@ -563,7 +563,8 @@ public class SaveController : MonoBehaviour
                 return fromPrefs;
 
             if (_saveType == SaveType.Json)
-                return Mathf.Max(Save.GoldForAllTime, fromPrefs);
+                return Save.GoldForAllTime;
+                //return Mathf.Max(Save.GoldForAllTime, fromPrefs);
 
             return 0;
         }
@@ -839,7 +840,7 @@ public class SaveController : MonoBehaviour
 
     public void Init()
     {
-        Debug.Log("SaveController.Init(Start)");
+        Debug.Log("SaveController.Initing...");        
         SetSaveType();        
 #if Yandex
         if (_saveType == SaveType.Yandex)
@@ -857,7 +858,7 @@ public class SaveController : MonoBehaviour
 #endif
 
 #if VK || OK
-            LoadFromStorageVK();
+            LoadFromStorage();
 #endif
         }
         else
@@ -1066,31 +1067,30 @@ public class SaveController : MonoBehaviour
 #endif
     }
 
-    private void LoadFromStorageVK()
+    private void LoadFromStorage()
     {
         if (_json == "")
         {
-            Debug.Log("SaveController.OnGetStorageVK: Default");
+            Debug.Log("SaveController.OnGetStorage: Default");
             Save = new Save();
             FillSaveFromPlayerPrefsOrStorage(Save);
         }
 
         if (!string.IsNullOrEmpty(_json))
         {
-            Debug.Log("SaveController.OnGetStorageVK: " + _json);
+            Debug.Log("SaveController.OnGetStorage: " + _json);
             Save = JsonUtility.FromJson<Save>(_json);
             FillSaveFromPlayerPrefsOrStorage(Save);
         }
         else
         {
-            Debug.LogWarning("SaveController.OnGetStorageVK: json IsNullOrEmpty");
+            Debug.LogWarning("SaveController.OnGetStorage: json IsNullOrEmpty");
         }
     }
 
-    public void OnGetStorageVK(string json)
-    {
-        Debug.Log("SaveController.OnGetStorageVK: " + _json);
-        _json = json;        
+    public void OnGetStorage(string json)
+    {        
+        _json = json;
     }
 
     private void SetSaveToJson()//GP
@@ -1101,9 +1101,8 @@ public class SaveController : MonoBehaviour
         GP_Player.Set(KeyJson, _json);
         GP_Player.Sync();
 #endif
-#if VK || OK
-        var json = JsonUtility.ToJson(Save);
-        string compressedJson = StringCompressor.CompressStringBrotli(json);
+#if VK || OK        
+        string compressedJson = StringCompressor.CompressStringBrotli(_json);
         string functionname = "";
 #if VK        
         functionname = "storageSet";
