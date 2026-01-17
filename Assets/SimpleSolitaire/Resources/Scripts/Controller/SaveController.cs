@@ -982,6 +982,32 @@ public class SaveController : MonoBehaviour
         //VKManager.Instance.StorageSave();
     }
 
+    public void FillSaveFromStorage(Save save)
+    {
+        Save.TakenDayBonuses = new bool[5];
+        for (int i = 0; i < 5; i++)
+        {
+            Save.TakenDayBonuses[i] = save.TakenDayBonuses[i];
+        }
+
+        Save.AchivementProgress = new int[12];
+        for (int i = 0; i < 12; i++)
+        {
+            Save.AchivementProgress[i] = save.AchivementProgress[i];
+        }
+        Save.LastVisitTime = ConvertStringToInt(save.LastVisitTime).ToString();
+        Save.Gold = save.Gold;
+        Save.Score = save.Score;
+        Save.Experience = save.Experience;
+        Save.GoldForAllTime = save.GoldForAllTime;
+        Save.Wins = save.Wins;
+        Save.Losts = save.Losts;
+        Save.FastestWinTime = save.FastestWinTime;
+        Save.FastestPartyTime = save.FastestPartyTime;
+        Save.LongestPartyTime = save.LongestPartyTime;
+        Save.NoAds = save.NoAds;                
+    }
+
     public void FillSaveFromPlayerPrefsOrStorage(Save save)
     {
         Save.TakenDayBonuses = new bool[5];
@@ -1080,7 +1106,7 @@ public class SaveController : MonoBehaviour
         {
             Debug.Log("SaveController.OnGetStorage: " + _json);
             Save = JsonUtility.FromJson<Save>(_json);
-            FillSaveFromPlayerPrefsOrStorage(Save);
+            FillSaveFromStorage(Save);
         }
         else
         {
