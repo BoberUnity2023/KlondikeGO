@@ -8,6 +8,7 @@ namespace BloomLines.UI
     public abstract class UIIAPTabBase : MonoBehaviour
     {
         [SerializeField] protected string _purchaseId;
+        [SerializeField] protected bool _consumable;
         [SerializeField] protected TextMeshProUGUI _price;
         [SerializeField] protected Text _priceLegacy;
         [SerializeField] protected Button _btn;
@@ -19,7 +20,7 @@ namespace BloomLines.UI
 
         protected virtual void OnClick()
         {
-            IAPController.Purchase(_purchaseId, OnPurchaseComplete);
+            IAPController.Purchase(_purchaseId, _consumable, OnPurchaseComplete);
         }
 
         protected virtual void OnPurchaseComplete(bool result)

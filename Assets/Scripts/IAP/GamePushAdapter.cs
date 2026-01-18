@@ -15,13 +15,18 @@ namespace BloomLines.IAP
         {
         }
 
-        public bool CanPurchase(string id)
+        public bool CanPurchase(string id, bool consumable)
         {
             if (!GP_Payments.IsPaymentsAvailable())
                 return false;
 
             var product = GP_Payments.Products.FirstOrDefault(e => e.tag == id);
+
+            if (consumable)
+                return product != null;
+
             var purchase = GP_Payments.Purchases.FirstOrDefault(e => e.tag == id);
+
             return product != null && purchase == null;
         }
 
@@ -37,11 +42,11 @@ namespace BloomLines.IAP
             return product == null ? "-" : $"{product.price} {product.currencySymbol}";
         }
 
-        public void Purchase(string id, Action<bool> result)
+        public void Purchase(string id, bool consumable, Action<bool> result)
         {
             _result = result;
 
-            if (CanPurchase(id))
+            if (CanPurchase(id, consumable))
             {
                 GP_Payments.Purchase(id, OnPurchaseSuccess, OnPurchaseFailed);
             }

@@ -9212,7 +9212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 332e36893e7cf4a49b3c1f72f76cd5e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTarget: {fileID: 465570398}
+  mTarget: {fileID: 1925386922}
 --- !u!1 &253176966
 GameObject:
   m_ObjectHideFlags: 0
@@ -11359,6 +11359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BloomLines.UI.UIIAPTabNoAds
   _purchaseId: no_ads
+  _consumable: 0
   _price: {fileID: 0}
   _priceLegacy: {fileID: 208280439}
   _btn: {fileID: 1956980250}
@@ -51036,6 +51037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BloomLines.UI.UIIAPTabStartOffer
   _purchaseId: start_offer
+  _consumable: 1
   _price: {fileID: 0}
   _priceLegacy: {fileID: 1857843167}
   _btn: {fileID: 628552874}
@@ -54882,6 +54884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: CoreAssembly::BloomLines.UI.UIIAPTabGold
   _purchaseId: gold_2
+  _consumable: 1
   _price: {fileID: 0}
   _priceLegacy: {fileID: 39855874}
   _btn: {fileID: 878032113}
@@ -83726,6 +83729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: CoreAssembly::BloomLines.UI.UIIAPTabGold
   _purchaseId: gold_3
+  _consumable: 1
   _price: {fileID: 0}
   _priceLegacy: {fileID: 1369357384}
   _btn: {fileID: 1130498859}
@@ -88589,6 +88593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: CoreAssembly::BloomLines.UI.UIIAPTabGold
   _purchaseId: gold_1
+  _consumable: 1
   _price: {fileID: 0}
   _priceLegacy: {fileID: 653716224}
   _btn: {fileID: 1205973834}

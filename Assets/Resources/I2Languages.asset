@@ -1044,6 +1044,17 @@ MonoBehaviour:
       - "L\xE4ngstes Spiel:"
       Flags: 0000000000
       Languages_Touch: []
+    - Term: bought
+      TermType: 0
+      Description: 
+      Languages:
+      - "\u041A\u0443\u043F\u043B\u0435\u043D\u043E"
+      - 'Bought '
+      - "Sat\u0131n al\u0131nm\u0131\u015F "
+      - "Compr\xF3 "
+      - 'Gekauft '
+      Flags: 0000000000
+      Languages_Touch: []
     CaseInsensitiveTerms: 0
     OnMissingTranslation: 1
     mTerm_AppName: 

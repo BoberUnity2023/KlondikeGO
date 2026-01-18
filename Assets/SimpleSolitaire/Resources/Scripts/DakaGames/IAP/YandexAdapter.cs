@@ -16,7 +16,7 @@ namespace BloomLines.IAP
             YG2.onPurchaseFailed += OnPurchaseFailed;
         }
 
-        public bool CanPurchase(string id)
+        public bool CanPurchase(string id, bool consumable)
         {
             var purchase = YG2.PurchaseByID(id);
             return purchase != null && purchase.consumed;
@@ -34,11 +34,11 @@ namespace BloomLines.IAP
             return purchase.price;
         }
 
-        public void Purchase(string id, Action<bool> result)
+        public void Purchase(string id, bool consumable, Action<bool> result)
         {
             _result = result;
 
-            if (CanPurchase(id))
+            if (CanPurchase(id, consumable))
             {
                 YG2.BuyPayments(id);
             }

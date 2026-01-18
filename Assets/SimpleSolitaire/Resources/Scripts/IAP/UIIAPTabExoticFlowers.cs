@@ -16,7 +16,7 @@ namespace BloomLines.UI
 
         protected override void OnClick()
         {
-            if (IAPController.CanPurchase(_purchaseId))
+            if (IAPController.CanPurchase(_purchaseId, _consumable))
             {
                 base.OnClick();
             }
@@ -50,7 +50,7 @@ namespace BloomLines.UI
         protected override void UpdatePurchase()
         {
             var isPurchased = IAPController.IsPurchased(_purchaseId);
-            var canPurchase = IAPController.CanPurchase(_purchaseId);
+            var canPurchase = IAPController.CanPurchase(_purchaseId, _consumable);
 
             if (isPurchased)
             {

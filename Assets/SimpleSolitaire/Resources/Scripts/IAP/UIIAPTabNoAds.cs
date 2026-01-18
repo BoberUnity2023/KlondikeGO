@@ -26,7 +26,7 @@ namespace BloomLines.UI
                 return; 
             }
 
-            if (IAPController.CanPurchase(_purchaseId))
+            if (IAPController.CanPurchase(_purchaseId, _consumable))
             {
                 base.OnClick();
             }
@@ -53,11 +53,11 @@ namespace BloomLines.UI
         protected override void UpdatePurchase()
         {
             var isPurchased = _gameManager.Save.NoAds;// IAPController.IsPurchased(_purchaseId);
-            var canPurchase = IAPController.CanPurchase(_purchaseId);
+            var canPurchase = IAPController.CanPurchase(_purchaseId, _consumable);
 
             if (isPurchased)
             {
-                _priceLegacy.text = "---";//LocalizationManager.GetTranslation("Main/change");//TODO: Куплено
+                _priceLegacy.text = LocalizationManager.GetTranslation("bought");// Куплено
                 _btn.interactable = false;
             }
             else if (canPurchase)

@@ -73,7 +73,7 @@ namespace BloomLines.Controllers
         }
 
         // Проверка можно ли купить товар
-        public static bool CanPurchase(string id)
+        public static bool CanPurchase(string id, bool consumable)
         {
 #if UNITY_EDITOR
             return !IsPurchased(id);
@@ -82,7 +82,7 @@ namespace BloomLines.Controllers
             if (_iapAdapter == null)
                 return false;
 
-            return !IsPurchased(id) && _iapAdapter.CanPurchase(id);
+            return _iapAdapter.CanPurchase(id, consumable);
         }
 
         // Получить цену товара
@@ -99,7 +99,7 @@ namespace BloomLines.Controllers
         }
 
         // Купить товар
-        public static void Purchase(string id, Action<bool> result)
+        public static void Purchase(string id, bool consumable, Action<bool> result)
         {
             var gameState = SaveManager.GameState;
 
@@ -112,7 +112,7 @@ namespace BloomLines.Controllers
             if (_iapAdapter == null)
                 return;
 
-            _iapAdapter.Purchase(id, (success) =>
+            _iapAdapter.Purchase(id, consumable, (success) =>
             {
                 if(success)
                     PurchaseCompleted(id);

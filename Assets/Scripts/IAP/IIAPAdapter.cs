@@ -6,9 +6,9 @@ namespace BloomLines.IAP
     public interface IIAPAdapter
     {
         void Initialize();
-        bool CanPurchase(string id);
+        bool CanPurchase(string id, bool consumable);
         bool IsPurchased(string id);
-        void Purchase(string id, Action<bool> result);
+        void Purchase(string id, bool consumable, Action<bool> result);
         void Consume(string id);
         string GetPurchasePrice(string id);
     }
