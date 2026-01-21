@@ -1,5 +1,6 @@
 #if Yandex
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using YG;
 
@@ -19,6 +20,10 @@ namespace BloomLines.IAP
         public bool CanPurchase(string id, bool consumable)
         {
             var purchase = YG2.PurchaseByID(id);
+            
+            if (consumable)
+                return purchase != null;
+
             return purchase != null && purchase.consumed;
         }
 

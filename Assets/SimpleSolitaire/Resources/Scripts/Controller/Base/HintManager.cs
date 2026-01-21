@@ -333,6 +333,11 @@ namespace SimpleSolitaire.Controller
             AvailableCountLevels = 3;
         }
 
+        private void Start()
+        {
+            ActivateHintButton(IsHasAutoCompleteHint());
+        }
+
         protected void OnDestroy()
         {
             if (HintCoroutine != null)

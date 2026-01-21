@@ -73,7 +73,12 @@ namespace SimpleSolitaire.Screen
                 item.ScaleHorizontal = item.Transform.localScale;
             }
             SetScreen();
-            StartCoroutine(UpdateCheck());
+            //StartCoroutine(UpdateCheck());
+        }
+
+        private void Update()
+        {
+            SetScreen();
         }
 
         public void SetFapiWindowHeight(int height)

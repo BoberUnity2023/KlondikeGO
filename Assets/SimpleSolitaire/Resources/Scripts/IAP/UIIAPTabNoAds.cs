@@ -47,6 +47,8 @@ namespace BloomLines.UI
                 Debug.Log("NoAds was purchased Success!");
                 _gameManager.Save.NoAds = true;
                 _adsController.CloseSticky();
+                _priceLegacy.text = LocalizationManager.GetTranslation("bought");// Куплено
+                _btn.interactable = false;
             }
         }
 
