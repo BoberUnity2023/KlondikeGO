@@ -161,6 +161,7 @@ namespace SimpleSolitaire.Controller
         public int ScoreCount => _scoreCount;
 
         public int TimeBonus => _timeBonus;
+
         public int Gold
         {
             get
@@ -169,12 +170,12 @@ namespace SimpleSolitaire.Controller
             }
             set
             {
-                int gold = Save.Gold;
+                //int gold = Save.Gold;
 
-                if (value > gold)
-                    Save.Experience += value - gold;
+                //if (value > gold)
+                //    Save.Experience += value - gold;
 
-                gold = Mathf.Max(0, value);
+                int gold = Mathf.Max(0, value);
                 _goldLabel.text = gold.ToString();
 
                 Save.Gold = gold;
@@ -283,8 +284,10 @@ namespace SimpleSolitaire.Controller
 
         private void Start()
         {
+            Debug.Log("GameManager.Start()");
 #if !UNITY_EDITOR && UNITY_WEBGL
         _isMobile = IsMobile();
+        Debug.Log("Device: " + Device.ToString());
 #endif
             InitializeGame();
         }
@@ -513,6 +516,7 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         public void HasWinGame()
         {
+            Debug.Log("Win!");
             _timeBonus = Public.SCORE_NUMBER / _timeCount;
 
             var score = _scoreCount + _timeBonus;
@@ -523,8 +527,9 @@ namespace SimpleSolitaire.Controller
                 GoldForParty = score * 3 * (Difficulty + 1) / 10;
             if (Game == Game.Solitaire)
                 GoldForParty = score * 3 * (Difficulty + 1) / 10;
-
+            Debug.Log("Gold before: " + Gold);
             Gold += GoldForParty;
+            Debug.Log("Gold after: " + Gold);
             SetBestValuesToPrefs(score);
 
             StopGameTimer();

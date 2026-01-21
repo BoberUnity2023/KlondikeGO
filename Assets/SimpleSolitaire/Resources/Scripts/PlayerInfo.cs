@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using SimpleSolitaire.Controller;
 #if Yandex
 using YG;
 using YG.Utils.Lang;
@@ -13,6 +14,7 @@ namespace BloomLines
 {
     public class PlayerInfo : MonoBehaviour
     {
+        [SerializeField] private GameManager _gameManager; 
         [SerializeField] private Text _title;
         [SerializeField] private Image _avatar;
         [SerializeField] private GameObject _yandexPlayerInfo;
@@ -22,7 +24,9 @@ namespace BloomLines
 #if GAME_PUSH && UNITY_WEBGL && !UNITY_EDITOR
             _yandexPlayerInfo.SetActive(false);
             _title.text = GP_Player.GetName();
-            GP_Player.GetAvatar(_avatar);
+            
+            if (_gameManager.Device == Device.Desktop)
+                GP_Player.GetAvatar(_avatar);
 #endif
 
 #if Yandex

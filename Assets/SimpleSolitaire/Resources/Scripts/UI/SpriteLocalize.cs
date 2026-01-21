@@ -46,7 +46,7 @@ namespace BloomLines
 
         private void OnChangeLanguage(string lang)
         {
-            Debug.Log(gameObject.name + ".OnChangeLanguage(" + lang + ")");
+            //Debug.Log(gameObject.name + ".OnChangeLanguage(" + lang + ")");
             _image.sprite = lang == "ru" ? _spriteRus : _spriteEng;
         }
 

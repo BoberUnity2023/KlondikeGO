@@ -123,7 +123,10 @@ public class TabLeaderboard : MonoBehaviour
         Rank = position;
         string playerName = GP_Player.GetName();
         string score = FormatNumbers.Format(_gameManager.Save.Experience);
-        string avatarUrl = GP_Player.GetAvatarUrl();
+        string avatarUrl = "";
+        if (_gameManager.Device == Device.Desktop)
+            avatarUrl = GP_Player.GetAvatarUrl();
+
         string rank = position.ToString();
         _thisPlayerGamePush.Set(playerName, score, rank, avatarUrl); 
     }
@@ -146,6 +149,10 @@ public class TabLeaderboard : MonoBehaviour
             string playerScore = FormatNumbers.Format(players[i].score);
             string playerRank = players[i].position.ToString();
             string playerAvatar = players[i].avatar;
+            if (_gameManager.Device == Device.Mobile)
+            {
+                playerAvatar = "";
+            }
             //Debug.Log("PLAYER: " + i);            
             //Debug.Log("PLAYER.ID: " + players[i].id);
             //Debug.Log("PLAYER.SCORE: " + playerScore);

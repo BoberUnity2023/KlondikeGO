@@ -470,8 +470,8 @@ public class SaveController : MonoBehaviour
 
             if (_saveType == SaveType.Json)
             {
-                return Save.Gold;
-                //return Mathf.Max(Save.Gold, PlayerPrefs.GetInt(KeyGold, 0));
+                //return Save.Gold;
+                return Mathf.Max(Save.Gold, PlayerPrefs.GetInt(KeyGold, 0));
             }            
             
             return 0;
@@ -519,8 +519,8 @@ public class SaveController : MonoBehaviour
                 return fromPrefs;
 
             if (_saveType == SaveType.Json)
-                return Save.Experience;
-                //return Mathf.Max(Save.Experience, fromPrefs);
+                //return Save.Experience;
+                return Mathf.Max(Save.Experience, fromPrefs);
 
             return 0;
         }
@@ -563,8 +563,8 @@ public class SaveController : MonoBehaviour
                 return fromPrefs;
 
             if (_saveType == SaveType.Json)
-                return Save.GoldForAllTime;
-                //return Mathf.Max(Save.GoldForAllTime, fromPrefs);
+                //return Save.GoldForAllTime;
+                return Mathf.Max(Save.GoldForAllTime, fromPrefs);
 
             return 0;
         }
@@ -1072,6 +1072,7 @@ public class SaveController : MonoBehaviour
     private void FillSaveReset()
     {
         Save.TakenDayBonuses = new bool[5];
+        Save.AchivementProgress = new int[12];
         Save.LastVisitTime = "0";
         Save.Gold = 0;
         Save.Score = 0;
@@ -1106,7 +1107,7 @@ public class SaveController : MonoBehaviour
         {
             Debug.Log("SaveController.OnGetStorage: " + _json);
             Save = JsonUtility.FromJson<Save>(_json);
-            FillSaveFromStorage(Save);
+            FillSaveFromPlayerPrefsOrStorage(Save);
         }
         else
         {
@@ -1123,20 +1124,17 @@ public class SaveController : MonoBehaviour
     {
        // Debug.Log("Setting json...");
         _json = JsonUtility.ToJson(Save);
-#if GAME_PUSH && !VK && !OK
-        GP_Player.Set(KeyJson, _json);
-        GP_Player.Sync();
-#endif
-#if VK || OK        
+//#if GAME_PUSH && !VK && !OK
+//        GP_Player.Set(KeyJson, _json);
+//        GP_Player.Sync();
+//#endif
         string compressedJson = StringCompressor.CompressStringBrotli(_json);
-        string functionname = "";
-#if VK        
-        functionname = "storageSet";
+        //Debug.Log("Saving json...:" + _json);
+#if VK
+        Application.ExternalCall("storageSet", KeyJson, compressedJson);
 #endif
-#if OK
-        functionname = "saveToOKStorage";
-#endif
-        Application.ExternalCall(functionname, KeyJson, compressedJson);
+#if OK        
+        Application.ExternalCall("saveToOKStorage", KeyJson, compressedJson);
 #endif
     }
 }

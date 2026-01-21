@@ -6789,6 +6789,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThisPlayerYandex
       objectReference: {fileID: 0}
+    - target: {fileID: 340534004792608241, guid: 2ec135cc55d81a047909558246ef6ae6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 340534004792608242, guid: 2ec135cc55d81a047909558246ef6ae6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14922,6 +14926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9a78d703c9aa943bc1b93433483454, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BloomLines.PlayerInfo
+  _gameManager: {fileID: 411655882}
   _title: {fileID: 1560240021}
   _avatar: {fileID: 880303039}
   _yandexPlayerInfo: {fileID: 514560040416688489}
@@ -15621,7 +15626,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5480401297381544734, guid: 6c8abf02761f889478b83d8610a260c7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -198.03174
+      value: -198.03192
       objectReference: {fileID: 0}
     - target: {fileID: 5480401297381544734, guid: 6c8abf02761f889478b83d8610a260c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -88136,7 +88141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5480401297381544734, guid: 6c8abf02761f889478b83d8610a260c7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -110.26611
+      value: -110.26596
       objectReference: {fileID: 0}
     - target: {fileID: 5480401297381544734, guid: 6c8abf02761f889478b83d8610a260c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
