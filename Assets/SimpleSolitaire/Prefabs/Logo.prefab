@@ -5307,6 +5307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5530906601643754335}
   - component: {fileID: 5587281953322524829}
+  - component: {fileID: 8279727152619718629}
   m_Layer: 5
   m_Name: Logo
   m_TagString: Untagged
@@ -5364,6 +5365,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8279727152619718629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395438798468912926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cdcaf746187c834faf9511116925028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: CoreAssembly::BloomLines.UIActivateByPlatformByBuildData
+  _logoText: {fileID: 2817191798119260043}
 --- !u!1 &4740948217855609468
 GameObject:
   m_ObjectHideFlags: 0
