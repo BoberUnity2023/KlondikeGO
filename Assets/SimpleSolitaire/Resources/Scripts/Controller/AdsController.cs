@@ -62,8 +62,9 @@ public class AdsController : MonoBehaviour
 
         if (_gameManager.Platform == Platform.VK)
         {
+#if GAME_PUSH
             GamePush.GP_Ads.ShowFullscreen();
-            //VKManager.Instance.ShowInterstitial();
+#endif
         }         
         
         if (_gameManager.Platform == Platform.GD)

@@ -1,5 +1,7 @@
 using BloomLines.Helpers;
+#if GAME_PUSH
 using GamePush;
+#endif
 using SimpleSolitaire.Controller;
 using System;
 using System.Collections;
