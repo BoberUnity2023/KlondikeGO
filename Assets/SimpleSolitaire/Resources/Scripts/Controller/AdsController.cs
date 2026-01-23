@@ -40,7 +40,7 @@ public class AdsController : MonoBehaviour
 
     public void TryShowInterstitial()
     {
-        if (IsReady)
+        if (!_gameManager.Save.NoAds && IsReady)
         {            
             _lastAdsTime = Time.time;
             ShowInterstitial();

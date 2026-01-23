@@ -8,11 +8,13 @@ namespace YG
 
         private void Start()
         {
+#if Yandex
             if (!consumed)
             {
                 consumed = true;
                 YG2.ConsumePurchases();
             }
+# endif
         }
     }
 }

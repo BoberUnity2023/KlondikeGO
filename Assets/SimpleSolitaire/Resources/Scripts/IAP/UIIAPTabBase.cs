@@ -16,6 +16,17 @@ namespace BloomLines.UI
         private void Awake()
         {
             _btn.onClick.AddListener(OnClick);
+            bool isPurchased = IAPController.IsPurchased(_purchaseId);
+            if (!_consumable && isPurchased)
+            {
+                Debug.Log("Product " + _purchaseId + " was consumed");
+                Consume(); 
+            }
+        }
+
+        private void OnEnable()
+        {
+            UpdatePurchase();
         }
 
         protected virtual void OnClick()
@@ -32,9 +43,8 @@ namespace BloomLines.UI
         {
         }
 
-        private void OnEnable()
+        protected virtual void Consume()
         {
-            UpdatePurchase();
         }
     }
 }

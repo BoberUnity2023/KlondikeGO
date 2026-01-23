@@ -77,6 +77,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private TutorialManager _tutorialComponent;
         [SerializeField] private AutoCompleteManager _autoCompleteComponent;
         [SerializeField] private AchivementsController _achivementsController;
+        [SerializeField] private PositionByDevice _positionByDevice;
 
         [SerializeField] private MagicWand _magicWand;
         public MagicWand MagicWand => _magicWand;
@@ -301,6 +302,7 @@ namespace SimpleSolitaire.Controller
 
             SetPlatform();
             SetInviteButton();
+            _positionByDevice.Init(Device);
 
             _isBarActive = true;
             _saveController.Init();
@@ -1217,6 +1219,10 @@ namespace SimpleSolitaire.Controller
         /// </summary>
         public void OnClickModalRandom()
         {
+            if (Platform == Platform.Yandex)
+            {
+                _adsController.TryShowInterstitial();
+            }
             DisappearWindow(_newGameLayer, OnWindowDisappeared);
 
             void OnWindowDisappeared()
@@ -1241,10 +1247,7 @@ namespace SimpleSolitaire.Controller
                     ScreenController.Active = true;
                 }
                 _undoPerformComponent.ResetUndoStates();
-                if (Platform == Platform.Yandex)
-                {
-                    _adsController.TryShowInterstitial();
-                }
+                
                 OnGameStart?.Invoke();
                 _magicWand.StartParty();
                 _peek.StartParty();

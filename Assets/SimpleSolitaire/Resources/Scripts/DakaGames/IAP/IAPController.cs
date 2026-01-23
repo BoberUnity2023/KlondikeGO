@@ -38,11 +38,11 @@ namespace BloomLines.Controllers
         }
 
         // Загрузить все покупки
-        public static void LoadPurchases()
+        /*public static void LoadPurchases()
         {
             if (IsPurchased(NO_ADS))
                 PurchaseCompleted(NO_ADS);
-        }
+        }*/
 
         // Проверка куплен ли товар
         public static bool IsPurchased(string id)
