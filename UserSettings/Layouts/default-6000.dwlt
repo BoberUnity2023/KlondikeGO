@@ -378,8 +378,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Console\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 343.4286
-    y: 840.5715
+    x: 1
+    y: 776.5714
     width: 988.28577
     height: 236.85718
   m_SerializedDataModeController:
@@ -414,8 +414,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Scene\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 6.8571434
-    y: 88.00001
+    x: 0
+    y: 24
     width: 335.57144
     height: 989.4286
   m_SerializedDataModeController:
@@ -1095,8 +1095,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1333.7144
-    y: 88.00001
+    x: 1
+    y: 24
     width: 275.14282
     height: 378.57144
   m_SerializedDataModeController:
@@ -1161,8 +1161,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Game\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 343.4286
-    y: 88.00001
+    x: 1
+    y: 24
     width: 988.28577
     height: 726.5714
   m_SerializedDataModeController:
@@ -1264,8 +1264,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Project\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1333.7144
-    y: 492.57144
+    x: 1
+    y: 428.57144
     width: 275.14282
     height: 584.8572
   m_SerializedDataModeController:
@@ -1309,7 +1309,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 11.142822}
     m_SelectedIDs: 30e20000
     m_LastClickedID: 57904
-    m_ExpandedIDs: 000000005eb3000072e1000074e1000076e1000078e100007ae100007ce100007ee1000080e1000082e1000084e1000086e1000088e100008ae100008ce100008ee1000090e1000092e1000094e1000096e1000098e1000024e2000000ca9a3b
+    m_ExpandedIDs: 000000005eb3000072e1000074e1000076e1000078e100007ae100007ce100007ee1000080e1000082e1000084e1000086e1000088e100008ae100008ce100008ee1000090e1000092e1000094e1000096e1000098e10000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1370,18 +1370,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: c62300007a7f00004e8b000000000000409e0000407700004a880000ca8b0000e08b0000a68d0000768f0000908f0000608f0000428e0000f0900000f2900000ec900000148f0000fc780100f0780100449a0000aa4f02008e740100b4b200001c930000fa92000008930000369200000ca5000086920000faa6000004980000be970000aa97000092c00000f8c2000034c400008274000034c300001aa400000adc00001ccf0000eece000026c1020084cd000086cd00001a19010080cf0000e0dd04004cdd000096d3000076dd0000cee000009ad300001cd70000e2d6000016d70000f8d6000076d70000d0d6000054d70000505b06001eb50000ee5b0b0090e900002cb20000f8691200f83c0100f43c0100186a120084af000074b00000d4ea000008630400d0b300007eb2000096b2000038b2000052e00000c0e90000c2e9000098dc000064af00007eae00000cb10000bcaa00008cdd000036a7000054a900006cdf0000deaa0000c0e4000068ab0000b2dc000042e4000086b4000012b80000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: UIIAPTabExoticFlowers
-      m_OriginalName: UIIAPTabExoticFlowers
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 40690
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
       m_ClientGUIView: {fileID: 6}
@@ -1417,8 +1417,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1610.8572
-    y: 88.00001
+    x: 1605
+    y: 24
     width: 527.57153
     height: 989.4286
   m_SerializedDataModeController:

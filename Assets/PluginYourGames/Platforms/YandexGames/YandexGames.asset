@@ -24,7 +24,7 @@ MonoBehaviour:
     autoPauseGame: 1
     selectWebGLTemplate: 1
     runInBackground: 0
-    enableExceptions: 3
+    enableExceptions: 2
     compressionFormat: 0
     decompressionFallback: 0
     autoGraphicsAPI: 1
