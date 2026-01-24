@@ -49,6 +49,7 @@ namespace SimpleSolitaire.Controller
     {
         [SerializeField] private Game _game;
         [SerializeField] private SaveController _saveController;
+        [SerializeField] private Shop _shop;
         [Header("Serialized fields:")]
         [SerializeField] private RectTransform _bottomPanel;
         [SerializeField] private Animator _settingsPanelAnimator;
@@ -306,6 +307,7 @@ namespace SimpleSolitaire.Controller
 
             _isBarActive = true;
             _saveController.Init();
+            _shop.Init();
             Stats = new Stats(this);
             
             _achivementsController.Init();

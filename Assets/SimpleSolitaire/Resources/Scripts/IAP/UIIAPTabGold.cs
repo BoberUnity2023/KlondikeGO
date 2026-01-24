@@ -26,33 +26,34 @@ namespace BloomLines.UI
             }
             else
             {
-                //var gameState = SaveManager.GameState;
-                //SetSkinPack(gameState.SkinPack == "skin_pack_1" ? "skin_pack_2" : "skin_pack_1");
-            }    
+                Debug.Log("Product: " + _purchaseId + " you can not purchase");
+            }
         }
 
-        protected override void OnPurchaseComplete(bool result)
+        /*protected override void OnPurchaseComplete(bool result)
         {
             base.OnPurchaseComplete(result);
 
             if (result)
             {
-                _gameManager.Gold += _gold;
+                Consume();
             }
-        }
+        }*/
 
         protected override void UpdatePurchase()
         {
             //var isPurchased = IAPController.IsPurchased(_purchaseId);
             var canPurchase = IAPController.CanPurchase(_purchaseId, _consumable);
-
             
             if (canPurchase)                                         
                 _priceLegacy.text = IAPController.GetPurchasePrice(_purchaseId);
             else
                 _priceLegacy.text = "---";
+        }
 
-            //gameObject.SetActive(isPurchased || canPurchase);
+        public override void Consume()
+        {
+            _gameManager.Gold += _gold;
         }
     }
 }

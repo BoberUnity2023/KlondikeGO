@@ -36,40 +36,16 @@ namespace BloomLines.Controllers
 
             _iapAdapter?.Initialize();
         }
-
-        // Загрузить все покупки
-        /*public static void LoadPurchases()
-        {
-            if (IsPurchased(NO_ADS))
-                PurchaseCompleted(NO_ADS);
-        }*/
+        
 
         // Проверка куплен ли товар
         public static bool IsPurchased(string id)
-        {            
-            //var gameState = SaveManager.GameState;//TODO
-
-#if UNITY_EDITOR
-            //BloomLines.Saving.GameState gameState = SaveManager.GameState;
-            //if (gameState == null)
-            //{
-            //    Debug.LogWarning("gameState == null");
-            //    return false;
-            //}
-
-            //if (gameState.Purchased == null)
-            //{
-            //    Debug.LogWarning("gameState.Purchased == null");
-            //    return false;
-            //}
-            //return gameState.Purchased.Contains(id);
-#endif
-
+        { 
             if (_iapAdapter == null)
                 return false;
 
             bool isPurchased = _iapAdapter.IsPurchased(id);
-            return /*gameState.Purchased.Contains(id) ||*/ isPurchased;
+            return isPurchased;
         }
 
         // Проверка можно ли купить товар
@@ -103,35 +79,31 @@ namespace BloomLines.Controllers
         {
             var gameState = SaveManager.GameState;
 
-#if UNITY_EDITOR
-            PurchaseCompleted(id);
-            result?.Invoke(true);
-            return;
-#endif
+            if (Application.platform == RuntimePlatform.WindowsEditor)
+            {
+                //PurchaseCompleted(id);
+                result?.Invoke(true);
+                return;
+            }
 
             if (_iapAdapter == null)
                 return;
 
             _iapAdapter.Purchase(id, consumable, (success) =>
             {
-                if(success)
-                    PurchaseCompleted(id);
+                //if(success)
+                //    PurchaseCompleted(id);
 
                 result?.Invoke(success);
 
-                if (success)
+                if (success && consumable)
                     _iapAdapter.Consume(id);
             });
         }
 
         // Покупка удалась
-        private static void PurchaseCompleted(string id)
+        /*private static void PurchaseCompleted(string id)
         {
-            //var gameState = SaveManager.GameState;
-
-            //if (!gameState.Purchased.Contains(id))
-            //    gameState.Purchased.Add(id);
-
             switch (id)
             {
                 case NO_ADS:
@@ -149,6 +121,17 @@ namespace BloomLines.Controllers
 
             //SaveManager.Save(SaveType.Game);
             //SaveManager.Sync();
+        }*/
+
+        public static void Consume(string id)
+        {
+            if (_iapAdapter == null)
+            {
+                Debug.LogError("IAPController.Consume _iapAdapter == null");
+                return;
+            }
+
+            _iapAdapter.Consume(id);
         }
     }
 }

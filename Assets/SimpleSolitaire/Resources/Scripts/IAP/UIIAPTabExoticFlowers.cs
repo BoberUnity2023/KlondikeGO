@@ -27,12 +27,12 @@ namespace BloomLines.UI
             }    
         }
 
-        protected override void OnPurchaseComplete(bool result)
+        /*protected override void OnPurchaseComplete(bool result)
         {
             base.OnPurchaseComplete(result);
 
             SetSkinPack("skin_pack_2");
-        }
+        }*/
 
         private void SetSkinPack(string id)
         {

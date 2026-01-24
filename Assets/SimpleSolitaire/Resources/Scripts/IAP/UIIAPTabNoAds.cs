@@ -24,11 +24,11 @@ namespace BloomLines.UI
             }
             else
             {
-                Debug.Log("You can not purchase NoAds :(");                
-            }    
+                Debug.Log("Product: " + _purchaseId + " you can not purchase");
+            }
         }
 
-        protected override void OnPurchaseComplete(bool result)
+        /*protected override void OnPurchaseComplete(bool result)
         {
             base.OnPurchaseComplete(result);
 
@@ -37,7 +37,7 @@ namespace BloomLines.UI
                 Debug.Log("NoAds was purchased Success!");
                 Consume();
             }
-        }
+        }*/
 
         protected override void UpdatePurchase()
         {
@@ -54,7 +54,7 @@ namespace BloomLines.UI
             }
         }
 
-        protected override void Consume()
+        public override void Consume()
         {
             Debug.Log("NoAds was consumed Success!");
             _gameManager.Save.NoAds = true;

@@ -2614,9 +2614,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 88027602}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c66d3ab56cc71745982569cb28c3dc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 5aacb1d211521784c9725c9afe5773ac, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::YG.ConsumePurchasesYG
+  m_EditorClassIdentifier: Assembly-CSharp::BloomLines.Shop
+  _uIIAPTabBases:
+  - {fileID: 296246611}
+  - {fileID: 935714717}
+  - {fileID: 1545415249}
+  - {fileID: 1046012606}
+  - {fileID: 1433535514}
 --- !u!1001 &89307137
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16967,6 +16973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _game: 0
   _saveController: {fileID: 36756227}
+  _shop: {fileID: 88027604}
   _bottomPanel: {fileID: 2284100040935464274}
   _settingsPanelAnimator: {fileID: 0}
   _buttonHint: {fileID: 2284100042079886694}

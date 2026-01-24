@@ -1,3 +1,3 @@
 ﻿Build path: C:/PROJECTS/KlondikeGO/Yandex
-Build number: 141
+Build number: 145
 PluginYG version: 2.007
