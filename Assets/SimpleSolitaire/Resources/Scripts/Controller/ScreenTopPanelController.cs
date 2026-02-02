@@ -1,3 +1,4 @@
+using SimpleSolitaire.Controller;
 using SimpleSolitaire.Screen;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,14 +12,17 @@ public enum TopPanelLines
 
 public class ScreenTopPanelController : MonoBehaviour
 {
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private float _changeAspectRatio;
     [SerializeField] private ScreenOrientationPosition[] _screenOrientationPositions;
     [SerializeField] private ScreenOrientationScale[] _screenOrientationScales;
     [SerializeField] private float _a;
     private TopPanelLines _topPanelLines = TopPanelLines.One;
+    private bool _isMobile;
 
-    void Start()
-    {        
+    public void Init(bool isMobile)
+    {
+        //_isMobile = isMobile;
         foreach (var item in _screenOrientationPositions)
         {
             item.PositionHorizontal = item.Transform.localPosition;
@@ -58,8 +62,11 @@ public class ScreenTopPanelController : MonoBehaviour
     {
         _topPanelLines = TopPanelLines.Two;
         foreach (var item in _screenOrientationPositions)
-        {
-            item.Transform.localPosition = item.PositionVerical.localPosition;
+        {  
+            if (_isMobile && item.PositionVericalMobile != null)
+                item.Transform.localPosition = item.PositionVericalMobile.localPosition;//Not used   
+            else
+                item.Transform.localPosition = item.PositionVerical.localPosition;//Used
         }
 
         foreach (var item in _screenOrientationScales)

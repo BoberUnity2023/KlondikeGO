@@ -50,7 +50,7 @@ namespace SimpleSolitaire.Controller
         [SerializeField] private Game _game;
         [SerializeField] private SaveController _saveController;
         [SerializeField] private Shop _shop;
-        [Header("Serialized fields:")]
+        [SerializeField] private ScreenTopPanelController _screenTopPanelController;        
         [SerializeField] private RectTransform _bottomPanel;
         [SerializeField] private Animator _settingsPanelAnimator;
         [SerializeField] protected GameObject _buttonHint;        
@@ -306,10 +306,11 @@ namespace SimpleSolitaire.Controller
             _positionByDevice.Init(Device);
 
             _isBarActive = true;
-            _saveController.Init();
-            _shop.Init();
+            _saveController.Init();            
             Stats = new Stats(this);
-            
+            _shop.Init();
+            _screenTopPanelController.Init(_isMobile);
+
             _achivementsController.Init();
             _rewardedVideoController.Init();
             _cardLogic.SubscribeEvents();
@@ -1556,6 +1557,21 @@ namespace SimpleSolitaire.Controller
         public void Click()
         {
             OnClick?.Invoke();
+        }
+
+        private int _consoleClickCount;
+        public void OnClickConsoleShow()
+        {
+            _consoleClickCount++;
+            if (_consoleClickCount > 10)
+            {
+                PlayerPrefs.SetInt("Console", 1);
+            }
+        }
+        
+        public void OnClickConsoleHide()
+        {
+            PlayerPrefs.SetInt("Console", 0);
         }
     }
 }

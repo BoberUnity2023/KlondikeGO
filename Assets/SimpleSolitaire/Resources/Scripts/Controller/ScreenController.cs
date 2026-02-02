@@ -21,6 +21,7 @@ namespace SimpleSolitaire.Screen
     {
         public Transform Transform;    
         public Transform PositionVerical;
+        public Transform PositionVericalMobile;
 
         public Vector3 PositionHorizontal { get; set; }
     }
@@ -73,13 +74,13 @@ namespace SimpleSolitaire.Screen
                 item.ScaleHorizontal = item.Transform.localScale;
             }
             SetScreen();
-            //StartCoroutine(UpdateCheck());
+            StartCoroutine(UpdateCheck());            
         }
 
-        private void Update()
+        /*private void Update()
         {
             SetScreen();
-        }
+        }*/
 
         public void SetFapiWindowHeight(int height)
         {

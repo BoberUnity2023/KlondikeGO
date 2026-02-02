@@ -17,8 +17,11 @@ namespace BloomLines.Controllers
 {
     public class PreLauncherController : MonoBehaviour
     {
+        [SerializeField] private GameObject _console;
+
         private void Awake()
         {
+            TryShowConsole();
             Debug.Log("KlondikeGO v." + Application.version + " started success");
 #if Yandex
             if (YG.YG2.isSDKEnabled)
@@ -73,6 +76,12 @@ namespace BloomLines.Controllers
             AnalyticsController.SendEvent("applicaton_inited");
             LoadGame();
 #endif
+        }    
+        
+        private void TryShowConsole()
+        {
+            bool active = PlayerPrefs.GetInt("Console", 0) == 1;
+            _console.SetActive(active);
         }        
     }    
 }
