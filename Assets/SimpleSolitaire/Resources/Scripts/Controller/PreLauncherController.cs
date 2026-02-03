@@ -51,7 +51,7 @@ namespace BloomLines.Controllers
             LoadGame();
 #endif
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || RuStore || GooglePlay
             LoadGame();
 #endif
         }
