@@ -852,15 +852,15 @@ public class SaveController : MonoBehaviour
 #endif
         if (_saveType == SaveType.Json)
         {
-#if GAME_PUSH && !VK && !OK
-            if (GP_Init.isReady)
-                OnGamePushInit();
-            else
-                FillSaveFromPlayerPrefs();
-#endif
+//#if GAME_PUSH && !VK && !OK
+//            if (GP_Init.isReady)
+//                OnGamePushInit();
+//            else
+//                FillSaveFromPlayerPrefs();
+//#endif
 
 #if VK || OK
-            LoadFromStorage();
+            //LoadFromStorage();
 #endif
         }
         else
@@ -1086,7 +1086,7 @@ public class SaveController : MonoBehaviour
 
     public void OnGamePushInit()//GP
     {
-#if GAME_PUSH && OK
+#if GAME_PUSH
         Debug.Log("GetTING JSON...*GamePush*");        
         _json = GP_Player.GetString(KeyJson);
         LoadFromStorage();

@@ -45,12 +45,12 @@ namespace BloomLines.Controllers
 
             yield return new WaitForSeconds(1.0f);
 
-#if VK && !UNITY_EDITOR
-            Debug.Log("VK Storage Loading...");
-            while (!vk.IsSaveLoaded)
-                yield return null;
-            Debug.Log("VK Storage Loaded success");
-#endif
+//#if VK && !UNITY_EDITOR // VK Storage
+//            Debug.Log("VK Storage Loading...");
+//            while (!vk.IsSaveLoaded)
+//                yield return null;
+//            Debug.Log("VK Storage Loaded success");
+//#endif
 
 //#if OK && !UNITY_EDITOR
 //            Debug.Log("OK Storage Loading...");
