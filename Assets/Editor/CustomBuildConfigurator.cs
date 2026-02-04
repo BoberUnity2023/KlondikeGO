@@ -38,7 +38,7 @@ public class CustomBuildConfigurator : IPreprocessBuildWithReport, IPostprocessB
                     PlayerSettings.WebGL.template = $"PROJECT:VK";
                     break;
                 case BuildPlatform.OK:
-                    PlayerSettings.WebGL.template = $"PROJECT:OK";
+                    PlayerSettings.WebGL.template = $"PROJECT:VK";
                     break;
                 case BuildPlatform.CrazyGames:
                     PlayerSettings.WebGL.template = $"PROJECT:CrazyGames";

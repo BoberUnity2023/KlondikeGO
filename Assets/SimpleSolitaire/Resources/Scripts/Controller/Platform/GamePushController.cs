@@ -87,6 +87,7 @@ public class GamePushController : MonoBehaviour
                 _gameManager = FindFirstObjectByType<GameManager>();
 
             _gameManager.GamePush = this;
+            _gameManager.Save.OnGamePushInit();
         }        
     }
 
@@ -97,13 +98,12 @@ public class GamePushController : MonoBehaviour
 
     private void Init()
     {        
-        /*
-        if (_gameManager.Platform == Platform.VK||
-            _gameManager.Platform == Platform.Ok)
-        {
-            _gameManager.Saves.OnGamePushInit();
-            _gameManager.UI.WindowMainMenu.OnGamePushInit();            
-        }*/
+        
+        //if (_gameManager.Platform == Platform.Ok)
+        //{
+        //    _gameManager.Saves.OnGamePushInit();
+        //    _gameManager.UI.WindowMainMenu.OnGamePushInit();            
+        //}
     }    
 
     //LB

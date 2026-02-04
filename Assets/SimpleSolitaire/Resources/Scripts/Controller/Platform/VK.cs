@@ -6,12 +6,12 @@ using UnityEngine;
 namespace BloomLines
 {
     public class VK : PlatformController
-    {        
+    {
 #if VK
         private void Start()
         {
             InitBridge();
-            StartCoroutine(LoadStorage());
+            //StartCoroutine(LoadStorage());//StorageVK
             StartCoroutine(BannerLogic(30));
         }        
 

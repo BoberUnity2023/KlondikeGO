@@ -1,8 +1,6 @@
 using System.Collections;
-using BloomLines.Managers;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -23,44 +21,14 @@ namespace BloomLines.Controllers
         private IEnumerator LoadGame()
         {
             Debug.Log("Scene1.LoadGame(1)");
-#if !UNITY_WEBGL
-            //VibrationAssets.Vibration.Init();
-#endif
 
             _progressBarFill.DOFillAmount(0.3f, 0.5f).SetEase(_curve);
-
-#if VK
-            //VK vk = FindObjectsByType<VK>(FindObjectsSortMode.None);
-#endif
-
-            /*#if !UNITY_EDITOR//TODO: CloudSave
-            #if OK
-                        Debug.Log("OKController.SaveLoaded");
-                        while (!OKController.SaveLoaded)
-                            yield return null;
-            #endif
-
-            #if VK
-                        while (!VKController.SaveLoaded)
-                            yield return null;
-            #endif
-            #endif*/
-            //Debug.Log("Scene1.LoadGame(2)");
-            //SaveManager.LoadAll(); // Загружаем сохранения
-            //IAPController.LoadPurchases(); // Загружаем покупки
-            //var gameState = SaveManager.GameState; // Ставим нужную громкость
-            //var audioMixer = Resources.Load<AudioMixer>("AudioMixer");
-            //audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80f, 0f, gameState.MusicVolume));
-            //audioMixer.SetFloat("SoundVolume", Mathf.Lerp(-80f, 0f, gameState.SoundVolume));            
 
             AnalyticsController.SendEvent("game_start");
 
             yield return new WaitForSeconds(0.5f);
 
             _progressBarFill.DOFillAmount(1f, 1.0f).SetEase(_curve);
-
-            //SaveManager.LoadAll(); // Загружаем сохранения
-            //IAPController.LoadPurchases(); // Загружаем покупки
 
             yield return new WaitForSeconds(1.0f);
             //Debug.Log("Scene1.LoadGame(4)");

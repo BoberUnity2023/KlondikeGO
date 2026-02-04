@@ -1086,11 +1086,10 @@ public class SaveController : MonoBehaviour
 
     public void OnGamePushInit()//GP
     {
-#if GAME_PUSH
+#if GAME_PUSH && OK
         Debug.Log("GetTING JSON...*GamePush*");        
-        _json = GP_Player.GetString(KeyJson); 
-        Save = JsonUtility.FromJson<Save>(_json);
-        FillSaveFromPlayerPrefsOrStorage(Save);
+        _json = GP_Player.GetString(KeyJson);
+        LoadFromStorage();
         _game.Gold = Save.Gold;
         Debug.Log("Get JSON: " + _json);
 #endif
@@ -1098,11 +1097,12 @@ public class SaveController : MonoBehaviour
 
     private void LoadFromStorage()
     {
-        if (_json == "")
+        if (_json == "" || _json.Length < 8)
         {
             Debug.Log("SaveController.OnGetStorage: Default");
             Save = new Save();
             FillSaveFromPlayerPrefsOrStorage(Save);
+            return;
         }
 
         if (!string.IsNullOrEmpty(_json))
@@ -1126,17 +1126,15 @@ public class SaveController : MonoBehaviour
     {
        // Debug.Log("Setting json...");
         _json = JsonUtility.ToJson(Save);
-//#if GAME_PUSH && !VK && !OK
-//        GP_Player.Set(KeyJson, _json);
-//        GP_Player.Sync();
-//#endif
-        string compressedJson = StringCompressor.CompressStringBrotli(_json);
-        //Debug.Log("Saving json...:" + _json);
-#if VK
-        Application.ExternalCall("storageSet", KeyJson, compressedJson);
+#if GAME_PUSH
+        GP_Player.Set(KeyJson, _json);
+        GP_Player.Sync();
 #endif
-#if OK        
-        Application.ExternalCall("saveToOKStorage", KeyJson, compressedJson);
-#endif
+        //StorageVK
+        //        string compressedJson = StringCompressor.CompressStringBrotli(_json);//StorageVK
+        //        //Debug.Log("Saving json...:" + _json);
+        //#if VK && !UNITY_EDITOR
+        //        Application.ExternalCall("storageSet", KeyJson, compressedJson);
+        //#endif
     }
 }

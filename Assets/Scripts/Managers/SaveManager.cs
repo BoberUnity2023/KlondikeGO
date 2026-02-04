@@ -75,19 +75,6 @@ namespace BloomLines.Managers
 #if UNITY_EDITOR
             return;
 #endif
-/*
-#if Yandex
-            _cloudSaveAdapter = new YandexAdapter();
-#endif
-
-#if VK
-            _cloudSaveAdapter = new VKAdapter();
-#endif
-
-#if OK
-            _cloudSaveAdapter = new OKAdapter();
-#endif*/
-
             _localSaveAdapter.Initialize();
             //if(_cloudSaveAdapter != null)//TODO: Вернуть Cloud
             //    _cloudSaveAdapter.Initialize();

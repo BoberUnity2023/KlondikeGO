@@ -54,13 +54,8 @@ public class AdsController : MonoBehaviour
             YG.YG2.InterstitialAdvShow();
         }
 
-        if (_gameManager.Platform == Platform.Ok)
-        {
-            OKManager.ShowInterstitial();
-            //OKManager.LoadAd();
-        }
-
-        if (_gameManager.Platform == Platform.VK)
+        if (_gameManager.Platform == Platform.VK ||
+            _gameManager.Platform == Platform.Ok)
         {
 #if GAME_PUSH
             GamePush.GP_Ads.ShowFullscreen();

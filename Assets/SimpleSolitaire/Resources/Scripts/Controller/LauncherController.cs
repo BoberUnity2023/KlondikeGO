@@ -27,44 +27,21 @@ namespace BloomLines.Controllers
             //VibrationAssets.Vibration.Init();
 #endif
 
-#if VK
+#if VK || OK
             VK vk = FindAnyObjectByType<VK>();
 #endif
 
-#if OK
-            OK ok = FindAnyObjectByType<OK>();
-#endif
+//#if OK
+//            OK ok = FindAnyObjectByType<OK>();
+//#endif
 
             _progressBarFill.DOFillAmount(0.3f, 0.5f).SetEase(_curve);
-
-/*#if !UNITY_EDITOR//TODO: CloudSave
-#if OK
-            Debug.Log("OKController.SaveLoaded");
-            while (!OKController.SaveLoaded)
-                yield return null;
-#endif
-
-#if VK
-            while (!VKController.SaveLoaded)
-                yield return null;
-#endif
-#endif*/
-            //Debug.Log("Scene1.LoadGame(2)");
-            //SaveManager.LoadAll(); // Загружаем сохранения
-            //IAPController.LoadPurchases(); // Загружаем покупки
-            //var gameState = SaveManager.GameState; // Ставим нужную громкость
-            //var audioMixer = Resources.Load<AudioMixer>("AudioMixer");
-            //audioMixer.SetFloat("MusicVolume", Mathf.Lerp(-80f, 0f, gameState.MusicVolume));
-            //audioMixer.SetFloat("SoundVolume", Mathf.Lerp(-80f, 0f, gameState.SoundVolume));            
 
             AnalyticsController.SendEvent("game_start");
 
             yield return new WaitForSeconds(0.5f);
 
             _progressBarFill.DOFillAmount(1f, 1.0f).SetEase(_curve);
-
-            //SaveManager.LoadAll(); // Загружаем сохранения
-            //IAPController.LoadPurchases(); // Загружаем покупки
 
             yield return new WaitForSeconds(1.0f);
 
@@ -75,12 +52,12 @@ namespace BloomLines.Controllers
             Debug.Log("VK Storage Loaded success");
 #endif
 
-#if OK && !UNITY_EDITOR
-            Debug.Log("OK Storage Loading...");
-            while (!ok.IsSaveLoaded)
-                yield return null;
-            Debug.Log("OK Storage Loaded success");
-#endif 
+//#if OK && !UNITY_EDITOR
+//            Debug.Log("OK Storage Loading...");
+//            while (!ok.IsSaveLoaded)
+//                yield return null;
+//            Debug.Log("OK Storage Loaded success");
+//#endif 
             //Debug.Log("Scene1.LoadGame(4)");
             SceneManager.LoadScene("2_KlondikeGO");
         }        

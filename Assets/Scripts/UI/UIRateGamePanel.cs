@@ -54,7 +54,7 @@ namespace BloomLines.UI
 #endif
 
 #if OK
-                Application.OpenURL("https://yandex.com/games/developer/71014");
+                Application.OpenURL("https://vk.com/dakagames");
 #endif
 
 #if RuStore 

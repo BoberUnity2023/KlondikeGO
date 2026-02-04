@@ -42,8 +42,8 @@ namespace BloomLines
             _loadedScene = scene.buildIndex;
             if (scene.name == "2_KlondikeGO")
             {
-                _saveController = FindFirstObjectByType<SaveController>();
-                _saveController.OnGetStorage(Json);
+                //_saveController = FindFirstObjectByType<SaveController>();//StorageVK
+                //_saveController.OnGetStorage(Json);
             }
         }
 
